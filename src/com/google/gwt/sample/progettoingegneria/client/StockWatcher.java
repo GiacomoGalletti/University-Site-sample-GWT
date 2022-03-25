@@ -1,4 +1,4 @@
-package com.google.gwt.sample.stockwatcher.client;
+package com.google.gwt.sample.progettoingegneria.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;

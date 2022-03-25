@@ -1,4 +1,4 @@
-package com.google.gwt.sample.stockwatcher.server;
+package com.google.gwt.sample.progettoingegneria.server;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -12,8 +12,8 @@ import javax.servlet.ServletContext;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
 
-import com.google.gwt.sample.stockwatcher.client.StockPrice;
-import com.google.gwt.sample.stockwatcher.client.StockPriceService;
+import com.google.gwt.sample.progettoingegneria.client.StockPrice;
+import com.google.gwt.sample.progettoingegneria.client.StockPriceService;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 public class StockPriceServiceImpl extends RemoteServiceServlet implements StockPriceService {

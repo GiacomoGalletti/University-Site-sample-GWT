@@ -1,13 +1,11 @@
-package com.google.gwt.sample.stockwatcher.client;
+package com.google.gwt.sample.progettoingegneria.client;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.WindowScrollListener;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.ButtonBase;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
@@ -19,7 +17,7 @@ public class LoginPage extends Composite{
 	private VerticalPanel mainPanel = new VerticalPanel();
 	private Image image1 = new Image();
 	private MainPage main;
-	private StockPriceServiceAsync stockPriceSvc = GWT.create(StockPriceService.class);
+	private ConnServiceAsync connService = GWT.create(ConnService.class);
 	private TextBox usernameTextBox = new TextBox();
     private TextBox passwordTextBox = new TextBox();
 	
@@ -59,7 +57,7 @@ public class LoginPage extends Composite{
 			String user = usernameTextBox.getText();
 			String passw = passwordTextBox.getText();
 			// TODO Auto-generated method stub
-			stockPriceSvc.loginRequest(user, passw, new AsyncCallback<Boolean>() {
+			connService.loginRequest(user, passw, new AsyncCallback<Boolean>() {
 				@Override
 				public void onFailure(Throwable caught) {
 					Window.alert("Cannot access: "
