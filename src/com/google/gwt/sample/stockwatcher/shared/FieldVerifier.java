@@ -33,13 +33,10 @@ public class FieldVerifier {
    * @param name the name to validate
    * @return true if valid, false if invalid
    */
-  public static boolean isValidName(String username) {
-    if ((username == null) || (username.length()<3)) {
+  public static boolean isValidName(String name) {
+    if (name == null) {
       return false;
     }
-    else {
-    	return true;
-    }
-    
+    return name.length() > 3;
   }
 }

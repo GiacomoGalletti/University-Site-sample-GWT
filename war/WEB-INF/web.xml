@@ -6,7 +6,15 @@
          xmlns="http://java.sun.com/xml/ns/javaee">
 
   <!-- Servlets -->
+  <servlet>
+    <servlet-name>stockPriceServiceImpl</servlet-name>
+    <servlet-class>com.google.gwt.sample.stockwatcher.server.StockPriceServiceImpl</servlet-class>
+  </servlet>
   
+  <servlet-mapping>
+    <servlet-name>stockPriceServiceImpl</servlet-name>
+    <url-pattern>/stockwatcher/stockPrices</url-pattern>
+  </servlet-mapping>
   
   
   <!-- Default page to serve -->
