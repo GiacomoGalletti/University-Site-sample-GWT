@@ -1,7 +1,11 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.sample.progettoingegneria.shared.Course;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.ListBox;
@@ -11,6 +15,7 @@ public class ProfessorMenuComponent extends Composite {
 	private VerticalPanel vPanel = new VerticalPanel();
 	private ListBox actionsListBox = new ListBox();
 	private Button confirmButton = new Button("Conferma");
+	private ConnServiceAsync connService = GWT.create(ConnService.class);
 	
 	public ProfessorMenuComponent() {
 		initWidget(this.vPanel);
@@ -36,6 +41,24 @@ public class ProfessorMenuComponent extends Composite {
 			case -1:
 				break;
 			case 0:
+				Course c = new Course("corsotest", "27/02/2022","28/02/2022");
+				connService.addCourse(c, new AsyncCallback<Boolean>() {
+
+					@Override
+					public void onFailure(Throwable caught) {
+						Window.alert("no");
+						
+					}
+
+					@Override
+					public void onSuccess(Boolean result) {
+						Window.alert("si");
+						
+					}
+
+					
+					
+				});
 				break;
 			case 1:
 				break;

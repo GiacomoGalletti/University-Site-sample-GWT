@@ -1,5 +1,8 @@
 package com.google.gwt.sample.progettoingegneria.shared;
 
+import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * <p>
  * FieldVerifier validates that the name the user enters is valid.
@@ -38,5 +41,20 @@ public class FieldVerifier {
       return false;
     }
     return name.length() > 3;
+  }
+  
+  public static boolean dateValidityCheck(Date x) {
+	  if (x.after(new Date())){
+		  return true;
+	  }
+	  return false;
+  }
+  
+  // generatore di id per gli oggetti
+  
+  private static final AtomicInteger sequence = new AtomicInteger();
+ 
+  public static int getId() {
+      return sequence.incrementAndGet();
   }
 }

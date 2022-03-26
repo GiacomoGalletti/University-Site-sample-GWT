@@ -57,7 +57,7 @@ public class LoginPage extends Composite{
 			String user = usernameTextBox.getText();
 			String passw = passwordTextBox.getText();
 			// TODO Auto-generated method stub
-			connService.loginRequest(user, passw, new AsyncCallback<Boolean>() {
+			connService.loginRequest(user, passw, new AsyncCallback<Integer>() {
 				@Override
 				public void onFailure(Throwable caught) {
 					Window.alert("Cannot access: "
@@ -65,12 +65,43 @@ public class LoginPage extends Composite{
 				}
 
 				@Override
-				public void onSuccess(Boolean r) {
-					if(r) {
-						main.openStudentDashboard();
-					}else {
-						Window.alert("wrong user or passw");
-					}
+				public void onSuccess(Integer result) {
+						
+						Account.email = (usernameTextBox.getText());
+						Account.tipoAccount = result;
+						mainPanel.clear();
+						switch(result) {
+						// password errata
+						case -1:
+							main.openHomePage();
+							Window.alert("Password errata");
+							break;
+							// utente non registrato 
+						case 0:
+							Window.alert("Utente non registrato");
+							break;
+
+							// Professor,
+						case 1:
+							main.openProfessorDashboard();
+							break;
+
+							// Scretary
+						case 2 :
+							main.openSecretaryDashboard();
+							break;
+
+							// Utente registrato
+						case 3:
+							main.openStudentDashboard();
+							break;
+
+						default:
+							System.out.println("[x]Errore interno!");
+							break;
+
+						}
+						//************
 					
 				}
 			});
