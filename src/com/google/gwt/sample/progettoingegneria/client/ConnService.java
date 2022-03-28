@@ -8,7 +8,16 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 public interface ConnService extends RemoteService {	
 	
 	String testCall(String input);
+	
 	Integer loginRequest(String user, String passw);
 	
-	boolean addCourse(Course c);
+	public boolean addCourse(Course c);
+	
+	String signUp(String username, String password, String email, String name, String surname, int type);
+
+	String viewStudentInfo();
+	
+	String viewProfessorInfo();
+	
+	String clearDB();
 }

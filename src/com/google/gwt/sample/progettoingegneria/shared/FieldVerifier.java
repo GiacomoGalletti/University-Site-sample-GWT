@@ -1,6 +1,6 @@
 package com.google.gwt.sample.progettoingegneria.shared;
 
-import java.util.Date;
+//import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -43,12 +43,12 @@ public class FieldVerifier {
     return name.length() > 3;
   }
   
-  public static boolean dateValidityCheck(Date x) {
-	  if (x.after(new Date())){
-		  return true;
-	  }
-	  return false;
-  }
+//  public static boolean dateValidityCheck(Date x) {
+//	  if (x.after(new Date())){
+//		  return true;
+//	  }
+//	  return false;
+//  }
   
   // generatore di id per gli oggetti
   

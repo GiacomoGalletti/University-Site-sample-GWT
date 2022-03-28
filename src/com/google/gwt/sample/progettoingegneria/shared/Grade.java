@@ -4,9 +4,11 @@ import java.io.Serializable;
 
 public class Grade implements Serializable{
 
+	private static final long serialVersionUID = 1L;
 	private int value;
 	
-	// prendere i corsi dal database per verificare l'esistenza del corso inserito
+	public Grade() {}
+	
 	public Grade(int value) {
 		this.value = value;
 	}

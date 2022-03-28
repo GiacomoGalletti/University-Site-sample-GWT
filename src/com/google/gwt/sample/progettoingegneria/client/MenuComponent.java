@@ -13,7 +13,6 @@ import com.google.gwt.user.client.ui.TextBox;
 public class MenuComponent extends Composite {
 	private HorizontalPanel hPanel = new HorizontalPanel();
 	private MainPage main;
-	private TextBox tb = new TextBox();
 	private ConnServiceAsync connService = GWT.create(ConnService.class);
 	
 	public MenuComponent(MainPage main) {
@@ -22,19 +21,18 @@ public class MenuComponent extends Composite {
 		
 		Button buttonLogin = new Button("login");
 		Button buttonHome = new Button("home");
-		Button buttonTestCall = new Button("testCall");
+		Button buttonClear = new Button("pulisci db");
 		
 		buttonLogin.setWidth("250px");
 		buttonHome.setWidth("250px");
 		
 		buttonLogin.addClickHandler(new buttonLoginHandler());
 		buttonHome.addClickHandler(new buttonHomeHandler());
-		buttonTestCall.addClickHandler(new buttonTestHandler());
+		buttonClear.addClickHandler(new buttonClearHandler());
 		
 		this.hPanel.add(buttonHome);
 		this.hPanel.add(buttonLogin);
-		this.hPanel.add(buttonTestCall);
-		this.hPanel.add(tb);
+		this.hPanel.add(buttonClear);
 
 	}
 	
@@ -42,7 +40,6 @@ public class MenuComponent extends Composite {
 
 		@Override
 		public void onClick(ClickEvent event) {
-			// TODO Auto-generated method stub
 			main.openLoginPage();
 		}
 		
@@ -52,33 +49,31 @@ public class MenuComponent extends Composite {
 
 		@Override
 		public void onClick(ClickEvent event) {
-			// TODO Auto-generated method stub
 			main.openHomePage();
 		}
 		
 	}
 	
-	private class buttonTestHandler implements ClickHandler{
+	private class buttonClearHandler implements ClickHandler{
 
 		@Override
 		public void onClick(ClickEvent event) {
-				String input = tb.getText();
-	
-				connService.testCall(input, new AsyncCallback<String>() {
-					@Override
-					public void onFailure(Throwable caught) {
-						Window.alert("Cannot load symbols: "
-								+ caught.getMessage());
-					}
+			connService.clearDB(new AsyncCallback<String>() {
 
-					@Override
-					public void onSuccess(String result) {
-						Window.alert(result);
-					}
-				});
+				@Override
+				public void onFailure(Throwable caught) {
+					Window.alert("ERROR: " + caught);
+				}
+
+				@Override
+				public void onSuccess(String result) {
+					Window.alert(result);
+					
+				}					
+			});
 		}
 		
-	}	
+	}
 		
 	
 }

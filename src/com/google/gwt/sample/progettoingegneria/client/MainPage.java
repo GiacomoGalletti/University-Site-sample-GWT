@@ -1,5 +1,9 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
+import com.google.gwt.sample.progettoingegneria.client.dashboards.AdminDashboard;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.ProfessorDashboard;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.SecretaryDashboard;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.StudentDashboard;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.VerticalPanel;

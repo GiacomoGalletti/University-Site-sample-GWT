@@ -9,19 +9,22 @@ import org.mapdb.DB;
 import org.mapdb.DBMaker;
 
 import com.google.gwt.sample.progettoingegneria.shared.Course;
-import com.google.gwt.sample.progettoingegneria.shared.User;
 
 public class CoursesDB {
 	
-	private static DB getCoursesDB() {
+	private static DB getCoursersDB() {
 		DB db = DBMaker.newFileDB(new File("dbProgettoIng")).make();		
 		return db;	
 	}
 	
+	private static DB getGradesDB() {
+		DB db = DBMaker.newFileDB(new File("dbProgettoIng")).make();		
+		return db;	
+	}
+
 	public static boolean addCourse(Course c){
-		DB db = getCoursesDB();
-		BTreeMap<Integer, Course> coursesMap = db.getTreeMap("coursesMap");
-		
+		DB db = getCoursersDB();
+		BTreeMap<Integer, Course> coursesMap = db.getTreeMap("coursesMap");		
 		coursesMap.put(coursesMap.lastKey()+1, c);
 		db.commit();
 		db.close();
@@ -29,8 +32,8 @@ public class CoursesDB {
 	}
 	
 	public static ArrayList<String> getCoursesList() {
+		DB db = getCoursersDB();
 
-		DB db = getCoursesDB();
 		BTreeMap<Integer, Course> coursesMap = db.getTreeMap("coursesMap");
 
 		ArrayList<String> coursesList = new ArrayList<String>();

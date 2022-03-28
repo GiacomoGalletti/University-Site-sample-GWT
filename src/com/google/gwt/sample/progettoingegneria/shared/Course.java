@@ -1,11 +1,10 @@
 package com.google.gwt.sample.progettoingegneria.shared;
 
 import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+
+import com.google.gwt.i18n.shared.DateTimeFormat;
+import com.google.gwt.user.client.Window;
 
 public class Course implements Serializable{
 
@@ -13,25 +12,17 @@ public class Course implements Serializable{
 	private String Name;
 	private String startingDate;
 	private String endDate;
-	
-	
-	public Course(String name, String startingDate, String endDate) 
-	{
 
-		Date a;
-		try {
-			a = new SimpleDateFormat("dd/MM/yyyy").parse(startingDate);
-			Date b = new SimpleDateFormat("dd/MM/yyyy").parse(endDate);
-			if ( FieldVerifier.dateValidityCheck(a) && FieldVerifier.dateValidityCheck(b) && isValidCoupleDate(a,b)) {
-			this.Name = name;
-			}
-			throw new IllegalArgumentException("Date error. dates insert not valid.");
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
+	public Course() {}
+	
+	public Course(String name) 
+	{
+		//DateTimeFormat format = DateTimeFormat.getFormat("dd/MM/yyyy");
+		//Date a = format.parse(startingDate);
+		//Date b = format.parse(endDate);		
+		this.Name = name;
+		//this.endDate = endDate;
+		//this.startingDate = startingDate;
 	}
 	
 	
@@ -51,14 +42,4 @@ public class Course implements Serializable{
 		return this.endDate;
 	}
 	
-	
-	// la segreteria inserisce i voti: tramite file?
-	
-	  public boolean isValidCoupleDate(Date start, Date end) throws ParseException {
-		  if ((end.after(start))) {
-			return true;
-		  }
-		  return false;
-	  }
-
 }

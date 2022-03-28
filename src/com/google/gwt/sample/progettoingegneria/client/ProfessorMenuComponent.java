@@ -27,7 +27,7 @@ public class ProfessorMenuComponent extends Composite {
 		actionsListBox.setVisibleItemCount(4);
 		confirmButton.setWidth("200px");
 		confirmButton.addClickHandler(new buttonConfirmHandler());
-		
+	
 		this.vPanel.add(actionsListBox);
 		this.vPanel.add(confirmButton);
 	}
@@ -41,23 +41,19 @@ public class ProfessorMenuComponent extends Composite {
 			case -1:
 				break;
 			case 0:
-				Course c = new Course("corsotest", "27/02/2022","28/02/2022");
+				Course c = new Course("corsotest");
 				connService.addCourse(c, new AsyncCallback<Boolean>() {
 
 					@Override
 					public void onFailure(Throwable caught) {
-						Window.alert("no");
-						
+						Window.alert("ERROR: " + caught);
 					}
 
 					@Override
 					public void onSuccess(Boolean result) {
-						Window.alert("si");
+						Window.alert("Risultato: "+result);
 						
-					}
-
-					
-					
+					}					
 				});
 				break;
 			case 1:

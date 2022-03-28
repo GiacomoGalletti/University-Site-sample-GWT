@@ -14,6 +14,8 @@ import com.google.gwt.sample.progettoingegneria.shared.Professor;
 import com.google.gwt.sample.progettoingegneria.shared.Secretary;
 import com.google.gwt.sample.progettoingegneria.shared.Student;
 import com.google.gwt.sample.progettoingegneria.shared.User;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class UserDB {
 
@@ -21,45 +23,82 @@ public class UserDB {
 		DB db = DBMaker.newFileDB(new File("dbProgettoIng")).make();		
 		return db;	
 	}
-	
-	public static void initAdmin() {
+
+	public static String signUp(String username, String password, String email, String name, String surname, int type) {
 
 		DB db = getUserDB();
-		BTreeMap<String, User> userMap = db.getTreeMap("UserMap");
-		
-		Admin a = new Admin("root", "root", "root@root.com", 
-				"root", "root");
+		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 
-		userMap.put(a.getEmail(), a);
+		switch (type) {
+		case 0:
+			User s = new Student(username, password, email, name, surname);
+			userMap.put(email, s);
+			break;
+		case 1:
+			User p = new Professor(username, password, email, name, surname);
+			userMap.put(email, p);
+			break;
+		case 2:
+			User se = new Secretary(username, password, email, name, surname);
+			userMap.put(email, se);
+			break;
+		}
+		User r = userMap.get(email);
 		db.commit();
 		db.close();
+		return "registrato "+ r.getEmail() ;
+		
 	}
-
-	public static String signUp(ArrayList<String> dati) {
-
+	
+	public static String viewStudentInfo() {
 		DB db = getUserDB();
-		BTreeMap<String, User> userMap;
+		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 
-		if(userValidation(dati)) {
-			if(!checkExists(dati.get(2))) {
-				userMap = db.getTreeMap("userMap");
+		String result = " ";
+		Set<String> keysU = userMap.keySet(); 
 
-				User u = new User(
-						dati.get(0),
-						dati.get(1),
-						dati.get(2),
-						dati.get(3),
-						dati.get(4)
-						);
-
-				userMap.put(u.getEmail(), u);
-				db.commit();
-				db.close();
-				return "Registazione completata con successo";
-			}
-			else return "Indirizzo email gia' presente";
+		for (String key : keysU) {
+			if(userMap.get(key).getClass() == Student.class)
+				
+				result = result + 
+				userMap.get(key).getEmail() + " " +
+				userMap.get(key).getName() + " " +
+				userMap.get(key).getSurname()
+				+ "\n";
 		}
-		else return "Compilare tutti i campi";
+		db.commit();
+		db.close();
+		return result;
+	}
+	
+	public static String viewProfessorInfo() {
+		DB db = getUserDB();
+		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
+
+		String result = "";
+		Set<String> keysU = userMap.keySet(); 
+
+		for (String key : keysU) {
+			if(userMap.get(key).getClass() == Professor.class)
+				
+				result = result + 
+				userMap.get(key).getEmail() + " " +
+				userMap.get(key).getName() + " " +
+				userMap.get(key).getSurname()
+				+ "\n";
+		}
+		db.commit();
+		db.close();
+		return result;
+	}
+	
+	public static String clearDB() {
+		DB db = getUserDB();
+		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
+		userMap.clear();
+		db.commit();
+		db.close();
+		return "pulito";
 	}
 
 	private static boolean userValidation(ArrayList<String> dati) {
@@ -71,52 +110,28 @@ public class UserDB {
 		return true;
 	}
 
-	private static boolean checkExists(String email) {
+	public static int login(String email, String password) {
 
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
-
-		if (email.equalsIgnoreCase("admin@admin.com")) { 
-			return true;
-		} else {
-			for (Entry<String, User> entry : userMap.entrySet()) {
-				if(entry.getValue().getEmail().equalsIgnoreCase(email)) {
-					// utente trovato
-					return true;
-				}
-			}
+		Student st =  new Student("ro","ro","ro@ro","ro", "ro"); 
+		Admin ad = new Admin("po","po","po@po","po", "po");
+		userMap.put(st.getEmail(), st);
+		userMap.put(ad.getEmail(), ad);
+		User u = userMap.get(email);
+		
+		if(u.getPw().equals(password)) {
+			return 1;
+		}else {
+			return 0;
 		}
-		// Utente non trovato 
-		return false;
+		
 	}
-
-	public static int login(String email, String password) throws IllegalArgumentException {
-
-		DB db = getUserDB();
-		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
-
-		if(checkExists(email)) {
-			User u = userMap.get(email);
-
-			if(u.getPw().equals(password)) {
-				// Utente trovato e dati di inserimento corretti
-				if((u.getClass() == Professor.class)) return  1;
-				if((u.getClass() == Secretary.class)) return 2;
-				if((u.getClass() == Student.class)) return 3;
-			}
-			else {
-				return -1; //password errata
-			}
-		}
-		return 0; // Utente non trovato
-
-	}
-
 
 	public static String getInfoUser(String email) {
 
 		DB db = getUserDB();
-		BTreeMap<String, User> UtentiMap = db.getTreeMap("UserMap");
+		BTreeMap<String, User> UtentiMap = db.getTreeMap("userMap");
 
 		User u = UtentiMap.get(email);
 
@@ -126,21 +141,9 @@ public class UserDB {
 		return info;
 	}
 
-	public static ArrayList<String> getUserList() {
 
-		DB db = getUserDB();
-		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
-
-		ArrayList<String> users = new ArrayList<String>();
-		Set<String> keysU = userMap.keySet(); 
-
-		for (String key : keysU) {
-			if(userMap.get(key).getClass() == User.class)
-				users.add(userMap.get(key).getEmail());
-		}
-
-		return users;
-	}
+	
+	
 
 }
 
