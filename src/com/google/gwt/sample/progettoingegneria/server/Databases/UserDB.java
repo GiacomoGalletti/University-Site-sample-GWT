@@ -26,27 +26,30 @@ public class UserDB {
 
 	public static String signUp(String username, String password, String email, String name, String surname, int type) {
 
-		DB db = getUserDB();
-		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
+		if (!checkMailExist(email)) {
+			DB db = getUserDB();
+			BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 
-		switch (type) {
-		case 0:
-			User s = new Student(username, password, email, name, surname);
-			userMap.put(email, s);
-			break;
-		case 1:
-			User p = new Professor(username, password, email, name, surname);
-			userMap.put(email, p);
-			break;
-		case 2:
-			User se = new Secretary(username, password, email, name, surname);
-			userMap.put(email, se);
-			break;
+			switch (type) {
+			case 0:
+				User s = new Student(username, password, email, name, surname);
+				userMap.put(email, s);
+				break;
+			case 1:
+				User p = new Professor(username, password, email, name, surname);
+				userMap.put(email, p);
+				break;
+			case 2:
+				User se = new Secretary(username, password, email, name, surname);
+				userMap.put(email, se);
+				break;
+			}
+			User r = userMap.get(email);
+			db.commit();
+			db.close();
+			return "registrato "+ r.getEmail() ;
 		}
-		User r = userMap.get(email);
-		db.commit();
-		db.close();
-		return "registrato "+ r.getEmail() ;
+		return email + " esiste già.";
 		
 	}
 	
@@ -110,22 +113,32 @@ public class UserDB {
 		return true;
 	}
 
+	private static boolean checkMailExist(String email) {
+		DB db = getUserDB();
+		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
+		
+		for (Entry<String, User> entry : userMap.entrySet()) {
+			if(entry.getValue().getEmail().equalsIgnoreCase(email)) {
+				return true;
+			}
+		}
+		return false;
+	}
 	public static int login(String email, String password) {
 
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
-		Student st =  new Student("ro","ro","ro@ro","ro", "ro"); 
-		Admin ad = new Admin("po","po","po@po","po", "po");
-		userMap.put(st.getEmail(), st);
-		userMap.put(ad.getEmail(), ad);
-		User u = userMap.get(email);
-		
-		if(u.getPw().equals(password)) {
-			return 1;
-		}else {
+
+		if (checkMailExist(email)) {
+			User u = userMap.get(email);
+			if (u.getPw().equals(password)) {
+				return 1;
+			}else {
+				return -1;
+			}
+		} else {
 			return 0;
 		}
-		
 	}
 
 	public static String getInfoUser(String email) {
