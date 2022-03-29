@@ -67,11 +67,12 @@ public class LoginPage extends Composite{
 				@Override
 				public void onSuccess(Integer result) {
 						if (result == 1) {
-							Window.alert("riuscito");
+							// open student board
+							main.openStudentDashboard();
 						} else if (result == -1){
-							Window.alert("Connessione Riuscita ma password errata");
+							Window.alert("password errata");
 						} else {
-							Window.alert("User non trovato");
+							Window.alert("Studente non trovato");
 						}
 					
 				}
