@@ -76,20 +76,22 @@ public class LoginPage extends Composite{
 							break;
 						case STUDENT: // Student
 							Session.getSession().setTipo(State.STUDENT);
+							main.menu.setLoginText();
 							main.openStudentDashboard();
 							break;
 						case PROFESSOR: // Professor
 							Session.getSession().setTipo(State.PROFESSOR);
+							main.menu.setLoginText();
 							main.openProfessorDashboard();
 							break;
 						case SECRETARY: //Secretary
 							Session.getSession().setTipo(State.SECRETARY);
+							main.menu.setLoginText();
 							main.openSecretaryDashboard();
 							break;
 						case ADMIN: // Admin
-							main.menu.setLogged(true);
-							main.menu.setLoginText();
 							Session.getSession().setTipo(State.ADMIN);
+							main.menu.setLoginText();
 							main.openAdminDashboard();
 							break;
 						default:

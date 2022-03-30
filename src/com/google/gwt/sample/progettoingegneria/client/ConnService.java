@@ -1,6 +1,5 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
-import com.google.gwt.sample.progettoingegneria.shared.Course;
 import com.google.gwt.sample.progettoingegneria.shared.State;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
@@ -12,7 +11,7 @@ public interface ConnService extends RemoteService {
 	
 	State loginRequest(String user, String passw);
 	
-	public boolean addCourse(Course c);
+	public boolean addCourse(String name, String startDate, String endDate);
 	
 	String signUp(String username, String password, String email, String name, String surname, int type);
 

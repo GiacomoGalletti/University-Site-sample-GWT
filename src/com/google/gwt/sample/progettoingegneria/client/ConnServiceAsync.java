@@ -1,6 +1,5 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
-import com.google.gwt.sample.progettoingegneria.shared.Course;
 import com.google.gwt.sample.progettoingegneria.shared.State;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
@@ -10,7 +9,7 @@ public interface ConnServiceAsync {
 	
 	void loginRequest(String user, String passw, AsyncCallback<State> asyncCallback);
 	
-	void addCourse(Course c, AsyncCallback<Boolean> callback);
+	void addCourse(String name, String startDate, String endDate, AsyncCallback<Boolean> callback);
 	
 	void signUp(String username, String password, String email, String name, String surname, int type,  AsyncCallback<String> callback);
 

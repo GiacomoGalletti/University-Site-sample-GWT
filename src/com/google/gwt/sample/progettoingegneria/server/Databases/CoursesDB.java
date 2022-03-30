@@ -25,8 +25,8 @@ public class CoursesDB {
 
 	public static boolean addCourse(Course c){
 		DB db = getCoursersDB();
-		BTreeMap<Integer, Course> coursesMap = db.getTreeMap("coursesMap");		
-		coursesMap.put(coursesMap.lastKey()+1, c);
+		BTreeMap<String, Course> coursesMap = db.getTreeMap("coursesMap");		
+		coursesMap.put(c.getId(),c);
 		db.commit();
 		db.close();
 		return true;

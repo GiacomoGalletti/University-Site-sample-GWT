@@ -5,6 +5,7 @@ import com.google.gwt.sample.progettoingegneria.server.Databases.CoursesDB;
 import com.google.gwt.sample.progettoingegneria.server.Databases.UserDB;
 import com.google.gwt.sample.progettoingegneria.shared.Course;
 import com.google.gwt.sample.progettoingegneria.shared.State;
+import com.google.gwt.sample.progettoingegneria.shared.utilities.FirstUtility;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 public class ConnServiceImpl extends RemoteServiceServlet implements ConnService {
@@ -23,7 +24,8 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 
 	@Override
-	public boolean addCourse(Course c) {
+	public boolean addCourse(String name, String startDate, String endDate) {
+		Course c = new Course(name,startDate,endDate, FirstUtility.generateID());
 		return CoursesDB.addCourse(c);	
 	}
 

@@ -41,22 +41,21 @@ public class MenuComponent extends Composite {
 		this.hPanel.add(sessionLabel);
 	}
 	
+	
+	//metodo per effettuare il logout 
+	
+	public void setSessionToLogout() {
+		if(Session.getSession().getTipo()!=State.NOT_SIGNED && (buttonLogin.getText()=="logout")) {
+			Session.getSession().setTipo(State.NOT_SIGNED);
+			main.openHomePage();
+		}
+	}
+	
 	/*
 	 * metodo per modificare il comportamento e l'aspetto del pulsante login/logout (buttonLogin)
 	 * */
-	public void setSessionToLogout() {
-		Session.getSession().setTipo(State.NOT_SIGNED);
-		main.openHomePage();
-	}
-	
-	private boolean logged = false;
-	
-	public void setLogged(boolean val) {
-		logged = val;
-	}
-	
 	public void setLoginText() {
-		if (logged) {buttonLogin.setText("logout");}
+		if (Session.getSession().getTipo()!=State.NOT_SIGNED) {buttonLogin.setText("logout");}
 		else {buttonLogin.setText("login");}
 	}
 	
@@ -69,21 +68,27 @@ public class MenuComponent extends Composite {
 
 		@Override
 		public void onClick(ClickEvent event) {
+			setSessionToLogout();
+			
 				switch(Session.getSession().getTipo()) {
 						case NOT_SIGNED:
 							openLoginTemplate();
+							setLoginText();
 							break;
 						case STUDENT:
 							main.openStudentDashboard();
 							break;
 						case PROFESSOR:
 							main.openProfessorDashboard();
+							setLoginText();
 							break;
 						case SECRETARY:
 							main.openSecretaryDashboard();
+							setLoginText();
 							break;
 						case ADMIN:
 							main.openAdminDashboard();
+							setLoginText();
 							break;
 						default:
 							break;
