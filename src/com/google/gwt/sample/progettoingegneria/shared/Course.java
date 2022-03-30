@@ -1,10 +1,6 @@
 package com.google.gwt.sample.progettoingegneria.shared;
 
 import java.io.Serializable;
-import java.util.Date;
-
-import com.google.gwt.i18n.shared.DateTimeFormat;
-import com.google.gwt.user.client.Window;
 
 public class Course implements Serializable{
 
@@ -15,14 +11,11 @@ public class Course implements Serializable{
 
 	public Course() {}
 	
-	public Course(String name) 
+	public Course(String name,String startingDate, String endDate) 
 	{
-		//DateTimeFormat format = DateTimeFormat.getFormat("dd/MM/yyyy");
-		//Date a = format.parse(startingDate);
-		//Date b = format.parse(endDate);		
 		this.Name = name;
-		//this.endDate = endDate;
-		//this.startingDate = startingDate;
+		this.startingDate = startingDate;
+		this.endDate = endDate;
 	}
 	
 	

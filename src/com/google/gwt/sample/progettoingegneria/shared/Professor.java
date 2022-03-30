@@ -4,6 +4,10 @@ public class Professor extends User{
 
 	private static final long serialVersionUID = 1L;
 
+	public Professor()	{
+		
+	}
+	
 	public Professor(
 			String userName, 
 			String password, 

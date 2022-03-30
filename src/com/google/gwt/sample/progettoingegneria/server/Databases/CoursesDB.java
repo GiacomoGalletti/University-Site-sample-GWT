@@ -17,6 +17,7 @@ public class CoursesDB {
 		return db;	
 	}
 	
+	@SuppressWarnings("unused")
 	private static DB getGradesDB() {
 		DB db = DBMaker.newFileDB(new File("dbProgettoIng")).make();		
 		return db;	

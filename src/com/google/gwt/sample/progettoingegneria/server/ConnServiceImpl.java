@@ -4,8 +4,7 @@ import com.google.gwt.sample.progettoingegneria.client.ConnService;
 import com.google.gwt.sample.progettoingegneria.server.Databases.CoursesDB;
 import com.google.gwt.sample.progettoingegneria.server.Databases.UserDB;
 import com.google.gwt.sample.progettoingegneria.shared.Course;
-import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.sample.progettoingegneria.shared.State;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 public class ConnServiceImpl extends RemoteServiceServlet implements ConnService {
@@ -14,11 +13,12 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 
 	@Override
 	public String testCall(String input) {
+		//UserDB.rootUserInit();
 		return "ho ricevuto "+ input;
 	}
 	
 	@Override
-	public Integer loginRequest(String user, String passw) {
+	public State loginRequest(String user, String passw) {
 		return UserDB.login(user, passw);
 	}
 
@@ -44,7 +44,12 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	
 	public String clearDB() {
 		//clear anche degli altri DB
-		return UserDB.clearDB();
+		try {
+			return UserDB.clearDB();
+		} finally {
+			UserDB.rootUserInit();
+		}
+		
 	}
 
 	

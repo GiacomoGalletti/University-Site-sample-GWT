@@ -1,7 +1,6 @@
 package com.google.gwt.sample.progettoingegneria.server.Databases;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Set;
 import java.util.Map.Entry;
 
@@ -12,10 +11,9 @@ import org.mapdb.DBMaker;
 import com.google.gwt.sample.progettoingegneria.shared.Admin;
 import com.google.gwt.sample.progettoingegneria.shared.Professor;
 import com.google.gwt.sample.progettoingegneria.shared.Secretary;
+import com.google.gwt.sample.progettoingegneria.shared.State;
 import com.google.gwt.sample.progettoingegneria.shared.Student;
 import com.google.gwt.sample.progettoingegneria.shared.User;
-import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class UserDB {
 
@@ -23,9 +21,19 @@ public class UserDB {
 		DB db = DBMaker.newFileDB(new File("dbProgettoIng")).make();		
 		return db;	
 	}
+	
+	public static void rootUserInit() {
+		DB db = getUserDB();
+		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
+		User ad = new Admin("root", "root", "root@root", "root", "root");
+		userMap.putIfAbsent(ad.getEmail(),ad);
+		db.commit();
+		db.close();
+	}
 
 	public static String signUp(String username, String password, String email, String name, String surname, int type) {
 
+		// STATE Pattern (?)
 		if (!checkMailExist(email)) {
 			DB db = getUserDB();
 			BTreeMap<String, User> userMap = db.getTreeMap("userMap");
@@ -104,15 +112,6 @@ public class UserDB {
 		return "pulito";
 	}
 
-	private static boolean userValidation(ArrayList<String> dati) {
-		for (int i=0; i<3; i++) {
-			if(dati.get(i).isEmpty()|| dati.get(i).trim().length() <= 0) {
-				return false;
-			}
-		}
-		return true;
-	}
-
 	private static boolean checkMailExist(String email) {
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
@@ -124,21 +123,31 @@ public class UserDB {
 		}
 		return false;
 	}
-	public static int login(String email, String password) {
-
+	
+	public static State login(String email, String password) {
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 
 		if (checkMailExist(email)) {
 			User u = userMap.get(email);
 			if (u.getPw().equals(password)) {
-				return 1;
-			}else {
-				return -1;
+				if (u.getClass() == Student.class) {
+					return State.STUDENT;
+				}
+				if (u.getClass() == Professor.class) {
+					return State.PROFESSOR;
+				}
+				if (u.getClass() == Secretary.class) {
+					return State.SECRETARY;
+				}
+				if (u.getClass() == Admin.class) {
+					return State.ADMIN;
+				}	
 			}
-		} else {
-			return 0;
+			
+			return State.WRONG_PASSWORD; //password errata
 		}
+		return State.NOT_SIGNED; // account non presente nel db
 	}
 
 	public static String getInfoUser(String email) {

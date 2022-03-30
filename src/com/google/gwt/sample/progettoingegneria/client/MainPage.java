@@ -12,11 +12,12 @@ public class MainPage extends Composite {
 	private VerticalPanel vPanel = new VerticalPanel();
 	private VerticalPanel contentPanel = new VerticalPanel();
 	private VerticalPanel footerPanel = new VerticalPanel();
+	MenuComponent menu;
 	
 	public MainPage() {
 		initWidget(this.vPanel);
 		
-		MenuComponent menu = new MenuComponent(this);
+		 menu = new MenuComponent(this);
 		Image logo = new Image();
 		logo.setUrl("https://cdn.pixabay.com/photo/2012/05/07/01/54/owl-47526_960_720.png");
 		logo.setWidth("100px");

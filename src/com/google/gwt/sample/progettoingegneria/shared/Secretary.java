@@ -4,6 +4,10 @@ public class Secretary extends User{
 
 	private static final long serialVersionUID = 1L;
 
+	public Secretary()	{
+		
+	}
+	
 	public Secretary(
 			String userName, 
 			String password, 
