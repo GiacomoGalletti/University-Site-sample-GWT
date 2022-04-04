@@ -24,8 +24,8 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 
 	@Override
-	public boolean addCourse(String name, String startDate, String endDate) {
-		Course c = new Course(name,startDate,endDate, FirstUtility.generateID());
+	public boolean addCourse(String name, String startDate, String endDate, String email) {
+		Course c = new Course(name,startDate,endDate, FirstUtility.generateID(), email);
 		return CoursesDB.addCourse(c);	
 	}
 
@@ -45,17 +45,31 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	public String clearDB() {
-		//clear anche degli altri DB
 		try {
-			return UserDB.clearDB();
+			return "Puliti: " + UserDB.clearDB() + " " +CoursesDB.clearDB();
 		} finally {
 			UserDB.rootUserInit();
-		}
-		
+		}		
 	}
 
-	
-	
-	
+	@Override
+	public String viewCoursesInfo(String email) {
+		return CoursesDB.getCoursesList(email);
+	}
 
+	@Override
+	public String getCourseData(String name) {
+		return CoursesDB.getCourseData(name);
+	}
+
+	@Override
+	public boolean setCourseData(String name, String newData, int type) {
+		return CoursesDB.setCourseData(name, newData,type);
+	}
+
+	@Override
+	public boolean deleteCourse(String name) {
+		return CoursesDB.deleteCourse(name);
+	}
+	
 }

@@ -1,7 +1,6 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
 import com.google.gwt.event.dom.client.ClickEvent;
-
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
@@ -13,7 +12,6 @@ public class AdminMenuComponent extends Composite{
 	private ListBox actionsListBox = new ListBox();
 	private Button confirmButton = new Button("Conferma");
 	private AdminSettingComponent adminSettingComp = new AdminSettingComponent();
-	//private ConnServiceAsync connService = GWT.create(ConnService.class);
 	
 	public AdminMenuComponent() {
 		initWidget(this.vPanel);
@@ -49,10 +47,6 @@ public class AdminMenuComponent extends Composite{
 				break;
 			case 2:
 				adminSettingComp.manageProfessor();
-				break;
-			case 3:
-				break;
-			case 4:
 				break;
 			}
 		}

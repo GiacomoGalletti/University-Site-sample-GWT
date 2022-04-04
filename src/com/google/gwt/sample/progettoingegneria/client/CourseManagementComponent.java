@@ -1,92 +1,175 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
-import java.util.Date;
-
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.i18n.shared.DateTimeFormat;
+
+/*
+ * TODO: da completare
+ * finestra per il settaggio di modifiche sul corso selezionato
+ */
+
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class CourseManagementComponent extends Composite{
-	
+	private VerticalPanel vPanel = new VerticalPanel();
 
-	private TextBox courseNameBox = new TextBox();
-	private TextBox startDateBox = new TextBox();
-	private TextBox endDateBox = new TextBox();
-	private VerticalPanel widgetBasePanel = new VerticalPanel();
-	private ConnServiceAsync connService = GWT.create(ConnService.class);
-	private Button confirmCreationButton = new Button("Crea corso");
+	private TextBox courseNameTb = new TextBox();
+	private TextBox startDateTb = new TextBox();
+	private TextBox endDateTb = new TextBox();
 	
+	private HorizontalPanel hPanelBtn = new HorizontalPanel();
+	private Button confirmBtn = new Button("Conferma Modifiche");
+	private Button deleteBtn = new Button("Elimina Corso");
 	
-	public CourseManagementComponent() {
+	private String initialCourseName;
+	private String[] currentCourse;
+	
+	public CourseManagementComponent(String courseName) {
+		initWidget(this.vPanel);
 		
-		initWidget(this.widgetBasePanel);
+		this.initialCourseName = courseName;
+		ConnServiceSingleton.getConnService().getCourseData(initialCourseName, new AsyncCallback<String>() {
+
+			@Override
+			public void onFailure(Throwable caught) {
+				Window.alert("Non riesco a trovare le informazioni sul server.");
+				
+			}
+
+			@Override
+			public void onSuccess(String result) {
+				currentCourse = result.split("@"); 
+				
+				courseNameTb.setText(currentCourse[0]);
+				startDateTb.setText(currentCourse[1]);
+				endDateTb.setText(currentCourse[2]);
+				
+				hPanelBtn.add(confirmBtn);
+				hPanelBtn.add(deleteBtn);
+				vPanel.add(new Label("MODIFICA CORSO"));
+				vPanel.add(new Label("Nome Corso:"));
+				vPanel.add(courseNameTb);
+				vPanel.add(new Label("Data Inizio:"));
+				vPanel.add(startDateTb);
+				vPanel.add(new Label("Data fine:"));
+				vPanel.add(endDateTb);
+				vPanel.add(hPanelBtn);
+			}
+			
+		});
 		
-		widgetBasePanel.add(new Label("Nome corso: "));
-		widgetBasePanel.add(courseNameBox);
-		widgetBasePanel.add(new Label("Data inizio: "));
-		widgetBasePanel.add(startDateBox);
-		widgetBasePanel.add(new Label("Data fine: "));
-		widgetBasePanel.add(endDateBox);
-		
-		widgetBasePanel.add(confirmCreationButton);
-		confirmCreationButton.addClickHandler(new confirmCreationButtonHandler());
+		confirmBtn.addClickHandler(new confirmBtnHandler());
+		deleteBtn.addClickHandler(new deleteBtnHandler());
 	}
 	
-	private class confirmCreationButtonHandler implements ClickHandler{
-
+	
+	private class confirmBtnHandler implements  ClickHandler {
+		String msg = "";
+		
 		@Override
 		public void onClick(ClickEvent event) {
-						
-			// i controlli sulle date inserite li faccio ora su client per prevenire problemi
 			
-			if (!courseNameBox.getText().equals("") && !startDateBox.getText().equals("") && !endDateBox.getText().equals("")) {
-				try {
-					Date start = DateTimeFormat.getFormat("dd/mm/yyyy").parse(startDateBox.getText());
-					Date end = DateTimeFormat.getFormat("dd/mm/yyyy").parse(endDateBox.getText());
+			
+			if (!currentCourse[0].equals(courseNameTb.getText())) {
+				ConnServiceSingleton.getConnService().setCourseData(currentCourse[0],initialCourseName,0, new AsyncCallback<Boolean>() {
+
+					@Override
+					public void onFailure(Throwable caught) {
+						Window.alert("Errore aggiornamento dati.");
+					}
+
+					@Override
+					public void onSuccess(Boolean result) {
+						if (result) {
+							msg += "Nome corso aggiornato: " + currentCourse[0]+"\n";
+						}
+					}
 					
-				if (end.after(start) && start.after(new Date())) {
-					connService.addCourse(
-							courseNameBox.getText(),
-							startDateBox.getText(),
-							endDateBox.getText(), 
-							new AsyncCallback<Boolean>() {
-					
-									@Override
-									public void onFailure(Throwable caught) {
-										Window.alert("ERROR: " + caught);
-									}
-									
-									@Override
-									public void onSuccess(Boolean result) {
-										Window.alert("Corso inserito.");
-										startDateBox.setText("");
-										endDateBox.setText("");
-										courseNameBox.setText("");
-									}
-							});
-				} else {
-					startDateBox.setText("");
-					endDateBox.setText("");
-					Window.alert("Date inserite non corrette");
-				}
-				} catch(IllegalArgumentException e) {
-					Window.alert("Formato data non valido\ninserire: giorno/mese/anno");
-					startDateBox.setText("");
-					endDateBox.setText("");
-				}
-			} else {
-			Window.alert("campi vuoti");
+				});
 			}
+			
+			if (!currentCourse[1].equals(startDateTb.getText())) {
+				ConnServiceSingleton.getConnService().setCourseData(currentCourse[1],initialCourseName,1, new AsyncCallback<Boolean>() {
+
+					@Override
+					public void onFailure(Throwable caught) {
+						Window.alert("Errore aggiornamento dati.");
+						
+					}
+
+					@Override
+					public void onSuccess(Boolean result) {
+						if (result) {
+							msg += "Data inizio aggiornata: " + currentCourse[1]+"\n";
+						}
+					}
+					
+				});
+			}
+			
+			if (!currentCourse[2].equals(endDateTb.getText())) {
+				ConnServiceSingleton.getConnService().setCourseData(currentCourse[1],initialCourseName,1, new AsyncCallback<Boolean>() {
+
+					@Override
+					public void onFailure(Throwable caught) {
+						Window.alert("Errore aggiornamento dati.");
+						
+					}
+
+					@Override
+					public void onSuccess(Boolean result) {
+						if (result) {
+							msg += "Data fine aggiornata: " + currentCourse[1]+"\n";
+						}
+					}
+					
+				});
+			}
+			
+			if (msg.equals("")) {
+				msg = "Nessun aggiornamento";
+			}
+			
+			Window.alert(msg);
 		}
 		
 	}
+	
+	private class deleteBtnHandler implements ClickHandler {
 
+		@Override
+		public void onClick(ClickEvent event) {
+			ConnServiceSingleton.getConnService().deleteCourse(initialCourseName, new AsyncCallback<Boolean>() {
+
+				@Override
+				public void onFailure(Throwable caught) {
+					Window.alert("Errore server");
+					
+				}
+
+				@Override
+				public void onSuccess(Boolean result) {
+					if (result) {
+						vPanel.clear();
+						/*
+						 * TODO: per aggiornare la vista dei corsi devo richiamare:  updateCoursesListView() nella classe CourseQueryComponet
+						 */
+						Window.alert("corso eliminato.");
+					} else {
+						Window.alert("corso non presente nel database");
+					}
+				}
+				
+			});
+		}
+		
+	}
 }

@@ -1,6 +1,5 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.sample.progettoingegneria.shared.State;
@@ -19,7 +18,6 @@ public class LoginPage extends Composite{
 	private VerticalPanel mainPanel = new VerticalPanel();
 	private Image image1 = new Image();
 	private MainPage main;
-	private ConnServiceAsync connService = GWT.create(ConnService.class);
 	private TextBox emailTextBox = new TextBox();
     private TextBox passwordTextBox = new TextBox();
 	private Button loginButton = new Button("Accedi");;
@@ -58,10 +56,10 @@ public class LoginPage extends Composite{
 
 		@Override
 		public void onClick(ClickEvent event) {
-			String user = emailTextBox.getText();
+			final String user = emailTextBox.getText();
 			String passw = passwordTextBox.getText();
 			
-			connService.loginRequest(user, passw,new AsyncCallback<State>() {
+			ConnServiceSingleton.getConnService().loginRequest(user, passw,new AsyncCallback<State>() {
 				@Override
 				public void onFailure(Throwable caught) {
 					Window.alert("Cannot access: "
@@ -75,23 +73,23 @@ public class LoginPage extends Composite{
 							Window.alert("password errata");
 							break;
 						case STUDENT: // Student
-							Session.getSession().setTipo(State.STUDENT);
-							main.menu.setLoginText();
+							Session.getSession().setSession(State.STUDENT,user);
+							main.setLoginText();
 							main.openStudentDashboard();
 							break;
 						case PROFESSOR: // Professor
-							Session.getSession().setTipo(State.PROFESSOR);
-							main.menu.setLoginText();
+							Session.getSession().setSession(State.PROFESSOR,user);
+							main.setLoginText();
 							main.openProfessorDashboard();
 							break;
 						case SECRETARY: //Secretary
-							Session.getSession().setTipo(State.SECRETARY);
-							main.menu.setLoginText();
+							Session.getSession().setSession(State.SECRETARY,user);
+							main.setLoginText();
 							main.openSecretaryDashboard();
 							break;
 						case ADMIN: // Admin
-							Session.getSession().setTipo(State.ADMIN);
-							main.menu.setLoginText();
+							Session.getSession().setSession(State.ADMIN,user);
+							main.setLoginText();
 							main.openAdminDashboard();
 							break;
 						default:

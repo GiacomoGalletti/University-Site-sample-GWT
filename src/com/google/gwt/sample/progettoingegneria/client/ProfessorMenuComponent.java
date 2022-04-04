@@ -1,48 +1,37 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
-/*
- * TODO: aggiungere i controlli sulla validità delle date inserite
- */
 
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.event.dom.client.DoubleClickEvent;
+import com.google.gwt.event.dom.client.DoubleClickHandler;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.ListBox;
-import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class ProfessorMenuComponent extends Composite {
-	private VerticalPanel vPanel = new VerticalPanel();
+	private HorizontalPanel vPanel = new HorizontalPanel();
 	private ListBox actionsListBox = new ListBox();
-	private Button confirmButton = new Button("Conferma");
-	
-	
-	private CourseManagementComponent courseComponent = new CourseManagementComponent();
+	private CourseListComponent courseQuaryList = new CourseListComponent();	
 	
 	public ProfessorMenuComponent() {
 		initWidget(this.vPanel);
-		
+		actionsListBox.addDoubleClickHandler(new ListBoxHandler());
 		actionsListBox.addItem("gestisci corsi");
 		actionsListBox.addItem("gestisci esami");
 		actionsListBox.addItem("invia voti esami");
 		actionsListBox.addItem("visualizza informazioni personali");
 		actionsListBox.setVisibleItemCount(4);
-		confirmButton.setWidth("200px");
-		confirmButton.addClickHandler(new buttonConfirmHandler());
 		this.vPanel.add(actionsListBox);
-		this.vPanel.add(confirmButton);
 	}
 	
-	private class buttonConfirmHandler implements ClickHandler{
-
+	private class ListBoxHandler implements DoubleClickHandler{
 		@Override
-		public void onClick(ClickEvent event) {
+		public void onDoubleClick(DoubleClickEvent event) {
 			int userchoice = actionsListBox.getSelectedIndex();
 			switch(userchoice) {
 			case -1:
 				break;
 			case 0:
-				vPanel.add(courseComponent.asWidget());				
+				vPanel.add(courseQuaryList.asWidget());				
 				break;
 			case 1:
 				break;
@@ -54,5 +43,6 @@ public class ProfessorMenuComponent extends Composite {
 				break;
 			}
 		}
+
 	}
 }

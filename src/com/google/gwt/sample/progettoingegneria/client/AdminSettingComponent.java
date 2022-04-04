@@ -1,6 +1,5 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
@@ -17,7 +16,6 @@ public class AdminSettingComponent extends Composite {
 	private VerticalPanel vPanel = new VerticalPanel();
 	private VerticalPanel signUpPanel = new VerticalPanel();
 	private VerticalPanel infoPanel = new VerticalPanel();
-	private ConnServiceAsync connService = GWT.create(ConnService.class);
 	
 	//components signUpPanel
 	private TextBox usernameTB = new TextBox();
@@ -69,7 +67,7 @@ public class AdminSettingComponent extends Composite {
 	
 	public void manageProfessor() {
 		hidePanels();
-		connService.viewProfessorInfo(new AsyncCallback<String>() {
+		ConnServiceSingleton.getConnService().viewProfessorInfo(new AsyncCallback<String>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
@@ -87,7 +85,7 @@ public class AdminSettingComponent extends Composite {
 	
 	public void manageStudent() {
 		hidePanels();
-		connService.viewStudentInfo(new AsyncCallback<String>() {
+		ConnServiceSingleton.getConnService().viewStudentInfo(new AsyncCallback<String>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
@@ -119,7 +117,7 @@ public class AdminSettingComponent extends Composite {
 			String surname = surnameTB.getText();
 			int type = typeListBox.getSelectedIndex();
 			
-			connService.signUp(user, psw, mail, name, surname, type, new AsyncCallback<String>() {
+			ConnServiceSingleton.getConnService().signUp(user, psw, mail, name, surname, type, new AsyncCallback<String>() {
 
 				@Override
 				public void onFailure(Throwable caught) {

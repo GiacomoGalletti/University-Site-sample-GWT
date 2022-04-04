@@ -8,20 +8,19 @@ public class Course implements Serializable{
 	private String Name;
 	private String startingDate;
 	private String endDate;
-
+	private String emailProfessor;
 	private String id = "";
 	
 	public Course() {}
 	
-	public Course(String name,String startingDate, String endDate, String id) 
+	public Course(String name,String startingDate, String endDate, String id, String emailProfessor) 
 	{
 		this.Name = name;
 		this.startingDate = startingDate;
 		this.endDate = endDate;
 		this.id = id;
+		this.emailProfessor = emailProfessor;
 	}
-	
-	
 	
 	public String getName()
 	{	
@@ -42,4 +41,24 @@ public class Course implements Serializable{
 		return id;
 	}
 	
+	public String getEmailProfessor() {
+		return emailProfessor;
+	}
+	
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public void setStartingDate(String startingDate) {
+		this.startingDate = startingDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
+	public void setEmailProfessor(String emailProfessor) {
+		this.emailProfessor = emailProfessor;
+	}
+
 }

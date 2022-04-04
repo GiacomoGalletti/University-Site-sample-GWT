@@ -3,11 +3,9 @@ package com.google.gwt.sample.progettoingegneria.server.Databases;
 import java.io.File;
 import java.util.Set;
 import java.util.Map.Entry;
-
 import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
-
 import com.google.gwt.sample.progettoingegneria.shared.Admin;
 import com.google.gwt.sample.progettoingegneria.shared.Professor;
 import com.google.gwt.sample.progettoingegneria.shared.Secretary;
@@ -109,7 +107,7 @@ public class UserDB {
 		userMap.clear();
 		db.commit();
 		db.close();
-		return "pulito";
+		return "UsersDB";
 	}
 
 	private static boolean checkMailExist(String email) {
