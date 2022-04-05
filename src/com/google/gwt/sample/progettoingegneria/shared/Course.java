@@ -5,8 +5,8 @@ import java.io.Serializable;
 public class Course implements Serializable{
 
 	private static final long serialVersionUID = 1L; 
-	private String Name;
-	private String startingDate;
+	private String name;
+	private String startDate;
 	private String endDate;
 	private String emailProfessor;
 	private String id = "";
@@ -15,8 +15,8 @@ public class Course implements Serializable{
 	
 	public Course(String name,String startingDate, String endDate, String id, String emailProfessor) 
 	{
-		this.Name = name;
-		this.startingDate = startingDate;
+		this.name = name;
+		this.startDate = startingDate;
 		this.endDate = endDate;
 		this.id = id;
 		this.emailProfessor = emailProfessor;
@@ -24,12 +24,12 @@ public class Course implements Serializable{
 	
 	public String getName()
 	{	
-		return this.Name;
+		return this.name;
 	}
 	
 	public String getStartingDate()
 	{
-		return this.startingDate;
+		return this.startDate;
 	}
 	
 	public String getEndDate() 
@@ -46,11 +46,11 @@ public class Course implements Serializable{
 	}
 	
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
-	public void setStartingDate(String startingDate) {
-		this.startingDate = startingDate;
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
 	}
 
 	public void setEndDate(String endDate) {

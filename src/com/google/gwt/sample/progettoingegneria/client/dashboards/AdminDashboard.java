@@ -1,6 +1,6 @@
 package com.google.gwt.sample.progettoingegneria.client.dashboards;
 
-import com.google.gwt.sample.progettoingegneria.client.AdminMenuComponent;
+import com.google.gwt.sample.progettoingegneria.client.menucomponents.AdminMenuComponent;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;

@@ -3,12 +3,10 @@ package com.google.gwt.sample.progettoingegneria.server.Databases;
 import java.io.File;
 import java.util.Set;
 import java.util.Map.Entry;
-
 import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
 import com.google.gwt.sample.progettoingegneria.shared.Course;
-import com.google.gwt.sample.progettoingegneria.shared.User;
 
 public class CoursesDB {
 	
@@ -123,38 +121,26 @@ public class CoursesDB {
 		db.close();
 		return false;
 	}
+	
+	
+	
+	public static boolean setCourseData(String name , String startData , String endData, String newName)
+	{
 		
-	public static boolean setCourseData(String name, String newData, int type) {
 		DB db = getCoursersDB();
 		Course course = getCourse(name);
 		
-		switch(type) {
-			case 0: // type: name
-				course.setName(newData);
-				replaceCourse(course.getId(),course);
-				db.commit();
-				db.close();
-				break;
-			case 1: // type: startDate
-				course.setStartingDate(newData);
-				replaceCourse(course.getId(),course);
-				db.commit();
-				db.close();
-				break;
-			case 2: // type: endDate
-				course.setEndDate(newData);
-				replaceCourse(course.getId(),course);
-				db.commit();
-				db.close();
-				break;
-			default:
-				db.commit();
-				db.close();
-				return false;
+		if (!newName.equals(name)) {
+			course.setName(newName);
 		}
-		
+		course.setStartDate(startData);
+		course.setEndDate(endData);
+		replaceCourse(course.getId(),course);	
+		db.commit();
+		db.close();
 		return true;
 	}
+	
 	
 	private static void replaceCourse(String oldItemKey, Course newItem) {
 		DB db = getCoursersDB();
@@ -163,4 +149,26 @@ public class CoursesDB {
 		db.commit();
 		db.close();
 	}
+	
+	public static String viewCoursesInfo() {
+        DB db = getCoursersDB();
+        BTreeMap<String, Course> coursesMap = db.getTreeMap("coursesMap");
+
+        String result = "";
+        Set<String> keysU = coursesMap.keySet(); 
+
+        for (String key : keysU) {
+            if(coursesMap.get(key).getClass() == Course.class)
+
+                result = result +
+                "Nome corso: " + coursesMap.get(key).getName() + 
+                "     Data Inizio:  " + coursesMap.get(key).getStartingDate() + 
+                "     Data Fine:  " + coursesMap.get(key).getEndDate() + 
+                "     EmailProfessore: " +  coursesMap.get(key).getEmailProfessor() 
+                + "\n";
+        }
+        db.commit();
+        db.close();
+        return result;
+    }
 }

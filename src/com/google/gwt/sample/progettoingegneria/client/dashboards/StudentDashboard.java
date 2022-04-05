@@ -1,6 +1,6 @@
 package com.google.gwt.sample.progettoingegneria.client.dashboards;
 
-import com.google.gwt.sample.progettoingegneria.client.StudentMenuComponent;
+import com.google.gwt.sample.progettoingegneria.client.menucomponents.StudentMenuComponent;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;

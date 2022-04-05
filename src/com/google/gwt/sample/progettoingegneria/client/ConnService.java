@@ -1,5 +1,9 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.google.gwt.sample.progettoingegneria.shared.Exam;
 import com.google.gwt.sample.progettoingegneria.shared.State;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
@@ -19,14 +23,21 @@ public interface ConnService extends RemoteService {
 	
 	String viewProfessorInfo();
 	
+	String viewSecretaryInfo();
+	
 	String clearDB();
+	
+	String viewCoursesInfo();
 	
 	String viewCoursesInfo(String email);
 	
 	String getCourseData(String name);
 	
-	boolean setCourseData(String name, String newData, int type);
+	boolean setCourseData(String name, String startData,String endData, String newName);
 	
 	boolean deleteCourse(String name);
 	
+	String addExam(String name, String date, String prof, ArrayList<String> students);
+	
+	ArrayList<String> retrieveExams(String profName);
 }

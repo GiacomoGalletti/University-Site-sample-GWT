@@ -16,7 +16,7 @@ import com.google.gwt.sample.progettoingegneria.shared.User;
 public class UserDB {
 
 	private static DB getUserDB() {
-		DB db = DBMaker.newFileDB(new File("dbProgettoIng")).make();		
+		DB db = DBMaker.newFileDB(new File("dbProgettoIng3")).make();		
 		return db;	
 	}
 	
@@ -63,15 +63,15 @@ public class UserDB {
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 
-		String result = " ";
+		String result = "";
 		Set<String> keysU = userMap.keySet(); 
 
 		for (String key : keysU) {
 			if(userMap.get(key).getClass() == Student.class)
 				
 				result = result + 
-				userMap.get(key).getEmail() + " " +
-				userMap.get(key).getName() + " " +
+				userMap.get(key).getEmail() + "@" +
+				userMap.get(key).getName() + "@" +
 				userMap.get(key).getSurname()
 				+ "\n";
 		}
@@ -91,8 +91,29 @@ public class UserDB {
 			if(userMap.get(key).getClass() == Professor.class)
 				
 				result = result + 
-				userMap.get(key).getEmail() + " " +
-				userMap.get(key).getName() + " " +
+				userMap.get(key).getEmail() + "@" +
+				userMap.get(key).getName() + "@" +
+				userMap.get(key).getSurname()
+				+ "\n";
+		}
+		db.commit();
+		db.close();
+		return result;
+	}
+	
+	public static String viewSecretaryInfo() {
+		DB db = getUserDB();
+		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
+
+		String result = "";
+		Set<String> keysU = userMap.keySet(); 
+
+		for (String key : keysU) {
+			if(userMap.get(key).getClass() == Secretary.class)
+				
+				result = result + 
+				userMap.get(key).getEmail() + "@" +
+				userMap.get(key).getName() + "@" +
 				userMap.get(key).getSurname()
 				+ "\n";
 		}

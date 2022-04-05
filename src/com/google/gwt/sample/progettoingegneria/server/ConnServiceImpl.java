@@ -1,7 +1,11 @@
 package com.google.gwt.sample.progettoingegneria.server;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.gwt.sample.progettoingegneria.client.ConnService;
 import com.google.gwt.sample.progettoingegneria.server.Databases.CoursesDB;
+import com.google.gwt.sample.progettoingegneria.server.Databases.ExamsDB;
 import com.google.gwt.sample.progettoingegneria.server.Databases.UserDB;
 import com.google.gwt.sample.progettoingegneria.shared.Course;
 import com.google.gwt.sample.progettoingegneria.shared.State;
@@ -40,6 +44,11 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	@Override
+	public String viewSecretaryInfo() {
+		return UserDB.viewSecretaryInfo();
+	}
+	
+	@Override
 	public String viewProfessorInfo() {
 		return UserDB.viewProfessorInfo();
 	}
@@ -63,13 +72,28 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 
 	@Override
-	public boolean setCourseData(String name, String newData, int type) {
-		return CoursesDB.setCourseData(name, newData,type);
+	public boolean setCourseData(String name, String startData ,String endData, String newName) {
+		return CoursesDB.setCourseData(name, startData,endData,newName);
 	}
 
 	@Override
 	public boolean deleteCourse(String name) {
 		return CoursesDB.deleteCourse(name);
 	}
+
+	@Override
+	public String viewCoursesInfo() {
+		return CoursesDB.viewCoursesInfo();
+	}
 	
+	@Override
+	public String addExam(String name, String date, String prof, ArrayList<String> students) {
+		return ExamsDB.addExam(name, date, prof, students);
+	}
+	
+	@Override
+	public ArrayList<String> retrieveExams(String profName) {
+		return ExamsDB.retrieveExams(profName);
+	}
+
 }

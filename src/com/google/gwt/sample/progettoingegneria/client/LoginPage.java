@@ -56,10 +56,10 @@ public class LoginPage extends Composite{
 
 		@Override
 		public void onClick(ClickEvent event) {
-			final String user = emailTextBox.getText();
+			final String userEmail = emailTextBox.getText();
 			String passw = passwordTextBox.getText();
 			
-			ConnServiceSingleton.getConnService().loginRequest(user, passw,new AsyncCallback<State>() {
+			ConnServiceSingleton.getConnService().loginRequest(userEmail, passw,new AsyncCallback<State>() {
 				@Override
 				public void onFailure(Throwable caught) {
 					Window.alert("Cannot access: "
@@ -72,23 +72,23 @@ public class LoginPage extends Composite{
 						case WRONG_PASSWORD:
 							Window.alert("password errata");
 							break;
-						case STUDENT: // Student
-							Session.getSession().setSession(State.STUDENT,user);
+						case STUDENT:
+							Session.getSession().setSession(State.STUDENT,userEmail);
 							main.setLoginText();
 							main.openStudentDashboard();
 							break;
-						case PROFESSOR: // Professor
-							Session.getSession().setSession(State.PROFESSOR,user);
+						case PROFESSOR:
+							Session.getSession().setSession(State.PROFESSOR,userEmail);
 							main.setLoginText();
 							main.openProfessorDashboard();
 							break;
-						case SECRETARY: //Secretary
-							Session.getSession().setSession(State.SECRETARY,user);
+						case SECRETARY:
+							Session.getSession().setSession(State.SECRETARY,userEmail);
 							main.setLoginText();
 							main.openSecretaryDashboard();
 							break;
-						case ADMIN: // Admin
-							Session.getSession().setSession(State.ADMIN,user);
+						case ADMIN:
+							Session.getSession().setSession(State.ADMIN,userEmail);
 							main.setLoginText();
 							main.openAdminDashboard();
 							break;
