@@ -25,15 +25,17 @@ public class ExamsDB {
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
 		Exam e = new Exam(name, date, prof, students);
 		examsMap.put(e.getName(),e);
+		String temp = examsMap.get(e.getName()).getName();
+		String temp2 = examsMap.get(e.getName()).getStudentsEmail().get(0);
 		db.commit();
 		db.close();
-		return "exam added "+ name;
+		return "exam added "+ temp + " primo iscritto "+ temp2;
 	}
 	
 	public static ArrayList<String> retrieveExams(String profName) {
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
-
+		
 		ArrayList<String> result = new ArrayList<String>();
 		Set<String> keysU = examsMap.keySet(); 
 		
@@ -43,6 +45,28 @@ public class ExamsDB {
 		}
 		db.commit();
 		db.close();
+		System.out.println(result.get(0));
 		return result;
 	}
+	
+	public static ArrayList<String> retrieveStudents(String selectedExam) {
+		DB db = getExamsDB();
+		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
+		
+		ArrayList<String> result = new ArrayList<String>();
+		Set<String> keysU = examsMap.keySet(); 
+		
+		for (String key : keysU) {
+			Exam current = examsMap.get(key);
+			if(current.getName().equals(selectedExam)) {
+				for (String student : current.getStudentsEmail()) {
+					result.add(student);
+				}
+			}
+		}
+		db.commit();
+		db.close();
+		return result;
+	}
+	
 }

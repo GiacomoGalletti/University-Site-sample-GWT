@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.DoubleClickEvent;
+import com.google.gwt.event.dom.client.DoubleClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -52,7 +54,9 @@ public class SendGradesComponent extends Composite {
 		this.subHPanel.add(gradesArea);
 		
 		searchExamsButton.addClickHandler(new SearchButtonHandler());
+		examsList.setWidth("200px");
 		examsList.setVisibleItemCount(5);
+		examsList.addDoubleClickHandler(new ExamsListHandler());
 	}
 	
 	private class SearchButtonHandler implements ClickHandler {
@@ -60,6 +64,43 @@ public class SendGradesComponent extends Composite {
 		public void onClick(ClickEvent event) {
 			retrieveExams();
 		}
+	}
+	
+	public class ExamsListHandler implements DoubleClickHandler{
+
+		@Override
+		public void onDoubleClick(DoubleClickEvent event) {
+			String selectedExam = examsList.getSelectedItemText();
+			
+			retrieveStudents(selectedExam);
+			
+			//studentsArea.setText(); 
+		}
+		
+	}
+	
+	public void retrieveStudents(String selectedExam) {
+		ConnServiceSingleton
+		.getConnService()
+		.retrieveStudents(selectedExam,
+				new AsyncCallback<ArrayList<String>>() {
+			
+				@Override
+				public void onFailure(Throwable caught) {
+					Window.alert("ERROR: " + caught);
+				}
+			
+				@Override
+				public void onSuccess(ArrayList<String> result) {
+				
+					for(String student : result) {
+						String temp = studentsArea.getText();
+						studentsArea.setText(temp + "\n " + student);
+					}
+				}
+		});
+		
+		
 	}
 	
 	public void retrieveExams() {
@@ -79,11 +120,10 @@ public class SendGradesComponent extends Composite {
 					@Override
 					public void onSuccess(ArrayList<String> result) {
 						
-						ArrayList<String> exams = new ArrayList<String>();
-						for(int i = 0; i< exams.size(); i++) {
-							examsList.addItem(exams.get(i));
+						for(int i = 0; i< result.size(); i++) {
+							examsList.addItem(result.get(i));
 						}
-						Window.alert("esami trovati " + exams.size());
+						Window.alert("esami trovati " + result.size());
 					}
 			});
 		

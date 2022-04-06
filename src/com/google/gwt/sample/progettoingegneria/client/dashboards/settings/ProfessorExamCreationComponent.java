@@ -65,7 +65,7 @@ public class ProfessorExamCreationComponent extends Composite {
 						
 						@Override
 						public void onSuccess(String result) {
-							Window.alert("Esame inserito. "+ result);
+							Window.alert(" "+ result);
 							
 						}
 				});

@@ -37,4 +37,6 @@ public interface ConnServiceAsync {
 	void addExam(String name, String date, String prof, ArrayList<String> students , AsyncCallback<String> callback);
 	
 	void retrieveExams(String profName, AsyncCallback<ArrayList<String>> callback);
+	
+	void retrieveStudents(String selectedExam, AsyncCallback<ArrayList<String>> callback);
 }

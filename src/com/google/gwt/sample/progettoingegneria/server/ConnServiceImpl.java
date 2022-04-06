@@ -95,5 +95,10 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	public ArrayList<String> retrieveExams(String profName) {
 		return ExamsDB.retrieveExams(profName);
 	}
+	
+	@Override
+	public ArrayList<String> retrieveStudents(String selectedExam) {
+		return ExamsDB.retrieveStudents(selectedExam);
+	}
 
 }

@@ -40,4 +40,6 @@ public interface ConnService extends RemoteService {
 	String addExam(String name, String date, String prof, ArrayList<String> students);
 	
 	ArrayList<String> retrieveExams(String profName);
+	
+	ArrayList<String> retrieveStudents(String selectedExam);
 }
