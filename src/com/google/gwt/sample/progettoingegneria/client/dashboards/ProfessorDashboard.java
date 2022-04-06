@@ -12,7 +12,7 @@ public class ProfessorDashboard extends Composite {
 	public ProfessorDashboard() {
 		initWidget(this.vPanel);
 		
-		Label titleLabel = new Label("Universit‡ di Giacky");
+		Label titleLabel = new Label("Universit√† di Giacky");
 		Image logoImage = new Image();
 		ProfessorMenuComponent profmenu = new ProfessorMenuComponent();
 		

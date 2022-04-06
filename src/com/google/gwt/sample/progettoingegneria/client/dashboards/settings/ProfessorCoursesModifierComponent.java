@@ -29,7 +29,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  */
 
-public class ProfessorCoursesManagementComponent extends Composite{
+public class ProfessorCoursesModifierComponent extends Composite {
 	private VerticalPanel vPanel = new VerticalPanel();
 
 	private TextBox courseNameTb = new TextBox();
@@ -43,17 +43,15 @@ public class ProfessorCoursesManagementComponent extends Composite{
 	private String initialCourseName;
 	private String[] currentCourse;
 	
-	public ProfessorCoursesManagementComponent(String courseName) {
+	public ProfessorCoursesModifierComponent(String courseName) {
 		initWidget(this.vPanel);
-		
 		this.initialCourseName = courseName;
-
+		
 		ConnServiceSingleton.getConnService().getCourseData(initialCourseName, new AsyncCallback<String>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
-				Window.alert("Non riesco a trovare le informazioni sul server.");
-				
+				Window.alert("Non riesco a trovare le informazioni sul server.");	
 			}
 
 			@Override
@@ -75,7 +73,6 @@ public class ProfessorCoursesManagementComponent extends Composite{
 				vPanel.add(endDateTb);
 				vPanel.add(hPanelBtn);
 			}
-			
 		});
 		
 		confirmBtn.addClickHandler(new confirmBtnHandler());

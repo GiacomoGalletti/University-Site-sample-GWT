@@ -12,7 +12,7 @@ public class AdminDashboard extends Composite{
 	public AdminDashboard() {
 		initWidget(this.vPanel);
 		
-		Label titleLabel = new Label("Universit‡ di Giacky");
+		Label titleLabel = new Label("Universit√† di Giacky");
 		Image logoImage = new Image();
 		AdminMenuComponent adminMenu = new AdminMenuComponent();
 		

@@ -7,6 +7,7 @@ import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
 import com.google.gwt.sample.progettoingegneria.shared.Admin;
+import com.google.gwt.sample.progettoingegneria.shared.Course;
 import com.google.gwt.sample.progettoingegneria.shared.Professor;
 import com.google.gwt.sample.progettoingegneria.shared.Secretary;
 import com.google.gwt.sample.progettoingegneria.shared.State;
@@ -55,7 +56,7 @@ public class UserDB {
 			db.close();
 			return "registrato "+ r.getEmail() ;
 		}
-		return email + " esiste gi‡.";
+		return email + " esiste gi√†.";
 		
 	}
 	
@@ -67,13 +68,15 @@ public class UserDB {
 		Set<String> keysU = userMap.keySet(); 
 
 		for (String key : keysU) {
-			if(userMap.get(key).getClass() == Student.class)
-				
+			User user = userMap.get(key);
+			if(user.getClass() == Student.class)
 				result = result + 
-				userMap.get(key).getEmail() + "@" +
-				userMap.get(key).getName() + "@" +
-				userMap.get(key).getSurname()
-				+ "\n";
+				"Email: " + user.getEmail() +
+				" Nome: " + user.getName() +
+				" Cognome: " + user.getSurname() +
+				"  Username: " + user.getUserName() +
+				" Password: " + user.getPw()
+				+ "_";
 		}
 		db.commit();
 		db.close();
@@ -88,34 +91,16 @@ public class UserDB {
 		Set<String> keysU = userMap.keySet(); 
 
 		for (String key : keysU) {
-			if(userMap.get(key).getClass() == Professor.class)
+			User user = userMap.get(key);
+			if(user.getClass() == Professor.class)
 				
 				result = result + 
-				userMap.get(key).getEmail() + "@" +
-				userMap.get(key).getName() + "@" +
-				userMap.get(key).getSurname()
-				+ "\n";
-		}
-		db.commit();
-		db.close();
-		return result;
-	}
-	
-	public static String viewSecretaryInfo() {
-		DB db = getUserDB();
-		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
-
-		String result = "";
-		Set<String> keysU = userMap.keySet(); 
-
-		for (String key : keysU) {
-			if(userMap.get(key).getClass() == Secretary.class)
-				
-				result = result + 
-				userMap.get(key).getEmail() + "@" +
-				userMap.get(key).getName() + "@" +
-				userMap.get(key).getSurname()
-				+ "\n";
+				"Email: " + user.getEmail() +
+				" Nome: " + user.getName() +
+				" Cognome: " + user.getSurname() +
+				"  Username: " + user.getUserName() +
+				" Password: " + user.getPw()
+				+ "_";
 		}
 		db.commit();
 		db.close();
@@ -172,9 +157,9 @@ public class UserDB {
 	public static String getInfoUser(String email) {
 
 		DB db = getUserDB();
-		BTreeMap<String, User> UtentiMap = db.getTreeMap("userMap");
+		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 
-		User u = UtentiMap.get(email);
+		User u = userMap.get(email);
 
 		String info = "Username :" + u.getUserName() + "\nEmail : " + email + 
 				"\nNome : " + u.getName() + "\nCognome : " + u.getSurname();
@@ -182,9 +167,38 @@ public class UserDB {
 		return info;
 	}
 
-
+	public static User getUser(String email) {
+		DB db = getUserDB();
+		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
+		return userMap.get(email);
+	}
 	
+	public static boolean setUserInfo(String email, String newEmail, String name , String surname, String userName, String password)
+	{
+		
+		DB db = getUserDB();
+		User user = getUser(email);
+		
+		if (!newEmail.equals(user.getEmail())) {
+			user.setEmail(email);
+		}
+		user.setName(name);
+		user.setSurname(surname);
+		user.setUserName(userName);
+		user.setPassword(password);
+		replaceUser(email,user);	
+		db.commit();
+		db.close();
+		return true;
+	}
 	
+	private static void replaceUser(String oldItemKey, User newItem) {
+		DB db = getUserDB();
+		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
+		userMap.replace(oldItemKey, newItem);
+		db.commit();
+		db.close();
+	}
 
 }
 

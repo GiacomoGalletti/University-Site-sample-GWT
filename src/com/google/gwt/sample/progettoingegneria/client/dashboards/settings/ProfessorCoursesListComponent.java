@@ -22,25 +22,28 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class ProfessorCoursesListComponent extends Composite{
 
+	private HorizontalPanel baseHPanel = new HorizontalPanel();
+	private VerticalPanel buttonvPanel = new VerticalPanel();
 	private HorizontalPanel hPanel = new HorizontalPanel();
-	private VerticalPanel vPanel = new VerticalPanel();
+	private HorizontalPanel curseManhPanel = new HorizontalPanel();
 	private ProfessorCourseCreationComponent createCourse = new ProfessorCourseCreationComponent();
-	private ProfessorCoursesManagementComponent courseManComp;
+	private ProfessorCoursesModifierComponent courseManComp;
 	
 	private ListBox coursesListBox = new ListBox();
 	private Button createCourseBtn = new Button("Crea nuovo corso");
 	private int nListItem = 0;
 	
 	public ProfessorCoursesListComponent() {
-		initWidget(this.hPanel);
+		initWidget(this.baseHPanel);
 
 		updateCoursesListView();
 		coursesListBox.addDoubleClickHandler(new ListBoxHandler());
 		createCourseBtn.addClickHandler(new CreateCourseBtnHandler());
 		
-		vPanel.add(coursesListBox);
-		vPanel.add(createCourseBtn);
-		hPanel.add(vPanel);
+		hPanel.add(coursesListBox);
+		buttonvPanel.add(hPanel);
+		buttonvPanel.add(createCourseBtn);
+		baseHPanel.add(buttonvPanel);
 	}
 	
 	public void updateCoursesListView() {
@@ -61,17 +64,18 @@ public class ProfessorCoursesListComponent extends Composite{
 				}
 				coursesListBox.setVisibleItemCount(nListItem);
 			}
-			
 		});
-		
 	}
+	
 	
 	private class ListBoxHandler implements  DoubleClickHandler {
 
 	     @Override
 	      public void onDoubleClick(DoubleClickEvent event) {
-	    	 courseManComp = new ProfessorCoursesManagementComponent(coursesListBox.getSelectedItemText());
-	    	 hPanel.add(courseManComp);
+	    	 curseManhPanel.clear();
+	    	 courseManComp = new ProfessorCoursesModifierComponent(coursesListBox.getSelectedItemText());
+	    	 curseManhPanel.add(courseManComp);
+	    	 hPanel.add(curseManhPanel);
 	      }
 	}
 	
@@ -79,7 +83,7 @@ public class ProfessorCoursesListComponent extends Composite{
 	private class CreateCourseBtnHandler implements ClickHandler {
 		@Override
 		public void onClick(ClickEvent event) {
-			hPanel.add(createCourse);
+			baseHPanel.add(createCourse);
 		}
 	}
 	

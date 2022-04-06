@@ -25,7 +25,7 @@ public class ProfessorMenuComponent extends Composite {
 		initWidget(this.hPanel);
 		actionsListBox.addDoubleClickHandler(new ListBoxHandler());
 		actionsListBox.addItem("gestisci corsi");
-		actionsListBox.addItem("gestisci esami");
+		actionsListBox.addItem("crea esame");
 		actionsListBox.addItem("invia voti esami");
 		actionsListBox.addItem("visualizza informazioni personali");
 		actionsListBox.setVisibleItemCount(4);

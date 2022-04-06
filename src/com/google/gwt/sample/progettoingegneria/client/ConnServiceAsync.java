@@ -1,8 +1,6 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import com.google.gwt.sample.progettoingegneria.shared.State;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
@@ -19,8 +17,6 @@ public interface ConnServiceAsync {
 	void viewStudentInfo(AsyncCallback<String> callback);
 	
 	void viewProfessorInfo(AsyncCallback<String> callback);
-	
-	void viewSecretaryInfo(AsyncCallback<String> callback);
 
 	void clearDB(AsyncCallback<String> callback);
 	
@@ -39,4 +35,6 @@ public interface ConnServiceAsync {
 	void retrieveExams(String profName, AsyncCallback<ArrayList<String>> callback);
 	
 	void retrieveStudents(String selectedExam, AsyncCallback<ArrayList<String>> callback);
+	
+	void setUserInfo(String email, String newEmail, String name , String surname, String userName, String password, AsyncCallback<Boolean> callback);
 }

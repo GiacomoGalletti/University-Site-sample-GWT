@@ -44,11 +44,6 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	@Override
-	public String viewSecretaryInfo() {
-		return UserDB.viewSecretaryInfo();
-	}
-	
-	@Override
 	public String viewProfessorInfo() {
 		return UserDB.viewProfessorInfo();
 	}
@@ -99,6 +94,12 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	@Override
 	public ArrayList<String> retrieveStudents(String selectedExam) {
 		return ExamsDB.retrieveStudents(selectedExam);
+	}
+
+	@Override
+	public boolean setUserInfo(String email, String newEmail, String name, String surname, String userName,
+			String password) {
+		return UserDB.setUserInfo(email, newEmail, name, surname, userName, password);
 	}
 
 }

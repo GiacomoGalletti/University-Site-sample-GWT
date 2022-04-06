@@ -3,26 +3,29 @@ package com.google.gwt.sample.progettoingegneria.client.menucomponents;
 import com.google.gwt.event.dom.client.DoubleClickEvent;
 import com.google.gwt.event.dom.client.DoubleClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.AdminCreateUserComponent;
-import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.AdminUsersListComponent;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.AdminProfessorsListComponent;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.AdminStudentsListComponent;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class AdminMenuComponent extends Composite{
-	private VerticalPanel vPanel = new VerticalPanel();
+	private HorizontalPanel baseVPanel = new HorizontalPanel();
+	private HorizontalPanel hPanel = new HorizontalPanel();
 	private ListBox actionsListBox = new ListBox();
 	private AdminCreateUserComponent adminCreateUserComp = new AdminCreateUserComponent();
-	//private AdminUsersListComponent userListComp = new AdminUsersListComponent();
+	private AdminStudentsListComponent studentsListComp = new AdminStudentsListComponent();
+	private AdminProfessorsListComponent professorsListComp = new AdminProfessorsListComponent();
 	
 	public AdminMenuComponent() {
-		initWidget(this.vPanel);
+		initWidget(this.baseVPanel);
 		actionsListBox.addItem("crea nuovo account");
 		actionsListBox.addItem("gestisci info studenti");
 		actionsListBox.addItem("gestisci info docenti");
-		actionsListBox.addItem("gestisci info segreteria");
-		actionsListBox.setVisibleItemCount(4);
+		actionsListBox.setVisibleItemCount(3);
 		actionsListBox.addDoubleClickHandler(new actionsListBoxHandler());
-		this.vPanel.add(actionsListBox);
+		this.baseVPanel.add(actionsListBox);
 	}
 	
 	private class actionsListBoxHandler implements DoubleClickHandler{
@@ -32,14 +35,18 @@ public class AdminMenuComponent extends Composite{
 			
 			int userchoice = actionsListBox.getSelectedIndex();
 			switch(userchoice) {
-			case 0:
-				vPanel.add(adminCreateUserComp);
+			case 0: //Crea nuovo utente
+				baseVPanel.add(adminCreateUserComp);
 				break;
-			case 1:
-				//vPanel.add(userListComp);
+			case 1: //mostra lista Studenti
+				hPanel.clear();
+				hPanel.add(studentsListComp);
+				baseVPanel.add(hPanel);
 				break;
-			case 2:
-				//vPanel.add(userListComp);
+			case 2: // mostra lista Professori
+				hPanel.clear();
+				hPanel.add(professorsListComp);
+				baseVPanel.add(hPanel);
 				break;
 			}
 		}

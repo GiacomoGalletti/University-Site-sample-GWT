@@ -23,8 +23,6 @@ public interface ConnService extends RemoteService {
 	
 	String viewProfessorInfo();
 	
-	String viewSecretaryInfo();
-	
 	String clearDB();
 	
 	String viewCoursesInfo();
@@ -42,4 +40,6 @@ public interface ConnService extends RemoteService {
 	ArrayList<String> retrieveExams(String profName);
 	
 	ArrayList<String> retrieveStudents(String selectedExam);
+	
+	boolean setUserInfo(String email, String newEmail, String name , String surname, String userName, String password);
 }

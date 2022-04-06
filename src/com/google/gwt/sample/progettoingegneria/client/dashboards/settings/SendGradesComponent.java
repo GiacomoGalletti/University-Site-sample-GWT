@@ -10,11 +10,13 @@ import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.ButtonBase;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextArea;
+import com.google.gwt.user.client.ui.TextBoxBase;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
@@ -32,10 +34,11 @@ public class SendGradesComponent extends Composite {
 	private VerticalPanel vPanel = new VerticalPanel();
 	private HorizontalPanel subHPanel = new HorizontalPanel();
 	private ListBox examsList = new ListBox();
-	private Button searchExamsButton = new Button("cerca esami disponibili");
+	private ButtonBase searchExamsButton = new Button("cerca esami disponibili");
 	
-	private TextArea studentsArea = new TextArea();
-	private TextArea gradesArea = new TextArea();
+	
+	private TextBoxBase studentsArea = new TextArea();
+	private TextBoxBase gradesArea = new TextArea();
 	
 	public SendGradesComponent() {
 		initWidget(this.vPanel);
