@@ -29,7 +29,7 @@ public class ExamsDB {
 		String temp2 = examsMap.get(e.getName()).getStudentsEmail().get(0);
 		db.commit();
 		db.close();
-		return "exam added "+ temp + " primo iscritto "+ temp2;
+		return "exam added ";
 	}
 	
 	public static ArrayList<String> retrieveExams(String profName) {
@@ -67,6 +67,38 @@ public class ExamsDB {
 		db.commit();
 		db.close();
 		return result;
+	}
+
+	public static String getAvailableExams() {
+		DB db = getExamsDB();
+		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
+		
+		Set<String> keysU = examsMap.keySet(); 
+		
+		String result = "";
+		for (String key : keysU) {
+			result = result + key + "\n";
+		}
+		
+		return result;
+	}
+
+	public static boolean registerStudentInExam(String selectedExam, String selectedStudent) {
+		DB db = getExamsDB();
+		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
+		
+		Set<String> keysU = examsMap.keySet(); 
+		
+		for (String key : keysU) {
+			Exam current = examsMap.get(key);
+			if(current.getName().equals(selectedExam)) {
+				current.addStudentEmail(selectedStudent);
+				examsMap.replace(key, current);
+			}
+		}
+		db.commit();
+		db.close();
+		return true;
 	}
 	
 }

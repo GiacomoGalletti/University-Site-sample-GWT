@@ -4,6 +4,7 @@ import com.google.gwt.event.dom.client.DoubleClickEvent;
 import com.google.gwt.event.dom.client.DoubleClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.CoursesListComponent;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.CoursesSignUpComponent;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.ExamSignUpComponent;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.GradesViewComponent;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.PersonalInfoComponent;
 import com.google.gwt.user.client.ui.Composite;
@@ -18,6 +19,7 @@ public class StudentMenuComponent extends Composite{
 	private CoursesListComponent coursesListView = new CoursesListComponent();
 	private CoursesSignUpComponent courseSignUpView = new CoursesSignUpComponent();
 	private GradesViewComponent gradesView = new GradesViewComponent();
+	private ExamSignUpComponent examView = new ExamSignUpComponent();
 	
 	public StudentMenuComponent() {
 		initWidget(this.hPanel);
@@ -48,12 +50,13 @@ public class StudentMenuComponent extends Composite{
 				hPanel.add(courseSignUpView);
 				break;
 			case 2:
-				hPanel.add(gradesView);
+				hPanel.add(examView);
 				break;
 			case 3:
 				hPanel.add(infoView);
 				break;
 			case 4:
+				hPanel.add(gradesView);
 				break;
 			}
 		}

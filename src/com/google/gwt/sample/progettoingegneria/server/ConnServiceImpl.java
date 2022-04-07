@@ -101,5 +101,14 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 			String password) {
 		return UserDB.setUserInfo(email, newEmail, name, surname, userName, password);
 	}
+	
+	@Override
+	public String getAvailableExams() {
+		return ExamsDB.getAvailableExams();
+	}
+	
+	public boolean registerStudentInExam(String selectedExam, String selectedStudent) {
+		return ExamsDB.registerStudentInExam(selectedExam, selectedStudent);
+	}
 
 }

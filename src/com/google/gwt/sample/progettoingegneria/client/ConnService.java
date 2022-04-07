@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.google.gwt.sample.progettoingegneria.shared.Exam;
 import com.google.gwt.sample.progettoingegneria.shared.State;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
@@ -42,4 +43,8 @@ public interface ConnService extends RemoteService {
 	ArrayList<String> retrieveStudents(String selectedExam);
 	
 	boolean setUserInfo(String email, String newEmail, String name , String surname, String userName, String password);
+	
+	String getAvailableExams();
+	
+	boolean registerStudentInExam(String selectedExam, String selectedStudent);
 }

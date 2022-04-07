@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
+import com.google.gwt.sample.progettoingegneria.client.Session;
 import com.google.gwt.sample.progettoingegneria.shared.Exam;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -29,11 +30,12 @@ public class ProfessorExamCreationComponent extends Composite {
 		widgetBasePanel.add(examNameBox);
 		widgetBasePanel.add(new Label("Data esame: "));
 		widgetBasePanel.add(examDateBox);
-		widgetBasePanel.add(new Label("nome prof (campo che sarà riempito automaticamente): "));
+		widgetBasePanel.add(new Label("email prof (automaticamente riempito con la mail del prof attuale)"));
 		widgetBasePanel.add(examprofNameBox);
-		
 		widgetBasePanel.add(confirmCreationButton);
+		
 		confirmCreationButton.addClickHandler(new confirmCreationButtonHandler());
+		examprofNameBox.setText(Session.getSession().getEmail());
 	}
 	
 	private class confirmCreationButtonHandler implements ClickHandler{

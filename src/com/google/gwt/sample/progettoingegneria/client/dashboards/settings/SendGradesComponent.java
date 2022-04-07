@@ -21,7 +21,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * componente che deve permettere di inviare i voti
- * l'idea più facile per implementarlo è
+ * l'idea piï¿½ facile per implementarlo ï¿½
  * 1 : mostrare gli esami del docente con una textarea o ListBox
  * 2 : richiedere al docente di scrivere il nome dell'esame 
  * 		del quale si vogliono inserire i voti
@@ -34,8 +34,8 @@ public class SendGradesComponent extends Composite {
 	private VerticalPanel vPanel = new VerticalPanel();
 	private HorizontalPanel subHPanel = new HorizontalPanel();
 	private ListBox examsList = new ListBox();
-	private ButtonBase searchExamsButton = new Button("cerca esami disponibili");
-	
+	private Button searchExamsButton = new Button("cerca esami disponibili");
+	private Button sendGradesButton = new Button("invia i voti");
 	
 	private TextBoxBase studentsArea = new TextArea();
 	private TextBoxBase gradesArea = new TextArea();
@@ -57,6 +57,7 @@ public class SendGradesComponent extends Composite {
 		this.subHPanel.add(gradesArea);
 		
 		searchExamsButton.addClickHandler(new SearchButtonHandler());
+		sendGradesButton.addClickHandler(new SendGradesButtonHandler());
 		examsList.setWidth("200px");
 		examsList.setVisibleItemCount(5);
 		examsList.addDoubleClickHandler(new ExamsListHandler());
@@ -66,6 +67,13 @@ public class SendGradesComponent extends Composite {
 		@Override
 		public void onClick(ClickEvent event) {
 			retrieveExams();
+		}
+	}
+	
+	private class SendGradesButtonHandler implements ClickHandler {
+		@Override
+		public void onClick(ClickEvent event) {
+			sendGrades();
 		}
 	}
 	
@@ -98,7 +106,7 @@ public class SendGradesComponent extends Composite {
 				
 					for(String student : result) {
 						String temp = studentsArea.getText();
-						studentsArea.setText(temp + "\n " + student);
+						studentsArea.setText(temp + student + "\n");
 					}
 				}
 		});
@@ -129,7 +137,10 @@ public class SendGradesComponent extends Composite {
 						Window.alert("esami trovati " + result.size());
 					}
 			});
-		
+	
+	}
+	
+	public void sendGrades() {
 		
 	}
 

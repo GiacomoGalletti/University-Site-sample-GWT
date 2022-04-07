@@ -42,4 +42,9 @@ public class Exam implements Serializable{
 		return this.studentsEmail;
 	}
 
+	public void addStudentEmail(String selectedStudent) {
+		this.studentsEmail.add(selectedStudent);
+		
+	}
+
 }
