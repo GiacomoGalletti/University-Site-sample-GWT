@@ -1,11 +1,9 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import com.google.gwt.sample.progettoingegneria.shared.Exam;
-import com.google.gwt.sample.progettoingegneria.shared.State;
-import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.sample.progettoingegneria.shared.GradeState;
+import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
@@ -14,7 +12,7 @@ public interface ConnService extends RemoteService {
 	
 	String testCall(String input);
 	
-	State loginRequest(String user, String passw);
+	UserState loginRequest(String user, String passw);
 	
 	boolean addCourse(String name, String startDate, String endDate, String email);
 	
@@ -36,7 +34,7 @@ public interface ConnService extends RemoteService {
 	
 	boolean deleteCourse(String name);
 	
-	String addExam(String name, String date, String prof, ArrayList<String> students);
+	String addExam(String name, String date, String prof, String classroom, String duration, ArrayList<String> students);
 	
 	ArrayList<String> retrieveExams(String profName);
 	
@@ -47,4 +45,10 @@ public interface ConnService extends RemoteService {
 	String getAvailableExams();
 	
 	boolean registerStudentInExam(String selectedExam, String selectedStudent);
+	
+	String retrieveInfoStudentList();
+	
+	boolean sendGrades(String selectedExam, String[] studentsList, String[] gradesList);
+	
+	String getGrades(String email);
 }

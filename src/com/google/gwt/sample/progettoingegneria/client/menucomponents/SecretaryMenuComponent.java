@@ -2,6 +2,7 @@ package com.google.gwt.sample.progettoingegneria.client.menucomponents;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.InfoStudentListComponent;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.ListBox;
@@ -11,6 +12,8 @@ public class SecretaryMenuComponent extends Composite{
 	private VerticalPanel vPanel = new VerticalPanel();
 	private ListBox actionsListBox = new ListBox();
 	private Button confirmButton = new Button("Conferma");
+	
+	private InfoStudentListComponent infoStudentView = new InfoStudentListComponent();
 	
 	public SecretaryMenuComponent() {
 		initWidget(this.vPanel);
@@ -30,17 +33,23 @@ public class SecretaryMenuComponent extends Composite{
 
 		@Override
 		public void onClick(ClickEvent event) {
+			clearPanel();
 			int userchoice = actionsListBox.getSelectedIndex();
 			switch(userchoice) {
-			case -1:
-				break;
 			case 0:
+				vPanel.add(infoStudentView);
 				break;
 			case 1:
+				
 				break;
 			case 2:
+				
 				break;
 			}
 		}
+	}
+	
+	private void clearPanel() {
+		vPanel.remove(infoStudentView);
 	}
 }

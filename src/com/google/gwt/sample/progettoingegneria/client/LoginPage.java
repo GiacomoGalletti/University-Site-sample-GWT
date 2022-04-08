@@ -2,7 +2,7 @@ package com.google.gwt.sample.progettoingegneria.client;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.sample.progettoingegneria.shared.State;
+import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
@@ -59,7 +59,7 @@ public class LoginPage extends Composite{
 			final String userEmail = emailTextBox.getText();
 			String passw = passwordTextBox.getText();
 			
-			ConnServiceSingleton.getConnService().loginRequest(userEmail, passw,new AsyncCallback<State>() {
+			ConnServiceSingleton.getConnService().loginRequest(userEmail, passw,new AsyncCallback<UserState>() {
 				@Override
 				public void onFailure(Throwable caught) {
 					Window.alert("Cannot access: "
@@ -67,28 +67,28 @@ public class LoginPage extends Composite{
 				}
 
 				@Override
-				public void onSuccess(State result) {
+				public void onSuccess(UserState result) {
 						switch(result) {
 						case WRONG_PASSWORD:
 							Window.alert("password errata");
 							break;
 						case STUDENT:
-							Session.getSession().setSession(State.STUDENT,userEmail);
+							Session.getSession().setSession(UserState.STUDENT,userEmail);
 							main.setLoginText();
 							main.openStudentDashboard();
 							break;
 						case PROFESSOR:
-							Session.getSession().setSession(State.PROFESSOR,userEmail);
+							Session.getSession().setSession(UserState.PROFESSOR,userEmail);
 							main.setLoginText();
 							main.openProfessorDashboard();
 							break;
 						case SECRETARY:
-							Session.getSession().setSession(State.SECRETARY,userEmail);
+							Session.getSession().setSession(UserState.SECRETARY,userEmail);
 							main.setLoginText();
 							main.openSecretaryDashboard();
 							break;
 						case ADMIN:
-							Session.getSession().setSession(State.ADMIN,userEmail);
+							Session.getSession().setSession(UserState.ADMIN,userEmail);
 							main.setLoginText();
 							main.openAdminDashboard();
 							break;

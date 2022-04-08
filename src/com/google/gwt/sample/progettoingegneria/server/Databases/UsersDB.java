@@ -7,14 +7,13 @@ import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
 import com.google.gwt.sample.progettoingegneria.shared.Admin;
-import com.google.gwt.sample.progettoingegneria.shared.Course;
 import com.google.gwt.sample.progettoingegneria.shared.Professor;
 import com.google.gwt.sample.progettoingegneria.shared.Secretary;
-import com.google.gwt.sample.progettoingegneria.shared.State;
+import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.sample.progettoingegneria.shared.Student;
 import com.google.gwt.sample.progettoingegneria.shared.User;
 
-public class UserDB {
+public class UsersDB {
 
 	private static DB getUserDB() {
 		DB db = DBMaker.newFileDB(new File("dbProgettoIng3")).make();		
@@ -127,7 +126,7 @@ public class UserDB {
 		return false;
 	}
 	
-	public static State login(String email, String password) {
+	public static UserState login(String email, String password) {
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 
@@ -135,22 +134,22 @@ public class UserDB {
 			User u = userMap.get(email);
 			if (u.getPw().equals(password)) {
 				if (u.getClass() == Student.class) {
-					return State.STUDENT;
+					return UserState.STUDENT;
 				}
 				if (u.getClass() == Professor.class) {
-					return State.PROFESSOR;
+					return UserState.PROFESSOR;
 				}
 				if (u.getClass() == Secretary.class) {
-					return State.SECRETARY;
+					return UserState.SECRETARY;
 				}
 				if (u.getClass() == Admin.class) {
-					return State.ADMIN;
+					return UserState.ADMIN;
 				}	
 			}
 			
-			return State.WRONG_PASSWORD; //password errata
+			return UserState.WRONG_PASSWORD; //password errata
 		}
-		return State.NOT_SIGNED; // account non presente nel db
+		return UserState.NOT_SIGNED; // account non presente nel db
 	}
 
 	public static String getInfoUser(String email) {

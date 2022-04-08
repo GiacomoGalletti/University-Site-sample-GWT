@@ -5,29 +5,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Exam implements Serializable{
-	
+	// examName = [courseName + ',' + date]
 	private static final long serialVersionUID = 1L; 
-	private String name;
+	private String examName;
+	
+	private String courseName;
 	private String date;
+	private String classroom;
+	private String duration;
 	private ArrayList<String> studentsEmail;
 	private String profEmail;
 	
 	public Exam() {}
 	
 	public Exam (
-			String name, 
-			String date ,
-			String profEmail,
+			String courseName,
+			String date,
+			String profEmail, 
+			String classroom,
+			String duration,
 			ArrayList<String> studentsEmail
 			) {
-		this.name = name;
 		this.date = date;
+		this.classroom = classroom;
+		this.duration = duration;
 		this.studentsEmail = studentsEmail;
 		this.profEmail = profEmail;
+		this.examName = courseName + "," + date;
 	}
 	
 	public String getName() {
-		return this.name;
+		return this.examName;
 	}
 
 	public String getDate() {
@@ -47,4 +55,15 @@ public class Exam implements Serializable{
 		
 	}
 
+	public String getClassroom() {
+		return this.classroom;
+	}
+	
+	public String getDuration() {
+		return this.duration;
+	}
+	
+	public String getCourseName() {
+		return this.courseName;
+	}
 }

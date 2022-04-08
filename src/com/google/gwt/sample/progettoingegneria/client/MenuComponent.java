@@ -2,7 +2,7 @@ package com.google.gwt.sample.progettoingegneria.client;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.sample.progettoingegneria.shared.State;
+import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
@@ -37,8 +37,8 @@ public class MenuComponent extends Composite {
 	//metodo per effettuare il logout 
 	
 	public void setSessionToLogout() {
-		if(Session.getSession().getTipo()!=State.NOT_SIGNED && (buttonLogin.getText()=="logout")) {
-			Session.getSession().setSession(State.NOT_SIGNED,null);
+		if(Session.getSession().getTipo()!=UserState.NOT_SIGNED && (buttonLogin.getText()=="logout")) {
+			Session.getSession().setSession(UserState.NOT_SIGNED,null);
 			main.openHomePage();
 		}
 	}
@@ -47,7 +47,7 @@ public class MenuComponent extends Composite {
 	 * metodo per modificare il comportamento e l'aspetto del pulsante login/logout (buttonLogin)
 	 * */
 	public void setLoginText() {
-		if (Session.getSession().getTipo()!=State.NOT_SIGNED) {buttonLogin.setText("logout");}
+		if (Session.getSession().getTipo()!=UserState.NOT_SIGNED) {buttonLogin.setText("logout");}
 		else {buttonLogin.setText("login");}
 	}
 	

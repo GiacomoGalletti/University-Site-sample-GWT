@@ -20,13 +20,15 @@ public class ExamsDB {
 		return db;	
 	}
 	
-	public static String addExam(String name, String date, String prof, ArrayList<String> students){
+	public static String addExam(String courseName, String date, String prof, String classroom, String duration, ArrayList<String> students){
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
-		Exam e = new Exam(name, date, prof, students);
+		/*
+		 * TODO: controllo sul courseName: verificare che esista il corso nel @CoursesDB
+		 * controllo sulle date
+		 */
+		Exam e = new Exam(courseName, date, prof, classroom, duration, students);
 		examsMap.put(e.getName(),e);
-		String temp = examsMap.get(e.getName()).getName();
-		String temp2 = examsMap.get(e.getName()).getStudentsEmail().get(0);
 		db.commit();
 		db.close();
 		return "exam added ";
@@ -100,5 +102,16 @@ public class ExamsDB {
 		db.close();
 		return true;
 	}
+
+	public static String clearDB() {
+		DB db = getExamsDB();
+		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
+		examsMap.clear();
+		db.commit();
+		db.close();
+		return "ExamsDB";
+	}
+	
+
 	
 }

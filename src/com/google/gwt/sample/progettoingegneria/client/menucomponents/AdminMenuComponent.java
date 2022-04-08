@@ -35,15 +35,16 @@ public class AdminMenuComponent extends Composite{
 			
 			int userchoice = actionsListBox.getSelectedIndex();
 			switch(userchoice) {
-			case 0: //Crea nuovo utente
+			case 0: 
+				hPanel.clear();
 				baseVPanel.add(adminCreateUserComp);
 				break;
-			case 1: //mostra lista Studenti
+			case 1: 
 				hPanel.clear();
 				hPanel.add(studentsListComp);
 				baseVPanel.add(hPanel);
 				break;
-			case 2: // mostra lista Professori
+			case 2: 
 				hPanel.clear();
 				hPanel.add(professorsListComp);
 				baseVPanel.add(hPanel);

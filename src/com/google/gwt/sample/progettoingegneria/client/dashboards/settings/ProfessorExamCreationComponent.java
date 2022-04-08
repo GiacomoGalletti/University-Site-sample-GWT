@@ -17,25 +17,30 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 public class ProfessorExamCreationComponent extends Composite {
 	
 	private VerticalPanel widgetBasePanel = new VerticalPanel();
-	private TextBox examNameBox = new TextBox();
+	private TextBox courseNameBox = new TextBox();
 	private TextBox examDateBox = new TextBox();
-	private TextBox examprofNameBox = new TextBox();
+	private TextBox classroomBox = new TextBox();
+	private TextBox durationBox = new TextBox();
 	private Button confirmCreationButton = new Button("Crea esame");
 	
 	public ProfessorExamCreationComponent() {
 		
 		initWidget(this.widgetBasePanel);
 		widgetBasePanel.add(new Label("CREA NUOVO ESAME"));
-		widgetBasePanel.add(new Label("Nome esame: "));
-		widgetBasePanel.add(examNameBox);
+		widgetBasePanel.add(new Label("Nome corso: "));
+		widgetBasePanel.add(courseNameBox);
 		widgetBasePanel.add(new Label("Data esame: "));
 		widgetBasePanel.add(examDateBox);
-		widgetBasePanel.add(new Label("email prof (automaticamente riempito con la mail del prof attuale)"));
-		widgetBasePanel.add(examprofNameBox);
+		widgetBasePanel.add(new Label("Aula: "));
+		widgetBasePanel.add(classroomBox);
+		widgetBasePanel.add(new Label("Durata esame(minuti): "));
+		widgetBasePanel.add(durationBox);
+		widgetBasePanel.add(new Label("email prof: " + Session.getSession().getEmail()));
+
 		widgetBasePanel.add(confirmCreationButton);
 		
 		confirmCreationButton.addClickHandler(new confirmCreationButtonHandler());
-		examprofNameBox.setText(Session.getSession().getEmail());
+		
 	}
 	
 	private class confirmCreationButtonHandler implements ClickHandler{
@@ -43,18 +48,18 @@ public class ProfessorExamCreationComponent extends Composite {
 		@Override
 		public void onClick(ClickEvent event) {
 			ArrayList<String> demostudents = new ArrayList<String>();
-			demostudents.add("gek");
-			demostudents.add("frency");
-			demostudents.add("tia");
+			demostudents.add("stu@stu");
 			
 			Exam e = new Exam();
 			
 			ConnServiceSingleton.
 			getConnService().
 			addExam(
-					examNameBox.getText(),
+					courseNameBox.getText(),
 					examDateBox.getText(),
-					examprofNameBox.getText(),
+					Session.getSession().getEmail(),
+					classroomBox.getText(),
+					durationBox.getText(),
 					demostudents,
 					new AsyncCallback<String>() {
 						

@@ -1,14 +1,13 @@
 package com.google.gwt.sample.progettoingegneria.server;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import com.google.gwt.sample.progettoingegneria.client.ConnService;
 import com.google.gwt.sample.progettoingegneria.server.Databases.CoursesDB;
 import com.google.gwt.sample.progettoingegneria.server.Databases.ExamsDB;
-import com.google.gwt.sample.progettoingegneria.server.Databases.UserDB;
+import com.google.gwt.sample.progettoingegneria.server.Databases.GradesDB;
+import com.google.gwt.sample.progettoingegneria.server.Databases.UsersDB;
 import com.google.gwt.sample.progettoingegneria.shared.Course;
-import com.google.gwt.sample.progettoingegneria.shared.State;
+import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.sample.progettoingegneria.shared.utilities.FirstUtility;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -23,8 +22,8 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	@Override
-	public State loginRequest(String user, String passw) {
-		return UserDB.login(user, passw);
+	public UserState loginRequest(String user, String passw) {
+		return UsersDB.login(user, passw);
 	}
 
 	@Override
@@ -35,24 +34,24 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 
 	@Override
 	public String signUp(String username, String password, String email, String name, String surname, int type) {
-		return UserDB.signUp(username, password, email, name, surname, type);
+		return UsersDB.signUp(username, password, email, name, surname, type);
 	}
 
 	@Override
 	public String viewStudentInfo() {
-		return UserDB.viewStudentInfo();
+		return UsersDB.viewStudentInfo();
 	}
 	
 	@Override
 	public String viewProfessorInfo() {
-		return UserDB.viewProfessorInfo();
+		return UsersDB.viewProfessorInfo();
 	}
 	
 	public String clearDB() {
 		try {
-			return "Puliti: " + UserDB.clearDB() + " " +CoursesDB.clearDB();
+			return "Puliti: " + UsersDB.clearDB() + " " + CoursesDB.clearDB()+ " " + ExamsDB.clearDB() + " " + GradesDB.clearDB();
 		} finally {
-			UserDB.rootUserInit();
+			UsersDB.rootUserInit();
 		}		
 	}
 
@@ -82,8 +81,8 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	@Override
-	public String addExam(String name, String date, String prof, ArrayList<String> students) {
-		return ExamsDB.addExam(name, date, prof, students);
+	public String addExam(String courseName, String date, String prof, String classroom, String duration, ArrayList<String> students) {
+		return ExamsDB.addExam(courseName, date, prof, classroom, duration, students);
 	}
 	
 	@Override
@@ -99,7 +98,7 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	@Override
 	public boolean setUserInfo(String email, String newEmail, String name, String surname, String userName,
 			String password) {
-		return UserDB.setUserInfo(email, newEmail, name, surname, userName, password);
+		return UsersDB.setUserInfo(email, newEmail, name, surname, userName, password);
 	}
 	
 	@Override
@@ -109,6 +108,21 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	
 	public boolean registerStudentInExam(String selectedExam, String selectedStudent) {
 		return ExamsDB.registerStudentInExam(selectedExam, selectedStudent);
+	}
+
+	@Override
+	public String retrieveInfoStudentList() {
+		return UsersDB.retrieveInfoStudentList();
+	}
+
+	@Override
+	public boolean sendGrades(String selectedExam, String[] studentsList, String[] gradesList) {
+		return GradesDB.addGrades(selectedExam, studentsList, gradesList);
+	}
+
+	@Override
+	public String getGrades(String email) {
+		return GradesDB.getGrades(email);
 	}
 
 }

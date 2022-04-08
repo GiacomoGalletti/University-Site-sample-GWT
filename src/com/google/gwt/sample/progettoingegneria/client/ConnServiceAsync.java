@@ -2,14 +2,14 @@ package com.google.gwt.sample.progettoingegneria.client;
 
 import java.util.ArrayList;
 
-import com.google.gwt.sample.progettoingegneria.shared.State;
+import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface ConnServiceAsync {
 	
 	void testCall(String input, AsyncCallback<String> callback);
 	
-	void loginRequest(String user, String passw, AsyncCallback<State> asyncCallback);
+	void loginRequest(String user, String passw, AsyncCallback<UserState> asyncCallback);
 	
 	void addCourse(String name, String startDate, String endDate, String email, AsyncCallback<Boolean> callback);
 	
@@ -31,7 +31,7 @@ public interface ConnServiceAsync {
 	
 	void deleteCourse(String name, AsyncCallback<Boolean> callback);
 	
-	void addExam(String name, String date, String prof, ArrayList<String> students , AsyncCallback<String> callback);
+	void addExam(String name, String date, String prof, String classroom, String duration, ArrayList<String> students , AsyncCallback<String> callback);
 	
 	void retrieveExams(String profName, AsyncCallback<ArrayList<String>> callback);
 	
@@ -42,4 +42,10 @@ public interface ConnServiceAsync {
 	void getAvailableExams(AsyncCallback<String> callback);
 
 	void registerStudentInExam(String selectedExam, String selectedStudent, AsyncCallback<Boolean> callback);
+
+	void retrieveInfoStudentList( AsyncCallback<String> callback);
+	
+	void sendGrades(String selectedExam, String[] studentsList, String[] gradesList, AsyncCallback<Boolean> callback);
+
+	void getGrades(String email, AsyncCallback<String> callback);
 }

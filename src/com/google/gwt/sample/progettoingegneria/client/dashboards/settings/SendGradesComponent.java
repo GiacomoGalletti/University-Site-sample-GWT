@@ -55,6 +55,7 @@ public class SendGradesComponent extends Composite {
 		
 		this.subHPanel.add(studentsArea);
 		this.subHPanel.add(gradesArea);
+		this.subHPanel.add(sendGradesButton);
 		
 		searchExamsButton.addClickHandler(new SearchButtonHandler());
 		sendGradesButton.addClickHandler(new SendGradesButtonHandler());
@@ -141,7 +142,28 @@ public class SendGradesComponent extends Composite {
 	}
 	
 	public void sendGrades() {
-		
+		String[] gradesList = gradesArea.getText().split("\n");
+		String[] studentsList = studentsArea.getText().split("\n");
+		String selectedExam = examsList.getSelectedItemText();
+		ConnServiceSingleton.getConnService().sendGrades(
+				selectedExam,
+				studentsList,
+				gradesList, 
+				new AsyncCallback<Boolean>() {
+
+					@Override
+					public void onFailure(Throwable caught) {
+						Window.alert("Error. inserimento fallito.");
+						
+					}
+
+					@Override
+					public void onSuccess(Boolean result) {
+						Window.alert("Inserimento avvenuto.");
+						subHPanel.clear();
+					}
+					
+				});
 	}
 
 }
