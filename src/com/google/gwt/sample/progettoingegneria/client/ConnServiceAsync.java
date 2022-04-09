@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-
+/**
+ * 
+ * interfaccia asincrona del Connection Service
+ *
+ */
 public interface ConnServiceAsync {
 	
 	void testCall(String input, AsyncCallback<String> callback);
@@ -31,7 +35,7 @@ public interface ConnServiceAsync {
 	
 	void deleteCourse(String name, AsyncCallback<Boolean> callback);
 	
-	void addExam(String name, String date, String prof, String classroom, String duration, ArrayList<String> students , AsyncCallback<String> callback);
+	void addExam(String name, String date, String hour, String prof, String classroom, String duration, ArrayList<String> students , AsyncCallback<String> callback);
 	
 	void retrieveExams(String profName, AsyncCallback<ArrayList<String>> callback);
 	
@@ -39,7 +43,7 @@ public interface ConnServiceAsync {
 	
 	void setUserInfo(String email, String newEmail, String name , String surname, String userName, String password, AsyncCallback<Boolean> callback);
 
-	void getAvailableExams(AsyncCallback<String> callback);
+	void getAvailableExams(String studentEmail, AsyncCallback<String> callback);
 
 	void registerStudentInExam(String selectedExam, String selectedStudent, AsyncCallback<Boolean> callback);
 
@@ -48,4 +52,8 @@ public interface ConnServiceAsync {
 	void sendGrades(String selectedExam, String[] studentsList, String[] gradesList, AsyncCallback<Boolean> callback);
 
 	void getGrades(String email, AsyncCallback<String> callback);
+	
+	void retrieveAviableCourses(String email, AsyncCallback<String> callback);
+	
+	void courseRegistration(String emailStudente, String courseName, AsyncCallback<Boolean> callback);
 }

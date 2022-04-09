@@ -11,6 +11,7 @@ public class Exam implements Serializable{
 	
 	private String courseName;
 	private String date;
+	private String hour;
 	private String classroom;
 	private String duration;
 	private ArrayList<String> studentsEmail;
@@ -21,12 +22,14 @@ public class Exam implements Serializable{
 	public Exam (
 			String courseName,
 			String date,
+			String hour,
 			String profEmail, 
 			String classroom,
 			String duration,
 			ArrayList<String> studentsEmail
 			) {
 		this.date = date;
+		this.setHour(hour);
 		this.classroom = classroom;
 		this.duration = duration;
 		this.studentsEmail = studentsEmail;
@@ -65,5 +68,13 @@ public class Exam implements Serializable{
 	
 	public String getCourseName() {
 		return this.courseName;
+	}
+
+	public String getHour() {
+		return hour;
+	}
+
+	public void setHour(String hour) {
+		this.hour = hour;
 	}
 }

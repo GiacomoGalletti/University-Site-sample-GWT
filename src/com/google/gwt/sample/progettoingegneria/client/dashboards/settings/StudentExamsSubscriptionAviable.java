@@ -19,7 +19,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  */
 
-public class ExamSignUpComponent extends Composite {
+public class StudentExamsSubscriptionAviable extends Composite {
 	VerticalPanel vPanel = new VerticalPanel();
 	Button searchExamsButton = new Button("cerca/aggiorna esami");
 	Label l1 = new Label("esami disponibili");
@@ -28,7 +28,7 @@ public class ExamSignUpComponent extends Composite {
 	TextBox tb = new TextBox();
 	Button confirmButton = new Button("iscriviti");
 	
-	public ExamSignUpComponent() {
+	public StudentExamsSubscriptionAviable() {
 		initWidget(this.vPanel);
 		
 		this.vPanel.add(searchExamsButton);
@@ -47,6 +47,7 @@ public class ExamSignUpComponent extends Composite {
 	private void getAvailableExams() {
 		
 		ConnServiceSingleton.getConnService().getAvailableExams(
+				Session.getSession().getEmail(),
 				new AsyncCallback<String>() {
 			@Override
 			public void onFailure(Throwable caught) {

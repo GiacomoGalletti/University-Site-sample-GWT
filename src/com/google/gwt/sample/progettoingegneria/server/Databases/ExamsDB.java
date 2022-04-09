@@ -20,14 +20,14 @@ public class ExamsDB {
 		return db;	
 	}
 	
-	public static String addExam(String courseName, String date, String prof, String classroom, String duration, ArrayList<String> students){
+	public static String addExam(String courseName, String date, String hour, String prof, String classroom, String duration, ArrayList<String> students){
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
 		/*
 		 * TODO: controllo sul courseName: verificare che esista il corso nel @CoursesDB
 		 * controllo sulle date
 		 */
-		Exam e = new Exam(courseName, date, prof, classroom, duration, students);
+		Exam e = new Exam(courseName, date, hour, prof, classroom, duration, students);
 		examsMap.put(e.getName(),e);
 		db.commit();
 		db.close();
@@ -71,15 +71,26 @@ public class ExamsDB {
 		return result;
 	}
 
-	public static String getAvailableExams() {
+	public static String getAvailableExams(String studentEmail) {
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
 		
 		Set<String> keysU = examsMap.keySet(); 
+		boolean alreadySigned;
 		
 		String result = "";
 		for (String key : keysU) {
-			result = result + key + "\n";
+			Exam current = examsMap.get(key);
+			alreadySigned = false;
+			ArrayList<String> signedStudents = current.getStudentsEmail();
+			for(String email : signedStudents) {
+				if(email.equals(studentEmail)) {
+					alreadySigned = true;
+				}
+			}
+			if(alreadySigned == false) {
+				result = result + key + "\n";
+			}
 		}
 		
 		return result;

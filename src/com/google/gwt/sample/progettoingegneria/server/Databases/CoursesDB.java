@@ -44,7 +44,7 @@ public class CoursesDB {
 		db.close();
 		return "NaN" + "@" + "NaN" + "@" + "NaN" + "@";
 	}
-	
+	// metodo che ritorna i corsi creati dal professore
 	public static String getCoursesList(String email) {
 		DB db = getCoursersDB();
 		BTreeMap<String, Course> coursesMap = db.getTreeMap("coursesMap");
@@ -171,4 +171,36 @@ public class CoursesDB {
         db.close();
         return result;
     }
+	// ritorna gli esami a cui uno studente può iscriversi (ovvero non si è già iscritto)
+	public static String retrieveAviableCourses(String email) {
+		DB db = getCoursersDB();
+        BTreeMap<String, Course> coursesMap = db.getTreeMap("coursesMap");
+
+        String result = "";
+        Set<String> keysU = coursesMap.keySet(); 
+
+        for (String key : keysU) {
+            Course current = coursesMap.get(key);
+        	if(!current.getStudentsEmail().contains(email)) {
+                result += current.getName() + "@";
+            }
+        }
+        db.commit();
+        db.close();
+        return result;
+	}
+	// metodo per la registrazione di uno studente al corso selezionato
+	public static boolean courseRegistration(String emailStudente, String courseName) {
+		DB db = getCoursersDB();
+        BTreeMap<String, Course> coursesMap = db.getTreeMap("coursesMap");
+
+        Course selectedCourse = getCourse(courseName);
+
+        selectedCourse.addStudentEmail(emailStudente);  
+        coursesMap.replace(courseName, selectedCourse);
+        
+        db.commit();
+        db.close();
+        return true;
+	}
 }

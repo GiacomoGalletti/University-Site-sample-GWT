@@ -8,23 +8,36 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+/*
+ * il componente MainPage è il componente di base della pagina,
+ * Esso contiene:
+ *  un headerPanel nel quale è inserito il logo e il menu principale
+ *  un vPanel nel quale è inserito un contentPanel che cambierà in base 
+ *  	alle azioni compiute dall'utente, ad esempio mostrerà la login e 
+ *  	successivamente all'accesso, le dashboard
+ *  un footerPanel nel quale è inserito il footer
+ */
+
 public class MainPage extends Composite {
 	private VerticalPanel vPanel = new VerticalPanel();
 	private VerticalPanel contentPanel = new VerticalPanel();
+	private VerticalPanel headerPanel = new VerticalPanel();
 	private VerticalPanel footerPanel = new VerticalPanel();
 	private MenuComponent menu = new MenuComponent(this);
 	
 	public MainPage() {
 		initWidget(this.vPanel);
+		
 		Image logo = new Image();
-		logo.setUrl("https://cdn.pixabay.com/photo/2012/05/07/01/54/owl-47526_960_720.png");
+		logo.setUrl("https://www.unibo.it/it/logo-unibo.png/@@images/44d79f14-1a99-4a5d-997f-90df029bd63e.png");
 		logo.setWidth("100px");
 		
 		this.vPanel.setBorderWidth(1);
 		this.contentPanel.setBorderWidth(1);
-		
-		this.vPanel.add(logo);
-		this.vPanel.add(menu);
+		this.headerPanel.add(logo);
+		this.headerPanel.add(menu);
+
+		this.vPanel.add(headerPanel);
 		this.vPanel.add(contentPanel);
 		this.vPanel.add(footerPanel);
 		
@@ -33,9 +46,6 @@ public class MainPage extends Composite {
 		
 	}
 	
-	/*
-	 * TODO: questo metodo fa schifo
-	 */
 	public void setLoginText() {
 		this.menu.setLoginText();
 	}

@@ -13,6 +13,12 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+/**
+ * 
+ * il componente LoginPage è il widget contenente
+ * il form e il pulsante di accesso
+ *
+ */
 public class LoginPage extends Composite{
 	
 	private VerticalPanel mainPanel = new VerticalPanel();

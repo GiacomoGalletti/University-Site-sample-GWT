@@ -31,7 +31,6 @@ public class ProfessorCoursesListComponent extends Composite{
 	
 	private ListBox coursesListBox = new ListBox();
 	private Button createCourseBtn = new Button("Crea nuovo corso");
-	private int nListItem = 0;
 	
 	public ProfessorCoursesListComponent() {
 		initWidget(this.baseHPanel);
@@ -57,12 +56,11 @@ public class ProfessorCoursesListComponent extends Composite{
 			@Override
 			public void onSuccess(String result) {
 				String[] list = result.split("@"); 
-				nListItem = list.length;
 				
 				for (int i=0; i<list.length; i++) {
 					coursesListBox.addItem(list[i]);
 				}
-				coursesListBox.setVisibleItemCount(nListItem);
+				coursesListBox.setVisibleItemCount(list.length);
 			}
 		});
 	}

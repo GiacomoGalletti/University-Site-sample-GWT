@@ -1,6 +1,7 @@
 package com.google.gwt.sample.progettoingegneria.shared;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Course implements Serializable{
 
@@ -10,6 +11,7 @@ public class Course implements Serializable{
 	private String endDate;
 	private String emailProfessor;
 	private String id = "";
+	private ArrayList<String> studentsEmail;
 	
 	public Course() {}
 	
@@ -20,6 +22,7 @@ public class Course implements Serializable{
 		this.endDate = endDate;
 		this.id = id;
 		this.emailProfessor = emailProfessor;
+		this.studentsEmail = new ArrayList<String>();
 	}
 	
 	public String getName()
@@ -59,6 +62,15 @@ public class Course implements Serializable{
 
 	public void setEmailProfessor(String emailProfessor) {
 		this.emailProfessor = emailProfessor;
+	}
+	
+	public ArrayList<String> getStudentsEmail() {
+		return this.studentsEmail;
+	}
+
+	public void addStudentEmail(String selectedStudent) {
+		this.studentsEmail.add(selectedStudent);
+		
 	}
 
 }

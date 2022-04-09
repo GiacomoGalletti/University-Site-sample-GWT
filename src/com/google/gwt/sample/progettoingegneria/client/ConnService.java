@@ -4,8 +4,15 @@ import java.util.ArrayList;
 
 import com.google.gwt.sample.progettoingegneria.shared.GradeState;
 import com.google.gwt.sample.progettoingegneria.shared.UserState;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
+
+/**
+ * 
+ * interfaccia del Connection Service
+ *
+ */
 
 @RemoteServiceRelativePath("stockPrices")
 public interface ConnService extends RemoteService {	
@@ -34,7 +41,7 @@ public interface ConnService extends RemoteService {
 	
 	boolean deleteCourse(String name);
 	
-	String addExam(String name, String date, String prof, String classroom, String duration, ArrayList<String> students);
+	String addExam(String name, String date, String hour, String prof, String classroom, String duration, ArrayList<String> students);
 	
 	ArrayList<String> retrieveExams(String profName);
 	
@@ -42,7 +49,7 @@ public interface ConnService extends RemoteService {
 	
 	boolean setUserInfo(String email, String newEmail, String name , String surname, String userName, String password);
 	
-	String getAvailableExams();
+	String getAvailableExams(String studentEmail);
 	
 	boolean registerStudentInExam(String selectedExam, String selectedStudent);
 	
@@ -51,4 +58,9 @@ public interface ConnService extends RemoteService {
 	boolean sendGrades(String selectedExam, String[] studentsList, String[] gradesList);
 	
 	String getGrades(String email);
+
+	String retrieveAviableCourses(String email);
+	
+	boolean courseRegistration(String emailStudente, String courseName);
+
 }

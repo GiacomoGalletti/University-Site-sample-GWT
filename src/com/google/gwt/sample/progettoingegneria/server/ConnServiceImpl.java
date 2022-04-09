@@ -56,6 +56,11 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 
 	@Override
+	public String retrieveAviableCourses(String email) {
+		return CoursesDB.retrieveAviableCourses(email);
+	}
+	
+	@Override
 	public String viewCoursesInfo(String email) {
 		return CoursesDB.getCoursesList(email);
 	}
@@ -81,8 +86,8 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	@Override
-	public String addExam(String courseName, String date, String prof, String classroom, String duration, ArrayList<String> students) {
-		return ExamsDB.addExam(courseName, date, prof, classroom, duration, students);
+	public String addExam(String courseName, String date, String hour, String prof, String classroom, String duration, ArrayList<String> students) {
+		return ExamsDB.addExam(courseName, date, hour, prof, classroom, duration, students);
 	}
 	
 	@Override
@@ -102,8 +107,8 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	@Override
-	public String getAvailableExams() {
-		return ExamsDB.getAvailableExams();
+	public String getAvailableExams(String studentEmail) {
+		return ExamsDB.getAvailableExams(studentEmail);
 	}
 	
 	public boolean registerStudentInExam(String selectedExam, String selectedStudent) {
@@ -123,6 +128,11 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	@Override
 	public String getGrades(String email) {
 		return GradesDB.getGrades(email);
+	}
+
+	@Override
+	public boolean courseRegistration(String emailStudente, String courseName) {
+		return CoursesDB.courseRegistration(emailStudente, courseName);
 	}
 
 }

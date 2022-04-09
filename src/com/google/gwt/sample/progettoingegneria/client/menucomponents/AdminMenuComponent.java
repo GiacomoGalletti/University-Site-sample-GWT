@@ -12,7 +12,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class AdminMenuComponent extends Composite{
 	private HorizontalPanel baseVPanel = new HorizontalPanel();
-	private HorizontalPanel hPanel = new HorizontalPanel();
 	private ListBox actionsListBox = new ListBox();
 	private AdminCreateUserComponent adminCreateUserComp = new AdminCreateUserComponent();
 	private AdminStudentsListComponent studentsListComp = new AdminStudentsListComponent();
@@ -32,25 +31,28 @@ public class AdminMenuComponent extends Composite{
 
 		@Override
 		public void onDoubleClick(DoubleClickEvent event) {
-			
+			cleanhPanel();
 			int userchoice = actionsListBox.getSelectedIndex();
 			switch(userchoice) {
 			case 0: 
-				hPanel.clear();
 				baseVPanel.add(adminCreateUserComp);
 				break;
 			case 1: 
-				hPanel.clear();
-				hPanel.add(studentsListComp);
-				baseVPanel.add(hPanel);
+				baseVPanel.add(studentsListComp);
 				break;
 			case 2: 
-				hPanel.clear();
-				hPanel.add(professorsListComp);
-				baseVPanel.add(hPanel);
+				baseVPanel.add(professorsListComp);
+
 				break;
 			}
 		}
+	}
+	
+	private void cleanhPanel() {
+		baseVPanel.remove(adminCreateUserComp);	
+		baseVPanel.remove(studentsListComp);
+		baseVPanel.remove(professorsListComp);
+
 	}
 	
 
