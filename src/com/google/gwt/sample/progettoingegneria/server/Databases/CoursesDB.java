@@ -2,6 +2,7 @@ package com.google.gwt.sample.progettoingegneria.server.Databases;
 
 import java.io.File;
 import java.util.Set;
+import java.util.List;
 import java.util.Map.Entry;
 import org.mapdb.BTreeMap;
 import org.mapdb.DB;
@@ -171,7 +172,7 @@ public class CoursesDB {
         db.close();
         return result;
     }
-	// ritorna gli esami a cui uno studente può iscriversi (ovvero non si è già iscritto)
+	// ritorna gli corsi a cui uno studente può iscriversi (ovvero non si è già iscritto)
 	public static String retrieveAviableCourses(String email) {
 		DB db = getCoursersDB();
         BTreeMap<String, Course> coursesMap = db.getTreeMap("coursesMap");
@@ -189,18 +190,47 @@ public class CoursesDB {
         db.close();
         return result;
 	}
-	// metodo per la registrazione di uno studente al corso selezionato
-	public static boolean courseRegistration(String emailStudente, String courseName) {
+	// ritorna gli corsi a cui uno studente è già iscritto
+	public static String retrieveSubscribedCourses(String email) {
 		DB db = getCoursersDB();
         BTreeMap<String, Course> coursesMap = db.getTreeMap("coursesMap");
 
-        Course selectedCourse = getCourse(courseName);
+        String result = "";
+        Set<String> keysU = coursesMap.keySet(); 
 
-        selectedCourse.addStudentEmail(emailStudente);  
-        coursesMap.replace(courseName, selectedCourse);
-        
+        for (String key : keysU) {
+            Course current = coursesMap.get(key);
+        	if(current.getStudentsEmail().contains(email)) {
+                result += current.getName() + "\n";
+            }
+        }
         db.commit();
         db.close();
+        return result;
+	}
+	// metodo per la registrazione di uno studente al corso selezionato
+	public static boolean courseRegistration(String emailStudente, String courseName) {
+        Course selectedCourse = getCourse(courseName);
+        selectedCourse.addStudentEmail(emailStudente);  
+        replaceCourse(selectedCourse.getId(), selectedCourse);
         return true;
 	}
-}
+	
+	// metodo che restituisce gli studenti iscritta al corso in input
+	
+	public static String getStudentsCourseList(String courseName) {	
+
+		List<String> studentsEmails = getCourse(courseName).getStudentsEmail();
+		String result = "";
+		for(String s : studentsEmails) {
+			result += s + "\n";
+		}
+		return result;
+	}
+	
+}	
+
+	
+
+
+

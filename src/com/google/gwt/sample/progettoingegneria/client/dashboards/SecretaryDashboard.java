@@ -1,5 +1,6 @@
 package com.google.gwt.sample.progettoingegneria.client.dashboards;
 
+import com.google.gwt.sample.progettoingegneria.client.Session;
 import com.google.gwt.sample.progettoingegneria.client.menucomponents.SecretaryMenuComponent;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
@@ -12,7 +13,7 @@ public class SecretaryDashboard extends Composite {
 	public SecretaryDashboard() {
 		initWidget(this.vPanel);
 		
-		Label titleLabel = new Label("Università di Giacky");
+		Label titleLabel = new Label("Dashboard Segreteria: "+Session.getSession().getEmail());
 		Image logoImage = new Image();
 		SecretaryMenuComponent secretaryMenu = new SecretaryMenuComponent();
 		

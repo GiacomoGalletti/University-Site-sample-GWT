@@ -35,7 +35,7 @@ public class GradesViewComponent extends Composite {
 
 					@Override
 					public void onFailure(Throwable caught) {
-						Window.alert("Error." + caught);
+						Window.alert("Error." + "impossibile visualizzare voti esami");
 						
 					}
 

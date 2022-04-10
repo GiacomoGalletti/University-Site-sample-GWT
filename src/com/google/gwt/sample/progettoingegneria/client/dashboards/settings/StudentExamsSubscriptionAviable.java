@@ -2,6 +2,8 @@ package com.google.gwt.sample.progettoingegneria.client.dashboards.settings;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.DoubleClickEvent;
+import com.google.gwt.event.dom.client.DoubleClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
 import com.google.gwt.sample.progettoingegneria.client.Session;
 import com.google.gwt.user.client.Window;
@@ -9,93 +11,101 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.TextArea;
-import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
- * componente che deve permettere ad uno studente di
- * iscriversi ad un esame (e vedere la lista degli esami disponibili?)
+ * componente che deve permettere ad uno studente di iscriversi ad un esame (e
+ * vedere la lista degli esami disponibili?)
  * 
  */
 
 public class StudentExamsSubscriptionAviable extends Composite {
 	VerticalPanel vPanel = new VerticalPanel();
-	Button searchExamsButton = new Button("cerca/aggiorna esami");
-	Label l1 = new Label("esami disponibili");
-	TextArea txta = new TextArea();
-	Label l2 = new Label("digita l'esame al quale vuoi iscriverti");
-	TextBox tb = new TextBox();
+	ListBox examsLb = new ListBox();
+	ListBox coursesLb = new ListBox();
+
 	Button confirmButton = new Button("iscriviti");
-	
+
 	public StudentExamsSubscriptionAviable() {
 		initWidget(this.vPanel);
-		
-		this.vPanel.add(searchExamsButton);
-		this.vPanel.add(l1);
-		this.vPanel.add(txta);
-		this.vPanel.add(l2);
-		this.vPanel.add(tb);
-		this.vPanel.add(confirmButton);
-		
-		txta.setWidth("300px");
-		txta.setHeight("300px");
-		confirmButton.addClickHandler(new ConfirmButtonHandler());
-		searchExamsButton.addClickHandler(new SearchExamsButtonHandler());
+		getAvailableCourses();
+		this.vPanel.add(new Label("CORSI A CUI SEI ISCRITTO:"));
+		this.vPanel.add(coursesLb);
+		coursesLb.addDoubleClickHandler(new coursesLbHandler());
+	}
+
+	private void getAvailableCourses() {
+		ConnServiceSingleton.getConnService().retrieveSubscribedCourses(Session.getSession().getEmail(),
+				new AsyncCallback<String>() {
+					@Override
+					public void onFailure(Throwable caught) {
+						Window.alert("ERROR: " + "impossibile ottenere corsi");
+					}
+
+					@Override
+					public void onSuccess(String result) {
+						String[] courses = result.split("\n");
+
+						for (int i = 0; i < courses.length; i++) {
+							coursesLb.addItem(courses[i]);
+						}
+						coursesLb.setVisibleItemCount(coursesLb.getItemCount());
+					}
+				});
 	}
 
 	private void getAvailableExams() {
-		
-		ConnServiceSingleton.getConnService().getAvailableExams(
-				Session.getSession().getEmail(),
-				new AsyncCallback<String>() {
-			@Override
-			public void onFailure(Throwable caught) {
-				Window.alert("ERROR: " + caught);
-			}
-			
-			@Override
-			public void onSuccess(String result) {
-				txta.setText(result);
-				
-			}
-		});
+		ConnServiceSingleton.getConnService().getAvailableExams(coursesLb.getSelectedItemText(),new AsyncCallback<String>() {
+					@Override
+					public void onFailure(Throwable caught) {
+						Window.alert("ERROR: " + "impossibile visualizzare esami");
+					}
+
+					@Override
+					public void onSuccess(String result) {
+						String[] exams = result.split("\n");
+
+						for (int i = 0; i < exams.length; i++) {
+							examsLb.addItem(exams[i]);
+						}
+					}
+				});
+		examsLb.setVisibleItemCount(examsLb.getItemCount());
 	}
-	
+
+	private class coursesLbHandler implements DoubleClickHandler {
+		@Override
+		public void onDoubleClick(DoubleClickEvent event) {
+			getAvailableExams();
+			vPanel.add(examsLb);
+			confirmButton.addClickHandler(new ConfirmButtonHandler());
+			vPanel.add(confirmButton);
+		}
+	}
+
 	private class ConfirmButtonHandler implements ClickHandler {
 		@Override
 		public void onClick(ClickEvent event) {
-			String selectedExam = tb.getText();
-			String selectedStudent = Session.getSession().getEmail();
-			
-			ConnServiceSingleton.getConnService().registerStudentInExam(
-					selectedExam,
-					selectedStudent,
-					new AsyncCallback<Boolean>() {
+
+			ConnServiceSingleton.getConnService().registerStudentInExam(examsLb.getSelectedItemText(),
+					Session.getSession().getEmail(), new AsyncCallback<Boolean>() {
 
 						@Override
 						public void onFailure(Throwable caught) {
 							Window.alert("ERROR: " + caught);
-							
+
 						}
 
 						@Override
 						public void onSuccess(Boolean result) {
-							if(result) {
+							if (result) {
 								Window.alert("iscritto");
 							}
-							
+
 						}
-						
-					}
-					);
-		}
-	}
-	
-	private class SearchExamsButtonHandler implements ClickHandler {
-		@Override
-		public void onClick(ClickEvent event) {
-			getAvailableExams();
+
+					});
 		}
 	}
 

@@ -10,13 +10,12 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class InfoStudentListComponent extends Composite {
 	VerticalPanel vPanel = new VerticalPanel();
-	Label l1 = new Label("informazioni personali studenti");
 	TextArea txta = new TextArea();
 	
 	public InfoStudentListComponent() {
 		initWidget(this.vPanel);
 		
-		this.vPanel.add(l1);
+		this.vPanel.add(new Label("informazioni personali studenti"));
 		this.vPanel.add(txta);
 		
 		retrieveInfoStudentList();

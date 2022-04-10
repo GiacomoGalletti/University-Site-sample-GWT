@@ -4,14 +4,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-
 import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
 
-import com.google.gwt.sample.progettoingegneria.shared.Course;
 import com.google.gwt.sample.progettoingegneria.shared.Exam;
-import com.google.gwt.user.client.Window;
 
 public class ExamsDB {
 	
@@ -23,10 +20,6 @@ public class ExamsDB {
 	public static String addExam(String courseName, String date, String hour, String prof, String classroom, String duration, ArrayList<String> students){
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
-		/*
-		 * TODO: controllo sul courseName: verificare che esista il corso nel @CoursesDB
-		 * controllo sulle date
-		 */
 		Exam e = new Exam(courseName, date, hour, prof, classroom, duration, students);
 		examsMap.put(e.getName(),e);
 		db.commit();
@@ -38,7 +31,7 @@ public class ExamsDB {
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
 		
-		ArrayList<String> result = new ArrayList<String>();
+		List<String> result = new ArrayList<String>();
 		Set<String> keysU = examsMap.keySet(); 
 		
 		for (String key : keysU) {
@@ -48,14 +41,14 @@ public class ExamsDB {
 		db.commit();
 		db.close();
 		System.out.println(result.get(0));
-		return result;
+		return (ArrayList<String>)result;
 	}
 	
 	public static ArrayList<String> retrieveStudents(String selectedExam) {
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
 		
-		ArrayList<String> result = new ArrayList<String>();
+		List<String> result = new ArrayList<String>();
 		Set<String> keysU = examsMap.keySet(); 
 		
 		for (String key : keysU) {
@@ -68,40 +61,30 @@ public class ExamsDB {
 		}
 		db.commit();
 		db.close();
-		return result;
+		return (ArrayList<String>)result;
 	}
-
-	public static String getAvailableExams(String studentEmail) {
+	
+	// metodo che restituisce gli esami di un corso in input
+	public static String getAvailableExams(String courseName) {
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
-		
-		Set<String> keysU = examsMap.keySet(); 
-		boolean alreadySigned;
-		
+		Set<String> keysExams = examsMap.keySet();
 		String result = "";
-		for (String key : keysU) {
+		for (String key : keysExams) {
 			Exam current = examsMap.get(key);
-			alreadySigned = false;
-			ArrayList<String> signedStudents = current.getStudentsEmail();
-			for(String email : signedStudents) {
-				if(email.equals(studentEmail)) {
-					alreadySigned = true;
-				}
-			}
-			if(alreadySigned == false) {
-				result = result + key + "\n";
+			if (current.getCourseName().equals(courseName)) {
+				result += current.getName() + "\n";
 			}
 		}
-		
+		db.commit();
+		db.close();
 		return result;
 	}
 
 	public static boolean registerStudentInExam(String selectedExam, String selectedStudent) {
 		DB db = getExamsDB();
-		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
-		
+		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");		
 		Set<String> keysU = examsMap.keySet(); 
-		
 		for (String key : keysU) {
 			Exam current = examsMap.get(key);
 			if(current.getName().equals(selectedExam)) {
@@ -122,7 +105,19 @@ public class ExamsDB {
 		db.close();
 		return "ExamsDB";
 	}
-	
 
-	
+	public static ArrayList<String> retrieveExamsForSecretary() {
+		DB db = getExamsDB();
+		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
+		Set<String> keysExams = examsMap.keySet();
+		List<String> result = new ArrayList<String>();
+		for (String key : keysExams) {
+			Exam current = examsMap.get(key);
+			result.add(current.getName());
+		}
+		db.commit();
+		db.close();
+		return (ArrayList<String>)result;
+	}
+		
 }

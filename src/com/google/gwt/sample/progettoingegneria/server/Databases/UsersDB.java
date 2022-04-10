@@ -24,7 +24,13 @@ public class UsersDB {
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 		User ad = new Admin("root", "root", "root@root", "root", "root");
+		User prof = new Professor("prof", "prof", "prof@prof", "prof", "prof");
+		User stu = new Student("stu", "stu", "stu@stu", "stu", "stu");
+		User sec = new Secretary("sec", "sec", "sec@sec", "sec", "sec");
 		userMap.putIfAbsent(ad.getEmail(),ad);
+		userMap.putIfAbsent(prof.getEmail(),prof);
+		userMap.putIfAbsent(stu.getEmail(),stu);
+		userMap.putIfAbsent(sec.getEmail(),sec);
 		db.commit();
 		db.close();
 	}

@@ -6,18 +6,13 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.shared.DateTimeFormat;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
-
-/*
- * TODO: da completare
- * finestra per il settaggio di modifiche sul corso selezionato
- */
-
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -31,10 +26,11 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class ProfessorCoursesModifierComponent extends Composite {
 	private VerticalPanel vPanel = new VerticalPanel();
-
 	private TextBox courseNameTb = new TextBox();
 	private TextBox startDateTb = new TextBox();
 	private TextBox endDateTb = new TextBox();
+	
+	private TextArea subscribedStudentsTa =  new TextArea();;
 	
 	private HorizontalPanel hPanelBtn = new HorizontalPanel();
 	private Button confirmBtn = new Button("Conferma Modifiche");
@@ -46,7 +42,6 @@ public class ProfessorCoursesModifierComponent extends Composite {
 	public ProfessorCoursesModifierComponent(String courseName) {
 		initWidget(this.vPanel);
 		this.initialCourseName = courseName;
-		
 		ConnServiceSingleton.getConnService().getCourseData(initialCourseName, new AsyncCallback<String>() {
 
 			@Override
@@ -72,13 +67,30 @@ public class ProfessorCoursesModifierComponent extends Composite {
 				vPanel.add(new Label("Data fine:"));
 				vPanel.add(endDateTb);
 				vPanel.add(hPanelBtn);
+				initSubscribedStudents();
+				subscribedStudentsTa.setWidth("221px");
+				vPanel.add(subscribedStudentsTa);
 			}
 		});
 		
 		confirmBtn.addClickHandler(new confirmBtnHandler());
 		deleteBtn.addClickHandler(new deleteBtnHandler());
 	}
-	
+	private void initSubscribedStudents() {
+		ConnServiceSingleton.getConnService().getStudentsCourseList(currentCourse[0],new AsyncCallback<String>() {
+
+			@Override
+			public void onFailure(Throwable caught) {
+				Window.alert("Errore server.\nLista studenti iscritti al corso non aggiornata");
+			}
+
+			@Override
+			public void onSuccess(String result) {
+				subscribedStudentsTa.setText("LISTA STUDENTI ISCRITTI:"+"\n"+ result);
+			}
+			
+		});
+	}
 	
 	private class confirmBtnHandler implements  ClickHandler {
 

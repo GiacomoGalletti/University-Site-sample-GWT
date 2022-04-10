@@ -34,6 +34,7 @@ public class Exam implements Serializable{
 		this.duration = duration;
 		this.studentsEmail = studentsEmail;
 		this.profEmail = profEmail;
+		this.courseName = courseName;
 		this.examName = courseName + "," + date;
 	}
 	

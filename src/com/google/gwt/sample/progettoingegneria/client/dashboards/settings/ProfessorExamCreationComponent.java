@@ -5,7 +5,6 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
 import com.google.gwt.sample.progettoingegneria.client.Session;
-import com.google.gwt.sample.progettoingegneria.shared.Exam;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
@@ -50,11 +49,7 @@ public class ProfessorExamCreationComponent extends Composite {
 
 		@Override
 		public void onClick(ClickEvent event) {
-			ArrayList<String> demostudents = new ArrayList<String>();
-			demostudents.add("stu@stu");
-			
-			Exam e = new Exam();
-			
+			ArrayList<String> demostudents = new ArrayList<String>();			
 			ConnServiceSingleton.
 			getConnService().
 			addExam(
@@ -78,7 +73,6 @@ public class ProfessorExamCreationComponent extends Composite {
 							
 						}
 				});
-			
 			
 		}
 	

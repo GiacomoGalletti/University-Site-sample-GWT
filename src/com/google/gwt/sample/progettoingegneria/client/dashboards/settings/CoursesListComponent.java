@@ -10,7 +10,7 @@ import com.google.gwt.user.client.ui.TextArea;
 /**
  * componente che deve permettere ad uno @Student di vedere 
  * la lista di corsi attualmente disponibili
- * Non deve permettere l'iscrizione, quello è già fatto da 
+ * Non deve permettere l'iscrizione, quello ï¿½ giï¿½ fatto da 
  * un altro componente @CoursesSignUpComponent
  * 
  * Si potrebbe riciclare il codice in maniera furba dal 
@@ -36,7 +36,7 @@ public class CoursesListComponent extends Composite {
 
             @Override
             public void onFailure(Throwable caught) {
-                Window.alert("ERROR: " + caught);
+                Window.alert("ERROR: " + "Impossibilie visualizzare i corsi");
             }
 
             @Override

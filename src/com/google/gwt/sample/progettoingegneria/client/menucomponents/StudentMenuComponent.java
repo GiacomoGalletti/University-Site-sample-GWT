@@ -19,7 +19,8 @@ public class StudentMenuComponent extends Composite{
 	private CoursesListComponent coursesListView = new CoursesListComponent();
 	private StudentCoursesSignUpComponent courseSignUpView = new StudentCoursesSignUpComponent();
 	private GradesViewComponent gradesView = new GradesViewComponent();
-	private StudentExamsSubscriptionAviable examView = new StudentExamsSubscriptionAviable();
+	private StudentExamsSubscriptionAviable examView;
+	
 	
 	public StudentMenuComponent() {
 		initWidget(this.hPanel);
@@ -49,6 +50,7 @@ public class StudentMenuComponent extends Composite{
 				hPanel.add(courseSignUpView);
 				break;
 			case 2:
+				examView = new StudentExamsSubscriptionAviable();
 				hPanel.add(examView);
 				break;
 			case 3:

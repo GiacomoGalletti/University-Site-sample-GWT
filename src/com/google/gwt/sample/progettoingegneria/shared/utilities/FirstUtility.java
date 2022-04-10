@@ -10,7 +10,6 @@ public class FirstUtility {
 		return UUID.randomUUID().toString();
 	}
 	
-	
 	public static void setVisibility(Composite c) {
 		if (c.isVisible()) {
 			c.setVisible(false);

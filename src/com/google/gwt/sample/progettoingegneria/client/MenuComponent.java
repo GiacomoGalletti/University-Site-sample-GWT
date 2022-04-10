@@ -69,6 +69,7 @@ public class MenuComponent extends Composite {
 							break;
 						case STUDENT:
 							main.openStudentDashboard();
+							setLoginText();
 							break;
 						case PROFESSOR:
 							main.openProfessorDashboard();

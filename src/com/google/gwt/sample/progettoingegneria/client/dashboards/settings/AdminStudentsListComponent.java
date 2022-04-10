@@ -8,7 +8,6 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.ListBox;
-import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * componente che permette ad un Admin di vedere la lista degli user in base
@@ -16,7 +15,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  */
 public class AdminStudentsListComponent extends Composite {
-	private HorizontalPanel hPanel = new HorizontalPanel();
 	private HorizontalPanel baseHPanel = new HorizontalPanel();
 	private ListBox usersListBox = new ListBox();
 	private AdminUserModifierComponent modifierComp;

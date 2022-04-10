@@ -43,7 +43,7 @@ public interface ConnServiceAsync {
 	
 	void setUserInfo(String email, String newEmail, String name , String surname, String userName, String password, AsyncCallback<Boolean> callback);
 
-	void getAvailableExams(String studentEmail, AsyncCallback<String> callback);
+	void getAvailableExams(String courseName, AsyncCallback<String> callback);
 
 	void registerStudentInExam(String selectedExam, String selectedStudent, AsyncCallback<Boolean> callback);
 
@@ -55,5 +55,13 @@ public interface ConnServiceAsync {
 	
 	void retrieveAviableCourses(String email, AsyncCallback<String> callback);
 	
-	void courseRegistration(String emailStudente, String courseName, AsyncCallback<Boolean> callback);
+	void courseRegistration(String studentEmail, String courseName, AsyncCallback<Boolean> callback);
+	
+	void retrieveSubscribedCourses(String studentEmail, AsyncCallback<String> callback);
+	
+	void getStudentsCourseList(String courseName, AsyncCallback<String> callback);
+
+	void retrieveExamsForSecretary(AsyncCallback<ArrayList<String>> callback);
+	
+	void retrieveGradesAndStudents(String selectedExam, AsyncCallback<String> callback);
 }

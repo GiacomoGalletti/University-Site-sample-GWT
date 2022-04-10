@@ -107,8 +107,8 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	@Override
-	public String getAvailableExams(String studentEmail) {
-		return ExamsDB.getAvailableExams(studentEmail);
+	public String getAvailableExams(String courseName) {
+		return ExamsDB.getAvailableExams(courseName);
 	}
 	
 	public boolean registerStudentInExam(String selectedExam, String selectedStudent) {
@@ -131,8 +131,29 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 
 	@Override
-	public boolean courseRegistration(String emailStudente, String courseName) {
-		return CoursesDB.courseRegistration(emailStudente, courseName);
+	public boolean courseRegistration(String studentEmail, String courseName) {
+		return CoursesDB.courseRegistration(studentEmail, courseName);
 	}
+	
+	@Override
+	public String retrieveSubscribedCourses(String studentEmail) {
+		return CoursesDB.retrieveSubscribedCourses(studentEmail);
+	}
+	
+	@Override
+	public String getStudentsCourseList(String courseName) {
+		return CoursesDB.getStudentsCourseList(courseName);
+	}
+
+	@Override
+	public ArrayList<String> retrieveExamsForSecretary() {
+		return ExamsDB.retrieveExamsForSecretary();
+	}
+
+	@Override
+	public String retrieveGradesAndStudents(String selectedExam) {
+		// TODO Auto-generated method stub
+		return null;
+	} 
 
 }

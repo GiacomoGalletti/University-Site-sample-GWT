@@ -2,17 +2,9 @@ package com.google.gwt.sample.progettoingegneria.client;
 
 import java.util.ArrayList;
 
-import com.google.gwt.sample.progettoingegneria.shared.GradeState;
 import com.google.gwt.sample.progettoingegneria.shared.UserState;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
-
-/**
- * 
- * interfaccia del Connection Service
- *
- */
 
 @RemoteServiceRelativePath("stockPrices")
 public interface ConnService extends RemoteService {	
@@ -49,7 +41,7 @@ public interface ConnService extends RemoteService {
 	
 	boolean setUserInfo(String email, String newEmail, String name , String surname, String userName, String password);
 	
-	String getAvailableExams(String studentEmail);
+	String getAvailableExams(String courseName);
 	
 	boolean registerStudentInExam(String selectedExam, String selectedStudent);
 	
@@ -62,5 +54,13 @@ public interface ConnService extends RemoteService {
 	String retrieveAviableCourses(String email);
 	
 	boolean courseRegistration(String emailStudente, String courseName);
+
+	String retrieveSubscribedCourses(String studentEmail);
+
+	String getStudentsCourseList(String courseName);
+	
+	ArrayList<String> retrieveExamsForSecretary();
+	
+	String retrieveGradesAndStudents(String selectedExam);
 
 }
