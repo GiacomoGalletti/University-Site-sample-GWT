@@ -1,29 +1,22 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.sample.progettoingegneria.shared.State;
+import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Label;
 
 public class MenuComponent extends Composite {
 	private HorizontalPanel hPanel = new HorizontalPanel();
 	private MainPage main;
-	private ConnServiceAsync connService = GWT.create(ConnService.class);
 	private Button buttonLogin;
-	private Label sessionLabel;
 	
 	public MenuComponent(MainPage main) {
 		initWidget(this.hPanel);
 		this.main = main;
-		
-		this.sessionLabel = new Label("Sessione: " + Session.getSession().getTipo());
-		
 		buttonLogin = new Button("Area Utente");
 		Button buttonHome = new Button("home");
 		Button buttonClear = new Button("pulisci db");
@@ -38,15 +31,14 @@ public class MenuComponent extends Composite {
 		this.hPanel.add(buttonHome);
 		this.hPanel.add(buttonLogin);
 		this.hPanel.add(buttonClear);
-		this.hPanel.add(sessionLabel);
 	}
 	
 	
 	//metodo per effettuare il logout 
 	
 	public void setSessionToLogout() {
-		if(Session.getSession().getTipo()!=State.NOT_SIGNED && (buttonLogin.getText()=="logout")) {
-			Session.getSession().setTipo(State.NOT_SIGNED);
+		if(Session.getSession().getTipo()!=UserState.NOT_SIGNED && (buttonLogin.getText()=="logout")) {
+			Session.getSession().setSession(UserState.NOT_SIGNED,null);
 			main.openHomePage();
 		}
 	}
@@ -55,7 +47,7 @@ public class MenuComponent extends Composite {
 	 * metodo per modificare il comportamento e l'aspetto del pulsante login/logout (buttonLogin)
 	 * */
 	public void setLoginText() {
-		if (Session.getSession().getTipo()!=State.NOT_SIGNED) {buttonLogin.setText("logout");}
+		if (Session.getSession().getTipo()!=UserState.NOT_SIGNED) {buttonLogin.setText("logout");}
 		else {buttonLogin.setText("login");}
 	}
 	
@@ -77,6 +69,7 @@ public class MenuComponent extends Composite {
 							break;
 						case STUDENT:
 							main.openStudentDashboard();
+							setLoginText();
 							break;
 						case PROFESSOR:
 							main.openProfessorDashboard();
@@ -111,7 +104,7 @@ public class MenuComponent extends Composite {
 
 		@Override
 		public void onClick(ClickEvent event) {
-			connService.clearDB(new AsyncCallback<String>() {
+			ConnServiceSingleton.getConnService().clearDB(new AsyncCallback<String>() {
 
 				@Override
 				public void onFailure(Throwable caught) {

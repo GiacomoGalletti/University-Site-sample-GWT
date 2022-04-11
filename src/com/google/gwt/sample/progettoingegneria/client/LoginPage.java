@@ -1,9 +1,8 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.sample.progettoingegneria.shared.State;
+import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
@@ -14,12 +13,17 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+/**
+ * 
+ * il componente LoginPage è il widget contenente
+ * il form e il pulsante di accesso
+ *
+ */
 public class LoginPage extends Composite{
 	
 	private VerticalPanel mainPanel = new VerticalPanel();
 	private Image image1 = new Image();
 	private MainPage main;
-	private ConnServiceAsync connService = GWT.create(ConnService.class);
 	private TextBox emailTextBox = new TextBox();
     private TextBox passwordTextBox = new TextBox();
 	private Button loginButton = new Button("Accedi");;
@@ -58,10 +62,10 @@ public class LoginPage extends Composite{
 
 		@Override
 		public void onClick(ClickEvent event) {
-			String user = emailTextBox.getText();
+			final String userEmail = emailTextBox.getText();
 			String passw = passwordTextBox.getText();
 			
-			connService.loginRequest(user, passw,new AsyncCallback<State>() {
+			ConnServiceSingleton.getConnService().loginRequest(userEmail, passw,new AsyncCallback<UserState>() {
 				@Override
 				public void onFailure(Throwable caught) {
 					Window.alert("Cannot access: "
@@ -69,29 +73,29 @@ public class LoginPage extends Composite{
 				}
 
 				@Override
-				public void onSuccess(State result) {
+				public void onSuccess(UserState result) {
 						switch(result) {
 						case WRONG_PASSWORD:
 							Window.alert("password errata");
 							break;
-						case STUDENT: // Student
-							Session.getSession().setTipo(State.STUDENT);
-							main.menu.setLoginText();
+						case STUDENT:
+							Session.getSession().setSession(UserState.STUDENT,userEmail);
+							main.setLoginText();
 							main.openStudentDashboard();
 							break;
-						case PROFESSOR: // Professor
-							Session.getSession().setTipo(State.PROFESSOR);
-							main.menu.setLoginText();
+						case PROFESSOR:
+							Session.getSession().setSession(UserState.PROFESSOR,userEmail);
+							main.setLoginText();
 							main.openProfessorDashboard();
 							break;
-						case SECRETARY: //Secretary
-							Session.getSession().setTipo(State.SECRETARY);
-							main.menu.setLoginText();
+						case SECRETARY:
+							Session.getSession().setSession(UserState.SECRETARY,userEmail);
+							main.setLoginText();
 							main.openSecretaryDashboard();
 							break;
-						case ADMIN: // Admin
-							Session.getSession().setTipo(State.ADMIN);
-							main.menu.setLoginText();
+						case ADMIN:
+							Session.getSession().setSession(UserState.ADMIN,userEmail);
+							main.setLoginText();
 							main.openAdminDashboard();
 							break;
 						default:

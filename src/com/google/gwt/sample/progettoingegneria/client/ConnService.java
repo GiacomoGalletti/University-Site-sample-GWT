@@ -1,6 +1,8 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
-import com.google.gwt.sample.progettoingegneria.shared.State;
+import java.util.ArrayList;
+
+import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
@@ -9,9 +11,9 @@ public interface ConnService extends RemoteService {
 	
 	String testCall(String input);
 	
-	State loginRequest(String user, String passw);
+	UserState loginRequest(String user, String passw);
 	
-	public boolean addCourse(String name, String startDate, String endDate);
+	boolean addCourse(String name, String startDate, String endDate, String email);
 	
 	String signUp(String username, String password, String email, String name, String surname, int type);
 
@@ -20,4 +22,51 @@ public interface ConnService extends RemoteService {
 	String viewProfessorInfo();
 	
 	String clearDB();
+	
+	String viewCoursesInfo();
+	
+	String viewCoursesInfo(String email);
+	
+	String getCourseData(String name);
+	
+	boolean setCourseData(String name, String startData,String endData, String newName);
+	
+	boolean deleteCourse(String name);
+	
+	String addExam(String name, String date, String hour, String prof, String classroom, String duration, ArrayList<String> students);
+	
+	ArrayList<String> retrieveExams(String profName);
+	
+	ArrayList<String> retrieveStudents(String selectedExam);
+	
+	boolean setUserInfo(String email, String newEmail, String name , String surname, String userName, String password);
+	
+	String getAvailableExams(String courseName);
+	
+	boolean registerStudentInExam(String selectedExam, String selectedStudent);
+	
+	String retrieveInfoStudentList();
+	
+	boolean sendGrades(String selectedExam, String[] studentsList, String[] gradesList);
+	
+	String getGrades(String email);
+
+	String retrieveAviableCourses(String email);
+	
+	boolean courseRegistration(String emailStudente, String courseName);
+
+	String retrieveSubscribedCourses(String studentEmail);
+
+	String getStudentsCourseList(String courseName);
+	
+	ArrayList<String> retrieveExamsForSecretary();
+	
+	String retrieveGradesAndStudents(String selectedExam);
+	
+	String getExamData(String name);
+	
+	boolean setExamData(String courseName, String date , String hour, String classroom, String duration);
+	
+	boolean deleteExam(String courseName);
+
 }

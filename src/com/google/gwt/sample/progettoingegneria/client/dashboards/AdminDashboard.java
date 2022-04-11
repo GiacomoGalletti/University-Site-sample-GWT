@@ -1,6 +1,7 @@
 package com.google.gwt.sample.progettoingegneria.client.dashboards;
 
-import com.google.gwt.sample.progettoingegneria.client.AdminMenuComponent;
+import com.google.gwt.sample.progettoingegneria.client.Session;
+import com.google.gwt.sample.progettoingegneria.client.menucomponents.AdminMenuComponent;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
@@ -12,7 +13,7 @@ public class AdminDashboard extends Composite{
 	public AdminDashboard() {
 		initWidget(this.vPanel);
 		
-		Label titleLabel = new Label("Università di Giacky");
+		Label titleLabel = new Label("Dashboard Admin: "+Session.getSession().getEmail());
 		Image logoImage = new Image();
 		AdminMenuComponent adminMenu = new AdminMenuComponent();
 		

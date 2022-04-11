@@ -1,6 +1,7 @@
 package com.google.gwt.sample.progettoingegneria.client.dashboards;
 
-import com.google.gwt.sample.progettoingegneria.client.StudentMenuComponent;
+import com.google.gwt.sample.progettoingegneria.client.Session;
+import com.google.gwt.sample.progettoingegneria.client.menucomponents.StudentMenuComponent;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
@@ -12,7 +13,7 @@ public class StudentDashboard extends Composite {
 	public StudentDashboard() {
 		initWidget(this.vPanel);
 		
-		Label titleLabel = new Label("Dashboard Studente");
+		Label titleLabel = new Label("Dashboard Studente: "+Session.getSession().getEmail());
 		Image logoImage = new Image();
 		StudentMenuComponent studentMenu = new StudentMenuComponent();
 		
