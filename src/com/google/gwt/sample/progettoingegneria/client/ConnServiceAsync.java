@@ -64,4 +64,10 @@ public interface ConnServiceAsync {
 	void retrieveExamsForSecretary(AsyncCallback<ArrayList<String>> callback);
 	
 	void retrieveGradesAndStudents(String selectedExam, AsyncCallback<String> callback);
+	
+	void getExamData(String name, AsyncCallback<String> callback);
+	
+	void setExamData(String courseName, String date , String hour, String classroom, String duration, AsyncCallback<Boolean> callback);
+	
+	void deleteExam(String courseName, AsyncCallback<Boolean> callback);
 }

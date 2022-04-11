@@ -28,20 +28,28 @@ public class ProfessorCoursesListComponent extends Composite{
 	private HorizontalPanel curseManhPanel = new HorizontalPanel();
 	private ProfessorCourseCreationComponent createCourse = new ProfessorCourseCreationComponent();
 	private ProfessorCoursesModifierComponent courseManComp;
+	private ProfessorExamModifierComponent examManComp;
+	private ProfessorExamCreationComponent createExam = new ProfessorExamCreationComponent();
 	
 	private ListBox coursesListBox = new ListBox();
-	private Button createCourseBtn = new Button("Crea nuovo corso");
+	private Button createBtn = new Button();
 	
 	public ProfessorCoursesListComponent() {
 		initWidget(this.baseHPanel);
 
 		updateCoursesListView();
-		coursesListBox.addDoubleClickHandler(new ListBoxHandler());
-		createCourseBtn.addClickHandler(new CreateCourseBtnHandler());
-		
+		if (Session.getSession().getNavIndex() == 0) { // apre la gestione corso
+			coursesListBox.addDoubleClickHandler(new ListBoxHandlerFromCourseManagement());
+			createBtn.addClickHandler(new CreateCourseBtnHandlerFromCourseManagement());
+			createBtn.setText("Crea nuovo corso");
+		} else if (Session.getSession().getNavIndex() == 1){ // apre la gestione esame
+			coursesListBox.addDoubleClickHandler(new ListBoxHandlerFromExamManagement());
+			createBtn.addClickHandler(new CreateCourseBtnHandlerFromExamManagement());
+			createBtn.setText("Crea nuovo esame");
+		}
 		hPanel.add(coursesListBox);
 		buttonvPanel.add(hPanel);
-		buttonvPanel.add(createCourseBtn);
+		buttonvPanel.add(createBtn);
 		baseHPanel.add(buttonvPanel);
 	}
 	
@@ -66,7 +74,7 @@ public class ProfessorCoursesListComponent extends Composite{
 	}
 	
 	
-	private class ListBoxHandler implements  DoubleClickHandler {
+	private class ListBoxHandlerFromCourseManagement implements  DoubleClickHandler {
 
 	     @Override
 	      public void onDoubleClick(DoubleClickEvent event) {
@@ -77,13 +85,30 @@ public class ProfessorCoursesListComponent extends Composite{
 	      }
 	}
 	
+	private class ListBoxHandlerFromExamManagement implements  DoubleClickHandler {
+
+	     @Override
+	      public void onDoubleClick(DoubleClickEvent event) {
+	    	 curseManhPanel.clear();
+	    	 examManComp = new ProfessorExamModifierComponent(coursesListBox.getSelectedItemText());
+	    	 curseManhPanel.add(examManComp);
+	    	 hPanel.add(curseManhPanel);
+	      }
+	}
 	
-	private class CreateCourseBtnHandler implements ClickHandler {
+	
+	private class CreateCourseBtnHandlerFromCourseManagement implements ClickHandler {
 		@Override
 		public void onClick(ClickEvent event) {
 			baseHPanel.add(createCourse);
 		}
 	}
 	
+	private class CreateCourseBtnHandlerFromExamManagement implements ClickHandler {
+		@Override
+		public void onClick(ClickEvent event) {
+			baseHPanel.add(createExam);
+		}
+	}
 	
 }

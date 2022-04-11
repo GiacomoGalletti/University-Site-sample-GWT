@@ -62,5 +62,11 @@ public interface ConnService extends RemoteService {
 	ArrayList<String> retrieveExamsForSecretary();
 	
 	String retrieveGradesAndStudents(String selectedExam);
+	
+	String getExamData(String name);
+	
+	boolean setExamData(String courseName, String date , String hour, String classroom, String duration);
+	
+	boolean deleteExam(String courseName);
 
 }

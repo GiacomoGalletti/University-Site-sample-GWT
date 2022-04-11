@@ -5,31 +5,35 @@ import com.google.gwt.event.dom.client.DoubleClickEvent;
 import com.google.gwt.event.dom.client.DoubleClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.ProfessorCoursesListComponent;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.ProfessorExamCreationComponent;
+import com.google.gwt.sample.progettoingegneria.client.Session;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.PersonalInfoComponent;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.SendGradesComponent;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class ProfessorMenuComponent extends Composite {
-	private HorizontalPanel hPanel = new HorizontalPanel();
+	private HorizontalPanel basePanel = new HorizontalPanel();
+	private VerticalPanel vPanel = new VerticalPanel();
 	private ListBox actionsListBox = new ListBox();
 	
-	private ProfessorCoursesListComponent courseQuaryList = new ProfessorCoursesListComponent();
-	private PersonalInfoComponent infoView = new PersonalInfoComponent();
-	private SendGradesComponent sendGradesView = new SendGradesComponent();
-	private ProfessorExamCreationComponent professorExamCreationView = new ProfessorExamCreationComponent();
+	private ProfessorCoursesListComponent courseQuaryList;
+	private PersonalInfoComponent infoView;
+	private SendGradesComponent sendGradesView;
 	
 	public ProfessorMenuComponent() {
-		initWidget(this.hPanel);
+		initWidget(this.basePanel);
 		actionsListBox.addDoubleClickHandler(new ListBoxHandler());
 		actionsListBox.addItem("gestisci corsi");
-		actionsListBox.addItem("crea esame");
+		actionsListBox.addItem("gestisci esame");
 		actionsListBox.addItem("invia voti esami");
 		actionsListBox.addItem("visualizza informazioni personali");
 		actionsListBox.setVisibleItemCount(4);
-		this.hPanel.add(actionsListBox);
+		this.basePanel.add(actionsListBox);
+		this.basePanel.add(vPanel);
+
 	}
 	
 	private class ListBoxHandler implements DoubleClickHandler{
@@ -39,16 +43,22 @@ public class ProfessorMenuComponent extends Composite {
 			int userchoice = actionsListBox.getSelectedIndex();
 			switch(userchoice) {
 			case 0:
-				hPanel.add(courseQuaryList);				
+				Session.getSession().setNavIndex(0);
+				courseQuaryList = new ProfessorCoursesListComponent();
+				vPanel.add(courseQuaryList);				
 				break;
 			case 1:
-				hPanel.add(professorExamCreationView);
+				Session.getSession().setNavIndex(1);
+				courseQuaryList = new ProfessorCoursesListComponent();
+				vPanel.add(courseQuaryList);
 				break;
 			case 2:
-				hPanel.add(sendGradesView);
+				sendGradesView = new SendGradesComponent();
+				vPanel.add(sendGradesView);
 				break;
 			case 3:
-				hPanel.add(infoView);
+				infoView = new PersonalInfoComponent();
+				vPanel.add(infoView);
 				break;
 			}
 		}
@@ -56,9 +66,6 @@ public class ProfessorMenuComponent extends Composite {
 	}
 	
 	private void cleanhPanel() {
-		hPanel.remove(courseQuaryList);	
-		hPanel.remove(sendGradesView);
-		hPanel.remove(infoView);
-		hPanel.remove(professorExamCreationView);
+		vPanel.clear();
 	}
 }

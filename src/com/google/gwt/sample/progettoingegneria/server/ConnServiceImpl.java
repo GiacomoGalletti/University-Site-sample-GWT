@@ -154,6 +154,21 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	public String retrieveGradesAndStudents(String selectedExam) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String getExamData(String name) {
+		return ExamsDB.getExamData(name);
+	}
+
+	@Override
+	public boolean setExamData(String courseName, String date, String hour, String classroom, String duration) {
+		return ExamsDB.setExamData(courseName, date, hour, classroom, duration);
+	}
+
+	@Override
+	public boolean deleteExam(String courseName) {
+		return ExamsDB.deleteExam(courseName);
 	} 
 
 }

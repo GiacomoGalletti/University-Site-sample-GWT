@@ -4,7 +4,6 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
 import com.google.gwt.sample.progettoingegneria.client.Session;
-import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -29,14 +28,14 @@ public class StudentCoursesSignUpComponent extends Composite {
 	private String[] courses;
 
 	///	timer
-	final int REFRESH_INTERVAL = 5000;
+	private final int REFRESH_INTERVAL = 5000;
 	Timer refreshTimer = new Timer() {
         @Override
         public void run() {
         	init();
         }
     };	
-	///
+    
 	public StudentCoursesSignUpComponent() {
 		initWidget(vPanel);
 		init();

@@ -6,7 +6,7 @@ public class Session {
 
 	private String email;
 	private UserState tipo;
-	
+	private int navIndex = 0;
 	private static Session currentSession = null;
 	
 	private Session(UserState tipo,String email) {
@@ -32,6 +32,14 @@ public class Session {
 	public void setSession(UserState tipo, String email) {
 		setTipo(tipo);
 		setEmail(email);
+	}
+
+	public int getNavIndex() {
+		return navIndex;
+	}
+
+	public void setNavIndex(int navIndex) {
+		this.navIndex = navIndex;
 	}
 
 }

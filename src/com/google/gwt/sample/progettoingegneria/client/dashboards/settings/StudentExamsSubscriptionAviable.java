@@ -6,6 +6,7 @@ import com.google.gwt.event.dom.client.DoubleClickEvent;
 import com.google.gwt.event.dom.client.DoubleClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
 import com.google.gwt.sample.progettoingegneria.client.Session;
+import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
@@ -21,18 +22,18 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 
 public class StudentExamsSubscriptionAviable extends Composite {
-	VerticalPanel vPanel = new VerticalPanel();
-	ListBox examsLb = new ListBox();
-	ListBox coursesLb = new ListBox();
-
+	private VerticalPanel vPanel = new VerticalPanel();
+	private Label examsLb = new Label();
+	private ListBox coursesLb = new ListBox();
 	Button confirmButton = new Button("iscriviti");
 
 	public StudentExamsSubscriptionAviable() {
-		initWidget(this.vPanel);
 		getAvailableCourses();
 		this.vPanel.add(new Label("CORSI A CUI SEI ISCRITTO:"));
 		this.vPanel.add(coursesLb);
-		coursesLb.addDoubleClickHandler(new coursesLbHandler());
+		this.confirmButton.addClickHandler(new ConfirmButtonHandler());
+		this.coursesLb.addDoubleClickHandler(new coursesLbHandler());
+		initWidget(this.vPanel);
 	}
 
 	private void getAvailableCourses() {
@@ -64,31 +65,34 @@ public class StudentExamsSubscriptionAviable extends Composite {
 
 					@Override
 					public void onSuccess(String result) {
-						String[] exams = result.split("\n");
-
-						for (int i = 0; i < exams.length; i++) {
-							examsLb.addItem(exams[i]);
+						
+						if(!result.equals("")) {
+							examsLb.setText("Esame disponibile:" + "\n" + result);
+							vPanel.add(examsLb);
+							vPanel.add(confirmButton);
+						} else {
+							vPanel.remove(confirmButton);
+							vPanel.add(examsLb);
+							examsLb.setText("Nessun esame in programma");
 						}
+						
 					}
 				});
-		examsLb.setVisibleItemCount(examsLb.getItemCount());
 	}
 
 	private class coursesLbHandler implements DoubleClickHandler {
 		@Override
 		public void onDoubleClick(DoubleClickEvent event) {
 			getAvailableExams();
-			vPanel.add(examsLb);
-			confirmButton.addClickHandler(new ConfirmButtonHandler());
-			vPanel.add(confirmButton);
 		}
 	}
 
 	private class ConfirmButtonHandler implements ClickHandler {
+
 		@Override
 		public void onClick(ClickEvent event) {
-
-			ConnServiceSingleton.getConnService().registerStudentInExam(examsLb.getSelectedItemText(),
+			examsLb.setText("Iscrizione avvenuta con successo!");
+			ConnServiceSingleton.getConnService().registerStudentInExam(examsLb.getText().split("\n")[1],
 					Session.getSession().getEmail(), new AsyncCallback<Boolean>() {
 
 						@Override
