@@ -9,6 +9,8 @@ import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
 import com.google.gwt.sample.progettoingegneria.shared.Exam;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.WindowScrollListener;
 
 public class ExamsDB {
 	
@@ -24,7 +26,7 @@ public class ExamsDB {
 		examsMap.put(e.getCourseName(),e);
 		db.commit();
 		db.close();
-		return "exam added ";
+		return "esame aggiunto ";
 	}
 	
 	public static ArrayList<String> retrieveExams(String profName) {
@@ -40,32 +42,12 @@ public class ExamsDB {
 		}
 		db.commit();
 		db.close();
-		System.out.println(result.get(0));
-		return (ArrayList<String>)result;
-	}
-	
-	public static ArrayList<String> retrieveStudents(String selectedExam) {
-		DB db = getExamsDB();
-		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
-		
-		List<String> result = new ArrayList<String>();
-		Set<String> keysU = examsMap.keySet(); 
-		
-		for (String key : keysU) {
-			Exam current = examsMap.get(key);
-			if(current.getCourseName().equals(selectedExam)) {
-				for (String student : current.getStudentsEmail()) {
-					result.add(student);
-				}
-			}
-		}
-		db.commit();
-		db.close();
 		return (ArrayList<String>)result;
 	}
 
 	// metodo che restituisce gli esami di un corso in input
-	public static String getAvailableExams(String courseName) {
+	// senza quelli a cui lo studente in input è già iscritto
+	public static String getAvailableExams(String studentEmail, String courseName) {
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
 		Set<String> keysExams = examsMap.keySet();
@@ -74,6 +56,9 @@ public class ExamsDB {
 			Exam current = examsMap.get(key);
 			if (current.getCourseName().equals(courseName)) {
 				result = current.getCourseName();
+				if(current.getStudentsEmail().contains(studentEmail)) {
+					result = result + " sei già iscritto/a a questo esame";
+				}
 				break;
 			}
 		}
@@ -82,7 +67,9 @@ public class ExamsDB {
 		return result;
 	}
 
+	//aggiunge la mail dello studente alla lista dentro l'esame
 	public static boolean registerStudentInExam(String selectedExam, String selectedStudent) {
+		boolean result = false;
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");		
 		Set<String> keysU = examsMap.keySet(); 
@@ -92,12 +79,16 @@ public class ExamsDB {
 				current.addStudentEmail(selectedStudent);
 				examsMap.replace(key, current);
 			}
+			if(current.getStudentsEmail().contains(selectedStudent)) {
+				result = true;
+			}
 		}
 		db.commit();
 		db.close();
-		return true;
+		return result;
 	}
-
+	
+	//pulisce il db
 	public static String clearDB() {
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
@@ -106,7 +97,8 @@ public class ExamsDB {
 		db.close();
 		return "ExamsDB";
 	}
-
+	
+	// lista completa degli esami - per segreteria
 	public static ArrayList<String> retrieveExamsForSecretary() {
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
@@ -133,7 +125,7 @@ public class ExamsDB {
 			Exam current = examsMap.get(key);
 			if(current.getCourseName().equals(courseName)) {
 				result = examsMap.get(key).getCourseName() + "@" + examsMap.get(key).getDate() + "@" + examsMap.get(key).getHour() + "@"
-						+ examsMap.get(key).getClassroom() + examsMap.get(key).getDuration();
+						+ examsMap.get(key).getClassroom() + "@" + examsMap.get(key).getDuration();
 				db.commit();
 				db.close();
 				return result;
@@ -141,12 +133,11 @@ public class ExamsDB {
 		}
 		db.commit();
 		db.close();
-		return "NaN" + "@" + "NaN" + "@" + "NaN" + "@";
+		return "NO_EXAM_CREATED";
 	}
 	
 	// modifica i dati di un esame
-	public static boolean setExamData(String courseName, String date , String hour, String classroom, String duration)
-	{	
+	public static boolean setExamData(String courseName, String date , String hour, String classroom, String duration){	
 		DB db = getExamsDB();
 		Exam exam = getExam(courseName);
 		exam.setDate(date);
@@ -166,7 +157,8 @@ public class ExamsDB {
 		
 		for (Entry<String, Exam> entry : examsMap.entrySet()) {
 			Exam current = entry.getValue();
-			if(current.getCourseName().equalsIgnoreCase(courseName)) {
+			String currentExam = entry.getKey();
+			if(currentExam.equalsIgnoreCase(courseName)) {
 				db.commit();
 				db.close();
 				return current;
@@ -203,5 +195,31 @@ public class ExamsDB {
 		db.close();
 		return false;
 	}
+	
+	// dato in input il nome dell'esame restitusce la lista di studenti iscritti
+	public static String getStudentsExamList(String examName) {	
+		DB db = getExamsDB();
+		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
+		
+		Set<String> keysE = examsMap.keySet();
+		String result = "";
+		
+		for (String key : keysE) {
+			Exam current = examsMap.get(key);
+			if (current.getCourseName().equalsIgnoreCase(examName)) {
+				ArrayList<String> studentsEmails = current.getStudentsEmail();
+				if(studentsEmails.isEmpty()) {
+					result = "la lista degli studenti per l'esame "+current.getCourseName()+" e' vuota";//va qui
+				}
+				for(String s : studentsEmails) {
+					result += s + "\n";
+				}
+			}
+		}
+		
+
+		return result;
+	}
+	
 	
 }

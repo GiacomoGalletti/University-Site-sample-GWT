@@ -7,7 +7,7 @@ import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.Profe
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.ProfessorExamCreationComponent;
 import com.google.gwt.sample.progettoingegneria.client.Session;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.PersonalInfoComponent;
-import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.SendGradesComponent;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.ProfessorSendGradesComponent;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -21,7 +21,7 @@ public class ProfessorMenuComponent extends Composite {
 	
 	private ProfessorCoursesListComponent courseQuaryList;
 	private PersonalInfoComponent infoView;
-	private SendGradesComponent sendGradesView;
+	private ProfessorSendGradesComponent sendGradesView;
 	
 	public ProfessorMenuComponent() {
 		initWidget(this.basePanel);
@@ -53,7 +53,7 @@ public class ProfessorMenuComponent extends Composite {
 				vPanel.add(courseQuaryList);
 				break;
 			case 2:
-				sendGradesView = new SendGradesComponent();
+				sendGradesView = new ProfessorSendGradesComponent();
 				vPanel.add(sendGradesView);
 				break;
 			case 3:

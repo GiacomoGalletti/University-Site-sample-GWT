@@ -15,8 +15,7 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
- * componente che permette ad un Professor di vedere la
- * lista dei SUOI corsi (e non di altri)
+ * GUI DA RIFARE PER MATRIOSKA DI PANELs
  * 
  */
 
@@ -79,6 +78,7 @@ public class ProfessorCoursesListComponent extends Composite{
 	     @Override
 	      public void onDoubleClick(DoubleClickEvent event) {
 	    	 curseManhPanel.clear();
+	    	 baseHPanel.remove(createCourse);
 	    	 courseManComp = new ProfessorCoursesModifierComponent(coursesListBox.getSelectedItemText());
 	    	 curseManhPanel.add(courseManComp);
 	    	 hPanel.add(curseManhPanel);
@@ -90,6 +90,7 @@ public class ProfessorCoursesListComponent extends Composite{
 	     @Override
 	      public void onDoubleClick(DoubleClickEvent event) {
 	    	 curseManhPanel.clear();
+	    	 baseHPanel.remove(createExam);
 	    	 examManComp = new ProfessorExamModifierComponent(coursesListBox.getSelectedItemText());
 	    	 curseManhPanel.add(examManComp);
 	    	 hPanel.add(curseManhPanel);
@@ -100,6 +101,7 @@ public class ProfessorCoursesListComponent extends Composite{
 	private class CreateCourseBtnHandlerFromCourseManagement implements ClickHandler {
 		@Override
 		public void onClick(ClickEvent event) {
+			hPanel.remove(curseManhPanel);
 			baseHPanel.add(createCourse);
 		}
 	}
@@ -107,6 +109,7 @@ public class ProfessorCoursesListComponent extends Composite{
 	private class CreateCourseBtnHandlerFromExamManagement implements ClickHandler {
 		@Override
 		public void onClick(ClickEvent event) {
+			hPanel.remove(curseManhPanel);
 			baseHPanel.add(createExam);
 		}
 	}

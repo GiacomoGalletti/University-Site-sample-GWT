@@ -53,30 +53,35 @@ public class ProfessorExamModifierComponent  extends Composite{
 
 			@Override
 			public void onSuccess(String result) {
-				currentExam = result.split("@"); 
-				
-				courseNameTb.setText(currentExam[0]);
-				dateTb.setText(currentExam[1]);
-				hourTb.setText(currentExam[2]);
-				classroomTb.setText(currentExam[3]);
-				durationTb.setText(currentExam[4]);
-				hPanelBtn.add(confirmBtn);
-				hPanelBtn.add(deleteBtn);
-				vPanel.add(new Label("MODIFICA ESAME"));
-				vPanel.add(new Label("Nome Corso:"));
-				vPanel.add(courseNameTb);
-				vPanel.add(new Label("Data:"));
-				vPanel.add(dateTb);
-				vPanel.add(new Label("Ora inizio:"));
-				vPanel.add(hourTb);
-				vPanel.add(new Label("Aula:"));
-				vPanel.add(classroomTb);
-				vPanel.add(new Label("Durata:"));
-				vPanel.add(durationTb);
-				vPanel.add(hPanelBtn);
-				initSubscribedStudents();
-				subscribedStudentsTa.setWidth("221px");
-				vPanel.add(subscribedStudentsTa);
+				if(result.equals("NO_EXAM_CREATED")) {
+					courseNameTb.setText("Nessun esame creato per questo corso");
+					vPanel.add(courseNameTb);
+				}else {
+					currentExam = result.split("@"); 
+					
+					courseNameTb.setText(currentExam[0]);
+					dateTb.setText(currentExam[1]);
+					hourTb.setText(currentExam[2]);
+					classroomTb.setText(currentExam[3]);
+					durationTb.setText(currentExam[4]);
+					hPanelBtn.add(confirmBtn);
+					hPanelBtn.add(deleteBtn);
+					vPanel.add(new Label("MODIFICA ESAME"));
+					vPanel.add(new Label("Nome Corso:"));
+					vPanel.add(courseNameTb);
+					vPanel.add(new Label("Data:"));
+					vPanel.add(dateTb);
+					vPanel.add(new Label("Ora inizio:"));
+					vPanel.add(hourTb);
+					vPanel.add(new Label("Aula:"));
+					vPanel.add(classroomTb);
+					vPanel.add(new Label("Durata:"));
+					vPanel.add(durationTb);
+					vPanel.add(hPanelBtn);
+					initSubscribedStudents();
+					subscribedStudentsTa.setWidth("221px");
+					vPanel.add(subscribedStudentsTa);
+				}
 			}
 		});
 		
@@ -84,7 +89,7 @@ public class ProfessorExamModifierComponent  extends Composite{
 		deleteBtn.addClickHandler(new deleteBtnHandler());
 	}
 	private void initSubscribedStudents() {
-		ConnServiceSingleton.getConnService().getStudentsCourseList(currentExam[0],new AsyncCallback<String>() {
+		ConnServiceSingleton.getConnService().getStudentsExamList(currentExam[0],new AsyncCallback<String>() {
 
 			@Override
 			public void onFailure(Throwable caught) {

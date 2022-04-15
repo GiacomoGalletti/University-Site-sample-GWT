@@ -42,7 +42,6 @@ public class AdminMenuComponent extends Composite{
 				break;
 			case 2: 
 				baseVPanel.add(professorsListComp);
-
 				break;
 			}
 		}
