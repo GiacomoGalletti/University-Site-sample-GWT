@@ -72,5 +72,7 @@ public interface ConnService extends RemoteService {
 	boolean setExamData(String courseName, String date , String hour, String classroom, String duration);
 	
 	boolean deleteExam(String courseName);
+	
+	boolean publishGrades(String examName);
 
 }

@@ -74,4 +74,6 @@ public interface ConnServiceAsync {
 	void setExamData(String courseName, String date , String hour, String classroom, String duration, AsyncCallback<Boolean> callback);
 	
 	void deleteExam(String courseName, AsyncCallback<Boolean> callback);
+	
+	void publishGrades(String examName, AsyncCallback<Boolean> callback);
 }

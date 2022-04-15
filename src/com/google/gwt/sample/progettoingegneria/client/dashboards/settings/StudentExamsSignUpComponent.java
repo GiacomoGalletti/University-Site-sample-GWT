@@ -68,10 +68,14 @@ public class StudentExamsSignUpComponent extends Composite {
 					@Override
 					public void onSuccess(String result) {
 						
-						if(!result.equals("")) {
+						if(!result.equals("") && !result.equals("signed")) {
 							examsLb.setText("Esame disponibile:" + "\n" + result);
 							vPanel.add(examsLb);
 							vPanel.add(confirmButton);
+						} else if (result.equals("signed")){
+							vPanel.remove(confirmButton);
+							vPanel.add(examsLb);
+							examsLb.setText("sei già registrato");
 						} else {
 							vPanel.remove(confirmButton);
 							vPanel.add(examsLb);
@@ -93,7 +97,7 @@ public class StudentExamsSignUpComponent extends Composite {
 
 		@Override
 		public void onClick(ClickEvent event) {
-			examsLb.setText("Iscrizione avvenuta con successo!");
+			//Window.alert("NOME ESAME: " + examsLb.getText().split("\n")[1] + "\n lunghezza array: " + examsLb.getText().split("\n").length);
 			ConnServiceSingleton.getConnService().registerStudentInExam(examsLb.getText().split("\n")[1],
 					Session.getSession().getEmail(), new AsyncCallback<Boolean>() {
 
@@ -106,7 +110,7 @@ public class StudentExamsSignUpComponent extends Composite {
 						@Override
 						public void onSuccess(Boolean result) {
 							if (result) {
-								Window.alert("iscritto");
+								examsLb.setText("Iscrizione avvenuta con successo!");
 							}
 
 						}

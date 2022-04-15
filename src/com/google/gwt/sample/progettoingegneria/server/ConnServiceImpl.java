@@ -156,12 +156,6 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 
 	@Override
-	public String retrieveGradesAndStudents(String selectedExam) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public String getExamData(String name) {
 		return ExamsDB.getExamData(name);
 	}
@@ -182,5 +176,13 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 		return null;
 	}
 
+	@Override
+	public String retrieveGradesAndStudents(String selectedExam) {
+		return GradesDB.retrieveGradesAndStudents(selectedExam);
+	}
 
+	@Override
+	public boolean publishGrades(String examName) {
+		return GradesDB.publishGrades(examName);
+	}
 }

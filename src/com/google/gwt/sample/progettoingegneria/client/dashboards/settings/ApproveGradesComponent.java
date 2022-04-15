@@ -2,11 +2,15 @@ package com.google.gwt.sample.progettoingegneria.client.dashboards.settings;
 
 import java.util.ArrayList;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.DoubleClickEvent;
 import com.google.gwt.event.dom.client.DoubleClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.ButtonBase;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
@@ -17,15 +21,15 @@ public class ApproveGradesComponent extends Composite {
 	VerticalPanel vPanel = new VerticalPanel();
 	ListBox examList = new ListBox();
 	TextArea txta = new TextArea();
+	ButtonBase pubBtn = new Button("PUBBLICA");
 	
 	public ApproveGradesComponent() {
 		initWidget(this.vPanel);
 		
-		this.vPanel.add(new Label("elenco esami con voti"));
+		this.vPanel.add(new Label("ELENCO ESAMI:"));
 		this.vPanel.add(examList);
-		this.vPanel.add(new Label("Studenti e voti:\n"));
-		this.vPanel.add(txta);
-		
+
+		this.pubBtn.addClickHandler(new pubBtnHandler());
 		examList.addDoubleClickHandler(new examListDoubleClickHandler());
 		
 		retrieveExamsForSecretary();
@@ -34,6 +38,8 @@ public class ApproveGradesComponent extends Composite {
 	public class examListDoubleClickHandler implements DoubleClickHandler {
 		@Override
 		public void onDoubleClick(DoubleClickEvent event) {
+			vPanel.add(new Label("STUDENTI E VOTI:\n"));
+			vPanel.add(txta);
 			String selectedExam = examList.getSelectedItemText();
 			ConnServiceSingleton
 			.getConnService()
@@ -46,13 +52,15 @@ public class ApproveGradesComponent extends Composite {
 
 				@Override
 				public void onSuccess(String result) {
-					/*riempi la textarea con 
-					 * STUDENTE|VOTO
-					 * STUDENTE|VOTO
-					 * sarebbe carina una lista di checkbox
-					 * per approvare i voti
-					 */
+					if (result.isEmpty()) {
+						txta.setText("Nessun Voto da approvare");
+						vPanel.remove(pubBtn);
+					} else {
+						txta.setText(result);
+						vPanel.add(pubBtn);
+					}
 					
+						
 				}
 				
 			});
@@ -83,5 +91,26 @@ public class ApproveGradesComponent extends Composite {
 		});
 	}
 	
+	public class pubBtnHandler implements ClickHandler {
+
+		@Override
+		public void onClick(ClickEvent event) {
+			ConnServiceSingleton.getConnService().publishGrades(examList.getSelectedItemText(), new AsyncCallback<Boolean>() {
+
+				@Override
+				public void onFailure(Throwable caught) {
+					Window.alert("Pubblicazione voti fallita");
+				}
+
+				@Override
+				public void onSuccess(Boolean result) {
+					Window.alert("Voti Pubblicati");
+				}
+				
+			});
+			
+		}
+		
+	}
 	
 }

@@ -48,46 +48,35 @@ public class ExamsDB {
 	// metodo che restituisce gli esami di un corso in input
 	// senza quelli a cui lo studente in input è già iscritto
 	public static String getAvailableExams(String studentEmail, String courseName) {
-		DB db = getExamsDB();
-		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
-		Set<String> keysExams = examsMap.keySet();
 		String result = "";
-		for (String key : keysExams) {
-			Exam current = examsMap.get(key);
-			if (current.getCourseName().equals(courseName)) {
+		Exam current = getExam(courseName);
+		if (current != null) {
+			boolean alreadySigned = current.getStudentsEmail().contains(studentEmail);
+			if (!alreadySigned) {
 				result = current.getCourseName();
-				if(current.getStudentsEmail().contains(studentEmail)) {
-					result = result + " sei già iscritto/a a questo esame";
-				}
-				break;
+			} else {
+				result = "signed";
 			}
 		}
-		db.commit();
-		db.close();
 		return result;
 	}
 
-	//aggiunge la mail dello studente alla lista dentro l'esame
+	// aggiunge la mail dello studente alla lista dentro l'esame
 	public static boolean registerStudentInExam(String selectedExam, String selectedStudent) {
 		boolean result = false;
-		DB db = getExamsDB();
-		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");		
-		Set<String> keysU = examsMap.keySet(); 
-		for (String key : keysU) {
-			Exam current = examsMap.get(key);
-			if(current.getCourseName().equals(selectedExam) && !current.getStudentsEmail().contains(selectedStudent)) {
-				current.addStudentEmail(selectedStudent);
-				examsMap.replace(key, current);
-			}
-			if(current.getStudentsEmail().contains(selectedStudent)) {
-				result = true;
-			}
+		
+		Exam current = getExam(selectedExam);
+		if (current.getCourseName().equals(selectedExam) && !current.getStudentsEmail().contains(selectedStudent)) {
+			current.addStudentEmail(selectedStudent);
+			replaceExam(current.getCourseName(), current);
 		}
-		db.commit();
-		db.close();
+		if (current.getStudentsEmail().contains(selectedStudent)) {
+			result = true;
+		}
+
 		return result;
 	}
-	
+
 	//pulisce il db
 	public static String clearDB() {
 		DB db = getExamsDB();
@@ -209,17 +198,14 @@ public class ExamsDB {
 			if (current.getCourseName().equalsIgnoreCase(examName)) {
 				ArrayList<String> studentsEmails = current.getStudentsEmail();
 				if(studentsEmails.isEmpty()) {
-					result = "la lista degli studenti per l'esame "+current.getCourseName()+" e' vuota";//va qui
+					result = "la lista degli studenti per l'esame "+current.getCourseName()+" è vuota";//va qui
 				}
 				for(String s : studentsEmails) {
 					result += s + "\n";
 				}
 			}
 		}
-		
-
 		return result;
 	}
-	
 	
 }

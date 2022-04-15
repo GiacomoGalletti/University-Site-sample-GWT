@@ -105,8 +105,6 @@ public class ProfessorExamModifierComponent  extends Composite{
 	}
 	
 	private class confirmBtnHandler implements  ClickHandler {
-
-		
 		@Override
 		public void onClick(ClickEvent event) {
 			

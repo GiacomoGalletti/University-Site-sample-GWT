@@ -6,6 +6,8 @@ import java.util.Set;
 import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
+
+import com.google.gwt.sample.progettoingegneria.shared.Exam;
 import com.google.gwt.sample.progettoingegneria.shared.Grade;
 import com.google.gwt.sample.progettoingegneria.shared.GradeState;
 
@@ -55,6 +57,49 @@ public class GradesDB {
 		db.commit();
 		db.close();
 		return "GradesDB";
+	}
+
+	public static String retrieveGradesAndStudents(String selectedExam) {
+		DB db = getGradesDB();
+		BTreeMap<String, Grade> gradesMap = db.getTreeMap("gradesMap");
+		
+		String result = "";
+		Set<String> keysU = gradesMap.keySet(); 
+		
+		for (String key : keysU) {
+			Grade current = gradesMap.get(key);
+			if(current.getExamName().equals(selectedExam) && current.getState() == GradeState.SENT) {
+				result += current.getEmailStudent() + ": " + current.getValue() + "\n";
+			}
+		}
+		db.commit();
+		db.close();
+		return result;
+	}
+	
+	public static boolean publishGrades(String examName) {
+		DB db = getGradesDB();
+		BTreeMap<String, Grade> gradesMap = db.getTreeMap("gradesMap");
+		
+		Set<String> keysG = gradesMap.keySet(); 
+		
+		for (String key : keysG) {
+			Grade current = gradesMap.get(key);
+			if (current.getExamName().equalsIgnoreCase(examName) && current.getState() == GradeState.SENT) {
+				current.setState(GradeState.PUBLISHED);
+				replaceGrade(current.getExamName() + "," + current.getEmailStudent(), current);
+			}
+		}
+		return true;
+	}
+	
+	// sostituisce un vecchio voto con uno aggiornato
+	private static void replaceGrade(String oldItemKey, Grade newItem) {
+		DB db = getGradesDB();
+		BTreeMap<String, Grade> gradesMap = db.getTreeMap("gradesMap");
+		gradesMap.replace(oldItemKey, newItem);
+		db.commit();
+		db.close();
 	}
 	
 }
