@@ -27,9 +27,9 @@ public interface ConnServiceAsync {
 
 	void clearDB(AsyncCallback<String> callback);
 	
-	void viewCoursesInfo(AsyncCallback<String> callback);
+	void viewSudentCoursesInfo(String studentEmail, AsyncCallback<String> callback);
 	
-	void viewCoursesInfo(String email,AsyncCallback<String> callback);
+	void viewProfessorCoursesInfo(String email,AsyncCallback<String> callback);
 	
 	void getCourseData(String name,AsyncCallback<String> callback);
 

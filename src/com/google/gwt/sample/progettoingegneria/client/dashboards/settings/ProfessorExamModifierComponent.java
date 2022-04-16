@@ -80,6 +80,7 @@ public class ProfessorExamModifierComponent  extends Composite{
 					vPanel.add(hPanelBtn);
 					initSubscribedStudents();
 					subscribedStudentsTa.setWidth("221px");
+					subscribedStudentsTa.setHeight("221px");
 					vPanel.add(subscribedStudentsTa);
 				}
 			}

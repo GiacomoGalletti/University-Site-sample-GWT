@@ -25,9 +25,9 @@ public interface ConnService extends RemoteService {
 	
 	String clearDB();
 	
-	String viewCoursesInfo();
+	String viewSudentCoursesInfo(String studentEmail);
 	
-	String viewCoursesInfo(String email);
+	String viewProfessorCoursesInfo(String email);
 	
 	String getCourseData(String name);
 	

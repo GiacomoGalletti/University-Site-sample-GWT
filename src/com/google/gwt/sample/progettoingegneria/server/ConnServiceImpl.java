@@ -66,8 +66,13 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	@Override
-	public String viewCoursesInfo(String email) {
-		return CoursesDB.getCoursesList(email);
+	public String viewProfessorCoursesInfo(String professorEmail) {
+		return CoursesDB.viewProfessorCoursesInfo(professorEmail);
+	}
+	
+	@Override
+	public String viewSudentCoursesInfo(String studentEmail) {
+		return CoursesDB.viewSudentCoursesInfo(studentEmail);
 	}
 
 	@Override
@@ -83,11 +88,6 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	@Override
 	public boolean deleteCourse(String name) {
 		return CoursesDB.deleteCourse(name);
-	}
-
-	@Override
-	public String viewCoursesInfo() {
-		return CoursesDB.viewCoursesInfo();
 	}
 	
 	@Override

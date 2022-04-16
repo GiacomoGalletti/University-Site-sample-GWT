@@ -16,6 +16,7 @@ import com.google.gwt.user.client.ui.ListBox;
  */
 public class AdminProfessorsListComponent extends Composite {
 	private HorizontalPanel baseHPanel = new HorizontalPanel();
+	private HorizontalPanel modifPanel = new HorizontalPanel();
 	private ListBox usersListBox = new ListBox();
 	private AdminUserModifierComponent modifierComp;
 	private int nListItem = 0;
@@ -26,6 +27,7 @@ public class AdminProfessorsListComponent extends Composite {
 		updateProfessorsListView();
 		this.usersListBox.addDoubleClickHandler(new UsersListBoxHandler());
 		this.baseHPanel.add(usersListBox);
+		this.baseHPanel.add(modifPanel);
 	}
 
 	public void updateProfessorsListView() {
@@ -55,8 +57,9 @@ public class AdminProfessorsListComponent extends Composite {
 
 		@Override
 		public void onDoubleClick(DoubleClickEvent event) {
+			modifPanel.clear();
 			modifierComp = new AdminUserModifierComponent(usersListBox.getSelectedItemText().split(" "));
-			baseHPanel.add(modifierComp);
+			modifPanel.add(modifierComp);
 		}
 	}
 

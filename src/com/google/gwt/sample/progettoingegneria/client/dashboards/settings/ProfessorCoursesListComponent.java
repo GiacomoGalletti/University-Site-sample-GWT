@@ -11,6 +11,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -38,14 +39,17 @@ public class ProfessorCoursesListComponent extends Composite{
 
 		updateCoursesListView();
 		if (Session.getSession().getNavIndex() == 0) { // apre la gestione corso
+			buttonvPanel.add(new Label("GESTIONE CORSO"));
 			coursesListBox.addDoubleClickHandler(new ListBoxHandlerFromCourseManagement());
 			createBtn.addClickHandler(new CreateCourseBtnHandlerFromCourseManagement());
 			createBtn.setText("Crea nuovo corso");
 		} else if (Session.getSession().getNavIndex() == 1){ // apre la gestione esame
+			buttonvPanel.add(new Label("GESTIONE ESAME"));
 			coursesListBox.addDoubleClickHandler(new ListBoxHandlerFromExamManagement());
 			createBtn.addClickHandler(new CreateCourseBtnHandlerFromExamManagement());
 			createBtn.setText("Crea nuovo esame");
 		}
+		buttonvPanel.add(new Label("I TUOI CORSI:"));
 		hPanel.add(coursesListBox);
 		buttonvPanel.add(hPanel);
 		buttonvPanel.add(createBtn);
@@ -53,7 +57,7 @@ public class ProfessorCoursesListComponent extends Composite{
 	}
 	
 	public void updateCoursesListView() {
-		ConnServiceSingleton.getConnService().viewCoursesInfo(Session.getSession().getEmail(), new AsyncCallback<String>() {
+		ConnServiceSingleton.getConnService().viewProfessorCoursesInfo(Session.getSession().getEmail(), new AsyncCallback<String>() {
 
 			@Override
 			public void onFailure(Throwable caught) {

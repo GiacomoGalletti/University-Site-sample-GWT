@@ -46,7 +46,7 @@ public class CoursesDB {
 		return "NaN" + "@" + "NaN" + "@" + "NaN" + "@";
 	}
 	// metodo che ritorna i corsi creati dal professore
-	public static String getCoursesList(String email) {
+	public static String viewProfessorCoursesInfo(String email) {
 		DB db = getCoursersDB();
 		BTreeMap<String, Course> coursesMap = db.getTreeMap("coursesMap");
 
@@ -151,25 +151,47 @@ public class CoursesDB {
 		db.close();
 	}
 	
-	public static String viewCoursesInfo() {
+	public static String viewSudentCoursesInfo(String studentEmail) {
         DB db = getCoursersDB();
         BTreeMap<String, Course> coursesMap = db.getTreeMap("coursesMap");
 
         String result = "";
+        String subscribed = "";
+        String other = "";
         Set<String> keysU = coursesMap.keySet(); 
 
         for (String key : keysU) {
-            if(coursesMap.get(key).getClass() == Course.class)
+        	Course current =  coursesMap.get(key);
+            if(current.getStudentsEmail().contains(studentEmail)) {
 
-                result = result +
-                "Nome corso: " + coursesMap.get(key).getName() + 
-                "     Data Inizio:  " + coursesMap.get(key).getStartingDate() + 
-                "     Data Fine:  " + coursesMap.get(key).getEndDate() + 
-                "     EmailProfessore: " +  coursesMap.get(key).getEmailProfessor() 
-                + "\n";
+            	subscribed +=
+                "     Nome corso: " + current.getName() + "\n" +
+                "     Data Inizio:  " + current.getStartingDate() + "\n" +
+                "     Data Fine:  " + current.getEndDate() + "\n" +
+                "     EmailProfessore: " +  current.getEmailProfessor() + "\n" +
+                "     Descrizione: "
+                + "\n\n"; 
+            } else {
+            	other +=
+                        "     Nome corso: " + current.getName() + "\n" +
+                        "     Data Inizio:  " + current.getStartingDate() + "\n" +
+                        "     Data Fine:  " + current.getEndDate() + "\n" +
+                        "     EmailProfessore: " +  current.getEmailProfessor() + "\n" +
+                        "	  Descrizione: "
+                        + "\n\n"; 
+            }
         }
         db.commit();
         db.close();
+        
+        if (subscribed.isEmpty() && other.isEmpty()) {
+        	result = "Nessun corso disponibile";
+        } else if (subscribed.isEmpty()){
+        	result = "CORSI DISPONIBILI: \n\n" + other;
+        } else {
+        	result = "CORSI A CUI SEI ISCRITTO: \n\n" + subscribed + "\n\nCORSI DISPONIBILI: \n\n" + other;
+        }
+        
         return result;
     }
 	// ritorna gli corsi a cui uno studente può iscriversi (ovvero non si è già iscritto)

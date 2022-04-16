@@ -75,7 +75,7 @@ public class StudentExamsSignUpComponent extends Composite {
 						} else if (result.equals("signed")){
 							vPanel.remove(confirmButton);
 							vPanel.add(examsLb);
-							examsLb.setText("sei già registrato");
+							examsLb.setText("sei già registrato all'esame " + coursesLb.getSelectedItemText());
 						} else {
 							vPanel.remove(confirmButton);
 							vPanel.add(examsLb);
