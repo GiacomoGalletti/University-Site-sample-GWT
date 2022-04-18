@@ -11,8 +11,10 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
@@ -21,18 +23,46 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 
 public class StudentExamsSignUpComponent extends Composite {
+	private HorizontalPanel hPanel = new HorizontalPanel();
 	private VerticalPanel vPanel = new VerticalPanel();
 	private Label examsLb = new Label();
 	private ListBox coursesLb = new ListBox();
+	private TextArea listSubscribedExamsTa = new TextArea();
 	Button confirmButton = new Button("iscriviti");
 
 	public StudentExamsSignUpComponent() {
 		getAvailableCourses();
-		this.vPanel.add(new Label("CORSI A CUI SEI ISCRITTO:"));
-		this.vPanel.add(coursesLb);
+		getSubscribedExams(); 
+		listSubscribedExamsTa.setWidth("220px");
+		listSubscribedExamsTa.setHeight("500px");
+		this.hPanel.add(new Label("CORSI A CUI SEI ISCRITTO:"));
+		this.hPanel.add(coursesLb);
 		this.confirmButton.addClickHandler(new ConfirmButtonHandler());
 		this.coursesLb.addDoubleClickHandler(new coursesLbHandler());
+		this.vPanel.add(hPanel);
+		this.vPanel.add(new Label("ESAMI A CUI SEI ISCRITTO:"));
+		this.vPanel.add(listSubscribedExamsTa);
+	
 		initWidget(this.vPanel);
+	}
+
+	private void getSubscribedExams() {
+		ConnServiceSingleton.getConnService().retrieveSubscribedExams(Session.getSession().getEmail(),
+				new AsyncCallback<String>() {
+
+					@Override
+					public void onFailure(Throwable caught) {
+						Window.alert("ERROR: " + "impossibile ottenere lsita esami a cui sei iscritto");
+						
+					}
+
+					@Override
+					public void onSuccess(String result) {
+						listSubscribedExamsTa.setText(result);
+						
+					}
+		});
+		
 	}
 
 	private void getAvailableCourses() {
@@ -40,7 +70,7 @@ public class StudentExamsSignUpComponent extends Composite {
 				new AsyncCallback<String>() {
 					@Override
 					public void onFailure(Throwable caught) {
-						Window.alert("ERROR: " + "impossibile ottenere corsi");
+						Window.alert("ERROR: " + "impossibile ottenere corsi a cui sei iscritto");
 					}
 
 					@Override
@@ -70,15 +100,15 @@ public class StudentExamsSignUpComponent extends Composite {
 						
 						if(!result.equals("") && !result.equals("signed")) {
 							examsLb.setText("Esame disponibile:" + "\n" + result);
-							vPanel.add(examsLb);
-							vPanel.add(confirmButton);
+							hPanel.add(examsLb);
+							hPanel.add(confirmButton);
 						} else if (result.equals("signed")){
-							vPanel.remove(confirmButton);
-							vPanel.add(examsLb);
+							hPanel.remove(confirmButton);
+							hPanel.add(examsLb);
 							examsLb.setText("sei già registrato all'esame " + coursesLb.getSelectedItemText());
 						} else {
-							vPanel.remove(confirmButton);
-							vPanel.add(examsLb);
+							hPanel.remove(confirmButton);
+							hPanel.add(examsLb);
 							examsLb.setText("Nessun esame in programma");
 						}
 						
@@ -109,10 +139,9 @@ public class StudentExamsSignUpComponent extends Composite {
 
 						@Override
 						public void onSuccess(Boolean result) {
-							if (result) {
-								examsLb.setText("Iscrizione avvenuta con successo!");
-							}
-
+							
+							examsLb.setText("Iscrizione avvenuta con successo!");
+							hPanel.remove(confirmButton);
 						}
 
 					});

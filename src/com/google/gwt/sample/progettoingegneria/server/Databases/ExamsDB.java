@@ -207,5 +207,37 @@ public class ExamsDB {
 		}
 		return result;
 	}
+
+	public static String retrieveSubscribedExams(String studentEmail) {
+		DB db = getExamsDB();
+		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
+		
+		Set<String> keysE = examsMap.keySet();
+		String result = "";
+		
+		for (String key : keysE) {
+			Exam current = examsMap.get(key);
+			if (current.getStudentsEmail().contains(studentEmail)) 
+			{
+				result = result + 
+						"	Nome: " +current.getCourseName() +"\n" +
+						"	Aula: "+current.getClassroom() + "\n" + 
+						"	Data: "+current.getDate() + "\n" + 
+						"	Ore: "+current.getHour() + "\n" + 
+						"	Durata: "+current.getDuration()
+						+"\n\n";
+			}									
+		}
+		
+		if(result.equals(""))
+		{
+			result="Non sei iscritto a nessun esame!";
+		}
+		
+		db.commit();
+		db.close();
+		return result;
+	}
+
 	
 }

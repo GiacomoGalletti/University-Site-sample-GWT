@@ -185,4 +185,10 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	public boolean publishGrades(String examName) {
 		return GradesDB.publishGrades(examName);
 	}
+
+	@Override
+	public String retrieveSubscribedExams(String studentEmail) {
+		return ExamsDB.retrieveSubscribedExams(studentEmail);
+		
+	}
 }

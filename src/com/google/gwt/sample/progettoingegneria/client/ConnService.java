@@ -45,7 +45,7 @@ public interface ConnService extends RemoteService {
 	
 	String getAvailableExams(String studentEmail, String courseName);
 	
-	boolean registerStudentInExam(String selectedExam, String selectedStudent);
+	boolean registerStudentInExam(String selectedExam, String selectedStudent);;
 	
 	String retrieveInfoStudentList();
 	
@@ -74,5 +74,7 @@ public interface ConnService extends RemoteService {
 	boolean deleteExam(String courseName);
 	
 	boolean publishGrades(String examName);
+	
+	String retrieveSubscribedExams(String studentEmail);
 
 }

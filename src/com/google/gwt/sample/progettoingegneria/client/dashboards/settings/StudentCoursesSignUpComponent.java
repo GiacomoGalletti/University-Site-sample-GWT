@@ -73,6 +73,8 @@ public class StudentCoursesSignUpComponent extends Composite {
 				@Override
 				public void onSuccess(Boolean result) {
 					Window.alert("Iscrizione avvenuta con successo.");
+					coursesList.clear();
+					retrieveAviableCourses();
 				}
 				
 			});

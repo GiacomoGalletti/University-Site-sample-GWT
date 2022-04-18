@@ -76,4 +76,6 @@ public interface ConnServiceAsync {
 	void deleteExam(String courseName, AsyncCallback<Boolean> callback);
 	
 	void publishGrades(String examName, AsyncCallback<Boolean> callback);
+
+	void retrieveSubscribedExams(String email, AsyncCallback<String> asyncCallback);
 }
