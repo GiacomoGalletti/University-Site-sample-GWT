@@ -2,7 +2,6 @@ package com.google.gwt.sample.progettoingegneria.shared;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Exam implements Serializable{
 	private static final long serialVersionUID = 1L; 

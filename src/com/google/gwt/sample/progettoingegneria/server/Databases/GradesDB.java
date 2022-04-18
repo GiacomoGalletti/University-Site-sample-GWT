@@ -2,12 +2,9 @@ package com.google.gwt.sample.progettoingegneria.server.Databases;
 
 import java.io.File;
 import java.util.Set;
-
 import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
-
-import com.google.gwt.sample.progettoingegneria.shared.Exam;
 import com.google.gwt.sample.progettoingegneria.shared.Grade;
 import com.google.gwt.sample.progettoingegneria.shared.GradeState;
 

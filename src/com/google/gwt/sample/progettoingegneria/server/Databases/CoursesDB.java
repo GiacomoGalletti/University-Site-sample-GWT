@@ -12,17 +12,21 @@ import com.google.gwt.sample.progettoingegneria.shared.Course;
 public class CoursesDB {
 	
 	private static DB getCoursersDB() {
-		DB db = DBMaker.newFileDB(new File("dbCourse1")).make();		
+		DB db = DBMaker.newFileDB(new File("dbCourse")).make();		
 		return db;	
 	}
 	
-	public static boolean addCourse(Course c){
-		DB db = getCoursersDB();
-		BTreeMap<String, Course> coursesMap = db.getTreeMap("coursesMap");		
-		coursesMap.put(c.getId(),c);
-		db.commit();
-		db.close();
-		return true;
+	public static boolean addCourse(Course c){	
+		if (!checkCourseExist(c.getName())) {
+			DB db = getCoursersDB();
+			BTreeMap<String, Course> coursesMap = db.getTreeMap("coursesMap");	
+			coursesMap.put(c.getId(),c);
+			db.commit();
+			db.close();
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	public static String getCourseData(String name) {
@@ -35,7 +39,12 @@ public class CoursesDB {
 		for (String key : keysU) {
 			Course current = coursesMap.get(key);
 			if(current.getName().equals(name)) {
-				result = coursesMap.get(key).getName() + "@" + coursesMap.get(key).getStartingDate() + "@" + coursesMap.get(key).getEndDate() + "@";
+				result = 
+						current.getName() + "\n" + 
+						current.getStartingDate() + "\n" + 
+						current.getEndDate() + "\n" +
+						current.getCoDoc() + "\n" +
+						current.getDesc() + "\n";
 				db.commit();
 				db.close();
 				return result;
@@ -43,7 +52,7 @@ public class CoursesDB {
 		}
 		db.commit();
 		db.close();
-		return "NaN" + "@" + "NaN" + "@" + "NaN" + "@";
+		return result;
 	}
 	// metodo che ritorna i corsi creati dal professore
 	public static String viewProfessorCoursesInfo(String email) {
@@ -56,7 +65,7 @@ public class CoursesDB {
 		for (String key : keysU) {
 			Course current = coursesMap.get(key);
 			if(current.getEmailProfessor().equals(email)) {
-				result += current.getName() + "@";
+				result += current.getName() + "\n";
 			}
 		}
 		db.commit();
@@ -123,9 +132,7 @@ public class CoursesDB {
 		return false;
 	}
 	
-	
-	
-	public static boolean setCourseData(String name , String startData , String endData, String newName)
+	public static boolean setCourseData(String name , String startData , String endData, String newName, String coDoc, String desc)
 	{
 		
 		DB db = getCoursersDB();
@@ -136,12 +143,13 @@ public class CoursesDB {
 		}
 		course.setStartDate(startData);
 		course.setEndDate(endData);
+		course.setCoDoc(coDoc);
+		course.setDesc(desc);
 		replaceCourse(course.getId(),course);	
 		db.commit();
 		db.close();
 		return true;
 	}
-	
 	
 	private static void replaceCourse(String oldItemKey, Course newItem) {
 		DB db = getCoursersDB();
@@ -169,7 +177,8 @@ public class CoursesDB {
                 "     Data Inizio:  " + current.getStartingDate() + "\n" +
                 "     Data Fine:  " + current.getEndDate() + "\n" +
                 "     EmailProfessore: " +  current.getEmailProfessor() + "\n" +
-                "     Descrizione: "
+                "     Co-docente: " + current.getCoDoc() + "\n" +
+                "     Descrizione: \n     " + current.getDesc()
                 + "\n\n"; 
             } else {
             	other +=
@@ -177,7 +186,8 @@ public class CoursesDB {
                         "     Data Inizio:  " + current.getStartingDate() + "\n" +
                         "     Data Fine:  " + current.getEndDate() + "\n" +
                         "     EmailProfessore: " +  current.getEmailProfessor() + "\n" +
-                        "	  Descrizione: "
+                        "     Co-docente: " + current.getCoDoc() + "\n" +
+                        "	  Descrizione: \n     " + current.getDesc()
                         + "\n\n"; 
             }
         }
@@ -205,7 +215,7 @@ public class CoursesDB {
         for (String key : keysU) {
             Course current = coursesMap.get(key);
         	if(!current.getStudentsEmail().contains(email)) {
-                result += current.getName() + "@";
+                result += current.getName() + "\n";
             }
         }
         db.commit();

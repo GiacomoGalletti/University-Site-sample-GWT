@@ -29,8 +29,9 @@ public class ProfessorCoursesModifierComponent extends Composite {
 	private TextBox courseNameTb = new TextBox();
 	private TextBox startDateTb = new TextBox();
 	private TextBox endDateTb = new TextBox();
-	
-	private TextArea subscribedStudentsTa =  new TextArea();;
+	private TextBox coDocTb = new TextBox();
+	private TextArea descTa =  new TextArea();
+	private TextArea subscribedStudentsTa =  new TextArea();
 	
 	private HorizontalPanel hPanelBtn = new HorizontalPanel();
 	private Button confirmBtn = new Button("Conferma Modifiche");
@@ -51,11 +52,13 @@ public class ProfessorCoursesModifierComponent extends Composite {
 
 			@Override
 			public void onSuccess(String result) {
-				currentCourse = result.split("@"); 
+				currentCourse = result.split("\n"); 
 				
 				courseNameTb.setText(currentCourse[0]);
 				startDateTb.setText(currentCourse[1]);
 				endDateTb.setText(currentCourse[2]);
+				coDocTb.setText(currentCourse[3]);
+				descTa.setText(currentCourse[4]);
 				
 				hPanelBtn.add(confirmBtn);
 				hPanelBtn.add(deleteBtn);
@@ -66,6 +69,10 @@ public class ProfessorCoursesModifierComponent extends Composite {
 				vPanel.add(startDateTb);
 				vPanel.add(new Label("Data fine:"));
 				vPanel.add(endDateTb);
+				vPanel.add(new Label("Co-Docente (se presente):"));
+				vPanel.add(coDocTb);
+				vPanel.add(new Label("Descrizione:"));
+				vPanel.add(descTa);
 				vPanel.add(hPanelBtn);
 				initSubscribedStudents();
 				subscribedStudentsTa.setWidth("221px");
@@ -109,6 +116,8 @@ public class ProfessorCoursesModifierComponent extends Composite {
 							startDateTb.getText(),
 							endDateTb.getText(),
 							courseNameTb.getText(),
+							coDocTb.getText(),
+							descTa.getText(),
 							new AsyncCallback<Boolean>() {
 	
 						@Override
@@ -129,18 +138,24 @@ public class ProfessorCoursesModifierComponent extends Composite {
 					courseNameTb.setText(currentCourse[0]);
 					startDateTb.setText(currentCourse[1]);
 					endDateTb.setText(currentCourse[2]);
+					coDocTb.setText(currentCourse[3]);
+					descTa.setText(currentCourse[4]);
 				}
 			} catch(IllegalArgumentException e) {
 				Window.alert("Formato data non valido\ninserire: giorno/mese/anno");
 				courseNameTb.setText(currentCourse[0]);
 				startDateTb.setText(currentCourse[1]);
 				endDateTb.setText(currentCourse[2]);
+				coDocTb.setText(currentCourse[3]);
+				descTa.setText(currentCourse[4]);
 			}
 		}else {
 			Window.alert("campi vuoti");
 			courseNameTb.setText(currentCourse[0]);
 			startDateTb.setText(currentCourse[1]);
 			endDateTb.setText(currentCourse[2]);
+			coDocTb.setText(currentCourse[3]);
+			descTa.setText(currentCourse[4]);
 		}
 		}
 	}
@@ -161,9 +176,6 @@ public class ProfessorCoursesModifierComponent extends Composite {
 				public void onSuccess(Boolean result) {
 					if (result) {
 						vPanel.clear();
-						/*
-						 * TODO: per aggiornare la vista dei corsi devo richiamare:  updateCoursesListView() nella classe CourseQueryComponet
-						 */
 						Window.alert("corso eliminato.");
 					} else {
 						Window.alert("corso non presente nel database");

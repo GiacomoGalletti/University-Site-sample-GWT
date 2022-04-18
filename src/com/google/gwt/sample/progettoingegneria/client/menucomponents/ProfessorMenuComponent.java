@@ -3,12 +3,10 @@ package com.google.gwt.sample.progettoingegneria.client.menucomponents;
 
 import com.google.gwt.event.dom.client.DoubleClickEvent;
 import com.google.gwt.event.dom.client.DoubleClickHandler;
-import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.ProfessorCoursesListComponent;
-import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.ProfessorExamCreationComponent;
-import com.google.gwt.sample.progettoingegneria.client.Session;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.ProfessorListCoursesComponent;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.ProfessorListExamsComponent;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.PersonalInfoComponent;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.ProfessorSendGradesComponent;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.ListBox;
@@ -19,7 +17,6 @@ public class ProfessorMenuComponent extends Composite {
 	private VerticalPanel vPanel = new VerticalPanel();
 	private ListBox actionsListBox = new ListBox();
 	
-	private ProfessorCoursesListComponent courseQuaryList;
 	private PersonalInfoComponent infoView;
 	private ProfessorSendGradesComponent sendGradesView;
 	
@@ -43,14 +40,12 @@ public class ProfessorMenuComponent extends Composite {
 			int userchoice = actionsListBox.getSelectedIndex();
 			switch(userchoice) {
 			case 0:
-				Session.getSession().setNavIndex(0);
-				courseQuaryList = new ProfessorCoursesListComponent();
-				vPanel.add(courseQuaryList);				
+				ProfessorListCoursesComponent courseList = new ProfessorListCoursesComponent();
+				vPanel.add(courseList);				
 				break;
 			case 1:
-				Session.getSession().setNavIndex(1);
-				courseQuaryList = new ProfessorCoursesListComponent();
-				vPanel.add(courseQuaryList);
+				ProfessorListExamsComponent examList = new ProfessorListExamsComponent();
+				vPanel.add(examList);
 				break;
 			case 2:
 				sendGradesView = new ProfessorSendGradesComponent();

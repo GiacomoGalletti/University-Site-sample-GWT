@@ -37,13 +37,15 @@ public class ProfessorExamModifierComponent  extends Composite{
 	
 	private HorizontalPanel hPanelBtn = new HorizontalPanel();
 	private Button confirmBtn = new Button("Conferma Modifiche");
+	private Button createBtn = new Button("Crea esame");
 	private Button deleteBtn = new Button("Elimina esame");
 	
 	private String[] currentExam;
-	
+	private String courseName = "";
 	public ProfessorExamModifierComponent(String courseName) {
 		initWidget(this.vPanel);
 	
+		this.courseName = courseName;
 		ConnServiceSingleton.getConnService().getExamData(courseName, new AsyncCallback<String>() {
 
 			@Override
@@ -56,8 +58,10 @@ public class ProfessorExamModifierComponent  extends Composite{
 				if(result.equals("NO_EXAM_CREATED")) {
 					courseNameTb.setText("Nessun esame creato per questo corso");
 					vPanel.add(courseNameTb);
+					createBtn.addClickHandler(new CreateCourseBtnHandlerFromExamManagement());
+					vPanel.add(createBtn);
 				}else {
-					currentExam = result.split("@"); 
+					currentExam = result.split("\n"); 
 					
 					courseNameTb.setText(currentExam[0]);
 					dateTb.setText(currentExam[1]);
@@ -162,6 +166,16 @@ public class ProfessorExamModifierComponent  extends Composite{
 		}
 		}
 	}
+	
+	private class CreateCourseBtnHandlerFromExamManagement implements ClickHandler {
+		@Override
+		public void onClick(ClickEvent event) {
+			ProfessorExamCreationComponent createExam = new ProfessorExamCreationComponent(courseName);
+			vPanel.clear();
+			vPanel.add(createExam);
+		}
+	}
+	
 	
 	private class deleteBtnHandler implements ClickHandler {
 

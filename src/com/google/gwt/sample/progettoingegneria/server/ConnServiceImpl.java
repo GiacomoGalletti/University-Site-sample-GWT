@@ -27,9 +27,8 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 
 	@Override
-	public boolean addCourse(String name, String startDate, String endDate, String email) {
-		Course c = new Course(name,startDate,endDate, FirstUtility.generateID(), email);
-		return CoursesDB.addCourse(c);	
+	public boolean addCourse(String name, String startDate, String endDate, String email, String coDoc ,String desc) {
+		return CoursesDB.addCourse(new Course(name,startDate,endDate, FirstUtility.generateID(), email, coDoc, desc));	
 	}
 
 	@Override
@@ -81,8 +80,8 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 
 	@Override
-	public boolean setCourseData(String name, String startData ,String endData, String newName) {
-		return CoursesDB.setCourseData(name, startData,endData,newName);
+	public boolean setCourseData(String name, String startData ,String endData, String newName, String coDoc, String desc) {
+		return CoursesDB.setCourseData(name, startData,endData,newName, coDoc, desc);
 	}
 
 	@Override

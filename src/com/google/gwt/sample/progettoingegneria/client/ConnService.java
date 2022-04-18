@@ -13,7 +13,7 @@ public interface ConnService extends RemoteService {
 	
 	UserState loginRequest(String user, String passw);
 	
-	boolean addCourse(String name, String startDate, String endDate, String email);
+	boolean addCourse(String name, String startDate, String endDate, String email, String coDoc, String desc);
 	
 	String signUp(String username, String password, String email, String name, String surname, int type);
 
@@ -31,7 +31,7 @@ public interface ConnService extends RemoteService {
 	
 	String getCourseData(String name);
 	
-	boolean setCourseData(String name, String startData,String endData, String newName);
+	boolean setCourseData(String name, String startData,String endData, String newName, String coDoc, String desc);
 	
 	boolean deleteCourse(String name);
 	

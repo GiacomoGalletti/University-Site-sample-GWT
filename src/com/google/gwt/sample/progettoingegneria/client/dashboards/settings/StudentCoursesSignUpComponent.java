@@ -4,7 +4,6 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
 import com.google.gwt.sample.progettoingegneria.client.Session;
-import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
@@ -47,7 +46,7 @@ public class StudentCoursesSignUpComponent extends Composite {
 
 			@Override
 			public void onSuccess(String result) {
-				courses = result.split("@");
+				courses = result.split("\n");
 				
 				for(int i=0; i < courses.length; i++) {
 					coursesList.addItem(courses[i]);

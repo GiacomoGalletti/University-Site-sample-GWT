@@ -16,19 +16,20 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 public class ProfessorExamCreationComponent extends Composite {
 	
 	private VerticalPanel widgetBasePanel = new VerticalPanel();
-	private TextBox courseNameBox = new TextBox();
+	private Label courseNameLb = new Label();
 	private TextBox examDateBox = new TextBox();
 	private TextBox examHourBox = new TextBox();
 	private TextBox classroomBox = new TextBox();
 	private TextBox durationBox = new TextBox();
 	private Button confirmCreationButton = new Button("Crea esame");
 	
-	public ProfessorExamCreationComponent() {
+	public ProfessorExamCreationComponent(String courseName) {
 		
 		initWidget(this.widgetBasePanel);
 		widgetBasePanel.add(new Label("CREA NUOVO ESAME"));
 		widgetBasePanel.add(new Label("Nome corso: "));
-		widgetBasePanel.add(courseNameBox);
+		courseNameLb.setText(courseName);
+		widgetBasePanel.add(courseNameLb);
 		widgetBasePanel.add(new Label("Data esame: [GG/MM/YYYY]"));
 		widgetBasePanel.add(examDateBox);
 		widgetBasePanel.add(new Label("Orario esame: [HH:MM]"));
@@ -53,7 +54,7 @@ public class ProfessorExamCreationComponent extends Composite {
 			ConnServiceSingleton.
 			getConnService().
 			addExam(
-					courseNameBox.getText(),
+					courseNameLb.getText(),
 					examDateBox.getText(),
 					examHourBox.getText(),
 					Session.getSession().getEmail(),

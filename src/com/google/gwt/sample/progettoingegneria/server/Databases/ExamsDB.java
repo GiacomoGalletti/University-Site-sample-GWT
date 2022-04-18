@@ -9,8 +9,6 @@ import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
 import com.google.gwt.sample.progettoingegneria.shared.Exam;
-import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.WindowScrollListener;
 
 public class ExamsDB {
 	
@@ -113,8 +111,8 @@ public class ExamsDB {
 		for (String key : keysE) {
 			Exam current = examsMap.get(key);
 			if(current.getCourseName().equals(courseName)) {
-				result = examsMap.get(key).getCourseName() + "@" + examsMap.get(key).getDate() + "@" + examsMap.get(key).getHour() + "@"
-						+ examsMap.get(key).getClassroom() + "@" + examsMap.get(key).getDuration();
+				result = examsMap.get(key).getCourseName() + "\n" + examsMap.get(key).getDate() + "\n" + examsMap.get(key).getHour() + "\n"
+						+ examsMap.get(key).getClassroom() + "\n" + examsMap.get(key).getDuration();
 				db.commit();
 				db.close();
 				return result;

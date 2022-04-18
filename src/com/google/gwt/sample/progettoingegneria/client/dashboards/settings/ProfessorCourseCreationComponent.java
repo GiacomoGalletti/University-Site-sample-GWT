@@ -11,6 +11,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -26,20 +27,25 @@ public class ProfessorCourseCreationComponent extends Composite{
 	private TextBox courseNameBox = new TextBox();
 	private TextBox startDateBox = new TextBox();
 	private TextBox endDateBox = new TextBox();
+	private TextBox coDocBox = new TextBox();
+	private TextArea descBox = new TextArea();
 	private Button confirmCreationButton = new Button("Crea corso");
 	
 	
 	public ProfessorCourseCreationComponent() {
 		
 		initWidget(this.widgetBasePanel);
-		widgetBasePanel.add(new Label("CREA NUOVO CORSO"));
+		widgetBasePanel.add(new Label(" CREA NUOVO CORSO"));
 		widgetBasePanel.add(new Label("Nome corso: "));
 		widgetBasePanel.add(courseNameBox);
 		widgetBasePanel.add(new Label("Data inizio: "));
 		widgetBasePanel.add(startDateBox);
 		widgetBasePanel.add(new Label("Data fine: "));
 		widgetBasePanel.add(endDateBox);
-		
+		widgetBasePanel.add(new Label("Co-Docente (se presente): "));
+		widgetBasePanel.add(coDocBox);
+		widgetBasePanel.add(new Label("Descrizione: "));
+		widgetBasePanel.add(descBox);
 		widgetBasePanel.add(confirmCreationButton);
 		confirmCreationButton.addClickHandler(new confirmCreationButtonHandler());
 	}
@@ -63,6 +69,8 @@ public class ProfessorCourseCreationComponent extends Composite{
 							startDateBox.getText(),
 							endDateBox.getText(),
 							Session.getSession().getEmail(),
+							coDocBox.getText(),
+							descBox.getText(),
 							new AsyncCallback<Boolean>() {
 					
 									@Override
@@ -72,10 +80,18 @@ public class ProfessorCourseCreationComponent extends Composite{
 									
 									@Override
 									public void onSuccess(Boolean result) {
-										Window.alert("Corso inserito.");
-										startDateBox.setText("");
-										endDateBox.setText("");
-										courseNameBox.setText("");
+										if (result) {
+											Window.alert("Corso inserito.");
+											startDateBox.setText("");
+											endDateBox.setText("");
+											courseNameBox.setText("");
+											coDocBox.setText("");
+											descBox.setText("");
+										} else {
+											Window.alert("Corso già creato.");
+											courseNameBox.setText("");
+
+										}
 									}
 							});
 				} else {
