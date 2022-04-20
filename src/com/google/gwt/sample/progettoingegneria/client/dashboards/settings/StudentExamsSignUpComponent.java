@@ -27,6 +27,7 @@ public class StudentExamsSignUpComponent extends Composite {
 	private Label examsLb = new Label();
 	private ListBox coursesLb = new ListBox();
 	private TextArea listSubscribedExamsTa = new TextArea();
+	String[] examInfo;
 	Button confirmButton = new Button("iscriviti");
 
 	public StudentExamsSignUpComponent() {
@@ -85,6 +86,9 @@ public class StudentExamsSignUpComponent extends Composite {
 	}
 
 	private void getAvailableExams() {
+		
+		
+		
 		ConnServiceSingleton.getConnService().getAvailableExams(
 				Session.getSession().getEmail(),
 				coursesLb.getSelectedItemText(),
@@ -97,10 +101,17 @@ public class StudentExamsSignUpComponent extends Composite {
 					@Override
 					public void onSuccess(String result) {
 						
-						if(!result.equals("") && !result.equals("signed")) {
-							examsLb.setText("Esame disponibile:" + "\n" + result);
+						if(!result.equals("") && !result.equals("signed")) { 	//se non sei ancora registrato mostra Data e ora dell'esame
+							TextArea examInfoTa = new TextArea();
+							examInfo = result.split("\n");
+							examsLb.setText("Esame disponibile:" + "\n" + examInfo[0]);
 							hPanel.add(examsLb);
 							hPanel.add(confirmButton);
+							
+							examInfoTa.setText("Data: " +examInfo[1] +"\n" +
+												"Ora: " + examInfo[2]);
+							hPanel.add(examInfoTa);
+											
 						} else if (result.equals("signed")){
 							hPanel.remove(confirmButton);
 							hPanel.add(examsLb);
@@ -126,8 +137,7 @@ public class StudentExamsSignUpComponent extends Composite {
 
 		@Override
 		public void onClick(ClickEvent event) {
-			//Window.alert("NOME ESAME: " + examsLb.getText().split("\n")[1] + "\n lunghezza array: " + examsLb.getText().split("\n").length);
-			ConnServiceSingleton.getConnService().registerStudentInExam(examsLb.getText().split("\n")[1],
+			ConnServiceSingleton.getConnService().registerStudentInExam(examInfo[0],
 					Session.getSession().getEmail(), new AsyncCallback<Boolean>() {
 
 						@Override

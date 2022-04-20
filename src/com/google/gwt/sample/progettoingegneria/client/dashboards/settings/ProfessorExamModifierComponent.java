@@ -5,6 +5,8 @@ import java.util.Date;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.shared.DateTimeFormat;
+import com.google.gwt.regexp.shared.MatchResult;
+import com.google.gwt.regexp.shared.RegExp;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -108,61 +110,82 @@ public class ProfessorExamModifierComponent  extends Composite{
 			
 		});
 	}
-	
-	private class confirmBtnHandler implements  ClickHandler {
+	private boolean fildVerifier(String exDate,String exHour, String exDuration) {
+		try {
+			final Date date = DateTimeFormat.getFormat("dd/MM/yyyy").parse(exDate);
+			final RegExp pattern = RegExp.compile("^[0-2][0-9]:[0-5][0-9]$");
+			final MatchResult matcher = pattern.exec(exHour);
+			final int duration =Integer.parseInt(exDuration);
+			
+			if (!date.after(new Date())){
+				Window.alert("Data non valida.");
+				return false;
+			}
+			
+			
+			if (duration <= 0) {
+				Window.alert("Durata non valida.");
+				return false;
+			}
+			
+			boolean matchFound = matcher != null;
+			if (!matchFound) {
+				Window.alert("Orario non valido.\ninserisci il formato: HH:mm");
+				return false;
+			}
+			
+			if (Integer.parseInt(exDuration.split(":")[0]) < 9) {
+				Window.alert("Orario non valido.\ninserisci un'orario successivo alle 09:00");
+				return false;
+			}
+			
+			return true;
+		}catch(IllegalArgumentException e) {
+			Window.alert(e.getMessage());
+		}
+		
+		return false;
+	}
+
+	private class confirmBtnHandler implements ClickHandler {
 		@Override
 		public void onClick(ClickEvent event) {
-			
-		if (!courseNameTb.getText().equals("") 
-				&& !dateTb.getText().equals("") 
-				&& !hourTb.getText().equals("") 
-				&& !classroomTb.getText().equals("")
-				&& !durationTb.getText().equals("")) {
-			try {
-				Date date = DateTimeFormat.getFormat("dd/MM/yyyy").parse(dateTb.getText());
-				if (date.after(new Date())) {
-					ConnServiceSingleton.getConnService().setExamData(
-							currentExam[0],
-							dateTb.getText(),
-							hourTb.getText(),
-							classroomTb.getText(),
-							durationTb.getText(),
+
+			if (!courseNameTb.getText().equals("") && !classroomTb.getText().equals("")
+					&& fildVerifier(dateTb.getText(), hourTb.getText(), durationTb.getText())) {
+				try {
+					ConnServiceSingleton.getConnService().setExamData(currentExam[0], dateTb.getText(),
+							hourTb.getText(), classroomTb.getText(), durationTb.getText(),
 							new AsyncCallback<Boolean>() {
-						@Override
-						public void onFailure(Throwable caught) {
-							Window.alert("Errore aggiornamento dati.");
-							
-						}
-	
-						@Override
-						public void onSuccess(Boolean result) {
-							if (result) {
-								Window.alert("Esame aggiornato");
-							}
-						}
-					});	
-				} else {
-					Window.alert("Data inserita non corretta");
+								@Override
+								public void onFailure(Throwable caught) {
+									Window.alert("Errore aggiornamento dati.");
+
+								}
+
+								@Override
+								public void onSuccess(Boolean result) {
+									if (result) {
+										Window.alert("Esame aggiornato");
+									}
+								}
+							});
+
+				} catch (IllegalArgumentException e) {
+					Window.alert("Formato data non valido\ninserire: giorno/mese/anno");
 					courseNameTb.setText(currentExam[0]);
 					dateTb.setText(currentExam[1]);
 					hourTb.setText(currentExam[2]);
-					
+					classroomTb.setText(currentExam[3]);
+					durationTb.setText(currentExam[4]);
 				}
-			} catch(IllegalArgumentException e) {
-				Window.alert("Formato data non valido\ninserire: giorno/mese/anno");
+			} else {
+				Window.alert("campi vuoti");
 				courseNameTb.setText(currentExam[0]);
 				dateTb.setText(currentExam[1]);
 				hourTb.setText(currentExam[2]);
 				classroomTb.setText(currentExam[3]);
 				durationTb.setText(currentExam[4]);
-			}
-		}else {
-			Window.alert("campi vuoti");
-			courseNameTb.setText(currentExam[0]);
-			dateTb.setText(currentExam[1]);
-			hourTb.setText(currentExam[2]);
-			classroomTb.setText(currentExam[3]);
-			durationTb.setText(currentExam[4]);
 		}
 		}
 	}

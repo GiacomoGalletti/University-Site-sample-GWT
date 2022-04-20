@@ -9,6 +9,7 @@ import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
 import com.google.gwt.sample.progettoingegneria.shared.Exam;
+import com.google.gwt.sample.progettoingegneria.shared.ExamState;
 
 public class ExamsDB {
 	
@@ -27,7 +28,7 @@ public class ExamsDB {
 		return "esame aggiunto ";
 	}
 	
-	public static ArrayList<String> retrieveExams(String profName) {
+	public static ArrayList<String> retrieveExams(String profEmail) {
 		DB db = getExamsDB();
 		BTreeMap<String, Exam> examsMap = db.getTreeMap("examsMap");
 		
@@ -36,7 +37,10 @@ public class ExamsDB {
 		
 		for (String key : keysU) {
 			Exam current = examsMap.get(key);
-			result.add(current.getCourseName());
+			if(current.getProfEmail().equals(profEmail) && current.getState()==ExamState.OPEN)
+			{
+				result.add(current.getCourseName());
+			}
 		}
 		db.commit();
 		db.close();
@@ -51,7 +55,7 @@ public class ExamsDB {
 		if (current != null) {
 			boolean alreadySigned = current.getStudentsEmail().contains(studentEmail);
 			if (!alreadySigned) {
-				result = current.getCourseName();
+				result = current.getCourseName() +"\n" +current.getDate()+"\n" + current.getHour() ; 
 			} else {
 				result = "signed";
 			}
@@ -235,6 +239,13 @@ public class ExamsDB {
 		db.commit();
 		db.close();
 		return result;
+	}
+
+	public static boolean changeExamState(String examName) {
+		Exam current = getExam(examName);
+		current.setState(ExamState.CLOSED);
+		replaceExam(examName,current);
+		return true;
 	}
 
 	

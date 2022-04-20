@@ -169,11 +169,6 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 		return ExamsDB.deleteExam(courseName);
 	}
 
-	@Override
-	public ArrayList<String> retrieveStudents(String selectedExam) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public String retrieveGradesAndStudents(String selectedExam) {
@@ -189,5 +184,10 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	public String retrieveSubscribedExams(String studentEmail) {
 		return ExamsDB.retrieveSubscribedExams(studentEmail);
 		
+	}
+
+	@Override
+	public boolean changeExamState(String examName) {
+		return ExamsDB.changeExamState(examName);
 	}
 }

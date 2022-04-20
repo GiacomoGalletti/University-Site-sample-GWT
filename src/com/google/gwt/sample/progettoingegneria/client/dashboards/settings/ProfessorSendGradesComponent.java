@@ -7,6 +7,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.DoubleClickEvent;
 import com.google.gwt.event.dom.client.DoubleClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
+import com.google.gwt.sample.progettoingegneria.client.Session;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
@@ -107,12 +108,11 @@ public class ProfessorSendGradesComponent extends Composite {
 	}
 	
 	public void retrieveExams() {
-		String profnamedemo = "prof";
 		
 		ConnServiceSingleton
 		.getConnService()
 		.retrieveExams(
-				profnamedemo,
+				Session.getSession().getEmail(),
 				new AsyncCallback<ArrayList<String>>() {
 					
 					@Override

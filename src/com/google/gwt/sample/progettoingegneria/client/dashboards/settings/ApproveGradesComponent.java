@@ -22,6 +22,7 @@ public class ApproveGradesComponent extends Composite {
 	ListBox examList = new ListBox();
 	TextArea txta = new TextArea();
 	ButtonBase pubBtn = new Button("PUBBLICA");
+	boolean publishConfirmed;
 	
 	public ApproveGradesComponent() {
 		initWidget(this.vPanel);
@@ -82,33 +83,53 @@ public class ApproveGradesComponent extends Composite {
 				for(String e : result) {
 					examList.addItem(e);
 				}
-				// riempi la examListbox con gli esami
-				//che hanno voti da approvare
-				//IN REALTà per come è implementato adesso
-				//LI RESTITUISCE TUTTI
+			}
+			
+		});
+	}
+	
+	public void changeExamState() {
+		if (publishConfirmed) {
+			ConnServiceSingleton.getConnService().changeExamState(examList.getSelectedItemText(), new AsyncCallback<Boolean>() {
+
+				@Override
+				public void onFailure(Throwable caught) {
+					Window.alert("Cambio stato esame fallito");
+
+				}
+
+				@Override
+				public void onSuccess(Boolean result) {
+					publishConfirmed = false;
+				}
+			});
+		}
+	}
+
+	public void publishGrades() {
+		ConnServiceSingleton.getConnService().publishGrades(examList.getSelectedItemText(), new AsyncCallback<Boolean>() {
+
+			@Override
+			public void onFailure(Throwable caught) {
+				Window.alert("Pubblicazione voti fallita");
+			}
+
+			@Override
+			public void onSuccess(Boolean result) {
+				Window.alert("Voti Pubblicati");
 			}
 			
 		});
 	}
 	
 	public class pubBtnHandler implements ClickHandler {
-
+		
 		@Override
 		public void onClick(ClickEvent event) {
-			ConnServiceSingleton.getConnService().publishGrades(examList.getSelectedItemText(), new AsyncCallback<Boolean>() {
-
-				@Override
-				public void onFailure(Throwable caught) {
-					Window.alert("Pubblicazione voti fallita");
-				}
-
-				@Override
-				public void onSuccess(Boolean result) {
-					Window.alert("Voti Pubblicati");
-				}
-				
-			});
-			
+			publishGrades();
+			publishConfirmed = true;
+			changeExamState();
+					
 		}
 		
 	}

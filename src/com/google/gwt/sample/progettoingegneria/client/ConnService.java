@@ -39,8 +39,6 @@ public interface ConnService extends RemoteService {
 	
 	ArrayList<String> retrieveExams(String profName);
 	
-	ArrayList<String> retrieveStudents(String selectedExam);
-	
 	boolean setUserInfo(String email, String newEmail, String name , String surname, String userName, String password);
 	
 	String getAvailableExams(String studentEmail, String courseName);
@@ -76,5 +74,7 @@ public interface ConnService extends RemoteService {
 	boolean publishGrades(String examName);
 	
 	String retrieveSubscribedExams(String studentEmail);
+	
+	boolean changeExamState(String examName);
 
 }
