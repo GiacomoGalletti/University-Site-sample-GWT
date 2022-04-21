@@ -7,6 +7,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.DoubleClickEvent;
 import com.google.gwt.event.dom.client.DoubleClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
+import com.google.gwt.sample.progettoingegneria.client.Session;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
@@ -29,7 +30,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * 
  */
 
-public class SendGradesComponent extends Composite {
+public class ProfessorSendGradesComponent extends Composite {
 	private VerticalPanel vPanel = new VerticalPanel();
 	private HorizontalPanel subHPanel = new HorizontalPanel();
 	private ListBox examsList = new ListBox();
@@ -39,12 +40,12 @@ public class SendGradesComponent extends Composite {
 	private TextBoxBase studentsArea = new TextArea();
 	private TextBoxBase gradesArea = new TextArea();
 	
-	public SendGradesComponent() {
+	public ProfessorSendGradesComponent() {
 		initWidget(this.vPanel);
 		
+		this.vPanel.add(searchExamsButton);
 		this.vPanel.add(new Label("scegli l'esame"));
 		this.vPanel.add(examsList);
-		this.vPanel.add(searchExamsButton);
 		this.vPanel.add(subHPanel);
 		
 		gradesArea.setHeight("200px");
@@ -82,19 +83,15 @@ public class SendGradesComponent extends Composite {
 		@Override
 		public void onDoubleClick(DoubleClickEvent event) {
 			String selectedExam = examsList.getSelectedItemText();
-			
-			retrieveStudents(selectedExam);
-			
-			//studentsArea.setText(); 
-		}
-		
+			retrieveStudents(selectedExam);		
+		}	
 	}
 	
 	public void retrieveStudents(String selectedExam) {
 		ConnServiceSingleton
 		.getConnService()
-		.retrieveStudents(selectedExam,
-				new AsyncCallback<ArrayList<String>>() {
+		.getStudentsExamList(selectedExam,
+				new AsyncCallback<String>() {
 			
 				@Override
 				public void onFailure(Throwable caught) {
@@ -102,12 +99,8 @@ public class SendGradesComponent extends Composite {
 				}
 			
 				@Override
-				public void onSuccess(ArrayList<String> result) {
-				
-					for(String student : result) {
-						String temp = studentsArea.getText();
-						studentsArea.setText(temp + student + "\n");
-					}
+				public void onSuccess(String result) {
+					studentsArea.setText(result);
 				}
 		});
 		
@@ -115,12 +108,11 @@ public class SendGradesComponent extends Composite {
 	}
 	
 	public void retrieveExams() {
-		String profnamedemo = "prof";
 		
 		ConnServiceSingleton
 		.getConnService()
 		.retrieveExams(
-				profnamedemo,
+				Session.getSession().getEmail(),
 				new AsyncCallback<ArrayList<String>>() {
 					
 					@Override

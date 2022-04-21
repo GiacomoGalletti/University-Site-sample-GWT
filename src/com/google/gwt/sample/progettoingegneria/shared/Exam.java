@@ -2,12 +2,11 @@ package com.google.gwt.sample.progettoingegneria.shared;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Exam implements Serializable{
 	private static final long serialVersionUID = 1L; 
 
-	
+	private ExamState state = ExamState.OPEN;
 	private String courseName;
 	private String date;
 	private String hour;
@@ -95,5 +94,13 @@ public class Exam implements Serializable{
 
 	public void setHour(String hour) {
 		this.hour = hour;
+	}
+
+	public ExamState getState() {
+		return state;
+	}
+
+	public void setState(ExamState state) {
+		this.state = state;
 	}
 }

@@ -1,5 +1,9 @@
 package com.google.gwt.sample.progettoingegneria.client.dashboards.settings;
 
+import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
+import com.google.gwt.sample.progettoingegneria.client.Session;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextArea;
@@ -29,8 +33,23 @@ public class PersonalInfoComponent extends Composite{
 	}
 	
 	public void retrieveUserInfo() {
-		//metodo che prende le info dello user che ha la sessione attiva
-		//e popola txta1
+		ConnServiceSingleton
+		.getConnService()
+		.getInfoUser(Session.getSession().getEmail(),
+				new AsyncCallback<String>() {
+
+					@Override
+					public void onFailure(Throwable caught) {
+						Window.alert("error:" + caught);
+						
+					}
+
+					@Override
+					public void onSuccess(String result) {
+						txta1.setText(result);
+					}
+			
+		});
 	}
 	
 	

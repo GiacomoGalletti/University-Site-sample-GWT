@@ -27,9 +27,8 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 
 	@Override
-	public boolean addCourse(String name, String startDate, String endDate, String email) {
-		Course c = new Course(name,startDate,endDate, FirstUtility.generateID(), email);
-		return CoursesDB.addCourse(c);	
+	public boolean addCourse(String name, String startDate, String endDate, String email, String coDoc ,String desc) {
+		return CoursesDB.addCourse(new Course(name,startDate,endDate, FirstUtility.generateID(), email, coDoc, desc));	
 	}
 
 	@Override
@@ -47,6 +46,11 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 		return UsersDB.viewProfessorInfo();
 	}
 	
+	@Override
+	public String getInfoUser(String userEmail) {
+		return UsersDB.getInfoUser(userEmail);
+	} 
+	
 	public String clearDB() {
 		try {
 			return "Puliti: " + UsersDB.clearDB() + " " + CoursesDB.clearDB()+ " " + ExamsDB.clearDB() + " " + GradesDB.clearDB();
@@ -61,8 +65,13 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	@Override
-	public String viewCoursesInfo(String email) {
-		return CoursesDB.getCoursesList(email);
+	public String viewProfessorCoursesInfo(String professorEmail) {
+		return CoursesDB.viewProfessorCoursesInfo(professorEmail);
+	}
+	
+	@Override
+	public String viewSudentCoursesInfo(String studentEmail) {
+		return CoursesDB.viewSudentCoursesInfo(studentEmail);
 	}
 
 	@Override
@@ -71,18 +80,13 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 
 	@Override
-	public boolean setCourseData(String name, String startData ,String endData, String newName) {
-		return CoursesDB.setCourseData(name, startData,endData,newName);
+	public boolean setCourseData(String name, String startData ,String endData, String newName, String coDoc, String desc) {
+		return CoursesDB.setCourseData(name, startData,endData,newName, coDoc, desc);
 	}
 
 	@Override
 	public boolean deleteCourse(String name) {
 		return CoursesDB.deleteCourse(name);
-	}
-
-	@Override
-	public String viewCoursesInfo() {
-		return CoursesDB.viewCoursesInfo();
 	}
 	
 	@Override
@@ -96,19 +100,14 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	@Override
-	public ArrayList<String> retrieveStudents(String selectedExam) {
-		return ExamsDB.retrieveStudents(selectedExam);
-	}
-
-	@Override
 	public boolean setUserInfo(String email, String newEmail, String name, String surname, String userName,
 			String password) {
 		return UsersDB.setUserInfo(email, newEmail, name, surname, userName, password);
 	}
 	
 	@Override
-	public String getAvailableExams(String courseName) {
-		return ExamsDB.getAvailableExams(courseName);
+	public String getAvailableExams(String studentEmail, String courseName) {
+		return ExamsDB.getAvailableExams(studentEmail, courseName);
 	}
 	
 	public boolean registerStudentInExam(String selectedExam, String selectedStudent) {
@@ -144,16 +143,15 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	public String getStudentsCourseList(String courseName) {
 		return CoursesDB.getStudentsCourseList(courseName);
 	}
+	
+	@Override
+	public String getStudentsExamList(String examName) {
+		return ExamsDB.getStudentsExamList(examName);
+	}
 
 	@Override
 	public ArrayList<String> retrieveExamsForSecretary() {
 		return ExamsDB.retrieveExamsForSecretary();
-	}
-
-	@Override
-	public String retrieveGradesAndStudents(String selectedExam) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -169,6 +167,27 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	@Override
 	public boolean deleteExam(String courseName) {
 		return ExamsDB.deleteExam(courseName);
-	} 
+	}
 
+
+	@Override
+	public String retrieveGradesAndStudents(String selectedExam) {
+		return GradesDB.retrieveGradesAndStudents(selectedExam);
+	}
+
+	@Override
+	public boolean publishGrades(String examName) {
+		return GradesDB.publishGrades(examName);
+	}
+
+	@Override
+	public String retrieveSubscribedExams(String studentEmail) {
+		return ExamsDB.retrieveSubscribedExams(studentEmail);
+		
+	}
+
+	@Override
+	public boolean changeExamState(String examName) {
+		return ExamsDB.changeExamState(examName);
+	}
 }

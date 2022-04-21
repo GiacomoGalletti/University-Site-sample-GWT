@@ -4,7 +4,6 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
 import com.google.gwt.sample.progettoingegneria.client.Session;
-import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
@@ -27,26 +26,17 @@ public class StudentCoursesSignUpComponent extends Composite {
 	private ButtonBase submitBtn = new Button("ISCRIVITI");
 	private String[] courses;
 
-	///	timer
-	private final int REFRESH_INTERVAL = 5000;
-	Timer refreshTimer = new Timer() {
-        @Override
-        public void run() {
-        	init();
-        }
-    };	
     
 	public StudentCoursesSignUpComponent() {
 		initWidget(vPanel);
-		init();
+		retrieveAviableCourses();
 		vPanel.add(new Label("Elenco corsi disponibili"));
 		vPanel.add(coursesList);
 		submitBtn.addClickHandler(new submitBtnHandler());
 		vPanel.add(submitBtn);
-		refreshTimer.scheduleRepeating(REFRESH_INTERVAL);
 	}
 	
-	private void init() {
+	private void retrieveAviableCourses() {
 		ConnServiceSingleton.getConnService().retrieveAviableCourses(Session.getSession().getEmail(), new AsyncCallback<String>() {
 
 			@Override
@@ -56,13 +46,13 @@ public class StudentCoursesSignUpComponent extends Composite {
 
 			@Override
 			public void onSuccess(String result) {
-				courses = result.split("@");
+				courses = result.split("\n");
 				
-				for(int i=0; i < result.length(); i++) {
+				for(int i=0; i < courses.length; i++) {
 					coursesList.addItem(courses[i]);
 				}
 				
-				coursesList.setVisibleItemCount(courses.length);
+				coursesList.setVisibleItemCount(coursesList.getItemCount());
 			}
 			
 		});
@@ -82,6 +72,8 @@ public class StudentCoursesSignUpComponent extends Composite {
 				@Override
 				public void onSuccess(Boolean result) {
 					Window.alert("Iscrizione avvenuta con successo.");
+					coursesList.clear();
+					retrieveAviableCourses();
 				}
 				
 			});

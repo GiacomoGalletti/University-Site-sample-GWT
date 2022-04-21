@@ -11,17 +11,22 @@ public class Course implements Serializable{
 	private String endDate;
 	private String emailProfessor;
 	private String id = "";
+	private String desc = "";
+	private String coDoc = "";
 	private ArrayList<String> studentsEmail;
 	
 	public Course() {}
 	
-	public Course(String name,String startingDate, String endDate, String id, String emailProfessor) 
+	public Course(String name,String startingDate, String endDate, String id, String emailProfessor,String coDoc,String desc) 
 	{
 		this.name = name;
 		this.startDate = startingDate;
 		this.endDate = endDate;
 		this.id = id;
 		this.emailProfessor = emailProfessor;
+		this.coDoc = coDoc;
+		this.desc = desc;
+		
 		this.studentsEmail = new ArrayList<String>();
 	}
 	
@@ -71,6 +76,22 @@ public class Course implements Serializable{
 	public void addStudentEmail(String selectedStudent) {
 		this.studentsEmail.add(selectedStudent);
 		
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public String getCoDoc() {
+		return coDoc;
+	}
+
+	public void setCoDoc(String coDoc) {
+		this.coDoc = coDoc;
 	}
 
 }
