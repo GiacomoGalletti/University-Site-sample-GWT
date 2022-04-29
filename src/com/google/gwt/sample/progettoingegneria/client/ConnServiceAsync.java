@@ -15,23 +15,25 @@ public interface ConnServiceAsync {
 	
 	void loginRequest(String user, String passw, AsyncCallback<UserState> asyncCallback);
 	
-	void addCourse(String name, String startDate, String endDate, String email, AsyncCallback<Boolean> callback);
+	void addCourse(String name, String startDate, String endDate, String email, String coDoc , String desc, AsyncCallback<Boolean> callback);
 	
 	void signUp(String username, String password, String email, String name, String surname, int type,  AsyncCallback<String> callback);
 
 	void viewStudentInfo(AsyncCallback<String> callback);
 	
 	void viewProfessorInfo(AsyncCallback<String> callback);
+	
+	void getInfoUser(String userEmail,AsyncCallback<String> callback);
 
 	void clearDB(AsyncCallback<String> callback);
 	
-	void viewCoursesInfo(AsyncCallback<String> callback);
+	void viewSudentCoursesInfo(String studentEmail, AsyncCallback<String> callback);
 	
-	void viewCoursesInfo(String email,AsyncCallback<String> callback);
+	void viewProfessorCoursesInfo(String email,AsyncCallback<String> callback);
 	
 	void getCourseData(String name,AsyncCallback<String> callback);
 
-	void setCourseData(String name, String startData, String endData, String newName, AsyncCallback<Boolean> callback);
+	void setCourseData(String name, String startData, String endData, String newName, String coDoc, String desc, AsyncCallback<Boolean> callback);
 	
 	void deleteCourse(String name, AsyncCallback<Boolean> callback);
 	
@@ -39,11 +41,9 @@ public interface ConnServiceAsync {
 	
 	void retrieveExams(String profName, AsyncCallback<ArrayList<String>> callback);
 	
-	void retrieveStudents(String selectedExam, AsyncCallback<ArrayList<String>> callback);
-	
 	void setUserInfo(String email, String newEmail, String name , String surname, String userName, String password, AsyncCallback<Boolean> callback);
 
-	void getAvailableExams(String courseName, AsyncCallback<String> callback);
+	void getAvailableExams(String studentEmail, String courseName, AsyncCallback<String> callback);
 
 	void registerStudentInExam(String selectedExam, String selectedStudent, AsyncCallback<Boolean> callback);
 
@@ -60,6 +60,8 @@ public interface ConnServiceAsync {
 	void retrieveSubscribedCourses(String studentEmail, AsyncCallback<String> callback);
 	
 	void getStudentsCourseList(String courseName, AsyncCallback<String> callback);
+	
+	void getStudentsExamList(String examName, AsyncCallback<String> callback);
 
 	void retrieveExamsForSecretary(AsyncCallback<ArrayList<String>> callback);
 	
@@ -70,4 +72,10 @@ public interface ConnServiceAsync {
 	void setExamData(String courseName, String date , String hour, String classroom, String duration, AsyncCallback<Boolean> callback);
 	
 	void deleteExam(String courseName, AsyncCallback<Boolean> callback);
+	
+	void publishGrades(String examName, AsyncCallback<Boolean> callback);
+
+	void retrieveSubscribedExams(String email, AsyncCallback<String> asyncCallback);
+
+	void changeExamState(String examName, AsyncCallback<Boolean> asyncCallback);
 }

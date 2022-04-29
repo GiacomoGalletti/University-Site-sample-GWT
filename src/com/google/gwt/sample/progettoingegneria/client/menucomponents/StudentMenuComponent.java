@@ -2,9 +2,9 @@ package com.google.gwt.sample.progettoingegneria.client.menucomponents;
 
 import com.google.gwt.event.dom.client.DoubleClickEvent;
 import com.google.gwt.event.dom.client.DoubleClickHandler;
-import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.CoursesListComponent;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.StudentCoursesInfoComponent;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.StudentCoursesSignUpComponent;
-import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.StudentExamsSubscriptionAviable;
+import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.StudentExamsSignUpComponent;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.GradesViewComponent;
 import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.PersonalInfoComponent;
 import com.google.gwt.user.client.ui.Composite;
@@ -17,10 +17,10 @@ public class StudentMenuComponent extends Composite{
 	private ListBox actionsListBox = new ListBox();
 	
 	private PersonalInfoComponent infoView;
-	private CoursesListComponent coursesListView;
+	private StudentCoursesInfoComponent coursesListView;
 	private StudentCoursesSignUpComponent courseSignUpView;
 	private GradesViewComponent gradesView;
-	private StudentExamsSubscriptionAviable examView;
+	private StudentExamsSignUpComponent examView;
 	
 	
 	public StudentMenuComponent() {
@@ -44,7 +44,7 @@ public class StudentMenuComponent extends Composite{
 			int userchoice = actionsListBox.getSelectedIndex();
 			switch(userchoice) {
 			case 0:
-				coursesListView = new CoursesListComponent();
+				coursesListView = new StudentCoursesInfoComponent();
 				vPanel.add(coursesListView);
 				break;
 			case 1:
@@ -52,7 +52,7 @@ public class StudentMenuComponent extends Composite{
 				vPanel.add(courseSignUpView);
 				break;
 			case 2:
-				examView  = new StudentExamsSubscriptionAviable();
+				examView  = new StudentExamsSignUpComponent();
 				vPanel.add(examView);
 				break;
 			case 3:

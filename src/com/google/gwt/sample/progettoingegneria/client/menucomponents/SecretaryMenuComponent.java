@@ -46,5 +46,6 @@ public class SecretaryMenuComponent extends Composite{
 	
 	private void clearPanel() {
 		vPanel.remove(infoStudentView);
+		vPanel.remove(approveGradesView);
 	}
 }

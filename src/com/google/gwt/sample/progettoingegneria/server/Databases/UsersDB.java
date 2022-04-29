@@ -77,9 +77,9 @@ public class UsersDB {
 				result = result + 
 				"Email: " + user.getEmail() +
 				" Nome: " + user.getName() +
-				" Cognome: " + user.getSurname() +
-				"  Username: " + user.getUserName() +
-				" Password: " + user.getPw()
+				" Cognome: " + user.getSurname() + 
+				" Username: "+ user.getSurname() + 
+				" Password: "+ user.getPw()
 				+ "_";
 		}
 		db.commit();
@@ -101,9 +101,9 @@ public class UsersDB {
 				result = result + 
 				"Email: " + user.getEmail() +
 				" Nome: " + user.getName() +
-				" Cognome: " + user.getSurname() +
-				"  Username: " + user.getUserName() +
-				" Password: " + user.getPw()
+				" Cognome: " + user.getSurname() + 
+				" Username: "+ user.getSurname() + 
+				" Password: "+ user.getPw()
 				+ "_";
 		}
 		db.commit();
@@ -120,7 +120,7 @@ public class UsersDB {
 		return "UsersDB";
 	}
 
-	private static boolean checkMailExist(String email) {
+	public static boolean checkMailExist(String email) {
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 		

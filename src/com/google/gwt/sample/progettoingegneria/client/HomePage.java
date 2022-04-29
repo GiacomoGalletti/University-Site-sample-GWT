@@ -1,8 +1,10 @@
 package com.google.gwt.sample.progettoingegneria.client;
 
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.TabPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
@@ -20,11 +22,7 @@ public class HomePage extends Composite {
 		
 		Label titleLabel = new Label("UniBo");
 		Image logoImage = new Image();
-<<<<<<< Updated upstream
-		Label l1 = new Label("Dipartimenti:\n-Matematica\n-Informatica\n-Scienze");
-=======
 		Label l1 = new Label("  Dipartimenti:");
->>>>>>> Stashed changes
 		
 		logoImage.setUrl("https://www.unibo.it/it/logo-unibo.png/@@images/44d79f14-1a99-4a5d-997f-90df029bd63e.png");
 		logoImage.setWidth("50%");
@@ -32,8 +30,6 @@ public class HomePage extends Composite {
 		this.vPanel.add(titleLabel);
 		this.vPanel.add(logoImage);
 		this.vPanel.add(l1);
-<<<<<<< Updated upstream
-=======
 		
 		drawDepartments();
 	}
@@ -320,6 +316,5 @@ public class HomePage extends Composite {
 	    		"Medicina");
 		
 		this.vPanel.add(tp);
->>>>>>> Stashed changes
 	}
 }

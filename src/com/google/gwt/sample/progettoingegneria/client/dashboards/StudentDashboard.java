@@ -17,13 +17,12 @@ public class StudentDashboard extends Composite {
 		Image logoImage = new Image();
 		StudentMenuComponent studentMenu = new StudentMenuComponent();
 		
-		logoImage.setUrl("https://cdn.pixabay.com/photo/2016/11/22/06/05/girl-1848454_960_720.jpg");
+		logoImage.setUrl("https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585_960_720.jpg");
 		logoImage.setWidth("50%");
 		
 		this.vPanel.add(titleLabel);
 		this.vPanel.add(logoImage);
 		this.vPanel.add(studentMenu);
 	}
-	
 	
 }

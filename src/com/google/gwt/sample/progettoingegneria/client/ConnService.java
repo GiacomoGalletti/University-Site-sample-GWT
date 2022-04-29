@@ -13,7 +13,7 @@ public interface ConnService extends RemoteService {
 	
 	UserState loginRequest(String user, String passw);
 	
-	boolean addCourse(String name, String startDate, String endDate, String email);
+	boolean addCourse(String name, String startDate, String endDate, String email, String coDoc, String desc);
 	
 	String signUp(String username, String password, String email, String name, String surname, int type);
 
@@ -21,15 +21,17 @@ public interface ConnService extends RemoteService {
 	
 	String viewProfessorInfo();
 	
+	String getInfoUser(String userEmail);
+	
 	String clearDB();
 	
-	String viewCoursesInfo();
+	String viewSudentCoursesInfo(String studentEmail);
 	
-	String viewCoursesInfo(String email);
+	String viewProfessorCoursesInfo(String email);
 	
 	String getCourseData(String name);
 	
-	boolean setCourseData(String name, String startData,String endData, String newName);
+	boolean setCourseData(String name, String startData,String endData, String newName, String coDoc, String desc);
 	
 	boolean deleteCourse(String name);
 	
@@ -37,13 +39,11 @@ public interface ConnService extends RemoteService {
 	
 	ArrayList<String> retrieveExams(String profName);
 	
-	ArrayList<String> retrieveStudents(String selectedExam);
-	
 	boolean setUserInfo(String email, String newEmail, String name , String surname, String userName, String password);
 	
-	String getAvailableExams(String courseName);
+	String getAvailableExams(String studentEmail, String courseName);
 	
-	boolean registerStudentInExam(String selectedExam, String selectedStudent);
+	boolean registerStudentInExam(String selectedExam, String selectedStudent);;
 	
 	String retrieveInfoStudentList();
 	
@@ -59,6 +59,8 @@ public interface ConnService extends RemoteService {
 
 	String getStudentsCourseList(String courseName);
 	
+	String getStudentsExamList(String courseName);
+	
 	ArrayList<String> retrieveExamsForSecretary();
 	
 	String retrieveGradesAndStudents(String selectedExam);
@@ -68,5 +70,11 @@ public interface ConnService extends RemoteService {
 	boolean setExamData(String courseName, String date , String hour, String classroom, String duration);
 	
 	boolean deleteExam(String courseName);
+	
+	boolean publishGrades(String examName);
+	
+	String retrieveSubscribedExams(String studentEmail);
+	
+	boolean changeExamState(String examName);
 
 }

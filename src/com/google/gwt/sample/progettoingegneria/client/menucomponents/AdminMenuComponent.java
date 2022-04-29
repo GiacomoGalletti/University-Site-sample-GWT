@@ -8,7 +8,6 @@ import com.google.gwt.sample.progettoingegneria.client.dashboards.settings.Admin
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.ListBox;
-import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class AdminMenuComponent extends Composite{
 	private HorizontalPanel baseVPanel = new HorizontalPanel();
@@ -42,7 +41,6 @@ public class AdminMenuComponent extends Composite{
 				break;
 			case 2: 
 				baseVPanel.add(professorsListComp);
-
 				break;
 			}
 		}

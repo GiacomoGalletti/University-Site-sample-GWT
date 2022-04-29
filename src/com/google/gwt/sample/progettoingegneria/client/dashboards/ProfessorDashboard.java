@@ -17,7 +17,7 @@ public class ProfessorDashboard extends Composite {
 		Image logoImage = new Image();
 		ProfessorMenuComponent profmenu = new ProfessorMenuComponent();
 		
-		logoImage.setUrl("https://cdn.pixabay.com/photo/2020/08/04/08/10/woman-5462074_960_720.jpg");
+		logoImage.setUrl("https://cdn.pixabay.com/photo/2021/08/22/13/43/teacher-6565166_960_720.png");
 		logoImage.setWidth("50%");
 		
 		this.vPanel.add(titleLabel);

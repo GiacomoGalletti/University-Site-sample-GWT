@@ -5,14 +5,14 @@ import java.io.Serializable;
 public class Grade implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	private int value;
+	private String value;
 	private GradeState state;
 	private String examName;
 	private String emailStudent;
 	
 	public Grade() {}
 	
-	public Grade(int value, GradeState state, String examName, String emailStudent) {
+	public Grade(String value, GradeState state, String examName, String emailStudent) {
 		super();
 		this.value = value;
 		this.state = state;
@@ -20,11 +20,11 @@ public class Grade implements Serializable{
 		this.emailStudent = emailStudent;
 	}
 	
-	public int getValue() {
+	public String getValue() {
 		return this.value;
 	}
 	
-	public void setValue(int newValue) {
+	public void setValue(String newValue) {
 		this.value = newValue;
 	}
 	
