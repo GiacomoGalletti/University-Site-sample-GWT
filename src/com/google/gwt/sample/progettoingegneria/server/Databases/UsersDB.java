@@ -13,29 +13,46 @@ import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.sample.progettoingegneria.shared.Student;
 import com.google.gwt.sample.progettoingegneria.shared.User;
 
-public class UsersDB {
+public class UsersDB
+{
 
-	private static DB getUserDB() {
+	private synchronized static DB getUserDB()
+	{
 		DB db = DBMaker.newFileDB(new File("dbProgettoIng3")).make();		
 		return db;	
 	}
 	
-	public static void rootUserInit() {
+	public static void rootUserInit()
+	{
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
+		
 		User ad = new Admin("root", "root", "root@root", "root", "root");
-		User prof = new Professor("prof", "prof", "prof@prof", "prof", "prof");
-		User stu = new Student("stu", "stu", "stu@stu", "stu", "stu");
-		User sec = new Secretary("sec", "sec", "sec@sec", "sec", "sec");
+		
+		User prof1 = new Professor("prof.Flammea", "flammea", "profFlammea@prof", "Mario", "Flammea");
+		User prof2 = new Professor("prof.Burrasca", "burrasca", "profBurrasca@prof", "Gian", "Burrasca");
+		User prof3 = new Professor("prof.Wu", "wu", "profWu@prof", "Alessia", "Wu");
+		
+		User stu1 = new Student("MattiaF", "mattia", "mattia@stu", "Mattia", "Frega");
+		User stu2 = new Student("FrancescoG", "francesco", "francesco@stu", "Francesco", "Guerrini");
+		User stu3 = new Student("GiacomoG", "giacomo", "giacomo@stu", "Giacomo", "Galletti");
+		
+		User segr = new Secretary("segr", "segr", "segr@segr", "segr", "segr");
+		
 		userMap.putIfAbsent(ad.getEmail(),ad);
-		userMap.putIfAbsent(prof.getEmail(),prof);
-		userMap.putIfAbsent(stu.getEmail(),stu);
-		userMap.putIfAbsent(sec.getEmail(),sec);
+		userMap.putIfAbsent(prof1.getEmail(),prof1);
+		userMap.putIfAbsent(prof2.getEmail(),prof2);
+		userMap.putIfAbsent(prof3.getEmail(),prof3);
+		userMap.putIfAbsent(stu1.getEmail(),stu1);
+		userMap.putIfAbsent(stu2.getEmail(),stu2);
+		userMap.putIfAbsent(stu3.getEmail(),stu3);
+		userMap.putIfAbsent(segr.getEmail(),segr);
 		db.commit();
 		db.close();
 	}
 
-	public static String signUp(String username, String password, String email, String name, String surname, int type) {
+	public static String signUp(String username, String password, String email, String name, String surname, int type)
+	{
 
 		if (!checkMailExist(email)) {
 			DB db = getUserDB();
@@ -64,7 +81,8 @@ public class UsersDB {
 		
 	}
 	
-	public static String viewStudentInfo() {
+	public static String viewStudentInfo()
+	{
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 
@@ -87,7 +105,8 @@ public class UsersDB {
 		return result;
 	}
 	
-	public static String viewProfessorInfo() {
+	public static String viewProfessorInfo()
+	{
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 
@@ -111,7 +130,8 @@ public class UsersDB {
 		return result;
 	}
 	
-	public static String clearDB() {
+	public static String clearDB()
+	{
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 		userMap.clear();
@@ -120,19 +140,25 @@ public class UsersDB {
 		return "UsersDB";
 	}
 
-	public static boolean checkMailExist(String email) {
+	public static boolean checkMailExist(String email)
+	{
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 		
 		for (Entry<String, User> entry : userMap.entrySet()) {
-			if(entry.getValue().getEmail().equalsIgnoreCase(email)) {
+			if(entry.getValue().getEmail().equals(email)) {
+				db.commit();
+				db.close();
 				return true;
 			}
 		}
+		db.commit();
+		db.close();
 		return false;
 	}
 	
-	public static UserState login(String email, String password) {
+	public static UserState login(String email, String password)
+	{
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 
@@ -158,8 +184,8 @@ public class UsersDB {
 		return UserState.NOT_SIGNED; // account non presente nel db
 	}
 
-	public static String getInfoUser(String email) {
-
+	public  static String getInfoUser(String email)
+	{
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 
@@ -171,20 +197,17 @@ public class UsersDB {
 		return info;
 	}
 
-	public static User getUser(String email) {
+	public static User getUser(String email)
+	{
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 		return userMap.get(email);
 	}
 	
-	public static boolean setUserInfo(String email, String newEmail, String name , String surname, String userName, String password)
+	public static boolean setUserInfo(String email,String name , String surname, String userName, String password)
 	{
 		DB db = getUserDB();
 		User user = getUser(email);
-		
-		if (!newEmail.equals(email)) {
-			user.setEmail(newEmail);
-		}
 		user.setName(name);
 		user.setSurname(surname);
 		user.setUserName(userName);
@@ -195,7 +218,8 @@ public class UsersDB {
 		return true;
 	}
 	
-	private static void replaceUser(String oldItemKey, User newItem) {
+	private static void replaceUser(String oldItemKey, User newItem)
+	{
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 		userMap.replace(oldItemKey, newItem);
@@ -203,7 +227,8 @@ public class UsersDB {
 		db.close();
 	}
 
-	public static String retrieveInfoStudentList() {
+	public static String retrieveInfoStudentList()
+	{
 		DB db = getUserDB();
 		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
 		
@@ -223,6 +248,22 @@ public class UsersDB {
 		db.commit();
 		db.close();
 		return result;
+	}
+	
+	private static boolean deleteUser(User u)
+	{
+		DB db = getUserDB();
+		BTreeMap<String, User> userMap = db.getTreeMap("userMap");
+		
+		userMap.remove(u.getEmail());
+		db.commit();
+		db.close();
+		return true;
+	}
+	
+	public static boolean deleteUserByEmail(String email)
+	{
+		return deleteUser(getUser(email));
 	}
 
 }

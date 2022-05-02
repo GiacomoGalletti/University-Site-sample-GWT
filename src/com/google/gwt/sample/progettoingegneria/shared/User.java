@@ -2,7 +2,7 @@ package com.google.gwt.sample.progettoingegneria.shared;
 
 import java.io.Serializable;
 
-public class User implements Serializable { 
+public abstract class User implements Serializable { 
 	
 	private static final long serialVersionUID = 4192379456341403664L;
 

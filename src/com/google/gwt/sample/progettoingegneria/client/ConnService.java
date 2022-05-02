@@ -9,6 +9,8 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 @RemoteServiceRelativePath("stockPrices")
 public interface ConnService extends RemoteService {	
 	
+	boolean deleteUserByEmail(String email);
+	
 	String testCall(String input);
 	
 	UserState loginRequest(String user, String passw);
@@ -39,7 +41,7 @@ public interface ConnService extends RemoteService {
 	
 	ArrayList<String> retrieveExams(String profName);
 	
-	boolean setUserInfo(String email, String newEmail, String name , String surname, String userName, String password);
+	boolean setUserInfo(String email, String name , String surname, String userName, String password);
 	
 	String getAvailableExams(String studentEmail, String courseName);
 	

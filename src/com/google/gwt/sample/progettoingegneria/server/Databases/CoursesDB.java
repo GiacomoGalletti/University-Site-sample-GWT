@@ -88,7 +88,7 @@ public class CoursesDB {
 		
 		for (Entry<String, Course> entry : coursesMap.entrySet()) {
 			Course current = entry.getValue();
-			if(current.getName().equalsIgnoreCase(name)) {
+			if(current.getName().equals(name)) {
 				db.commit();
 				db.close();
 				return current;
@@ -137,8 +137,7 @@ public class CoursesDB {
 		
 		DB db = getCoursersDB();
 		Course course = getCourse(name);
-		
-		if (!newName.equals(name)) {
+		if (!name.equals(newName)) {
 			course.setName(newName);
 		}
 		course.setStartDate(startData);
@@ -251,7 +250,6 @@ public class CoursesDB {
 	// metodo che restituisce gli studenti iscritta al corso in input
 	
 	public static String getStudentsCourseList(String courseName) {	
-
 		List<String> studentsEmails = getCourse(courseName).getStudentsEmail();
 		String result = "";
 		for(String s : studentsEmails) {

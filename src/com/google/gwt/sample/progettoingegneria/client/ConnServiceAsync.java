@@ -11,6 +11,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
  */
 public interface ConnServiceAsync {
 	
+	void deleteUserByEmail(String email, AsyncCallback<Boolean> callback);
+	
 	void testCall(String input, AsyncCallback<String> callback);
 	
 	void loginRequest(String user, String passw, AsyncCallback<UserState> asyncCallback);
@@ -41,7 +43,7 @@ public interface ConnServiceAsync {
 	
 	void retrieveExams(String profName, AsyncCallback<ArrayList<String>> callback);
 	
-	void setUserInfo(String email, String newEmail, String name , String surname, String userName, String password, AsyncCallback<Boolean> callback);
+	void setUserInfo(String email, String name , String surname, String userName, String password, AsyncCallback<Boolean> callback);
 
 	void getAvailableExams(String studentEmail, String courseName, AsyncCallback<String> callback);
 

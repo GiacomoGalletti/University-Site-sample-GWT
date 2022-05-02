@@ -16,9 +16,14 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	private static final long serialVersionUID = 4192379456341403664L;
 
 	@Override
+	public boolean deleteUserByEmail(String email) {
+		return UsersDB.deleteUserByEmail(email);
+	}
+	
+	@Override
 	public String testCall(String input) {
 		//UserDB.rootUserInit();
-		return "ho ricevuto "+ input;
+		return input;
 	}
 	
 	@Override
@@ -100,9 +105,9 @@ public class ConnServiceImpl extends RemoteServiceServlet implements ConnService
 	}
 	
 	@Override
-	public boolean setUserInfo(String email, String newEmail, String name, String surname, String userName,
+	public boolean setUserInfo(String email, String name, String surname, String userName,
 			String password) {
-		return UsersDB.setUserInfo(email, newEmail, name, surname, userName, password);
+		return UsersDB.setUserInfo(email,name, surname, userName, password);
 	}
 	
 	@Override

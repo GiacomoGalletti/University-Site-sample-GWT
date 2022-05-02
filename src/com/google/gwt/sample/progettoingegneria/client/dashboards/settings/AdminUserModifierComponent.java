@@ -20,7 +20,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 public class AdminUserModifierComponent extends Composite {
 	private VerticalPanel vPanel = new VerticalPanel();
 
-	private TextBox emailTb = new TextBox();
+	private Label emailLb = new Label();
 	private TextBox nameTb = new TextBox();
 	private TextBox surnameTb = new TextBox();
 	private TextBox userNameTb = new TextBox();
@@ -32,7 +32,7 @@ public class AdminUserModifierComponent extends Composite {
 	public AdminUserModifierComponent(String[] user) {
 		this.user = user;
 		initWidget(this.vPanel);
-		emailTb.setText(this.user[1]);
+		emailLb.setText(this.user[1]);
 		nameTb.setText(this.user[3]);
 		surnameTb.setText(this.user[5]);
 		userNameTb.setText(this.user[7]);
@@ -40,7 +40,7 @@ public class AdminUserModifierComponent extends Composite {
 		
 		vPanel.add(new Label("MODIFICA USER"));
 		vPanel.add(new Label("Email:"));
-		vPanel.add(emailTb);
+		vPanel.add(emailLb);
 		vPanel.add(new Label("Nome:"));
 		vPanel.add(nameTb);
 		vPanel.add(new Label("Cognome:"));
@@ -58,7 +58,6 @@ public class AdminUserModifierComponent extends Composite {
 		public void onClick(ClickEvent event) {
 			ConnServiceSingleton.getConnService().setUserInfo(
 					user[1], 
-					emailTb.getText(), 
 					nameTb.getText(), 
 					surnameTb.getText(), 
 					userNameTb.getText(), 
