@@ -23,7 +23,7 @@ public class ApproveGradesComponent extends Composite {
 	TextArea txta = new TextArea();
 	ButtonBase pubBtn = new Button("PUBBLICA");
 	boolean publishConfirmed;
-	
+	Label lab1 = new Label("STUDENTI E VOTI:\n");
 	public ApproveGradesComponent() {
 		initWidget(this.vPanel);
 		
@@ -39,7 +39,7 @@ public class ApproveGradesComponent extends Composite {
 	public class examListDoubleClickHandler implements DoubleClickHandler {
 		@Override
 		public void onDoubleClick(DoubleClickEvent event) {
-			vPanel.add(new Label("STUDENTI E VOTI:\n"));
+			vPanel.add(lab1);
 			vPanel.add(txta);
 			String selectedExam = examList.getSelectedItemText();
 			ConnServiceSingleton
@@ -83,6 +83,8 @@ public class ApproveGradesComponent extends Composite {
 				for(String e : result) {
 					examList.addItem(e);
 				}
+				
+				examList.setVisibleItemCount(result.size());
 			}
 			
 		});
@@ -129,7 +131,7 @@ public class ApproveGradesComponent extends Composite {
 			publishGrades();
 			publishConfirmed = true;
 			changeExamState();
-					
+			vPanel.clear();			
 		}
 		
 	}

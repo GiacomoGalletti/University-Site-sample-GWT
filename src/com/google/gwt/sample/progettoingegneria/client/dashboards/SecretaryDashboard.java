@@ -17,7 +17,7 @@ public class SecretaryDashboard extends Composite {
 		Image logoImage = new Image();
 		SecretaryMenuComponent secretaryMenu = new SecretaryMenuComponent();
 		
-		logoImage.setUrl("https://cdn.pixabay.com/photo/2020/02/10/12/49/girl-4836396_960_720.jpg");
+		logoImage.setUrl("https://cdn.pixabay.com/photo/2021/09/10/18/39/secretary-6613923_960_720.png");
 		logoImage.setWidth("50%");
 		
 		this.vPanel.add(titleLabel);

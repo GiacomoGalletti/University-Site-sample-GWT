@@ -20,7 +20,7 @@ public class GradesDB {
 		BTreeMap<String, Grade> gradesMap = db.getTreeMap("gradesMap");
 
 		for (int i = 0; i < studentsList.length; i++) {
-			Grade g = new Grade(Integer.parseInt(gradesList[i]),GradeState.SENT, examName, studentsList[i]);
+			Grade g = new Grade(gradesList[i],GradeState.SENT, examName, studentsList[i]);
 			gradesMap.put(g.getExamName() + "," + g.getEmailStudent(), g);
 		}
 

@@ -10,6 +10,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -25,7 +26,7 @@ public class LoginPage extends Composite{
 	private Image image1 = new Image();
 	private MainPage main;
 	private TextBox emailTextBox = new TextBox();
-    private TextBox passwordTextBox = new TextBox();
+    private PasswordTextBox passwordTextBox = new PasswordTextBox();
 	private Button loginButton = new Button("Accedi");;
 	
 	public LoginPage(MainPage main) {
@@ -37,10 +38,7 @@ public class LoginPage extends Composite{
 		Label emailLabel = new Label("email: ");
 		Label passwordLabel = new Label("password:");
 		VerticalPanel vpanel1 = new VerticalPanel();
-		VerticalPanel vpanel2 = new VerticalPanel();
 		HorizontalPanel hpanel = new HorizontalPanel();
-
-
 	    
 	    image1.setUrl("https://cdn.pixabay.com/photo/2018/10/02/11/13/girl-3718537_960_720.jpg");
 		loginButton.addClickHandler(new loginButtonHandler());
@@ -48,11 +46,10 @@ public class LoginPage extends Composite{
 		mainPanel.add(titleLabel);
 		mainPanel.add(credentialsLabel);
 		vpanel1.add(emailLabel);
+		vpanel1.add(emailTextBox);
 		vpanel1.add(passwordLabel);
-		vpanel2.add(emailTextBox);
-		vpanel2.add(passwordTextBox);
+		vpanel1.add(passwordTextBox);
 		hpanel.add(vpanel1);
-		hpanel.add(vpanel2);
 		mainPanel.add(hpanel);
 		mainPanel.add(loginButton);
 		mainPanel.add(image1);

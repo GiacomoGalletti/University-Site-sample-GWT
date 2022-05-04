@@ -17,7 +17,7 @@ public class AdminDashboard extends Composite{
 		Image logoImage = new Image();
 		AdminMenuComponent adminMenu = new AdminMenuComponent();
 		
-		logoImage.setUrl("https://cdn.pixabay.com/photo/2016/11/22/06/05/girl-1848454_960_720.jpg");
+		logoImage.setUrl("https://cdn.pixabay.com/photo/2017/03/28/12/10/chairs-2181951_960_720.jpg");
 		logoImage.setWidth("50%");
 		
 		this.vPanel.add(titleLabel);

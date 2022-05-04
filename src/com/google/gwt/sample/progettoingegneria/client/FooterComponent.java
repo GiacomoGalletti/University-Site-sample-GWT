@@ -14,9 +14,9 @@ public class FooterComponent extends Composite {
 	public FooterComponent() {
 		initWidget(this.hPanel);
 		
-		Label l1 = new Label("mail: unibo@unibo.it");
-		Label l2 = new Label("  telefono: 0123-345  ");
-		Label l3 = new Label("indirizzo: Via Ingegneria del Software, Bologna");
+		Label l1 = new Label("mail: unibo@unibo.it  |");
+		Label l2 = new Label("  telefono: 0123-345  |");
+		Label l3 = new Label("  indirizzo: Via Ingegneria del Software, Bologna");
 		
 		this.hPanel.add(l1);
 		this.hPanel.add(l2);
