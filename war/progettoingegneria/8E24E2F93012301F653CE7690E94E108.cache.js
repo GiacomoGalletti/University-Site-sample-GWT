@@ -3,7 +3,7 @@ var __gwtModuleFunction = $wnd.progettoingegneria;
 var $sendStats = __gwtModuleFunction.__sendStats;
 $sendStats('moduleStartup', 'moduleEvalStart');
 var $gwt_version = "2.9.0";
-var $strongName = '4542BCE5F0AC0473636760A46BC8B61F';
+var $strongName = '8E24E2F93012301F653CE7690E94E108';
 var $gwt = {};
 var $doc = $wnd.document;
 var $moduleName, $moduleBase;
@@ -22,7 +22,7 @@ var $stats = $wnd.__gwtStatsEvent ? function(a) {
 return $wnd.__gwtStatsEvent && $wnd.__gwtStatsEvent(a);
 } : null;
 var $sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
-var $intern_0 = {3:1}, $intern_1 = {3:1, 6:1, 4:1}, $intern_2 = {88:1, 32:1, 3:1, 14:1, 15:1}, $intern_3 = {58:1, 3:1, 6:1, 4:1}, $intern_4 = {39:1, 3:1, 4:1}, $intern_5 = {3:1, 14:1, 29:1}, $intern_6 = -2147483648, $intern_7 = 4194303, $intern_8 = 1048575, $intern_9 = 524288, $intern_10 = 4194304, $intern_11 = 17592186044416, $intern_12 = -17592186044416, $intern_13 = {11:1, 8:1, 10:1, 9:1, 12:1, 7:1, 5:1}, $intern_14 = {27:1, 22:1}, $intern_15 = {60:1, 22:1}, $intern_16 = 65536, $intern_17 = 16777216, $intern_18 = 33554432, $intern_19 = 67108864, $intern_20 = {21:1, 3:1, 14:1, 15:1}, $intern_21 = {11:1, 8:1, 10:1, 9:1, 45:1, 12:1, 7:1, 5:1}, $intern_22 = {11:1, 8:1, 10:1, 9:1, 45:1, 12:1, 72:1, 7:1, 5:1}, $intern_23 = {34:1, 3:1, 14:1, 15:1}, $intern_24 = {3:1, 41:1, 4:1}, $intern_25 = {3:1, 30:1, 6:1, 4:1}, $intern_26 = {52:1, 78:1}, $intern_27 = {40:1};
+var $intern_0 = {3:1}, $intern_1 = {3:1, 9:1, 4:1}, $intern_2 = {88:1, 32:1, 3:1, 14:1, 15:1}, $intern_3 = {59:1, 3:1, 9:1, 4:1}, $intern_4 = {41:1, 3:1, 4:1}, $intern_5 = {3:1, 14:1, 29:1}, $intern_6 = -2147483648, $intern_7 = 4194303, $intern_8 = 1048575, $intern_9 = 524288, $intern_10 = 4194304, $intern_11 = 17592186044416, $intern_12 = -17592186044416, $intern_13 = {12:1, 8:1, 11:1, 10:1, 13:1, 7:1, 6:1}, $intern_14 = {25:1, 20:1}, $intern_15 = {35:1, 20:1}, $intern_16 = 65536, $intern_17 = 131072, $intern_18 = 16777216, $intern_19 = 33554432, $intern_20 = 67108864, $intern_21 = {23:1, 3:1, 14:1, 15:1}, $intern_22 = {12:1, 8:1, 11:1, 10:1, 47:1, 13:1, 7:1, 6:1}, $intern_23 = {12:1, 8:1, 11:1, 10:1, 47:1, 13:1, 72:1, 7:1, 6:1}, $intern_24 = {34:1, 3:1, 14:1, 15:1}, $intern_25 = {3:1, 43:1, 4:1}, $intern_26 = {3:1, 30:1, 9:1, 4:1}, $intern_27 = {53:1, 78:1}, $intern_28 = {42:1};
 var _, prototypesByTypeId_0, initFnList_0, permutationId = -1;
 function setGwtProperty(propertyName, propertyValue){
   typeof window === 'object' && typeof window['$gwt'] === 'object' && (window['$gwt'][propertyName] = propertyValue);
@@ -401,9 +401,9 @@ function Duration(){
   this.start_0 = now_1();
 }
 
-defineClass(161, 1, {}, Duration);
+defineClass(162, 1, {}, Duration);
 _.start_0 = 0;
-var Lcom_google_gwt_core_client_Duration_2_classLit = createForClass('com.google.gwt.core.client', 'Duration', 161);
+var Lcom_google_gwt_core_client_Duration_2_classLit = createForClass('com.google.gwt.core.client', 'Duration', 162);
 function $addSuppressed(this$static, exception){
   checkCriticalNotNull_0(exception);
   checkCriticalArgument(exception != this$static, 'Exception can not suppress itself.');
@@ -487,7 +487,7 @@ _.getBackingJsObject = function getBackingJsObject(){
 ;
 _.getBackingSuppressed = function getBackingSuppressed(){
   var collected, lastArg, lastArg0;
-  return collected = castTo($reduce((lastArg0 = $map(stream_0((this.suppressedExceptions == null && (this.suppressedExceptions = initUnidimensionalArray(Ljava_lang_Throwable_2_classLit, $intern_0, 4, 0, 0, 1)) , this.suppressedExceptions)), new Throwable$lambda$0$Type) , of(new Collectors$21methodref$ctor$Type, new Collectors$20methodref$add$Type, new Collectors$lambda$42$Type, stampJavaTypeInfo(getClassLiteralForArray(Ljava_util_stream_Collector$Characteristics_2_classLit, 1), $intern_0, 53, 0, [($clinit_Collector$Characteristics() , IDENTITY_FINISH)])) , lastArg0), (lastArg = new ArrayList , lastArg)), 42) , collected.toArray(initUnidimensionalArray(Ljava_lang_Object_2_classLit, $intern_0, 1, collected.size_1(), 5, 1));
+  return collected = castTo($reduce((lastArg0 = $map(stream_0((this.suppressedExceptions == null && (this.suppressedExceptions = initUnidimensionalArray(Ljava_lang_Throwable_2_classLit, $intern_0, 4, 0, 0, 1)) , this.suppressedExceptions)), new Throwable$lambda$0$Type) , of(new Collectors$21methodref$ctor$Type, new Collectors$20methodref$add$Type, new Collectors$lambda$42$Type, stampJavaTypeInfo(getClassLiteralForArray(Ljava_util_stream_Collector$Characteristics_2_classLit, 1), $intern_0, 54, 0, [($clinit_Collector$Characteristics() , IDENTITY_FINISH)])) , lastArg0), (lastArg = new ArrayList , lastArg)), 44) , collected.toArray(initUnidimensionalArray(Ljava_lang_Object_2_classLit, $intern_0, 1, collected.size_1(), 5, 1));
 }
 ;
 _.getCause = function getCause(){
@@ -517,8 +517,8 @@ function Exception(message){
   this.initializeBackingError();
 }
 
-defineClass(54, 4, {3:1, 4:1});
-var Ljava_lang_Exception_2_classLit = createForClass('java.lang', 'Exception', 54);
+defineClass(55, 4, {3:1, 4:1});
+var Ljava_lang_Exception_2_classLit = createForClass('java.lang', 'Exception', 55);
 function RuntimeException(){
   $fillInStackTrace(this);
   this.initializeBackingError();
@@ -532,12 +532,12 @@ function RuntimeException_1(message, cause){
   Throwable.call(this, message, cause);
 }
 
-defineClass(6, 54, $intern_1);
-var Ljava_lang_RuntimeException_2_classLit = createForClass('java.lang', 'RuntimeException', 6);
-defineClass(80, 6, $intern_1);
+defineClass(9, 55, $intern_1);
+var Ljava_lang_RuntimeException_2_classLit = createForClass('java.lang', 'RuntimeException', 9);
+defineClass(80, 9, $intern_1);
 var Ljava_lang_JsException_2_classLit = createForClass('java.lang', 'JsException', 80);
-defineClass(121, 80, $intern_1);
-var Lcom_google_gwt_core_client_impl_JavaScriptExceptionBase_2_classLit = createForClass('com.google.gwt.core.client.impl', 'JavaScriptExceptionBase', 121);
+defineClass(122, 80, $intern_1);
+var Lcom_google_gwt_core_client_impl_JavaScriptExceptionBase_2_classLit = createForClass('com.google.gwt.core.client.impl', 'JavaScriptExceptionBase', 122);
 function $clinit_JavaScriptException(){
   $clinit_JavaScriptException = emptyMethod;
   NOT_SET = new Object_0;
@@ -572,7 +572,7 @@ function getExceptionName0(e){
   return e == null?null:e.name;
 }
 
-defineClass(44, 121, {44:1, 3:1, 6:1, 4:1}, JavaScriptException);
+defineClass(46, 122, {46:1, 3:1, 9:1, 4:1}, JavaScriptException);
 _.getMessage = function getMessage_0(){
   return $ensureInit(this) , this.message_0;
 }
@@ -582,7 +582,7 @@ _.getThrown = function getThrown(){
 }
 ;
 var NOT_SET;
-var Lcom_google_gwt_core_client_JavaScriptException_2_classLit = createForClass('com.google.gwt.core.client', 'JavaScriptException', 44);
+var Lcom_google_gwt_core_client_JavaScriptException_2_classLit = createForClass('com.google.gwt.core.client', 'JavaScriptException', 46);
 var Lcom_google_gwt_core_client_JavaScriptObject_2_classLit = createForClass('com.google.gwt.core.client', 'JavaScriptObject$', 0);
 function now_1(){
   if (Date.now) {
@@ -604,8 +604,8 @@ function throwIllegalArgumentException(message, data_0){
   throw toJs(new IllegalArgumentException_0(message + '\n' + data_0));
 }
 
-defineClass(295, 1, {});
-var Lcom_google_gwt_core_client_Scheduler_2_classLit = createForClass('com.google.gwt.core.client', 'Scheduler', 295);
+defineClass(310, 1, {});
+var Lcom_google_gwt_core_client_Scheduler_2_classLit = createForClass('com.google.gwt.core.client', 'Scheduler', 310);
 function $clinit_Impl(){
   $clinit_Impl = emptyMethod;
   !!($clinit_StackTraceCreator() , collector);
@@ -813,7 +813,7 @@ function runScheduledTasks(tasks, rescheduled){
       if (instanceOf($e0, 4)) {
         e = $e0;
         $clinit_Impl();
-        reportToBrowser(instanceOf(e, 44)?castTo(e, 44).getThrown():e);
+        reportToBrowser(instanceOf(e, 46)?castTo(e, 46).getThrown():e);
       }
        else 
         throw toJs($e0);
@@ -832,16 +832,16 @@ function scheduleFixedDelayImpl(cmd, delayMs){
   $wnd.setTimeout(callback, delayMs);
 }
 
-defineClass(144, 295, {}, SchedulerImpl);
+defineClass(145, 310, {}, SchedulerImpl);
 _.flushRunning = false;
 _.shouldBeRunning = false;
 var INSTANCE;
-var Lcom_google_gwt_core_client_impl_SchedulerImpl_2_classLit = createForClass('com.google.gwt.core.client.impl', 'SchedulerImpl', 144);
+var Lcom_google_gwt_core_client_impl_SchedulerImpl_2_classLit = createForClass('com.google.gwt.core.client.impl', 'SchedulerImpl', 145);
 function SchedulerImpl$Flusher(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(145, 1, {}, SchedulerImpl$Flusher);
+defineClass(146, 1, {}, SchedulerImpl$Flusher);
 _.execute = function execute_0(){
   this.this$01.flushRunning = true;
   $flushPostEventPumpCommands(this.this$01);
@@ -849,18 +849,18 @@ _.execute = function execute_0(){
   return this.this$01.shouldBeRunning = $isWorkQueued(this.this$01);
 }
 ;
-var Lcom_google_gwt_core_client_impl_SchedulerImpl$Flusher_2_classLit = createForClass('com.google.gwt.core.client.impl', 'SchedulerImpl/Flusher', 145);
+var Lcom_google_gwt_core_client_impl_SchedulerImpl$Flusher_2_classLit = createForClass('com.google.gwt.core.client.impl', 'SchedulerImpl/Flusher', 146);
 function SchedulerImpl$Rescuer(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(146, 1, {}, SchedulerImpl$Rescuer);
+defineClass(147, 1, {}, SchedulerImpl$Rescuer);
 _.execute = function execute_1(){
   this.this$01.flushRunning && scheduleFixedDelayImpl(this.this$01.flusher, 1);
   return this.this$01.shouldBeRunning;
 }
 ;
-var Lcom_google_gwt_core_client_impl_SchedulerImpl$Rescuer_2_classLit = createForClass('com.google.gwt.core.client.impl', 'SchedulerImpl/Rescuer', 146);
+var Lcom_google_gwt_core_client_impl_SchedulerImpl$Rescuer_2_classLit = createForClass('com.google.gwt.core.client.impl', 'SchedulerImpl/Rescuer', 147);
 function $clinit_StackTraceCreator(){
   $clinit_StackTraceCreator = emptyMethod;
   var c, enforceLegacy;
@@ -889,12 +889,12 @@ function supportsErrorStack(){
 }
 
 var ANONYMOUS = 'anonymous', collector;
-defineClass(307, 1, {});
-var Lcom_google_gwt_core_client_impl_StackTraceCreator$Collector_2_classLit = createForClass('com.google.gwt.core.client.impl', 'StackTraceCreator/Collector', 307);
+defineClass(322, 1, {});
+var Lcom_google_gwt_core_client_impl_StackTraceCreator$Collector_2_classLit = createForClass('com.google.gwt.core.client.impl', 'StackTraceCreator/Collector', 322);
 function StackTraceCreator$CollectorLegacy(){
 }
 
-defineClass(122, 307, {}, StackTraceCreator$CollectorLegacy);
+defineClass(123, 322, {}, StackTraceCreator$CollectorLegacy);
 _.collect = function collect(error){
   var seen = {}, name_1;
   var fnStack = [];
@@ -918,17 +918,17 @@ _.collect = function collect(error){
   }
 }
 ;
-var Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorLegacy_2_classLit = createForClass('com.google.gwt.core.client.impl', 'StackTraceCreator/CollectorLegacy', 122);
-defineClass(308, 307, {});
+var Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorLegacy_2_classLit = createForClass('com.google.gwt.core.client.impl', 'StackTraceCreator/CollectorLegacy', 123);
+defineClass(323, 322, {});
 _.collect = function collect_0(error){
 }
 ;
-var Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorModern_2_classLit = createForClass('com.google.gwt.core.client.impl', 'StackTraceCreator/CollectorModern', 308);
+var Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorModern_2_classLit = createForClass('com.google.gwt.core.client.impl', 'StackTraceCreator/CollectorModern', 323);
 function StackTraceCreator$CollectorModernNoSourceMap(){
 }
 
-defineClass(123, 308, {}, StackTraceCreator$CollectorModernNoSourceMap);
-var Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorModernNoSourceMap_2_classLit = createForClass('com.google.gwt.core.client.impl', 'StackTraceCreator/CollectorModernNoSourceMap', 123);
+defineClass(124, 323, {}, StackTraceCreator$CollectorModernNoSourceMap);
+var Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorModernNoSourceMap_2_classLit = createForClass('com.google.gwt.core.client.impl', 'StackTraceCreator/CollectorModernNoSourceMap', 124);
 function $appendChild(this$static, newChild){
   return this$static.appendChild(newChild);
 }
@@ -945,6 +945,13 @@ function $setInnerHTML(this$static, html){
   this$static.innerHTML = html || '';
 }
 
+function $getFirstChildElement(elem){
+  var child = elem.firstChild;
+  while (child && child.nodeType != 1)
+    child = child.nextSibling;
+  return child;
+}
+
 function $getParentElement(node){
   var parent_0 = node.parentNode;
   (!parent_0 || parent_0.nodeType != 1) && (parent_0 = null);
@@ -955,16 +962,36 @@ function $dispatchEvent(target, evt){
   target.dispatchEvent(evt);
 }
 
-function $isOrHasChild(parent_0, child){
-  return parent_0.contains(child);
-}
-
 function $setInnerText(elem, text_0){
   elem.textContent = text_0 || '';
 }
 
-function $getTabIndex(elem){
-  return typeof elem.tabIndex != 'undefined'?elem.tabIndex:-1;
+function $eventGetRelatedTarget(evt){
+  var relatedTarget = evt.relatedTarget;
+  if (!relatedTarget) {
+    return null;
+  }
+  try {
+    var nodeName = relatedTarget.nodeName;
+    return relatedTarget;
+  }
+   catch (e) {
+    return null;
+  }
+}
+
+function $isOrHasChild(parent_0, child){
+  return parent_0 === child || !!(parent_0.compareDocumentPosition(child) & 16);
+}
+
+function $toString_0(elem){
+  var doc = elem.ownerDocument;
+  var temp = elem.cloneNode(true);
+  var tempDiv = doc.createElement('DIV');
+  tempDiv.appendChild(temp);
+  outer = tempDiv.innerHTML;
+  temp.innerHTML = '';
+  return outer;
 }
 
 function $setSrc(this$static, src_0){
@@ -1019,43 +1046,43 @@ function Style$TextAlign$1(){
   Style$TextAlign.call(this, 'CENTER', 0);
 }
 
-defineClass(147, 32, $intern_2, Style$TextAlign$1);
-var Lcom_google_gwt_dom_client_Style$TextAlign$1_2_classLit = createForEnum('com.google.gwt.dom.client', 'Style/TextAlign/1', 147, Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit, null);
+defineClass(148, 32, $intern_2, Style$TextAlign$1);
+var Lcom_google_gwt_dom_client_Style$TextAlign$1_2_classLit = createForEnum('com.google.gwt.dom.client', 'Style/TextAlign/1', 148, Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit, null);
 function Style$TextAlign$2(){
   Style$TextAlign.call(this, 'JUSTIFY', 1);
 }
 
-defineClass(148, 32, $intern_2, Style$TextAlign$2);
-var Lcom_google_gwt_dom_client_Style$TextAlign$2_2_classLit = createForEnum('com.google.gwt.dom.client', 'Style/TextAlign/2', 148, Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit, null);
+defineClass(149, 32, $intern_2, Style$TextAlign$2);
+var Lcom_google_gwt_dom_client_Style$TextAlign$2_2_classLit = createForEnum('com.google.gwt.dom.client', 'Style/TextAlign/2', 149, Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit, null);
 function Style$TextAlign$3(){
   Style$TextAlign.call(this, 'LEFT', 2);
 }
 
-defineClass(149, 32, $intern_2, Style$TextAlign$3);
-var Lcom_google_gwt_dom_client_Style$TextAlign$3_2_classLit = createForEnum('com.google.gwt.dom.client', 'Style/TextAlign/3', 149, Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit, null);
+defineClass(150, 32, $intern_2, Style$TextAlign$3);
+var Lcom_google_gwt_dom_client_Style$TextAlign$3_2_classLit = createForEnum('com.google.gwt.dom.client', 'Style/TextAlign/3', 150, Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit, null);
 function Style$TextAlign$4(){
   Style$TextAlign.call(this, 'RIGHT', 3);
 }
 
-defineClass(150, 32, $intern_2, Style$TextAlign$4);
-var Lcom_google_gwt_dom_client_Style$TextAlign$4_2_classLit = createForEnum('com.google.gwt.dom.client', 'Style/TextAlign/4', 150, Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit, null);
-defineClass(315, 1, {});
+defineClass(151, 32, $intern_2, Style$TextAlign$4);
+var Lcom_google_gwt_dom_client_Style$TextAlign$4_2_classLit = createForEnum('com.google.gwt.dom.client', 'Style/TextAlign/4', 151, Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit, null);
+defineClass(330, 1, {});
 _.toString_0 = function toString_3(){
   return 'An event type';
 }
 ;
-var Lcom_google_web_bindery_event_shared_Event_2_classLit = createForClass('com.google.web.bindery.event.shared', 'Event', 315);
+var Lcom_google_web_bindery_event_shared_Event_2_classLit = createForClass('com.google.web.bindery.event.shared', 'Event', 330);
 function $overrideSource(this$static, source){
   this$static.source = source;
 }
 
-defineClass(316, 315, {});
+defineClass(331, 330, {});
 _.getAssociatedType_0 = function getAssociatedType(){
   return this.getAssociatedType();
 }
 ;
 _.dead = false;
-var Lcom_google_gwt_event_shared_GwtEvent_2_classLit = createForClass('com.google.gwt.event.shared', 'GwtEvent', 316);
+var Lcom_google_gwt_event_shared_GwtEvent_2_classLit = createForClass('com.google.gwt.event.shared', 'GwtEvent', 331);
 function $setNativeEvent(this$static, nativeEvent){
   this$static.nativeEvent = nativeEvent;
 }
@@ -1067,7 +1094,7 @@ function $setRelativeElement(this$static, relativeElem){
 function fireNativeEvent(nativeEvent, handlerSource, relativeElem){
   var currentNative, currentRelativeElem, type_0, type$iterator, types;
   if (registered) {
-    types = castTo($unsafeGet(registered, nativeEvent.type), 42);
+    types = castTo($unsafeGet(registered, nativeEvent.type), 44);
     if (types) {
       for (type$iterator = types.iterator(); type$iterator.hasNext_0();) {
         type_0 = castTo(type$iterator.next_0(), 74);
@@ -1083,7 +1110,7 @@ function fireNativeEvent(nativeEvent, handlerSource, relativeElem){
   }
 }
 
-defineClass(320, 316, {});
+defineClass(335, 331, {});
 _.getAssociatedType = function getAssociatedType_0(){
   return this.getAssociatedType_1();
 }
@@ -1093,11 +1120,11 @@ _.getAssociatedType_0 = function getAssociatedType_1(){
 }
 ;
 var registered;
-var Lcom_google_gwt_event_dom_client_DomEvent_2_classLit = createForClass('com.google.gwt.event.dom.client', 'DomEvent', 320);
-defineClass(321, 320, {});
-var Lcom_google_gwt_event_dom_client_HumanInputEvent_2_classLit = createForClass('com.google.gwt.event.dom.client', 'HumanInputEvent', 321);
-defineClass(322, 321, {});
-var Lcom_google_gwt_event_dom_client_MouseEvent_2_classLit = createForClass('com.google.gwt.event.dom.client', 'MouseEvent', 322);
+var Lcom_google_gwt_event_dom_client_DomEvent_2_classLit = createForClass('com.google.gwt.event.dom.client', 'DomEvent', 335);
+defineClass(336, 335, {});
+var Lcom_google_gwt_event_dom_client_HumanInputEvent_2_classLit = createForClass('com.google.gwt.event.dom.client', 'HumanInputEvent', 336);
+defineClass(337, 336, {});
+var Lcom_google_gwt_event_dom_client_MouseEvent_2_classLit = createForClass('com.google.gwt.event.dom.client', 'MouseEvent', 337);
 function $clinit_ClickEvent(){
   $clinit_ClickEvent = emptyMethod;
   TYPE = new DomEvent$Type('click', new ClickEvent);
@@ -1106,9 +1133,9 @@ function $clinit_ClickEvent(){
 function ClickEvent(){
 }
 
-defineClass(170, 322, {}, ClickEvent);
+defineClass(171, 337, {}, ClickEvent);
 _.dispatch = function dispatch(handler){
-  castTo(handler, 27).onClick(this);
+  castTo(handler, 25).onClick(this);
 }
 ;
 _.getAssociatedType = function getAssociatedType_3(){
@@ -1124,8 +1151,8 @@ _.getAssociatedType_1 = function getAssociatedType_2(){
 }
 ;
 var TYPE;
-var Lcom_google_gwt_event_dom_client_ClickEvent_2_classLit = createForClass('com.google.gwt.event.dom.client', 'ClickEvent', 170);
-defineClass(152, 1, {});
+var Lcom_google_gwt_event_dom_client_ClickEvent_2_classLit = createForClass('com.google.gwt.event.dom.client', 'ClickEvent', 171);
+defineClass(153, 1, {});
 _.hashCode_0 = function hashCode_2(){
   return this.index_0;
 }
@@ -1136,19 +1163,19 @@ _.toString_0 = function toString_4(){
 ;
 _.index_0 = 0;
 var nextHashCode = 0;
-var Lcom_google_web_bindery_event_shared_Event$Type_2_classLit = createForClass('com.google.web.bindery.event.shared', 'Event/Type', 152);
+var Lcom_google_web_bindery_event_shared_Event$Type_2_classLit = createForClass('com.google.web.bindery.event.shared', 'Event/Type', 153);
 function GwtEvent$Type(){
   this.index_0 = ++nextHashCode;
 }
 
-defineClass(84, 152, {}, GwtEvent$Type);
+defineClass(84, 153, {}, GwtEvent$Type);
 var Lcom_google_gwt_event_shared_GwtEvent$Type_2_classLit = createForClass('com.google.gwt.event.shared', 'GwtEvent/Type', 84);
 function DomEvent$Type(eventName, flyweight){
   var types;
   GwtEvent$Type.call(this);
   this.flyweight = flyweight;
   !registered && (registered = new PrivateMap);
-  types = castTo($unsafeGet(registered, eventName), 42);
+  types = castTo($unsafeGet(registered, eventName), 44);
   if (!types) {
     types = new ArrayList;
     $unsafePut(registered, eventName, types);
@@ -1167,9 +1194,9 @@ function $clinit_DoubleClickEvent(){
 function DoubleClickEvent(){
 }
 
-defineClass(237, 322, {}, DoubleClickEvent);
+defineClass(230, 337, {}, DoubleClickEvent);
 _.dispatch = function dispatch_0(handler){
-  castTo(handler, 60).onDoubleClick(this);
+  castTo(handler, 35).onDoubleClick(this);
 }
 ;
 _.getAssociatedType = function getAssociatedType_6(){
@@ -1185,7 +1212,7 @@ _.getAssociatedType_1 = function getAssociatedType_5(){
 }
 ;
 var TYPE_0;
-var Lcom_google_gwt_event_dom_client_DoubleClickEvent_2_classLit = createForClass('com.google.gwt.event.dom.client', 'DoubleClickEvent', 237);
+var Lcom_google_gwt_event_dom_client_DoubleClickEvent_2_classLit = createForClass('com.google.gwt.event.dom.client', 'DoubleClickEvent', 230);
 function $unsafeGet(this$static, key){
   return this$static.map_0[key];
 }
@@ -1198,8 +1225,8 @@ function PrivateMap(){
   this.map_0 = {};
 }
 
-defineClass(175, 1, {}, PrivateMap);
-var Lcom_google_gwt_event_dom_client_PrivateMap_2_classLit = createForClass('com.google.gwt.event.dom.client', 'PrivateMap', 175);
+defineClass(176, 1, {}, PrivateMap);
+var Lcom_google_gwt_event_dom_client_PrivateMap_2_classLit = createForClass('com.google.gwt.event.dom.client', 'PrivateMap', 176);
 function CloseEvent_0(){
 }
 
@@ -1211,9 +1238,9 @@ function fire(source){
   }
 }
 
-defineClass(171, 316, {}, CloseEvent_0);
+defineClass(172, 331, {}, CloseEvent_0);
 _.dispatch = function dispatch_1(handler){
-  castTo(handler, 328);
+  castTo(handler, 342);
   detachWidgets();
 }
 ;
@@ -1226,7 +1253,7 @@ _.getAssociatedType = function getAssociatedType_8(){
 }
 ;
 var TYPE_1;
-var Lcom_google_gwt_event_logical_shared_CloseEvent_2_classLit = createForClass('com.google.gwt.event.logical.shared', 'CloseEvent', 171);
+var Lcom_google_gwt_event_logical_shared_CloseEvent_2_classLit = createForClass('com.google.gwt.event.logical.shared', 'CloseEvent', 172);
 function $addHandler(this$static, type_0, handler){
   return $doAdd(this$static.eventBus, type_0, handler) , new LegacyHandlerWrapper;
 }
@@ -1241,7 +1268,7 @@ function $fireEvent(this$static, event_0){
   }
    catch ($e0) {
     $e0 = toJava($e0);
-    if (instanceOf($e0, 58)) {
+    if (instanceOf($e0, 59)) {
       e = $e0;
       throw toJs(new UmbrellaException_0(e.causes));
     }
@@ -1260,8 +1287,8 @@ function HandlerManager(source){
 
 defineClass(83, 1, {8:1}, HandlerManager);
 var Lcom_google_gwt_event_shared_HandlerManager_2_classLit = createForClass('com.google.gwt.event.shared', 'HandlerManager', 83);
-defineClass(317, 1, {});
-var Lcom_google_web_bindery_event_shared_EventBus_2_classLit = createForClass('com.google.web.bindery.event.shared', 'EventBus', 317);
+defineClass(332, 1, {});
+var Lcom_google_web_bindery_event_shared_EventBus_2_classLit = createForClass('com.google.web.bindery.event.shared', 'EventBus', 332);
 function $defer(this$static, command){
   !this$static.deferredDeltas && (this$static.deferredDeltas = new ArrayList);
   $add_4(this$static.deferredDeltas, command);
@@ -1295,7 +1322,7 @@ function $doFire(this$static, event_0){
     while (this$static.isReverseOrder?it.hasPrevious():it.hasNext_0()) {
       handler = this$static.isReverseOrder?it.previous():it.next_0();
       try {
-        event_0.dispatch(castTo(handler, 22));
+        event_0.dispatch(castTo(handler, 20));
       }
        catch ($e0) {
         $e0 = toJava($e0);
@@ -1320,12 +1347,12 @@ function $doFire(this$static, event_0){
 
 function $ensureHandlerList(this$static, type_0, source){
   var handlers, sourceMap;
-  sourceMap = castTo($get(this$static.map_0, type_0), 46);
+  sourceMap = castTo($get(this$static.map_0, type_0), 48);
   if (!sourceMap) {
     sourceMap = new HashMap;
     $put(this$static.map_0, type_0, sourceMap);
   }
-  handlers = castTo(sourceMap.get_0(source), 42);
+  handlers = castTo(sourceMap.get_0(source), 44);
   if (!handlers) {
     handlers = new ArrayList;
     sourceMap.put(source, handlers);
@@ -1335,11 +1362,11 @@ function $ensureHandlerList(this$static, type_0, source){
 
 function $getHandlerList(this$static, type_0){
   var handlers, sourceMap;
-  sourceMap = castTo($get(this$static.map_0, type_0), 46);
+  sourceMap = castTo($get(this$static.map_0, type_0), 48);
   if (!sourceMap) {
     return $clinit_Collections() , $clinit_Collections() , EMPTY_LIST;
   }
-  handlers = castTo(sourceMap.get_0(null), 42);
+  handlers = castTo(sourceMap.get_0(null), 44);
   if (!handlers) {
     return $clinit_Collections() , $clinit_Collections() , EMPTY_LIST;
   }
@@ -1351,7 +1378,7 @@ function $handleQueuedAddsAndRemoves(this$static){
   if (this$static.deferredDeltas) {
     try {
       for (c$iterator = new ArrayList$1(this$static.deferredDeltas); c$iterator.i < c$iterator.this$01.array.length;) {
-        c = castTo($next_1(c$iterator), 330);
+        c = castTo($next_1(c$iterator), 344);
         $doAddNow(c.this$01, c.val$type2, c.val$source3, c.val$handler4);
       }
     }
@@ -1361,22 +1388,22 @@ function $handleQueuedAddsAndRemoves(this$static){
   }
 }
 
-defineClass(153, 317, {});
+defineClass(154, 332, {});
 _.firingDepth = 0;
 _.isReverseOrder = false;
-var Lcom_google_web_bindery_event_shared_SimpleEventBus_2_classLit = createForClass('com.google.web.bindery.event.shared', 'SimpleEventBus', 153);
+var Lcom_google_web_bindery_event_shared_SimpleEventBus_2_classLit = createForClass('com.google.web.bindery.event.shared', 'SimpleEventBus', 154);
 function HandlerManager$Bus(){
   this.map_0 = new HashMap;
   this.isReverseOrder = false;
 }
 
-defineClass(154, 153, {}, HandlerManager$Bus);
-var Lcom_google_gwt_event_shared_HandlerManager$Bus_2_classLit = createForClass('com.google.gwt.event.shared', 'HandlerManager/Bus', 154);
+defineClass(155, 154, {}, HandlerManager$Bus);
+var Lcom_google_gwt_event_shared_HandlerManager$Bus_2_classLit = createForClass('com.google.gwt.event.shared', 'HandlerManager/Bus', 155);
 function LegacyHandlerWrapper(){
 }
 
-defineClass(176, 1, {}, LegacyHandlerWrapper);
-var Lcom_google_gwt_event_shared_LegacyHandlerWrapper_2_classLit = createForClass('com.google.gwt.event.shared', 'LegacyHandlerWrapper', 176);
+defineClass(177, 1, {}, LegacyHandlerWrapper);
+var Lcom_google_gwt_event_shared_LegacyHandlerWrapper_2_classLit = createForClass('com.google.gwt.event.shared', 'LegacyHandlerWrapper', 177);
 function UmbrellaException(causes){
   var cause, cause$iterator, i;
   RuntimeException_1.call(this, makeMessage(causes), causes.isEmpty()?null:castTo(causes.iterator().next_0(), 4));
@@ -1407,13 +1434,13 @@ function makeMessage(causes){
   return b.string;
 }
 
-defineClass(58, 6, $intern_3, UmbrellaException);
-var Lcom_google_web_bindery_event_shared_UmbrellaException_2_classLit = createForClass('com.google.web.bindery.event.shared', 'UmbrellaException', 58);
+defineClass(59, 9, $intern_3, UmbrellaException);
+var Lcom_google_web_bindery_event_shared_UmbrellaException_2_classLit = createForClass('com.google.web.bindery.event.shared', 'UmbrellaException', 59);
 function UmbrellaException_0(causes){
   UmbrellaException.call(this, causes);
 }
 
-defineClass(93, 58, $intern_3, UmbrellaException_0);
+defineClass(93, 59, $intern_3, UmbrellaException_0);
 var Lcom_google_gwt_event_shared_UmbrellaException_2_classLit = createForClass('com.google.gwt.event.shared', 'UmbrellaException', 93);
 function $cancel(this$static){
   var xhr;
@@ -1464,9 +1491,9 @@ function Request_0(xmlHttpRequest, timeoutMillis, callback){
   timeoutMillis > 0 && $schedule(this.timer, timeoutMillis);
 }
 
-defineClass(225, 1, {}, Request_0);
+defineClass(226, 1, {}, Request_0);
 _.timeoutMillis = 0;
-var Lcom_google_gwt_http_client_Request_2_classLit = createForClass('com.google.gwt.http.client', 'Request', 225);
+var Lcom_google_gwt_http_client_Request_2_classLit = createForClass('com.google.gwt.http.client', 'Request', 226);
 function $cancel_0(this$static){
   if (!this$static.timerId) {
     return;
@@ -1504,7 +1531,7 @@ function setTimeout_0(func, time){
   return $wnd.setTimeout(func, time);
 }
 
-defineClass(227, 1, {});
+defineClass(228, 1, {});
 _.fire = function fire_0(scheduleCancelCounter){
   if (scheduleCancelCounter != this.cancelCounter) {
     return;
@@ -1516,13 +1543,13 @@ _.fire = function fire_0(scheduleCancelCounter){
 _.cancelCounter = 0;
 _.isRepeating = false;
 _.timerId = null;
-var Lcom_google_gwt_user_client_Timer_2_classLit = createForClass('com.google.gwt.user.client', 'Timer', 227);
+var Lcom_google_gwt_user_client_Timer_2_classLit = createForClass('com.google.gwt.user.client', 'Timer', 228);
 function Request$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(228, 227, {}, Request$1);
-var Lcom_google_gwt_http_client_Request$1_2_classLit = createForClass('com.google.gwt.http.client', 'Request/1', 228);
+defineClass(229, 228, {}, Request$1);
+var Lcom_google_gwt_http_client_Request$1_2_classLit = createForClass('com.google.gwt.http.client', 'Request/1', 229);
 function $clinit_RequestBuilder(){
   $clinit_RequestBuilder = emptyMethod;
   new RequestBuilder$Method('DELETE');
@@ -1540,7 +1567,7 @@ function $doSend(this$static, requestData, callback){
   }
    catch ($e0) {
     $e0 = toJava($e0);
-    if (instanceOf($e0, 44)) {
+    if (instanceOf($e0, 46)) {
       e = $e0;
       requestPermissionException = new RequestPermissionException(this$static.url_0);
       $initCause(requestPermissionException, new RequestException(e.getMessage()));
@@ -1558,7 +1585,7 @@ function $doSend(this$static, requestData, callback){
   }
    catch ($e1) {
     $e1 = toJava($e1);
-    if (instanceOf($e1, 44)) {
+    if (instanceOf($e1, 46)) {
       e = $e1;
       throw toJs(new RequestException(e.getMessage()));
     }
@@ -1585,7 +1612,7 @@ function $setHeaders(this$static, xmlHttpRequest){
       }
        catch ($e0) {
         $e0 = toJava($e0);
-        if (instanceOf($e0, 44)) {
+        if (instanceOf($e0, 46)) {
           e = $e0;
           throw toJs(new RequestException(e.getMessage()));
         }
@@ -1611,17 +1638,17 @@ function RequestBuilder_0(httpMethod, url_0){
   this.url_0 = url_0;
 }
 
-defineClass(107, 1, {}, RequestBuilder);
+defineClass(106, 1, {}, RequestBuilder);
 _.includeCredentials = false;
 _.timeoutMillis = 0;
 var POST;
-var Lcom_google_gwt_http_client_RequestBuilder_2_classLit = createForClass('com.google.gwt.http.client', 'RequestBuilder', 107);
+var Lcom_google_gwt_http_client_RequestBuilder_2_classLit = createForClass('com.google.gwt.http.client', 'RequestBuilder', 106);
 function RequestBuilder$1(val$request, val$callback){
   this.val$request2 = val$request;
   this.val$callback3 = val$callback;
 }
 
-defineClass(265, 1, {}, RequestBuilder$1);
+defineClass(248, 1, {}, RequestBuilder$1);
 _.onReadyStateChange = function onReadyStateChange(xhr){
   if (xhr.readyState == 4) {
     $clearOnReadyStateChange(xhr);
@@ -1629,7 +1656,7 @@ _.onReadyStateChange = function onReadyStateChange(xhr){
   }
 }
 ;
-var Lcom_google_gwt_http_client_RequestBuilder$1_2_classLit = createForClass('com.google.gwt.http.client', 'RequestBuilder/1', 265);
+var Lcom_google_gwt_http_client_RequestBuilder$1_2_classLit = createForClass('com.google.gwt.http.client', 'RequestBuilder/1', 248);
 function RequestBuilder$Method(name_0){
   this.name_0 = name_0;
 }
@@ -1644,28 +1671,28 @@ function RequestException(message){
   Exception.call(this, message);
 }
 
-defineClass(39, 54, $intern_4, RequestException);
-var Lcom_google_gwt_http_client_RequestException_2_classLit = createForClass('com.google.gwt.http.client', 'RequestException', 39);
+defineClass(41, 55, $intern_4, RequestException);
+var Lcom_google_gwt_http_client_RequestException_2_classLit = createForClass('com.google.gwt.http.client', 'RequestException', 41);
 function RequestPermissionException(url_0){
   RequestException.call(this, 'The URL ' + url_0 + ' is invalid or violates the same-origin security restriction');
 }
 
-defineClass(272, 39, $intern_4, RequestPermissionException);
-var Lcom_google_gwt_http_client_RequestPermissionException_2_classLit = createForClass('com.google.gwt.http.client', 'RequestPermissionException', 272);
+defineClass(252, 41, $intern_4, RequestPermissionException);
+var Lcom_google_gwt_http_client_RequestPermissionException_2_classLit = createForClass('com.google.gwt.http.client', 'RequestPermissionException', 252);
 function RequestTimeoutException(timeoutMillis){
   RequestException.call(this, 'A request timeout has expired after ' + timeoutMillis + ' ms');
 }
 
-defineClass(291, 39, $intern_4, RequestTimeoutException);
-var Lcom_google_gwt_http_client_RequestTimeoutException_2_classLit = createForClass('com.google.gwt.http.client', 'RequestTimeoutException', 291);
-defineClass(324, 1, {});
-var Lcom_google_gwt_http_client_Response_2_classLit = createForClass('com.google.gwt.http.client', 'Response', 324);
+defineClass(304, 41, $intern_4, RequestTimeoutException);
+var Lcom_google_gwt_http_client_RequestTimeoutException_2_classLit = createForClass('com.google.gwt.http.client', 'RequestTimeoutException', 304);
+defineClass(338, 1, {});
+var Lcom_google_gwt_http_client_Response_2_classLit = createForClass('com.google.gwt.http.client', 'Response', 338);
 function ResponseImpl(xmlHttpRequest){
   this.xmlHttpRequest = xmlHttpRequest;
 }
 
-defineClass(226, 324, {}, ResponseImpl);
-var Lcom_google_gwt_http_client_ResponseImpl_2_classLit = createForClass('com.google.gwt.http.client', 'ResponseImpl', 226);
+defineClass(227, 338, {}, ResponseImpl);
+var Lcom_google_gwt_http_client_ResponseImpl_2_classLit = createForClass('com.google.gwt.http.client', 'ResponseImpl', 227);
 function throwIfEmptyOrNull(name_0, value_0){
   throwIfNull(name_0, value_0);
   if (0 == $trim(value_0).length) {
@@ -1714,10 +1741,10 @@ function setDirectionOnElement(elem, direction){
   }
 }
 
-defineClass(326, 1, {});
-var Lcom_google_gwt_i18n_shared_DefaultDateTimeFormatInfo_2_classLit = createForClass('com.google.gwt.i18n.shared', 'DefaultDateTimeFormatInfo', 326);
-defineClass(327, 326, {});
-var Lcom_google_gwt_i18n_client_DefaultDateTimeFormatInfo_2_classLit = createForClass('com.google.gwt.i18n.client', 'DefaultDateTimeFormatInfo', 327);
+defineClass(340, 1, {});
+var Lcom_google_gwt_i18n_shared_DefaultDateTimeFormatInfo_2_classLit = createForClass('com.google.gwt.i18n.shared', 'DefaultDateTimeFormatInfo', 340);
+defineClass(341, 340, {});
+var Lcom_google_gwt_i18n_client_DefaultDateTimeFormatInfo_2_classLit = createForClass('com.google.gwt.i18n.client', 'DefaultDateTimeFormatInfo', 341);
 function $clinit_HasDirection$Direction(){
   $clinit_HasDirection$Direction = emptyMethod;
   RTL = new HasDirection$Direction('RTL', 0);
@@ -1750,14 +1777,14 @@ function $getDateTimeFormatInfo(this$static){
 function LocaleInfo(){
 }
 
-defineClass(159, 1, {}, LocaleInfo);
+defineClass(160, 1, {}, LocaleInfo);
 var instance_0;
-var Lcom_google_gwt_i18n_client_LocaleInfo_2_classLit = createForClass('com.google.gwt.i18n.client', 'LocaleInfo', 159);
+var Lcom_google_gwt_i18n_client_LocaleInfo_2_classLit = createForClass('com.google.gwt.i18n.client', 'LocaleInfo', 160);
 function DateTimeFormatInfoImpl(){
 }
 
-defineClass(289, 327, {}, DateTimeFormatInfoImpl);
-var Lcom_google_gwt_i18n_client_impl_cldr_DateTimeFormatInfoImpl_2_classLit = createForClass('com.google.gwt.i18n.client.impl.cldr', 'DateTimeFormatInfoImpl', 289);
+defineClass(307, 341, {}, DateTimeFormatInfoImpl);
+var Lcom_google_gwt_i18n_client_impl_cldr_DateTimeFormatInfoImpl_2_classLit = createForClass('com.google.gwt.i18n.client.impl.cldr', 'DateTimeFormatInfoImpl', 307);
 function $clinit_DateTimeFormat(){
   $clinit_DateTimeFormat = emptyMethod;
   cache = new HashMap;
@@ -1768,7 +1795,7 @@ function $addPart(this$static, buf, count){
   if (buf.string.length > 0) {
     $add_4(this$static.patternParts, new DateTimeFormat$PatternPart(buf.string, count));
     oldLength = buf.string.length;
-    0 < oldLength?(buf.string = buf.string.substr(0, 0)):0 > oldLength && (buf.string += valueOf_4(initUnidimensionalArray(C_classLit, $intern_0, 294, -oldLength, 15, 1)));
+    0 < oldLength?(buf.string = buf.string.substr(0, 0)):0 > oldLength && (buf.string += valueOf_4(initUnidimensionalArray(C_classLit, $intern_0, 309, -oldLength, 15, 1)));
   }
 }
 
@@ -1787,10 +1814,10 @@ function $identifyAbutStart(this$static){
   abut = false;
   len = this$static.patternParts.array.length;
   for (i = 0; i < len; i++) {
-    if ($isNumeric(castTo($get_0(this$static.patternParts, i), 59))) {
-      if (!abut && i + 1 < len && $isNumeric(castTo($get_0(this$static.patternParts, i + 1), 59))) {
+    if ($isNumeric(castTo($get_0(this$static.patternParts, i), 60))) {
+      if (!abut && i + 1 < len && $isNumeric(castTo($get_0(this$static.patternParts, i + 1), 60))) {
         abut = true;
-        castTo($get_0(this$static.patternParts, i), 59).abutStart = true;
+        castTo($get_0(this$static.patternParts, i), 60).abutStart = true;
       }
     }
      else {
@@ -1828,12 +1855,12 @@ function $matchString(text_0, start_0, data_0, pos){
 function $parse(this$static, text_0, date){
   var abutPass, abutPat, abutStart, cal, count, i, parsePos, part, s;
   cal = new DateRecord;
-  parsePos = stampJavaTypeInfo(getClassLiteralForArray(I_classLit, 1), $intern_0, 294, 15, [0]);
+  parsePos = stampJavaTypeInfo(getClassLiteralForArray(I_classLit, 1), $intern_0, 309, 15, [0]);
   abutPat = -1;
   abutStart = 0;
   abutPass = 0;
   for (i = 0; i < this$static.patternParts.array.length; ++i) {
-    part = castTo($get_0(this$static.patternParts, i), 59);
+    part = castTo($get_0(this$static.patternParts, i), 60);
     if (part.count > 0) {
       if (abutPat < 0 && part.abutStart) {
         abutPat = i;
@@ -2257,10 +2284,10 @@ function DateTimeFormat$PatternPart(txt, cnt){
   this.abutStart = false;
 }
 
-defineClass(59, 1, {59:1}, DateTimeFormat$PatternPart);
+defineClass(60, 1, {60:1}, DateTimeFormat$PatternPart);
 _.abutStart = false;
 _.count = 0;
-var Lcom_google_gwt_i18n_shared_DateTimeFormat$PatternPart_2_classLit = createForClass('com.google.gwt.i18n.shared', 'DateTimeFormat/PatternPart', 59);
+var Lcom_google_gwt_i18n_shared_DateTimeFormat$PatternPart_2_classLit = createForClass('com.google.gwt.i18n.shared', 'DateTimeFormat/PatternPart', 60);
 function $after(this$static, when){
   return gt(fromDouble_0(this$static.jsdate.getTime()), fromDouble_0(when.jsdate.getTime()));
 }
@@ -2433,7 +2460,7 @@ function DateRecord(){
   this.tzOffset = $intern_6;
 }
 
-defineClass(290, 29, $intern_5, DateRecord);
+defineClass(308, 29, $intern_5, DateRecord);
 _.ambiguousYear = false;
 _.ampm = 0;
 _.dayOfMonth = 0;
@@ -2447,7 +2474,7 @@ _.month = 0;
 _.seconds = 0;
 _.tzOffset = 0;
 _.year = 0;
-var Lcom_google_gwt_i18n_shared_impl_DateRecord_2_classLit = createForClass('com.google.gwt.i18n.shared.impl', 'DateRecord', 290);
+var Lcom_google_gwt_i18n_shared_impl_DateRecord_2_classLit = createForClass('com.google.gwt.i18n.shared.impl', 'DateRecord', 308);
 function canSet(array, value_0){
   var elementTypeCategory;
   switch (getElementTypeCategory(array)) {
@@ -3148,12 +3175,12 @@ function SafeUriString(uri_0){
   this.uri_0 = uri_0;
 }
 
-defineClass(38, 1, {329:1, 38:1}, SafeUriString);
+defineClass(39, 1, {343:1, 39:1}, SafeUriString);
 _.equals_0 = function equals_2(obj){
-  if (!instanceOf(obj, 38)) {
+  if (!instanceOf(obj, 39)) {
     return false;
   }
-  return $equals_1(this.uri_0, castTo(obj, 329).uri_0);
+  return $equals_1(this.uri_0, castTo(obj, 343).uri_0);
 }
 ;
 _.hashCode_0 = function hashCode_4(){
@@ -3164,7 +3191,7 @@ _.toString_0 = function toString_10(){
   return 'safe: "' + this.uri_0 + '"';
 }
 ;
-var Lcom_google_gwt_safehtml_shared_SafeUriString_2_classLit = createForClass('com.google.gwt.safehtml.shared', 'SafeUriString', 38);
+var Lcom_google_gwt_safehtml_shared_SafeUriString_2_classLit = createForClass('com.google.gwt.safehtml.shared', 'SafeUriString', 39);
 function $clinit_UriUtils(){
   $clinit_UriUtils = emptyMethod;
   new RegExp('%5B', 'g');
@@ -3200,7 +3227,7 @@ function $doInvoke(this$static, responseReader, methodName, statsContext, reques
   }
    catch ($e0) {
     $e0 = toJava($e0);
-    if (instanceOf($e0, 39)) {
+    if (instanceOf($e0, 41)) {
       ex = $e0;
       iex = new InvocationException_0('Unable to initiate the asynchronous service invocation (' + methodName + ') -- check the network connection', ex);
       callback.onFailure(iex);
@@ -3242,8 +3269,8 @@ function getEncodedInstance(encodedResponse){
   return encodedResponse;
 }
 
-defineClass(192, 1, {});
-var Lcom_google_gwt_user_client_rpc_impl_RemoteServiceProxy_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'RemoteServiceProxy', 192);
+defineClass(193, 1, {});
+var Lcom_google_gwt_user_client_rpc_impl_RemoteServiceProxy_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'RemoteServiceProxy', 193);
 function $clinit_ConnService_Proxy(){
   $clinit_ConnService_Proxy = emptyMethod;
   SERIALIZER = new ConnService_TypeSerializer;
@@ -3365,13 +3392,34 @@ function $deleteCourse(this$static, name_0, callback){
   }
 }
 
-function $getAvailableExams(this$static, courseName, callback){
+function $deleteExam(this$static, courseName, callback){
+  var helper, streamWriter;
+  helper = new RemoteServiceProxy$ServiceHelper(this$static, 'deleteExam');
+  try {
+    streamWriter = $start(helper, 1);
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, courseName));
+    $finish_0(helper, callback, ($clinit_RequestCallbackAdapter$ResponseReader() , BOOLEAN));
+  }
+   catch ($e0) {
+    $e0 = toJava($e0);
+    if (instanceOf($e0, 16)) {
+      $wnd.alert('Errore server');
+    }
+     else 
+      throw toJs($e0);
+  }
+}
+
+function $getAvailableExams(this$static, studentEmail, courseName, callback){
   var helper, streamWriter;
   helper = new RemoteServiceProxy$ServiceHelper(this$static, 'getAvailableExams');
   try {
-    streamWriter = $start(helper, 1);
-    $append(streamWriter, '' + $addString(streamWriter, '[Ljava.lang.String;/2600011424'));
-    $writeObject(streamWriter, courseName);
+    streamWriter = $start(helper, 2);
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, studentEmail));
+    $append(streamWriter, '' + $addString(streamWriter, courseName));
     $finish_0(helper, callback, ($clinit_RequestCallbackAdapter$ResponseReader() , STRING));
   }
    catch ($e0) {
@@ -3387,6 +3435,25 @@ function $getAvailableExams(this$static, courseName, callback){
 function $getCourseData(this$static, name_0, callback){
   var helper, streamWriter;
   helper = new RemoteServiceProxy$ServiceHelper(this$static, 'getCourseData');
+  try {
+    streamWriter = $start(helper, 1);
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, name_0));
+    $finish_0(helper, callback, ($clinit_RequestCallbackAdapter$ResponseReader() , STRING));
+  }
+   catch ($e0) {
+    $e0 = toJava($e0);
+    if (instanceOf($e0, 16)) {
+      $wnd.alert('Non riesco a trovare le informazioni sul server.');
+    }
+     else 
+      throw toJs($e0);
+  }
+}
+
+function $getExamData(this$static, name_0, callback){
+  var helper, streamWriter;
+  helper = new RemoteServiceProxy$ServiceHelper(this$static, 'getExamData');
   try {
     streamWriter = $start(helper, 1);
     $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
@@ -3422,6 +3489,26 @@ function $getGrades(this$static, email, callback){
   }
 }
 
+function $getInfoUser(this$static, userEmail, callback){
+  var ex, helper, streamWriter;
+  helper = new RemoteServiceProxy$ServiceHelper(this$static, 'getInfoUser');
+  try {
+    streamWriter = $start(helper, 1);
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, userEmail));
+    $finish_0(helper, callback, ($clinit_RequestCallbackAdapter$ResponseReader() , STRING));
+  }
+   catch ($e0) {
+    $e0 = toJava($e0);
+    if (instanceOf($e0, 16)) {
+      ex = $e0;
+      $wnd.alert('error:' + ex);
+    }
+     else 
+      throw toJs($e0);
+  }
+}
+
 function $getStudentsCourseList(this$static, courseName, callback){
   var helper, streamWriter;
   helper = new RemoteServiceProxy$ServiceHelper(this$static, 'getStudentsCourseList');
@@ -3435,6 +3522,26 @@ function $getStudentsCourseList(this$static, courseName, callback){
     $e0 = toJava($e0);
     if (instanceOf($e0, 16)) {
       $wnd.alert('Errore server.\nLista studenti iscritti al corso non aggiornata');
+    }
+     else 
+      throw toJs($e0);
+  }
+}
+
+function $getStudentsExamList(this$static, examName, callback){
+  var ex, helper, streamWriter;
+  helper = new RemoteServiceProxy$ServiceHelper(this$static, 'getStudentsExamList');
+  try {
+    streamWriter = $start(helper, 1);
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, examName));
+    $finish_0(helper, callback, ($clinit_RequestCallbackAdapter$ResponseReader() , STRING));
+  }
+   catch ($e0) {
+    $e0 = toJava($e0);
+    if (instanceOf($e0, 16)) {
+      ex = $e0;
+      callback.onFailure(ex);
     }
      else 
       throw toJs($e0);
@@ -3524,11 +3631,31 @@ function $retrieveExams(this$static, callback){
   }
 }
 
-function $retrieveInfoStudentList(this$static, callback){
+function $retrieveExamsForSecretary(this$static, callback){
   var ex, helper;
-  helper = new RemoteServiceProxy$ServiceHelper(this$static, 'retrieveInfoStudentList');
+  helper = new RemoteServiceProxy$ServiceHelper(this$static, 'retrieveExamsForSecretary');
   try {
     $start(helper, 0);
+    $finish_0(helper, callback, ($clinit_RequestCallbackAdapter$ResponseReader() , OBJECT));
+  }
+   catch ($e0) {
+    $e0 = toJava($e0);
+    if (instanceOf($e0, 16)) {
+      ex = $e0;
+      $wnd.alert('ERROR: ' + ex);
+    }
+     else 
+      throw toJs($e0);
+  }
+}
+
+function $retrieveGradesAndStudents(this$static, selectedExam, callback){
+  var ex, helper, streamWriter;
+  helper = new RemoteServiceProxy$ServiceHelper(this$static, 'retrieveGradesAndStudents');
+  try {
+    streamWriter = $start(helper, 1);
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, selectedExam));
     $finish_0(helper, callback, ($clinit_RequestCallbackAdapter$ResponseReader() , STRING));
   }
    catch ($e0) {
@@ -3542,14 +3669,12 @@ function $retrieveInfoStudentList(this$static, callback){
   }
 }
 
-function $retrieveStudents(this$static, selectedExam, callback){
-  var ex, helper, streamWriter;
-  helper = new RemoteServiceProxy$ServiceHelper(this$static, 'retrieveStudents');
+function $retrieveInfoStudentList(this$static, callback){
+  var ex, helper;
+  helper = new RemoteServiceProxy$ServiceHelper(this$static, 'retrieveInfoStudentList');
   try {
-    streamWriter = $start(helper, 1);
-    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
-    $append(streamWriter, '' + $addString(streamWriter, selectedExam));
-    $finish_0(helper, callback, ($clinit_RequestCallbackAdapter$ResponseReader() , OBJECT));
+    $start(helper, 0);
+    $finish_0(helper, callback, ($clinit_RequestCallbackAdapter$ResponseReader() , STRING));
   }
    catch ($e0) {
     $e0 = toJava($e0);
@@ -3617,6 +3742,33 @@ function $setCourseData(this$static, name_0, startData, endData, newName, callba
     $append(streamWriter, '' + $addString(streamWriter, startData));
     $append(streamWriter, '' + $addString(streamWriter, endData));
     $append(streamWriter, '' + $addString(streamWriter, newName));
+    $finish_0(helper, callback, ($clinit_RequestCallbackAdapter$ResponseReader() , BOOLEAN));
+  }
+   catch ($e0) {
+    $e0 = toJava($e0);
+    if (instanceOf($e0, 16)) {
+      $wnd.alert('Errore aggiornamento dati.');
+    }
+     else 
+      throw toJs($e0);
+  }
+}
+
+function $setExamData(this$static, courseName, date, hour, classroom, duration, callback){
+  var helper, streamWriter;
+  helper = new RemoteServiceProxy$ServiceHelper(this$static, 'setExamData');
+  try {
+    streamWriter = $start(helper, 5);
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, 'java.lang.String/2004016611'));
+    $append(streamWriter, '' + $addString(streamWriter, courseName));
+    $append(streamWriter, '' + $addString(streamWriter, date));
+    $append(streamWriter, '' + $addString(streamWriter, hour));
+    $append(streamWriter, '' + $addString(streamWriter, classroom));
+    $append(streamWriter, '' + $addString(streamWriter, duration));
     $finish_0(helper, callback, ($clinit_RequestCallbackAdapter$ResponseReader() , BOOLEAN));
   }
    catch ($e0) {
@@ -3763,7 +3915,7 @@ function ConnService_Proxy(){
   RemoteServiceProxy.call(this, getModuleBaseURL(), SERIALIZER);
 }
 
-defineClass(18, 192, {}, ConnService_Proxy);
+defineClass(18, 193, {}, ConnService_Proxy);
 var SERIALIZER;
 var Lcom_google_gwt_sample_progettoingegneria_client_ConnService_1Proxy_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'ConnService_Proxy', 18);
 function $check(this$static, typeSignature){
@@ -3797,8 +3949,8 @@ function SerializerBase(methodMapNative, signatureMapNative){
   this.signatureMapNative = signatureMapNative;
 }
 
-defineClass(205, 1, {});
-var Lcom_google_gwt_user_client_rpc_impl_SerializerBase_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'SerializerBase', 205);
+defineClass(206, 1, {});
+var Lcom_google_gwt_user_client_rpc_impl_SerializerBase_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'SerializerBase', 206);
 function $clinit_ConnService_TypeSerializer(){
   var result, result_0;
   $clinit_ConnService_TypeSerializer = emptyMethod;
@@ -3811,9 +3963,9 @@ function ConnService_TypeSerializer(){
   SerializerBase.call(this, methodMapNative_0, signatureMapNative_0);
 }
 
-defineClass(206, 205, {}, ConnService_TypeSerializer);
+defineClass(207, 206, {}, ConnService_TypeSerializer);
 var methodMapNative_0, signatureMapNative_0;
-var Lcom_google_gwt_sample_progettoingegneria_client_ConnService_1TypeSerializer_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'ConnService_TypeSerializer', 206);
+var Lcom_google_gwt_sample_progettoingegneria_client_ConnService_1TypeSerializer_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'ConnService_TypeSerializer', 207);
 function $getElement(this$static){
   return $clinit_DOM() , this$static.element;
 }
@@ -3851,7 +4003,7 @@ function $sinkBitlessEvent(this$static, eventTypeName){
   sinkBitlessEvent(($clinit_DOM() , this$static.element), eventTypeName);
 }
 
-defineClass(7, 1, {9:1, 7:1});
+defineClass(7, 1, {10:1, 7:1});
 _.resolvePotentialElement = function resolvePotentialElement(){
   return $resolvePotentialElement();
 }
@@ -3860,14 +4012,14 @@ _.toString_0 = function toString_11(){
   if (!this.element) {
     return '(null handle)';
   }
-  return ($clinit_DOM() , this.element).outerHTML;
+  return $toString_0(($clinit_DOM() , this.element));
 }
 ;
 var Lcom_google_gwt_user_client_ui_UIObject_2_classLit = createForClass('com.google.gwt.user.client.ui', 'UIObject', 7);
 function $addDomHandler(this$static, handler, type_0){
   var typeInt;
   typeInt = getTypeInt(type_0.name_0);
-  typeInt == -1?$sinkBitlessEvent(this$static, type_0.name_0):this$static.eventsToSink == -1?sinkEvents(($clinit_DOM() , this$static.element), typeInt | (this$static.element.__eventBits || 0)):(this$static.eventsToSink |= typeInt);
+  typeInt == -1?$sinkBitlessEvent(this$static, type_0.name_0):this$static.eventsToSink == -1?($clinit_DOM() , $sinkEvents_0(this$static.element, typeInt | (this$static.element.__eventBits || 0))):(this$static.eventsToSink |= typeInt);
   return $addHandler(!this$static.handlerManager?(this$static.handlerManager = new HandlerManager(this$static)):this$static.handlerManager, type_0, handler);
 }
 
@@ -3885,7 +4037,7 @@ function $onAttach(this$static){
   setEventListener(this$static.element, this$static);
   bitsToAdd = this$static.eventsToSink;
   this$static.eventsToSink = -1;
-  bitsToAdd > 0 && (this$static.eventsToSink == -1?sinkEvents(this$static.element, bitsToAdd | (this$static.element.__eventBits || 0)):(this$static.eventsToSink |= bitsToAdd));
+  bitsToAdd > 0 && (this$static.eventsToSink == -1?$sinkEvents_0(this$static.element, bitsToAdd | (this$static.element.__eventBits || 0)):(this$static.eventsToSink |= bitsToAdd));
   this$static.doAttachChildren();
   this$static.onLoad();
 }
@@ -3895,7 +4047,7 @@ function $onBrowserEvent(this$static, event_0){
   switch ($clinit_DOM() , $eventGetTypeInt(event_0.type)) {
     case 16:
     case 32:
-      related = event_0.relatedTarget;
+      related = $eventGetRelatedTarget(event_0);
       if (!!related && $isOrHasChild(this$static.element, related)) {
         return;
       }
@@ -3923,8 +4075,8 @@ function $removeFromParent(this$static){
     $clinit_RootPanel();
     $contains_0(widgetsToDetach, this$static) && detachNow(this$static);
   }
-   else if (instanceOf(this$static.parent_0, 45)) {
-    castTo(this$static.parent_0, 45).remove(this$static);
+   else if (instanceOf(this$static.parent_0, 47)) {
+    castTo(this$static.parent_0, 47).remove(this$static);
   }
    else if (this$static.parent_0) {
     throw toJs(new IllegalStateException_0("This widget's parent does not implement HasWidgets"));
@@ -3959,10 +4111,10 @@ function $setParent(this$static, parent_0){
 }
 
 function $sinkEvents(this$static, eventBitsToAdd){
-  this$static.eventsToSink == -1?sinkEvents(($clinit_DOM() , this$static.element), eventBitsToAdd | (this$static.element.__eventBits || 0)):(this$static.eventsToSink |= eventBitsToAdd);
+  this$static.eventsToSink == -1?($clinit_DOM() , $sinkEvents_0(this$static.element, eventBitsToAdd | (this$static.element.__eventBits || 0))):(this$static.eventsToSink |= eventBitsToAdd);
 }
 
-defineClass(5, 7, $intern_13);
+defineClass(6, 7, $intern_13);
 _.doAttachChildren = function doAttachChildren(){
 }
 ;
@@ -3990,7 +4142,7 @@ _.onLoad = function onLoad(){
 ;
 _.attached = false;
 _.eventsToSink = 0;
-var Lcom_google_gwt_user_client_ui_Widget_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Widget', 5);
+var Lcom_google_gwt_user_client_ui_Widget_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Widget', 6);
 function $checkInit(this$static){
   if (!this$static.widget) {
     throw toJs(new IllegalStateException_0('initWidget() is not called yet'));
@@ -4010,7 +4162,7 @@ function $initWidget(this$static, widget){
   $setParent(widget, this$static);
 }
 
-defineClass(309, 5, $intern_13);
+defineClass(324, 6, $intern_13);
 _.isAttached = function isAttached_0(){
   if (this.widget) {
     return this.widget.attached;
@@ -4043,28 +4195,28 @@ _.resolvePotentialElement = function resolvePotentialElement_0(){
   return $clinit_DOM() , this.element;
 }
 ;
-var Lcom_google_gwt_user_client_ui_Composite_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Composite', 309);
+var Lcom_google_gwt_user_client_ui_Composite_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Composite', 324);
 function FooterComponent(){
   var l1, l2, l3;
   this.hPanel = new HorizontalPanel;
   $initWidget(this, this.hPanel);
-  l1 = new Label('mail: unibo@unibo.it');
-  l2 = new Label('  telefono: 0123-345  ');
-  l3 = new Label('indirizzo: Via Ingegneria del Software, Bologna');
+  l1 = new Label_0('mail: unibo@unibo.it');
+  l2 = new Label_0('  telefono: 0123-345  ');
+  l3 = new Label_0('indirizzo: Via Ingegneria del Software, Bologna');
   $add_1(this.hPanel, l1);
   $add_1(this.hPanel, l2);
   $add_1(this.hPanel, l3);
 }
 
-defineClass(158, 309, $intern_13, FooterComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_FooterComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'FooterComponent', 158);
+defineClass(159, 324, $intern_13, FooterComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_FooterComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'FooterComponent', 159);
 function HomePage(){
   var l1, logoImage, titleLabel;
   this.vPanel = new VerticalPanel;
   $initWidget(this, this.vPanel);
-  titleLabel = new Label('UniBo');
+  titleLabel = new Label_0('UniBo');
   logoImage = new Image_0;
-  l1 = new Label('Dipartimenti:\n-Matematica\n-Informatica\n-Scienze');
+  l1 = new Label_0('Dipartimenti:\n-Matematica\n-Informatica\n-Scienze');
   $setUrl(logoImage, ($clinit_UriUtils() , new SafeUriString('https://www.unibo.it/it/logo-unibo.png/@@images/44d79f14-1a99-4a5d-997f-90df029bd63e.png')));
   ($clinit_DOM() , logoImage.element).style['width'] = '50%';
   $add_2(this.vPanel, titleLabel);
@@ -4072,21 +4224,21 @@ function HomePage(){
   $add_2(this.vPanel, l1);
 }
 
-defineClass(157, 309, $intern_13, HomePage);
-var Lcom_google_gwt_sample_progettoingegneria_client_HomePage_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'HomePage', 157);
+defineClass(158, 324, $intern_13, HomePage);
+var Lcom_google_gwt_sample_progettoingegneria_client_HomePage_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'HomePage', 158);
 function LoginPage(main){
   var credentialsLabel, emailLabel, hpanel, passwordLabel, titleLabel, vpanel1, vpanel2;
   this.mainPanel = new VerticalPanel;
   this.image1 = new Image_0;
   this.emailTextBox = new TextBox;
   this.passwordTextBox = new TextBox;
-  this.loginButton = new Button('Accedi');
+  this.loginButton = new Button_0('Accedi');
   this.main = main;
   $initWidget(this, this.mainPanel);
-  titleLabel = new Label('Accedi');
-  credentialsLabel = new Label('Credenziali di accesso:');
-  emailLabel = new Label('email: ');
-  passwordLabel = new Label('password:');
+  titleLabel = new Label_0('Accedi');
+  credentialsLabel = new Label_0('Credenziali di accesso:');
+  emailLabel = new Label_0('email: ');
+  passwordLabel = new Label_0('password:');
   vpanel1 = new VerticalPanel;
   vpanel2 = new VerticalPanel;
   hpanel = new HorizontalPanel;
@@ -4105,13 +4257,13 @@ function LoginPage(main){
   $add_2(this.mainPanel, this.image1);
 }
 
-defineClass(194, 309, $intern_13, LoginPage);
-var Lcom_google_gwt_sample_progettoingegneria_client_LoginPage_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'LoginPage', 194);
+defineClass(195, 324, $intern_13, LoginPage);
+var Lcom_google_gwt_sample_progettoingegneria_client_LoginPage_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'LoginPage', 195);
 function LoginPage$loginButtonHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(195, 1, $intern_14, LoginPage$loginButtonHandler);
+defineClass(196, 1, $intern_14, LoginPage$loginButtonHandler);
 _.onClick = function onClick(event_0){
   var passw, userEmail;
   userEmail = $getText(this.this$01.emailTextBox);
@@ -4120,7 +4272,7 @@ _.onClick = function onClick(event_0){
   $loginRequest(connService, userEmail, passw, new LoginPage$loginButtonHandler$1(this, userEmail));
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_LoginPage$loginButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'LoginPage/loginButtonHandler', 195);
+var Lcom_google_gwt_sample_progettoingegneria_client_LoginPage$loginButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'LoginPage/loginButtonHandler', 196);
 function $onSuccess(this$static, result){
   switch (result.ordinal) {
     case 4:
@@ -4155,7 +4307,7 @@ function LoginPage$loginButtonHandler$1(this$1, val$userEmail){
   this.val$userEmail2 = val$userEmail;
 }
 
-defineClass(196, 1, {}, LoginPage$loginButtonHandler$1);
+defineClass(197, 1, {}, LoginPage$loginButtonHandler$1);
 _.onSuccess = function onSuccess(result){
   $onSuccess(this, castTo(result, 33));
 }
@@ -4164,7 +4316,7 @@ _.onFailure = function onFailure(caught){
   alert_0('Cannot access: ' + caught.getMessage());
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_LoginPage$loginButtonHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'LoginPage/loginButtonHandler/1', 196);
+var Lcom_google_gwt_sample_progettoingegneria_client_LoginPage$loginButtonHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'LoginPage/loginButtonHandler/1', 197);
 function $openAdminDashboard(this$static){
   var admDash;
   $clear(this$static.contentPanel);
@@ -4231,8 +4383,8 @@ function MainPage(){
   $add_2(this.footerPanel, footer);
 }
 
-defineClass(110, 309, $intern_13, MainPage);
-var Lcom_google_gwt_sample_progettoingegneria_client_MainPage_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MainPage', 110);
+defineClass(111, 324, $intern_13, MainPage);
+var Lcom_google_gwt_sample_progettoingegneria_client_MainPage_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MainPage', 111);
 function $setLoginText(this$static){
   (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).tipo != ($clinit_UserState() , NOT_SIGNED)?$setText(this$static.buttonLogin, 'logout'):$setText(this$static.buttonLogin, 'login');
 }
@@ -4249,9 +4401,9 @@ function MenuComponent(main){
   this.hPanel = new HorizontalPanel;
   $initWidget(this, this.hPanel);
   this.main = main;
-  this.buttonLogin = new Button('Area Utente');
-  buttonHome = new Button('home');
-  buttonClear = new Button('pulisci db');
+  this.buttonLogin = new Button_0('Area Utente');
+  buttonHome = new Button_0('home');
+  buttonClear = new Button_0('pulisci db');
   $setWidth(this.buttonLogin, '250px');
   ($clinit_DOM() , buttonHome.element).style['width'] = '250px';
   $addDomHandler(this.buttonLogin, new MenuComponent$buttonLoginHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
@@ -4262,22 +4414,22 @@ function MenuComponent(main){
   $add_1(this.hPanel, buttonClear);
 }
 
-defineClass(136, 309, $intern_13, MenuComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_MenuComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MenuComponent', 136);
+defineClass(137, 324, $intern_13, MenuComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_MenuComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MenuComponent', 137);
 function MenuComponent$buttonClearHandler(){
 }
 
-defineClass(139, 1, $intern_14, MenuComponent$buttonClearHandler);
+defineClass(140, 1, $intern_14, MenuComponent$buttonClearHandler);
 _.onClick = function onClick_0(event_0){
   !connService && (connService = new ConnService_Proxy);
   $clearDB(connService, new MenuComponent$buttonClearHandler$1);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_MenuComponent$buttonClearHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MenuComponent/buttonClearHandler', 139);
+var Lcom_google_gwt_sample_progettoingegneria_client_MenuComponent$buttonClearHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MenuComponent/buttonClearHandler', 140);
 function MenuComponent$buttonClearHandler$1(){
 }
 
-defineClass(140, 1, {}, MenuComponent$buttonClearHandler$1);
+defineClass(141, 1, {}, MenuComponent$buttonClearHandler$1);
 _.onSuccess = function onSuccess_0(result){
   alert_0(castToString(result));
 }
@@ -4286,23 +4438,23 @@ _.onFailure = function onFailure_0(caught){
   $wnd.alert('ERROR: ' + caught);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_MenuComponent$buttonClearHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MenuComponent/buttonClearHandler/1', 140);
+var Lcom_google_gwt_sample_progettoingegneria_client_MenuComponent$buttonClearHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MenuComponent/buttonClearHandler/1', 141);
 function MenuComponent$buttonHomeHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(138, 1, $intern_14, MenuComponent$buttonHomeHandler);
+defineClass(139, 1, $intern_14, MenuComponent$buttonHomeHandler);
 _.onClick = function onClick_1(event_0){
   $openHomePage(this.this$01.main);
   $setText(this.this$01.buttonLogin, 'Area Utente');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_MenuComponent$buttonHomeHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MenuComponent/buttonHomeHandler', 138);
+var Lcom_google_gwt_sample_progettoingegneria_client_MenuComponent$buttonHomeHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MenuComponent/buttonHomeHandler', 139);
 function MenuComponent$buttonLoginHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(137, 1, $intern_14, MenuComponent$buttonLoginHandler);
+defineClass(138, 1, $intern_14, MenuComponent$buttonLoginHandler);
 _.onClick = function onClick_2(event_0){
   $setSessionToLogout(this.this$01);
   switch ((!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).tipo.ordinal) {
@@ -4329,7 +4481,7 @@ _.onClick = function onClick_2(event_0){
   }
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_MenuComponent$buttonLoginHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MenuComponent/buttonLoginHandler', 137);
+var Lcom_google_gwt_sample_progettoingegneria_client_MenuComponent$buttonLoginHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'MenuComponent/buttonLoginHandler', 138);
 function $setSession(this$static, tipo, email){
   this$static.tipo = tipo;
   this$static.email = email;
@@ -4340,14 +4492,15 @@ function Session(tipo){
   this.email = null;
 }
 
-defineClass(24, 1, {}, Session);
+defineClass(22, 1, {}, Session);
+_.navIndex = 0;
 var currentSession = null;
-var Lcom_google_gwt_sample_progettoingegneria_client_Session_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'Session', 24);
+var Lcom_google_gwt_sample_progettoingegneria_client_Session_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client', 'Session', 22);
 function AdminDashboard(){
   var adminMenu, logoImage, titleLabel;
   this.vPanel = new VerticalPanel;
   $initWidget(this, this.vPanel);
-  titleLabel = new Label('Universit\xE0 di Giacky');
+  titleLabel = new Label_0('Dashboard Admin: ' + (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email);
   logoImage = new Image_0;
   adminMenu = new AdminMenuComponent;
   $setUrl(logoImage, ($clinit_UriUtils() , new SafeUriString('https://cdn.pixabay.com/photo/2016/11/22/06/05/girl-1848454_960_720.jpg')));
@@ -4357,13 +4510,13 @@ function AdminDashboard(){
   $add_2(this.vPanel, adminMenu);
 }
 
-defineClass(191, 309, $intern_13, AdminDashboard);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_AdminDashboard_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards', 'AdminDashboard', 191);
+defineClass(192, 324, $intern_13, AdminDashboard);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_AdminDashboard_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards', 'AdminDashboard', 192);
 function ProfessorDashboard(){
   var logoImage, profmenu, titleLabel;
   this.vPanel = new VerticalPanel;
   $initWidget(this, this.vPanel);
-  titleLabel = new Label('Universit\xE0 di Giacky');
+  titleLabel = new Label_0('Dashboard Professore: ' + (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email);
   logoImage = new Image_0;
   profmenu = new ProfessorMenuComponent;
   $setUrl(logoImage, ($clinit_UriUtils() , new SafeUriString('https://cdn.pixabay.com/photo/2020/08/04/08/10/woman-5462074_960_720.jpg')));
@@ -4373,13 +4526,13 @@ function ProfessorDashboard(){
   $add_2(this.vPanel, profmenu);
 }
 
-defineClass(189, 309, $intern_13, ProfessorDashboard);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_ProfessorDashboard_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards', 'ProfessorDashboard', 189);
+defineClass(190, 324, $intern_13, ProfessorDashboard);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_ProfessorDashboard_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards', 'ProfessorDashboard', 190);
 function SecretaryDashboard(){
   var logoImage, secretaryMenu, titleLabel;
   this.vPanel = new VerticalPanel;
   $initWidget(this, this.vPanel);
-  titleLabel = new Label('Universit\uFFFD di Giacky');
+  titleLabel = new Label_0('Dashboard Segreteria: ' + (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email);
   logoImage = new Image_0;
   secretaryMenu = new SecretaryMenuComponent;
   $setUrl(logoImage, ($clinit_UriUtils() , new SafeUriString('https://cdn.pixabay.com/photo/2020/02/10/12/49/girl-4836396_960_720.jpg')));
@@ -4389,13 +4542,13 @@ function SecretaryDashboard(){
   $add_2(this.vPanel, secretaryMenu);
 }
 
-defineClass(190, 309, $intern_13, SecretaryDashboard);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_SecretaryDashboard_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards', 'SecretaryDashboard', 190);
+defineClass(191, 324, $intern_13, SecretaryDashboard);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_SecretaryDashboard_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards', 'SecretaryDashboard', 191);
 function StudentDashboard(){
   var logoImage, studentMenu, titleLabel;
   this.vPanel = new VerticalPanel;
   $initWidget(this, this.vPanel);
-  titleLabel = new Label('Dashboard Studente');
+  titleLabel = new Label_0('Dashboard Studente: ' + (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email);
   logoImage = new Image_0;
   studentMenu = new StudentMenuComponent;
   $setUrl(logoImage, ($clinit_UriUtils() , new SafeUriString('https://cdn.pixabay.com/photo/2016/11/22/06/05/girl-1848454_960_720.jpg')));
@@ -4405,8 +4558,8 @@ function StudentDashboard(){
   $add_2(this.vPanel, studentMenu);
 }
 
-defineClass(188, 309, $intern_13, StudentDashboard);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_StudentDashboard_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards', 'StudentDashboard', 188);
+defineClass(189, 324, $intern_13, StudentDashboard);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_StudentDashboard_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards', 'StudentDashboard', 189);
 function AdminCreateUserComponent(){
   this.vPanel = new VerticalPanel;
   this.signUpPanel = new VerticalPanel;
@@ -4416,18 +4569,18 @@ function AdminCreateUserComponent(){
   this.nameTB = new TextBox;
   this.surnameTB = new TextBox;
   this.typeListBox = new ListBox;
-  this.confirmSignUpButton = new Button('Registra');
+  this.confirmSignUpButton = new Button_0('Registra');
   $initWidget(this, this.vPanel);
   $add_2(this.vPanel, this.signUpPanel);
-  $add_2(this.signUpPanel, new Label('username'));
+  $add_2(this.signUpPanel, new Label_0('username'));
   $add_2(this.signUpPanel, this.usernameTB);
-  $add_2(this.signUpPanel, new Label('pssw'));
+  $add_2(this.signUpPanel, new Label_0('pssw'));
   $add_2(this.signUpPanel, this.passwordTB);
-  $add_2(this.signUpPanel, new Label('mail'));
+  $add_2(this.signUpPanel, new Label_0('mail'));
   $add_2(this.signUpPanel, this.mailTB);
-  $add_2(this.signUpPanel, new Label('nome'));
+  $add_2(this.signUpPanel, new Label_0('nome'));
   $add_2(this.signUpPanel, this.nameTB);
-  $add_2(this.signUpPanel, new Label('cognome'));
+  $add_2(this.signUpPanel, new Label_0('cognome'));
   $add_2(this.signUpPanel, this.surnameTB);
   $insertItem(this.typeListBox, 'Studente');
   $insertItem(this.typeListBox, 'Professore');
@@ -4437,13 +4590,13 @@ function AdminCreateUserComponent(){
   $addDomHandler(this.confirmSignUpButton, new AdminCreateUserComponent$confirmSignUpButtonHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
 }
 
-defineClass(254, 309, $intern_13, AdminCreateUserComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminCreateUserComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminCreateUserComponent', 254);
+defineClass(237, 324, $intern_13, AdminCreateUserComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminCreateUserComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminCreateUserComponent', 237);
 function AdminCreateUserComponent$confirmSignUpButtonHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(255, 1, $intern_14, AdminCreateUserComponent$confirmSignUpButtonHandler);
+defineClass(238, 1, $intern_14, AdminCreateUserComponent$confirmSignUpButtonHandler);
 _.onClick = function onClick_3(event_0){
   var mail, name_0, psw, surname, type_0, user;
   user = $getText(this.this$01.usernameTB);
@@ -4456,11 +4609,11 @@ _.onClick = function onClick_3(event_0){
   $signUp(connService, user, psw, mail, name_0, surname, type_0, new AdminCreateUserComponent$confirmSignUpButtonHandler$1);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminCreateUserComponent$confirmSignUpButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminCreateUserComponent/confirmSignUpButtonHandler', 255);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminCreateUserComponent$confirmSignUpButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminCreateUserComponent/confirmSignUpButtonHandler', 238);
 function AdminCreateUserComponent$confirmSignUpButtonHandler$1(){
 }
 
-defineClass(256, 1, {}, AdminCreateUserComponent$confirmSignUpButtonHandler$1);
+defineClass(239, 1, {}, AdminCreateUserComponent$confirmSignUpButtonHandler$1);
 _.onSuccess = function onSuccess_1(result){
   alert_0('Risultato: ' + castToString(result));
 }
@@ -4469,9 +4622,8 @@ _.onFailure = function onFailure_1(caught){
   $wnd.alert('ERROR: ' + caught);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminCreateUserComponent$confirmSignUpButtonHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminCreateUserComponent/confirmSignUpButtonHandler/1', 256);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminCreateUserComponent$confirmSignUpButtonHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminCreateUserComponent/confirmSignUpButtonHandler/1', 239);
 function AdminProfessorsListComponent(){
-  new HorizontalPanel;
   this.baseHPanel = new HorizontalPanel;
   this.usersListBox = new ListBox;
   $initWidget(this, this.baseHPanel);
@@ -4481,9 +4633,9 @@ function AdminProfessorsListComponent(){
   $add_1(this.baseHPanel, this.usersListBox);
 }
 
-defineClass(260, 309, $intern_13, AdminProfessorsListComponent);
+defineClass(243, 324, $intern_13, AdminProfessorsListComponent);
 _.nListItem = 0;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminProfessorsListComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminProfessorsListComponent', 260);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminProfessorsListComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminProfessorsListComponent', 243);
 function $onSuccess_0(this$static, result){
   var i, list;
   list = $split(result, '_');
@@ -4498,7 +4650,7 @@ function AdminProfessorsListComponent$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(262, 1, {}, AdminProfessorsListComponent$1);
+defineClass(245, 1, {}, AdminProfessorsListComponent$1);
 _.onSuccess = function onSuccess_2(result){
   $onSuccess_0(this, castToString(result));
 }
@@ -4507,20 +4659,19 @@ _.onFailure = function onFailure_2(caught){
   $wnd.alert('Errore comunicazione server: UPDATECOURSE');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminProfessorsListComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminProfessorsListComponent/1', 262);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminProfessorsListComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminProfessorsListComponent/1', 245);
 function AdminProfessorsListComponent$UsersListBoxHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(261, 1, $intern_15, AdminProfessorsListComponent$UsersListBoxHandler);
+defineClass(244, 1, $intern_15, AdminProfessorsListComponent$UsersListBoxHandler);
 _.onDoubleClick = function onDoubleClick(event_0){
   this.this$01.modifierComp = new AdminUserModifierComponent($split($getSelectedItemText(this.this$01.usersListBox), ' '));
   $add_1(this.this$01.baseHPanel, this.this$01.modifierComp);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminProfessorsListComponent$UsersListBoxHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminProfessorsListComponent/UsersListBoxHandler', 261);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminProfessorsListComponent$UsersListBoxHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminProfessorsListComponent/UsersListBoxHandler', 244);
 function AdminStudentsListComponent(){
-  new HorizontalPanel;
   this.baseHPanel = new HorizontalPanel;
   this.usersListBox = new ListBox;
   $initWidget(this, this.baseHPanel);
@@ -4530,9 +4681,9 @@ function AdminStudentsListComponent(){
   $add_1(this.baseHPanel, this.usersListBox);
 }
 
-defineClass(257, 309, $intern_13, AdminStudentsListComponent);
+defineClass(240, 324, $intern_13, AdminStudentsListComponent);
 _.nListItem = 0;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminStudentsListComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminStudentsListComponent', 257);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminStudentsListComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminStudentsListComponent', 240);
 function $onSuccess_1(this$static, result){
   var i, list;
   list = $split(result, '_');
@@ -4547,7 +4698,7 @@ function AdminStudentsListComponent$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(259, 1, {}, AdminStudentsListComponent$1);
+defineClass(242, 1, {}, AdminStudentsListComponent$1);
 _.onSuccess = function onSuccess_3(result){
   $onSuccess_1(this, castToString(result));
 }
@@ -4556,18 +4707,18 @@ _.onFailure = function onFailure_3(caught){
   $wnd.alert('Errore comunicazione server: UPDATECOURSE');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminStudentsListComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminStudentsListComponent/1', 259);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminStudentsListComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminStudentsListComponent/1', 242);
 function AdminStudentsListComponent$UsersListBoxHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(258, 1, $intern_15, AdminStudentsListComponent$UsersListBoxHandler);
+defineClass(241, 1, $intern_15, AdminStudentsListComponent$UsersListBoxHandler);
 _.onDoubleClick = function onDoubleClick_0(event_0){
   this.this$01.modifierComp = new AdminUserModifierComponent($split($getSelectedItemText(this.this$01.usersListBox), ' '));
   $add_1(this.this$01.baseHPanel, this.this$01.modifierComp);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminStudentsListComponent$UsersListBoxHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminStudentsListComponent/UsersListBoxHandler', 258);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminStudentsListComponent$UsersListBoxHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminStudentsListComponent/UsersListBoxHandler', 241);
 function AdminUserModifierComponent(user){
   this.vPanel = new VerticalPanel;
   this.emailTb = new TextBox;
@@ -4575,46 +4726,46 @@ function AdminUserModifierComponent(user){
   this.surnameTb = new TextBox;
   this.userNameTb = new TextBox;
   this.passwordTb = new TextBox;
-  this.confirmBtn = new Button('Conferma Modifiche');
+  this.confirmBtn = new Button_0('Conferma Modifiche');
   this.user = user;
   $initWidget(this, this.vPanel);
-  $setText_0(this.emailTb, this.user[1]);
-  $setText_0(this.nameTb, this.user[3]);
-  $setText_0(this.surnameTb, this.user[5]);
-  $setText_0(this.userNameTb, this.user[7]);
-  $setText_0(this.passwordTb, this.user[9]);
-  $add_2(this.vPanel, new Label('MODIFICA USER'));
-  $add_2(this.vPanel, new Label('Email:'));
+  $setText_1(this.emailTb, this.user[1]);
+  $setText_1(this.nameTb, this.user[3]);
+  $setText_1(this.surnameTb, this.user[5]);
+  $setText_1(this.userNameTb, this.user[7]);
+  $setText_1(this.passwordTb, this.user[9]);
+  $add_2(this.vPanel, new Label_0('MODIFICA USER'));
+  $add_2(this.vPanel, new Label_0('Email:'));
   $add_2(this.vPanel, this.emailTb);
-  $add_2(this.vPanel, new Label('Nome:'));
+  $add_2(this.vPanel, new Label_0('Nome:'));
   $add_2(this.vPanel, this.nameTb);
-  $add_2(this.vPanel, new Label('Cognome:'));
+  $add_2(this.vPanel, new Label_0('Cognome:'));
   $add_2(this.vPanel, this.surnameTb);
-  $add_2(this.vPanel, new Label('Username:'));
+  $add_2(this.vPanel, new Label_0('Username:'));
   $add_2(this.vPanel, this.userNameTb);
-  $add_2(this.vPanel, new Label('Password:'));
+  $add_2(this.vPanel, new Label_0('Password:'));
   $add_2(this.vPanel, this.passwordTb);
   $add_2(this.vPanel, this.confirmBtn);
   $addDomHandler(this.confirmBtn, new AdminUserModifierComponent$confirmBtnHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
 }
 
-defineClass(108, 309, $intern_13, AdminUserModifierComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminUserModifierComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminUserModifierComponent', 108);
+defineClass(109, 324, $intern_13, AdminUserModifierComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminUserModifierComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminUserModifierComponent', 109);
 function AdminUserModifierComponent$confirmBtnHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(286, 1, $intern_14, AdminUserModifierComponent$confirmBtnHandler);
+defineClass(281, 1, $intern_14, AdminUserModifierComponent$confirmBtnHandler);
 _.onClick = function onClick_4(event_0){
   !connService && (connService = new ConnService_Proxy);
   $setUserInfo(connService, this.this$01.user[1], $getText(this.this$01.emailTb), $getText(this.this$01.nameTb), $getText(this.this$01.surnameTb), $getText(this.this$01.userNameTb), $getText(this.this$01.passwordTb), new AdminUserModifierComponent$confirmBtnHandler$1);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminUserModifierComponent$confirmBtnHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminUserModifierComponent/confirmBtnHandler', 286);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminUserModifierComponent$confirmBtnHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminUserModifierComponent/confirmBtnHandler', 281);
 function AdminUserModifierComponent$confirmBtnHandler$1(){
 }
 
-defineClass(287, 1, {}, AdminUserModifierComponent$confirmBtnHandler$1);
+defineClass(282, 1, {}, AdminUserModifierComponent$confirmBtnHandler$1);
 _.onSuccess = function onSuccess_4(result){
   castToBoolean(result);
   $wnd.alert('Dati aggiornati.');
@@ -4624,7 +4775,71 @@ _.onFailure = function onFailure_4(caught){
   $wnd.alert('Errore del server. Dati non aggiornati.');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminUserModifierComponent$confirmBtnHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminUserModifierComponent/confirmBtnHandler/1', 287);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_AdminUserModifierComponent$confirmBtnHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'AdminUserModifierComponent/confirmBtnHandler/1', 282);
+function ApproveGradesComponent(){
+  this.vPanel = new VerticalPanel;
+  this.examList = new ListBox;
+  this.txta = new TextArea_0;
+  $initWidget(this, this.vPanel);
+  $add_2(this.vPanel, new Label_0('elenco esami con voti'));
+  $add_2(this.vPanel, this.examList);
+  $add_2(this.vPanel, new Label_0('Studenti e voti:\n'));
+  $add_2(this.vPanel, this.txta);
+  $addDomHandler(this.examList, new ApproveGradesComponent$examListDoubleClickHandler(this), ($clinit_DoubleClickEvent() , $clinit_DoubleClickEvent() , TYPE_0));
+  !connService && (connService = new ConnService_Proxy);
+  $retrieveExamsForSecretary(connService, new ApproveGradesComponent$1(this));
+}
+
+defineClass(233, 324, $intern_13, ApproveGradesComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ApproveGradesComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ApproveGradesComponent', 233);
+function $onSuccess_2(this$static, result){
+  var e, e$iterator;
+  for (e$iterator = new ArrayList$1(result); e$iterator.i < e$iterator.this$01.array.length;) {
+    e = castToString($next_1(e$iterator));
+    $insertItem(this$static.this$01.examList, e);
+  }
+}
+
+function ApproveGradesComponent$1(this$0){
+  this.this$01 = this$0;
+}
+
+defineClass(236, 1, {}, ApproveGradesComponent$1);
+_.onSuccess = function onSuccess_5(result){
+  $onSuccess_2(this, castTo(result, 27));
+}
+;
+_.onFailure = function onFailure_5(caught){
+  $wnd.alert('ERROR: ' + caught);
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ApproveGradesComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ApproveGradesComponent/1', 236);
+function ApproveGradesComponent$examListDoubleClickHandler(this$0){
+  this.this$01 = this$0;
+}
+
+defineClass(234, 1, $intern_15, ApproveGradesComponent$examListDoubleClickHandler);
+_.onDoubleClick = function onDoubleClick_1(event_0){
+  var selectedExam;
+  selectedExam = $getSelectedItemText(this.this$01.examList);
+  !connService && (connService = new ConnService_Proxy);
+  $retrieveGradesAndStudents(connService, selectedExam, new ApproveGradesComponent$examListDoubleClickHandler$1);
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ApproveGradesComponent$examListDoubleClickHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ApproveGradesComponent/examListDoubleClickHandler', 234);
+function ApproveGradesComponent$examListDoubleClickHandler$1(){
+}
+
+defineClass(235, 1, {}, ApproveGradesComponent$examListDoubleClickHandler$1);
+_.onSuccess = function onSuccess_6(result){
+  castToString(result);
+}
+;
+_.onFailure = function onFailure_6(caught){
+  $wnd.alert('ERROR: ' + caught);
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ApproveGradesComponent$examListDoubleClickHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ApproveGradesComponent/examListDoubleClickHandler/1', 235);
 function CoursesListComponent(){
   this.hPanel = new HorizontalPanel;
   this.txta = new TextArea_0;
@@ -4636,31 +4851,31 @@ function CoursesListComponent(){
   $add_1(this.hPanel, this.txta);
 }
 
-defineClass(229, 309, $intern_13, CoursesListComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_CoursesListComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'CoursesListComponent', 229);
-function $onSuccess_2(this$static, result){
-  $setText_0(this$static.this$01.txta, result);
+defineClass(254, 324, $intern_13, CoursesListComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_CoursesListComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'CoursesListComponent', 254);
+function $onSuccess_3(this$static, result){
+  $setText_1(this$static.this$01.txta, result);
 }
 
 function CoursesListComponent$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(230, 1, {}, CoursesListComponent$1);
-_.onSuccess = function onSuccess_5(result){
-  $onSuccess_2(this, castToString(result));
+defineClass(255, 1, {}, CoursesListComponent$1);
+_.onSuccess = function onSuccess_7(result){
+  $onSuccess_3(this, castToString(result));
 }
 ;
-_.onFailure = function onFailure_5(caught){
+_.onFailure = function onFailure_7(caught){
   $wnd.alert('ERROR: Impossibilie visualizzare i corsi');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_CoursesListComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'CoursesListComponent/1', 230);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_CoursesListComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'CoursesListComponent/1', 255);
 function GradesViewComponent(){
   this.vPanel = new VerticalPanel;
   this.gradesTextArea = new TextArea_0;
   $initWidget(this, this.vPanel);
-  $add_2(this.vPanel, new Label('VOTI ESAMI:'));
+  $add_2(this.vPanel, new Label_0('VOTI ESAMI:'));
   $setHeight(this.gradesTextArea, '250px');
   $setWidth(this.gradesTextArea, '250px');
   !connService && (connService = new ConnService_Proxy);
@@ -4668,95 +4883,114 @@ function GradesViewComponent(){
   $add_2(this.vPanel, this.gradesTextArea);
 }
 
-defineClass(235, 309, $intern_13, GradesViewComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_GradesViewComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'GradesViewComponent', 235);
-function $onSuccess_3(this$static, result){
-  $setText_0(this$static.this$01.gradesTextArea, result);
+defineClass(267, 324, $intern_13, GradesViewComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_GradesViewComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'GradesViewComponent', 267);
+function $onSuccess_4(this$static, result){
+  $setText_1(this$static.this$01.gradesTextArea, result);
 }
 
 function GradesViewComponent$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(236, 1, {}, GradesViewComponent$1);
-_.onSuccess = function onSuccess_6(result){
-  $onSuccess_3(this, castToString(result));
+defineClass(268, 1, {}, GradesViewComponent$1);
+_.onSuccess = function onSuccess_8(result){
+  $onSuccess_4(this, castToString(result));
 }
 ;
-_.onFailure = function onFailure_6(caught){
+_.onFailure = function onFailure_8(caught){
   $wnd.alert('Error.impossibile visualizzare voti esami');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_GradesViewComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'GradesViewComponent/1', 236);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_GradesViewComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'GradesViewComponent/1', 268);
 function InfoStudentListComponent(){
   this.vPanel = new VerticalPanel;
-  this.l1 = new Label('informazioni personali studenti');
   this.txta = new TextArea_0;
   $initWidget(this, this.vPanel);
-  $add_2(this.vPanel, this.l1);
+  $add_2(this.vPanel, new Label_0('informazioni personali studenti'));
   $add_2(this.vPanel, this.txta);
   !connService && (connService = new ConnService_Proxy);
   $retrieveInfoStudentList(connService, new InfoStudentListComponent$1(this));
 }
 
-defineClass(252, 309, $intern_13, InfoStudentListComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_InfoStudentListComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'InfoStudentListComponent', 252);
-function $onSuccess_4(this$static, result){
-  $setText_0(this$static.this$01.txta, result);
+defineClass(231, 324, $intern_13, InfoStudentListComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_InfoStudentListComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'InfoStudentListComponent', 231);
+function $onSuccess_5(this$static, result){
+  $setText_1(this$static.this$01.txta, result);
 }
 
 function InfoStudentListComponent$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(253, 1, {}, InfoStudentListComponent$1);
-_.onSuccess = function onSuccess_7(result){
-  $onSuccess_4(this, castToString(result));
+defineClass(232, 1, {}, InfoStudentListComponent$1);
+_.onSuccess = function onSuccess_9(result){
+  $onSuccess_5(this, castToString(result));
 }
 ;
-_.onFailure = function onFailure_7(caught){
+_.onFailure = function onFailure_9(caught){
   $wnd.alert('ERROR: ' + caught);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_InfoStudentListComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'InfoStudentListComponent/1', 253);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_InfoStudentListComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'InfoStudentListComponent/1', 232);
 function PersonalInfoComponent(){
   this.vPanel = new VerticalPanel;
-  this.label1 = new Label('le tue info personali');
+  this.label1 = new Label_0('le tue info personali');
   this.txta1 = new TextArea_0;
   $initWidget(this, this.vPanel);
   $add_2(this.vPanel, this.label1);
   $add_2(this.vPanel, this.txta1);
   $setWidth(this.txta1, '200px');
   $setHeight(this.txta1, '150px');
+  !connService && (connService = new ConnService_Proxy);
+  $getInfoUser(connService, (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email, new PersonalInfoComponent$1(this));
 }
 
-defineClass(104, 309, $intern_13, PersonalInfoComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_PersonalInfoComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'PersonalInfoComponent', 104);
+defineClass(107, 324, $intern_13, PersonalInfoComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_PersonalInfoComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'PersonalInfoComponent', 107);
+function $onSuccess_6(this$static, result){
+  $setText_1(this$static.this$01.txta1, result);
+}
+
+function PersonalInfoComponent$1(this$0){
+  this.this$01 = this$0;
+}
+
+defineClass(266, 1, {}, PersonalInfoComponent$1);
+_.onSuccess = function onSuccess_10(result){
+  $onSuccess_6(this, castToString(result));
+}
+;
+_.onFailure = function onFailure_10(caught){
+  $wnd.alert('error:' + caught);
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_PersonalInfoComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'PersonalInfoComponent/1', 266);
 function ProfessorCourseCreationComponent(){
   this.widgetBasePanel = new VerticalPanel;
   this.courseNameBox = new TextBox;
   this.startDateBox = new TextBox;
   this.endDateBox = new TextBox;
-  this.confirmCreationButton = new Button('Crea corso');
+  this.confirmCreationButton = new Button_0('Crea corso');
   $initWidget(this, this.widgetBasePanel);
-  $add_2(this.widgetBasePanel, new Label('CREA NUOVO CORSO'));
-  $add_2(this.widgetBasePanel, new Label('Nome corso: '));
+  $add_2(this.widgetBasePanel, new Label_0('CREA NUOVO CORSO'));
+  $add_2(this.widgetBasePanel, new Label_0('Nome corso: '));
   $add_2(this.widgetBasePanel, this.courseNameBox);
-  $add_2(this.widgetBasePanel, new Label('Data inizio: '));
+  $add_2(this.widgetBasePanel, new Label_0('Data inizio: '));
   $add_2(this.widgetBasePanel, this.startDateBox);
-  $add_2(this.widgetBasePanel, new Label('Data fine: '));
+  $add_2(this.widgetBasePanel, new Label_0('Data fine: '));
   $add_2(this.widgetBasePanel, this.endDateBox);
   $add_2(this.widgetBasePanel, this.confirmCreationButton);
   $addDomHandler(this.confirmCreationButton, new ProfessorCourseCreationComponent$confirmCreationButtonHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
 }
 
-defineClass(266, 309, $intern_13, ProfessorCourseCreationComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCourseCreationComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCourseCreationComponent', 266);
+defineClass(283, 324, $intern_13, ProfessorCourseCreationComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCourseCreationComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCourseCreationComponent', 283);
 function ProfessorCourseCreationComponent$confirmCreationButtonHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(267, 1, $intern_14, ProfessorCourseCreationComponent$confirmCreationButtonHandler);
+defineClass(284, 1, $intern_14, ProfessorCourseCreationComponent$confirmCreationButtonHandler);
 _.onClick = function onClick_5(event_0){
   var end, start_0;
   if (!$equals_1($getText(this.this$01.courseNameBox), '') && !$equals_1($getText(this.this$01.startDateBox), '') && !$equals_1($getText(this.this$01.endDateBox), '')) {
@@ -4768,8 +5002,8 @@ _.onClick = function onClick_5(event_0){
         $addCourse(connService, $getText(this.this$01.courseNameBox), $getText(this.this$01.startDateBox), $getText(this.this$01.endDateBox), (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email, new ProfessorCourseCreationComponent$confirmCreationButtonHandler$1(this));
       }
        else {
-        $setText_0(this.this$01.startDateBox, '');
-        $setText_0(this.this$01.endDateBox, '');
+        $setText_1(this.this$01.startDateBox, '');
+        $setText_1(this.this$01.endDateBox, '');
         $wnd.alert('Date inserite non corrette');
       }
     }
@@ -4777,8 +5011,8 @@ _.onClick = function onClick_5(event_0){
       $e0 = toJava($e0);
       if (instanceOf($e0, 30)) {
         $wnd.alert('Formato data non valido\ninserire: giorno/mese/anno');
-        $setText_0(this.this$01.startDateBox, '');
-        $setText_0(this.this$01.endDateBox, '');
+        $setText_1(this.this$01.startDateBox, '');
+        $setText_1(this.this$01.endDateBox, '');
       }
        else 
         throw toJs($e0);
@@ -4789,51 +5023,60 @@ _.onClick = function onClick_5(event_0){
   }
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCourseCreationComponent$confirmCreationButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCourseCreationComponent/confirmCreationButtonHandler', 267);
-function $onSuccess_5(this$static){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCourseCreationComponent$confirmCreationButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCourseCreationComponent/confirmCreationButtonHandler', 284);
+function $onSuccess_7(this$static){
   $wnd.alert('Corso inserito.');
-  $setText_0(this$static.this$11.this$01.startDateBox, '');
-  $setText_0(this$static.this$11.this$01.endDateBox, '');
-  $setText_0(this$static.this$11.this$01.courseNameBox, '');
+  $setText_1(this$static.this$11.this$01.startDateBox, '');
+  $setText_1(this$static.this$11.this$01.endDateBox, '');
+  $setText_1(this$static.this$11.this$01.courseNameBox, '');
 }
 
 function ProfessorCourseCreationComponent$confirmCreationButtonHandler$1(this$1){
   this.this$11 = this$1;
 }
 
-defineClass(268, 1, {}, ProfessorCourseCreationComponent$confirmCreationButtonHandler$1);
-_.onSuccess = function onSuccess_8(result){
+defineClass(285, 1, {}, ProfessorCourseCreationComponent$confirmCreationButtonHandler$1);
+_.onSuccess = function onSuccess_11(result){
   var lastArg;
-  $onSuccess_5((lastArg = this , castToBoolean(result) , lastArg));
+  $onSuccess_7((lastArg = this , castToBoolean(result) , lastArg));
 }
 ;
-_.onFailure = function onFailure_8(caught){
+_.onFailure = function onFailure_11(caught){
   $wnd.alert('ERROR: ' + caught);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCourseCreationComponent$confirmCreationButtonHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCourseCreationComponent/confirmCreationButtonHandler/1', 268);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCourseCreationComponent$confirmCreationButtonHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCourseCreationComponent/confirmCreationButtonHandler/1', 285);
 function ProfessorCoursesListComponent(){
   this.baseHPanel = new HorizontalPanel;
   this.buttonvPanel = new VerticalPanel;
   this.hPanel = new HorizontalPanel;
   this.curseManhPanel = new HorizontalPanel;
   this.createCourse = new ProfessorCourseCreationComponent;
+  this.createExam = new ProfessorExamCreationComponent;
   this.coursesListBox = new ListBox;
-  this.createCourseBtn = new Button('Crea nuovo corso');
+  this.createBtn = new Button;
   $initWidget(this, this.baseHPanel);
   !connService && (connService = new ConnService_Proxy);
   $viewCoursesInfo_0(connService, (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email, new ProfessorCoursesListComponent$1(this));
-  $addDomHandler(this.coursesListBox, new ProfessorCoursesListComponent$ListBoxHandler(this), ($clinit_DoubleClickEvent() , $clinit_DoubleClickEvent() , TYPE_0));
-  $addDomHandler(this.createCourseBtn, new ProfessorCoursesListComponent$CreateCourseBtnHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
+  if ((!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).navIndex == 0) {
+    $addDomHandler(this.coursesListBox, new ProfessorCoursesListComponent$ListBoxHandlerFromCourseManagement(this), ($clinit_DoubleClickEvent() , $clinit_DoubleClickEvent() , TYPE_0));
+    $addDomHandler(this.createBtn, new ProfessorCoursesListComponent$CreateCourseBtnHandlerFromCourseManagement(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
+    $setText(this.createBtn, 'Crea nuovo corso');
+  }
+   else if ((!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).navIndex == 1) {
+    $addDomHandler(this.coursesListBox, new ProfessorCoursesListComponent$ListBoxHandlerFromExamManagement(this), ($clinit_DoubleClickEvent() , $clinit_DoubleClickEvent() , TYPE_0));
+    $addDomHandler(this.createBtn, new ProfessorCoursesListComponent$CreateCourseBtnHandlerFromExamManagement(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
+    $setText(this.createBtn, 'Crea nuovo esame');
+  }
   $add_1(this.hPanel, this.coursesListBox);
   $add_2(this.buttonvPanel, this.hPanel);
-  $add_2(this.buttonvPanel, this.createCourseBtn);
+  $add_2(this.buttonvPanel, this.createBtn);
   $add_1(this.baseHPanel, this.buttonvPanel);
 }
 
-defineClass(238, 309, $intern_13, ProfessorCoursesListComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesListComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesListComponent', 238);
-function $onSuccess_6(this$static, result){
+defineClass(108, 324, $intern_13, ProfessorCoursesListComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesListComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesListComponent', 108);
+function $onSuccess_8(this$static, result){
   var i, list;
   list = $split(result, '@');
   for (i = 0; i < list.length; i++) {
@@ -4846,39 +5089,66 @@ function ProfessorCoursesListComponent$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(241, 1, {}, ProfessorCoursesListComponent$1);
-_.onSuccess = function onSuccess_9(result){
-  $onSuccess_6(this, castToString(result));
+defineClass(273, 1, {}, ProfessorCoursesListComponent$1);
+_.onSuccess = function onSuccess_12(result){
+  $onSuccess_8(this, castToString(result));
 }
 ;
-_.onFailure = function onFailure_9(caught){
+_.onFailure = function onFailure_12(caught){
   $wnd.alert('Errore comunicazione server: UPDATECOURSE');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesListComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesListComponent/1', 241);
-function ProfessorCoursesListComponent$CreateCourseBtnHandler(this$0){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesListComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesListComponent/1', 273);
+function ProfessorCoursesListComponent$CreateCourseBtnHandlerFromCourseManagement(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(240, 1, $intern_14, ProfessorCoursesListComponent$CreateCourseBtnHandler);
+defineClass(271, 1, $intern_14, ProfessorCoursesListComponent$CreateCourseBtnHandlerFromCourseManagement);
 _.onClick = function onClick_6(event_0){
+  $remove_0(this.this$01.hPanel, this.this$01.curseManhPanel);
   $add_1(this.this$01.baseHPanel, this.this$01.createCourse);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesListComponent$CreateCourseBtnHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesListComponent/CreateCourseBtnHandler', 240);
-function ProfessorCoursesListComponent$ListBoxHandler(this$0){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesListComponent$CreateCourseBtnHandlerFromCourseManagement_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesListComponent/CreateCourseBtnHandlerFromCourseManagement', 271);
+function ProfessorCoursesListComponent$CreateCourseBtnHandlerFromExamManagement(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(239, 1, $intern_15, ProfessorCoursesListComponent$ListBoxHandler);
-_.onDoubleClick = function onDoubleClick_1(event_0){
+defineClass(272, 1, $intern_14, ProfessorCoursesListComponent$CreateCourseBtnHandlerFromExamManagement);
+_.onClick = function onClick_7(event_0){
+  $remove_0(this.this$01.hPanel, this.this$01.curseManhPanel);
+  $add_1(this.this$01.baseHPanel, this.this$01.createExam);
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesListComponent$CreateCourseBtnHandlerFromExamManagement_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesListComponent/CreateCourseBtnHandlerFromExamManagement', 272);
+function ProfessorCoursesListComponent$ListBoxHandlerFromCourseManagement(this$0){
+  this.this$01 = this$0;
+}
+
+defineClass(269, 1, $intern_15, ProfessorCoursesListComponent$ListBoxHandlerFromCourseManagement);
+_.onDoubleClick = function onDoubleClick_2(event_0){
   $clear(this.this$01.curseManhPanel);
+  $remove_0(this.this$01.baseHPanel, this.this$01.createCourse);
   this.this$01.courseManComp = new ProfessorCoursesModifierComponent($getSelectedItemText(this.this$01.coursesListBox));
   $add_1(this.this$01.curseManhPanel, this.this$01.courseManComp);
   $add_1(this.this$01.hPanel, this.this$01.curseManhPanel);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesListComponent$ListBoxHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesListComponent/ListBoxHandler', 239);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesListComponent$ListBoxHandlerFromCourseManagement_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesListComponent/ListBoxHandlerFromCourseManagement', 269);
+function ProfessorCoursesListComponent$ListBoxHandlerFromExamManagement(this$0){
+  this.this$01 = this$0;
+}
+
+defineClass(270, 1, $intern_15, ProfessorCoursesListComponent$ListBoxHandlerFromExamManagement);
+_.onDoubleClick = function onDoubleClick_3(event_0){
+  $clear(this.this$01.curseManhPanel);
+  $remove_0(this.this$01.baseHPanel, this.this$01.createExam);
+  this.this$01.examManComp = new ProfessorExamModifierComponent($getSelectedItemText(this.this$01.coursesListBox));
+  $add_1(this.this$01.curseManhPanel, this.this$01.examManComp);
+  $add_1(this.this$01.hPanel, this.this$01.curseManhPanel);
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesListComponent$ListBoxHandlerFromExamManagement_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesListComponent/ListBoxHandlerFromExamManagement', 270);
 function $initSubscribedStudents(this$static){
   !connService && (connService = new ConnService_Proxy);
   $getStudentsCourseList(connService, this$static.currentCourse[0], new ProfessorCoursesModifierComponent$2(this$static));
@@ -4891,8 +5161,8 @@ function ProfessorCoursesModifierComponent(courseName){
   this.endDateTb = new TextBox;
   this.subscribedStudentsTa = new TextArea_0;
   this.hPanelBtn = new HorizontalPanel;
-  this.confirmBtn = new Button('Conferma Modifiche');
-  this.deleteBtn = new Button('Elimina Corso');
+  this.confirmBtn = new Button_0('Conferma Modifiche');
+  this.deleteBtn = new Button_0('Elimina Corso');
   $initWidget(this, this.vPanel);
   this.initialCourseName = courseName;
   !connService && (connService = new ConnService_Proxy);
@@ -4901,21 +5171,21 @@ function ProfessorCoursesModifierComponent(courseName){
   $addDomHandler(this.deleteBtn, new ProfessorCoursesModifierComponent$deleteBtnHandler(this), (null , TYPE));
 }
 
-defineClass(279, 309, $intern_13, ProfessorCoursesModifierComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent', 279);
-function $onSuccess_7(this$static, result){
+defineClass(290, 324, $intern_13, ProfessorCoursesModifierComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent', 290);
+function $onSuccess_9(this$static, result){
   this$static.this$01.currentCourse = $split(result, '@');
-  $setText_0(this$static.this$01.courseNameTb, this$static.this$01.currentCourse[0]);
-  $setText_0(this$static.this$01.startDateTb, this$static.this$01.currentCourse[1]);
-  $setText_0(this$static.this$01.endDateTb, this$static.this$01.currentCourse[2]);
+  $setText_1(this$static.this$01.courseNameTb, this$static.this$01.currentCourse[0]);
+  $setText_1(this$static.this$01.startDateTb, this$static.this$01.currentCourse[1]);
+  $setText_1(this$static.this$01.endDateTb, this$static.this$01.currentCourse[2]);
   $add_1(this$static.this$01.hPanelBtn, this$static.this$01.confirmBtn);
   $add_1(this$static.this$01.hPanelBtn, this$static.this$01.deleteBtn);
-  $add_2(this$static.this$01.vPanel, new Label('MODIFICA CORSO'));
-  $add_2(this$static.this$01.vPanel, new Label('Nome Corso:'));
+  $add_2(this$static.this$01.vPanel, new Label_0('MODIFICA CORSO'));
+  $add_2(this$static.this$01.vPanel, new Label_0('Nome Corso:'));
   $add_2(this$static.this$01.vPanel, this$static.this$01.courseNameTb);
-  $add_2(this$static.this$01.vPanel, new Label('Data Inizio:'));
+  $add_2(this$static.this$01.vPanel, new Label_0('Data Inizio:'));
   $add_2(this$static.this$01.vPanel, this$static.this$01.startDateTb);
-  $add_2(this$static.this$01.vPanel, new Label('Data fine:'));
+  $add_2(this$static.this$01.vPanel, new Label_0('Data fine:'));
   $add_2(this$static.this$01.vPanel, this$static.this$01.endDateTb);
   $add_2(this$static.this$01.vPanel, this$static.this$01.hPanelBtn);
   $initSubscribedStudents(this$static.this$01);
@@ -4927,40 +5197,40 @@ function ProfessorCoursesModifierComponent$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(284, 1, {}, ProfessorCoursesModifierComponent$1);
-_.onSuccess = function onSuccess_10(result){
-  $onSuccess_7(this, castToString(result));
+defineClass(295, 1, {}, ProfessorCoursesModifierComponent$1);
+_.onSuccess = function onSuccess_13(result){
+  $onSuccess_9(this, castToString(result));
 }
 ;
-_.onFailure = function onFailure_10(caught){
+_.onFailure = function onFailure_13(caught){
   $wnd.alert('Non riesco a trovare le informazioni sul server.');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/1', 284);
-function $onSuccess_8(this$static, result){
-  $setText_0(this$static.this$01.subscribedStudentsTa, 'LISTA STUDENTI ISCRITTI:\n' + result);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/1', 295);
+function $onSuccess_10(this$static, result){
+  $setText_1(this$static.this$01.subscribedStudentsTa, 'LISTA STUDENTI ISCRITTI:\n' + result);
 }
 
 function ProfessorCoursesModifierComponent$2(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(285, 1, {}, ProfessorCoursesModifierComponent$2);
-_.onSuccess = function onSuccess_11(result){
-  $onSuccess_8(this, castToString(result));
+defineClass(296, 1, {}, ProfessorCoursesModifierComponent$2);
+_.onSuccess = function onSuccess_14(result){
+  $onSuccess_10(this, castToString(result));
 }
 ;
-_.onFailure = function onFailure_11(caught){
+_.onFailure = function onFailure_14(caught){
   $wnd.alert('Errore server.\nLista studenti iscritti al corso non aggiornata');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$2_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/2', 285);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$2_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/2', 296);
 function ProfessorCoursesModifierComponent$confirmBtnHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(280, 1, $intern_14, ProfessorCoursesModifierComponent$confirmBtnHandler);
-_.onClick = function onClick_7(event_0){
+defineClass(291, 1, $intern_14, ProfessorCoursesModifierComponent$confirmBtnHandler);
+_.onClick = function onClick_8(event_0){
   var end, start_0;
   if (!$equals_1($getText(this.this$01.courseNameTb), '') && !$equals_1($getText(this.this$01.startDateTb), '') && !$equals_1($getText(this.this$01.endDateTb), '')) {
     try {
@@ -4972,18 +5242,18 @@ _.onClick = function onClick_7(event_0){
       }
        else {
         $wnd.alert('Date inserite non corrette');
-        $setText_0(this.this$01.courseNameTb, this.this$01.currentCourse[0]);
-        $setText_0(this.this$01.startDateTb, this.this$01.currentCourse[1]);
-        $setText_0(this.this$01.endDateTb, this.this$01.currentCourse[2]);
+        $setText_1(this.this$01.courseNameTb, this.this$01.currentCourse[0]);
+        $setText_1(this.this$01.startDateTb, this.this$01.currentCourse[1]);
+        $setText_1(this.this$01.endDateTb, this.this$01.currentCourse[2]);
       }
     }
      catch ($e0) {
       $e0 = toJava($e0);
       if (instanceOf($e0, 30)) {
         $wnd.alert('Formato data non valido\ninserire: giorno/mese/anno');
-        $setText_0(this.this$01.courseNameTb, this.this$01.currentCourse[0]);
-        $setText_0(this.this$01.startDateTb, this.this$01.currentCourse[1]);
-        $setText_0(this.this$01.endDateTb, this.this$01.currentCourse[2]);
+        $setText_1(this.this$01.courseNameTb, this.this$01.currentCourse[0]);
+        $setText_1(this.this$01.startDateTb, this.this$01.currentCourse[1]);
+        $setText_1(this.this$01.endDateTb, this.this$01.currentCourse[2]);
       }
        else 
         throw toJs($e0);
@@ -4991,42 +5261,42 @@ _.onClick = function onClick_7(event_0){
   }
    else {
     $wnd.alert('campi vuoti');
-    $setText_0(this.this$01.courseNameTb, this.this$01.currentCourse[0]);
-    $setText_0(this.this$01.startDateTb, this.this$01.currentCourse[1]);
-    $setText_0(this.this$01.endDateTb, this.this$01.currentCourse[2]);
+    $setText_1(this.this$01.courseNameTb, this.this$01.currentCourse[0]);
+    $setText_1(this.this$01.startDateTb, this.this$01.currentCourse[1]);
+    $setText_1(this.this$01.endDateTb, this.this$01.currentCourse[2]);
   }
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$confirmBtnHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/confirmBtnHandler', 280);
-function $onSuccess_9(result){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$confirmBtnHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/confirmBtnHandler', 291);
+function $onSuccess_11(result){
   (checkCriticalNotNull(result) , result) && ($wnd.alert('Corso aggiornato') , undefined);
 }
 
 function ProfessorCoursesModifierComponent$confirmBtnHandler$1(){
 }
 
-defineClass(282, 1, {}, ProfessorCoursesModifierComponent$confirmBtnHandler$1);
-_.onSuccess = function onSuccess_12(result){
-  $onSuccess_9(castToBoolean(result));
+defineClass(293, 1, {}, ProfessorCoursesModifierComponent$confirmBtnHandler$1);
+_.onSuccess = function onSuccess_15(result){
+  $onSuccess_11(castToBoolean(result));
 }
 ;
-_.onFailure = function onFailure_12(caught){
+_.onFailure = function onFailure_15(caught){
   $wnd.alert('Errore aggiornamento dati.');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$confirmBtnHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/confirmBtnHandler/1', 282);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$confirmBtnHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/confirmBtnHandler/1', 293);
 function ProfessorCoursesModifierComponent$deleteBtnHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(281, 1, $intern_14, ProfessorCoursesModifierComponent$deleteBtnHandler);
-_.onClick = function onClick_8(event_0){
+defineClass(292, 1, $intern_14, ProfessorCoursesModifierComponent$deleteBtnHandler);
+_.onClick = function onClick_9(event_0){
   !connService && (connService = new ConnService_Proxy);
   $deleteCourse(connService, this.this$01.initialCourseName, new ProfessorCoursesModifierComponent$deleteBtnHandler$1(this));
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$deleteBtnHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/deleteBtnHandler', 281);
-function $onSuccess_10(this$static, result){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$deleteBtnHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/deleteBtnHandler', 292);
+function $onSuccess_12(this$static, result){
   if (checkCriticalNotNull(result) , result) {
     $clear(this$static.this$11.this$01.vPanel);
     $wnd.alert('corso eliminato.');
@@ -5040,16 +5310,16 @@ function ProfessorCoursesModifierComponent$deleteBtnHandler$1(this$1){
   this.this$11 = this$1;
 }
 
-defineClass(283, 1, {}, ProfessorCoursesModifierComponent$deleteBtnHandler$1);
-_.onSuccess = function onSuccess_13(result){
-  $onSuccess_10(this, castToBoolean(result));
+defineClass(294, 1, {}, ProfessorCoursesModifierComponent$deleteBtnHandler$1);
+_.onSuccess = function onSuccess_16(result){
+  $onSuccess_12(this, castToBoolean(result));
 }
 ;
-_.onFailure = function onFailure_13(caught){
+_.onFailure = function onFailure_16(caught){
   $wnd.alert('Errore server');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$deleteBtnHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/deleteBtnHandler/1', 283);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorCoursesModifierComponent$deleteBtnHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorCoursesModifierComponent/deleteBtnHandler/1', 294);
 function ProfessorExamCreationComponent(){
   this.widgetBasePanel = new VerticalPanel;
   this.courseNameBox = new TextBox;
@@ -5057,60 +5327,247 @@ function ProfessorExamCreationComponent(){
   this.examHourBox = new TextBox;
   this.classroomBox = new TextBox;
   this.durationBox = new TextBox;
-  this.confirmCreationButton = new Button('Crea esame');
+  this.confirmCreationButton = new Button_0('Crea esame');
   $initWidget(this, this.widgetBasePanel);
-  $add_2(this.widgetBasePanel, new Label('CREA NUOVO ESAME'));
-  $add_2(this.widgetBasePanel, new Label('Nome corso: '));
+  $add_2(this.widgetBasePanel, new Label_0('CREA NUOVO ESAME'));
+  $add_2(this.widgetBasePanel, new Label_0('Nome corso: '));
   $add_2(this.widgetBasePanel, this.courseNameBox);
-  $add_2(this.widgetBasePanel, new Label('Data esame: [GG/MM/YYYY]'));
+  $add_2(this.widgetBasePanel, new Label_0('Data esame: [GG/MM/YYYY]'));
   $add_2(this.widgetBasePanel, this.examDateBox);
-  $add_2(this.widgetBasePanel, new Label('Orario esame: [HH:MM]'));
+  $add_2(this.widgetBasePanel, new Label_0('Orario esame: [HH:MM]'));
   $add_2(this.widgetBasePanel, this.examHourBox);
-  $add_2(this.widgetBasePanel, new Label('Aula: '));
+  $add_2(this.widgetBasePanel, new Label_0('Aula: '));
   $add_2(this.widgetBasePanel, this.classroomBox);
-  $add_2(this.widgetBasePanel, new Label('Durata esame(minuti): '));
+  $add_2(this.widgetBasePanel, new Label_0('Durata esame(minuti): '));
   $add_2(this.widgetBasePanel, this.durationBox);
-  $add_2(this.widgetBasePanel, new Label('email prof: ' + (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email));
+  $add_2(this.widgetBasePanel, new Label_0('email prof: ' + (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email));
   $add_2(this.widgetBasePanel, this.confirmCreationButton);
   $addDomHandler(this.confirmCreationButton, new ProfessorExamCreationComponent$confirmCreationButtonHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
 }
 
-defineClass(249, 309, $intern_13, ProfessorExamCreationComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamCreationComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamCreationComponent', 249);
+defineClass(286, 324, $intern_13, ProfessorExamCreationComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamCreationComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamCreationComponent', 286);
 function ProfessorExamCreationComponent$confirmCreationButtonHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(250, 1, $intern_14, ProfessorExamCreationComponent$confirmCreationButtonHandler);
-_.onClick = function onClick_9(event_0){
+defineClass(287, 1, $intern_14, ProfessorExamCreationComponent$confirmCreationButtonHandler);
+_.onClick = function onClick_10(event_0){
   var demostudents;
   demostudents = new ArrayList;
   !connService && (connService = new ConnService_Proxy);
   $addExam(connService, $getText(this.this$01.courseNameBox), $getText(this.this$01.examDateBox), $getText(this.this$01.examHourBox), (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email, $getText(this.this$01.classroomBox), $getText(this.this$01.durationBox), demostudents, new ProfessorExamCreationComponent$confirmCreationButtonHandler$1);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamCreationComponent$confirmCreationButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamCreationComponent/confirmCreationButtonHandler', 250);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamCreationComponent$confirmCreationButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamCreationComponent/confirmCreationButtonHandler', 287);
 function ProfessorExamCreationComponent$confirmCreationButtonHandler$1(){
 }
 
-defineClass(251, 1, {}, ProfessorExamCreationComponent$confirmCreationButtonHandler$1);
-_.onSuccess = function onSuccess_14(result){
+defineClass(288, 1, {}, ProfessorExamCreationComponent$confirmCreationButtonHandler$1);
+_.onSuccess = function onSuccess_17(result){
   alert_0(' ' + castToString(result));
 }
 ;
-_.onFailure = function onFailure_14(caught){
+_.onFailure = function onFailure_17(caught){
   $wnd.alert('ERROR: ' + caught);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamCreationComponent$confirmCreationButtonHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamCreationComponent/confirmCreationButtonHandler/1', 251);
-function $retrieveExams_0(this$static){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamCreationComponent$confirmCreationButtonHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamCreationComponent/confirmCreationButtonHandler/1', 288);
+function $initSubscribedStudents_0(this$static){
   !connService && (connService = new ConnService_Proxy);
-  $retrieveExams(connService, new SendGradesComponent$2(this$static));
+  $getStudentsExamList(connService, this$static.currentExam[0], new ProfessorExamModifierComponent$2(this$static));
 }
 
-function $retrieveStudents_0(this$static, selectedExam){
+function ProfessorExamModifierComponent(courseName){
+  this.vPanel = new VerticalPanel;
+  this.courseNameTb = new Label;
+  this.dateTb = new TextBox;
+  this.hourTb = new TextBox;
+  this.classroomTb = new TextBox;
+  this.durationTb = new TextBox;
+  this.subscribedStudentsTa = new TextArea_0;
+  this.hPanelBtn = new HorizontalPanel;
+  this.confirmBtn = new Button_0('Conferma Modifiche');
+  this.deleteBtn = new Button_0('Elimina esame');
+  $initWidget(this, this.vPanel);
   !connService && (connService = new ConnService_Proxy);
-  $retrieveStudents(connService, selectedExam, new SendGradesComponent$1(this$static));
+  $getExamData(connService, courseName, new ProfessorExamModifierComponent$1(this));
+  $addDomHandler(this.confirmBtn, new ProfessorExamModifierComponent$confirmBtnHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
+  $addDomHandler(this.deleteBtn, new ProfessorExamModifierComponent$deleteBtnHandler(this), (null , TYPE));
+}
+
+defineClass(297, 324, $intern_13, ProfessorExamModifierComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamModifierComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamModifierComponent', 297);
+function $onSuccess_13(this$static, result){
+  if ($equals_1(result, 'NO_EXAM_CREATED')) {
+    $setText_0(this$static.this$01.courseNameTb, 'Nessun esame creato per questo corso');
+    $add_2(this$static.this$01.vPanel, this$static.this$01.courseNameTb);
+  }
+   else {
+    this$static.this$01.currentExam = $split(result, '@');
+    $setText_0(this$static.this$01.courseNameTb, this$static.this$01.currentExam[0]);
+    $setText_1(this$static.this$01.dateTb, this$static.this$01.currentExam[1]);
+    $setText_1(this$static.this$01.hourTb, this$static.this$01.currentExam[2]);
+    $setText_1(this$static.this$01.classroomTb, this$static.this$01.currentExam[3]);
+    $setText_1(this$static.this$01.durationTb, this$static.this$01.currentExam[4]);
+    $add_1(this$static.this$01.hPanelBtn, this$static.this$01.confirmBtn);
+    $add_1(this$static.this$01.hPanelBtn, this$static.this$01.deleteBtn);
+    $add_2(this$static.this$01.vPanel, new Label_0('MODIFICA ESAME'));
+    $add_2(this$static.this$01.vPanel, new Label_0('Nome Corso:'));
+    $add_2(this$static.this$01.vPanel, this$static.this$01.courseNameTb);
+    $add_2(this$static.this$01.vPanel, new Label_0('Data:'));
+    $add_2(this$static.this$01.vPanel, this$static.this$01.dateTb);
+    $add_2(this$static.this$01.vPanel, new Label_0('Ora inizio:'));
+    $add_2(this$static.this$01.vPanel, this$static.this$01.hourTb);
+    $add_2(this$static.this$01.vPanel, new Label_0('Aula:'));
+    $add_2(this$static.this$01.vPanel, this$static.this$01.classroomTb);
+    $add_2(this$static.this$01.vPanel, new Label_0('Durata:'));
+    $add_2(this$static.this$01.vPanel, this$static.this$01.durationTb);
+    $add_2(this$static.this$01.vPanel, this$static.this$01.hPanelBtn);
+    $initSubscribedStudents_0(this$static.this$01);
+    $setWidth(this$static.this$01.subscribedStudentsTa, '221px');
+    $add_2(this$static.this$01.vPanel, this$static.this$01.subscribedStudentsTa);
+  }
+}
+
+function ProfessorExamModifierComponent$1(this$0){
+  this.this$01 = this$0;
+}
+
+defineClass(302, 1, {}, ProfessorExamModifierComponent$1);
+_.onSuccess = function onSuccess_18(result){
+  $onSuccess_13(this, castToString(result));
+}
+;
+_.onFailure = function onFailure_18(caught){
+  $wnd.alert('Non riesco a trovare le informazioni sul server.');
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamModifierComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamModifierComponent/1', 302);
+function $onSuccess_14(this$static, result){
+  $setText_1(this$static.this$01.subscribedStudentsTa, 'LISTA STUDENTI ISCRITTI:\n' + result);
+}
+
+function ProfessorExamModifierComponent$2(this$0){
+  this.this$01 = this$0;
+}
+
+defineClass(303, 1, {}, ProfessorExamModifierComponent$2);
+_.onSuccess = function onSuccess_19(result){
+  $onSuccess_14(this, castToString(result));
+}
+;
+_.onFailure = function onFailure_19(caught){
+  $wnd.alert("Errore server.\nLista studenti iscritti all'esame non aggiornata");
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamModifierComponent$2_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamModifierComponent/2', 303);
+function ProfessorExamModifierComponent$confirmBtnHandler(this$0){
+  this.this$01 = this$0;
+}
+
+defineClass(298, 1, $intern_14, ProfessorExamModifierComponent$confirmBtnHandler);
+_.onClick = function onClick_11(event_0){
+  var date;
+  if (!$equals_1($getTextOrHtml(this.this$01.courseNameTb.directionalTextHelper), '') && !$equals_1($getText(this.this$01.dateTb), '') && !$equals_1($getText(this.this$01.hourTb), '') && !$equals_1($getText(this.this$01.classroomTb), '') && !$equals_1($getText(this.this$01.durationTb), '')) {
+    try {
+      date = $parse_0(($clinit_DateTimeFormat() , getFormat($getDateTimeFormatInfo(($clinit_LocaleInfo() , $clinit_LocaleInfo() , instance_0)))), $getText(this.this$01.dateTb));
+      if ($after(date, new Date_0)) {
+        !connService && (connService = new ConnService_Proxy);
+        $setExamData(connService, this.this$01.currentExam[0], $getText(this.this$01.dateTb), $getText(this.this$01.hourTb), $getText(this.this$01.classroomTb), $getText(this.this$01.durationTb), new ProfessorExamModifierComponent$confirmBtnHandler$1);
+      }
+       else {
+        $wnd.alert('Data inserita non corretta');
+        $setText_0(this.this$01.courseNameTb, this.this$01.currentExam[0]);
+        $setText_1(this.this$01.dateTb, this.this$01.currentExam[1]);
+        $setText_1(this.this$01.hourTb, this.this$01.currentExam[2]);
+      }
+    }
+     catch ($e0) {
+      $e0 = toJava($e0);
+      if (instanceOf($e0, 30)) {
+        $wnd.alert('Formato data non valido\ninserire: giorno/mese/anno');
+        $setText_0(this.this$01.courseNameTb, this.this$01.currentExam[0]);
+        $setText_1(this.this$01.dateTb, this.this$01.currentExam[1]);
+        $setText_1(this.this$01.hourTb, this.this$01.currentExam[2]);
+        $setText_1(this.this$01.classroomTb, this.this$01.currentExam[3]);
+        $setText_1(this.this$01.durationTb, this.this$01.currentExam[4]);
+      }
+       else 
+        throw toJs($e0);
+    }
+  }
+   else {
+    $wnd.alert('campi vuoti');
+    $setText_0(this.this$01.courseNameTb, this.this$01.currentExam[0]);
+    $setText_1(this.this$01.dateTb, this.this$01.currentExam[1]);
+    $setText_1(this.this$01.hourTb, this.this$01.currentExam[2]);
+    $setText_1(this.this$01.classroomTb, this.this$01.currentExam[3]);
+    $setText_1(this.this$01.durationTb, this.this$01.currentExam[4]);
+  }
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamModifierComponent$confirmBtnHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamModifierComponent/confirmBtnHandler', 298);
+function $onSuccess_15(result){
+  (checkCriticalNotNull(result) , result) && ($wnd.alert('Esame aggiornato') , undefined);
+}
+
+function ProfessorExamModifierComponent$confirmBtnHandler$1(){
+}
+
+defineClass(300, 1, {}, ProfessorExamModifierComponent$confirmBtnHandler$1);
+_.onSuccess = function onSuccess_20(result){
+  $onSuccess_15(castToBoolean(result));
+}
+;
+_.onFailure = function onFailure_20(caught){
+  $wnd.alert('Errore aggiornamento dati.');
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamModifierComponent$confirmBtnHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamModifierComponent/confirmBtnHandler/1', 300);
+function ProfessorExamModifierComponent$deleteBtnHandler(this$0){
+  this.this$01 = this$0;
+}
+
+defineClass(299, 1, $intern_14, ProfessorExamModifierComponent$deleteBtnHandler);
+_.onClick = function onClick_12(event_0){
+  !connService && (connService = new ConnService_Proxy);
+  $deleteExam(connService, this.this$01.currentExam[0], new ProfessorExamModifierComponent$deleteBtnHandler$1(this));
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamModifierComponent$deleteBtnHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamModifierComponent/deleteBtnHandler', 299);
+function $onSuccess_16(this$static, result){
+  if (checkCriticalNotNull(result) , result) {
+    $clear(this$static.this$11.this$01.vPanel);
+    $wnd.alert('esame eliminato.');
+  }
+   else {
+    $wnd.alert('esame non presente nel database');
+  }
+}
+
+function ProfessorExamModifierComponent$deleteBtnHandler$1(this$1){
+  this.this$11 = this$1;
+}
+
+defineClass(301, 1, {}, ProfessorExamModifierComponent$deleteBtnHandler$1);
+_.onSuccess = function onSuccess_21(result){
+  $onSuccess_16(this, castToBoolean(result));
+}
+;
+_.onFailure = function onFailure_21(caught){
+  $wnd.alert('Errore server');
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorExamModifierComponent$deleteBtnHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorExamModifierComponent/deleteBtnHandler/1', 301);
+function $retrieveExams_0(this$static){
+  !connService && (connService = new ConnService_Proxy);
+  $retrieveExams(connService, new ProfessorSendGradesComponent$2(this$static));
+}
+
+function $retrieveStudents(this$static, selectedExam){
+  !connService && (connService = new ConnService_Proxy);
+  $getStudentsExamList(connService, selectedExam, new ProfessorSendGradesComponent$1(this$static));
 }
 
 function $sendGrades_0(this$static){
@@ -5119,21 +5576,21 @@ function $sendGrades_0(this$static){
   studentsList = $split($getText(this$static.studentsArea), '\n');
   selectedExam = $getSelectedItemText(this$static.examsList);
   !connService && (connService = new ConnService_Proxy);
-  $sendGrades(connService, selectedExam, studentsList, gradesList, new SendGradesComponent$3(this$static));
+  $sendGrades(connService, selectedExam, studentsList, gradesList, new ProfessorSendGradesComponent$3(this$static));
 }
 
-function SendGradesComponent(){
+function ProfessorSendGradesComponent(){
   this.vPanel = new VerticalPanel;
   this.subHPanel = new HorizontalPanel;
   this.examsList = new ListBox;
-  this.searchExamsButton = new Button('cerca esami disponibili');
-  this.sendGradesButton = new Button('invia i voti');
+  this.searchExamsButton = new Button_0('cerca esami disponibili');
+  this.sendGradesButton = new Button_0('invia i voti');
   this.studentsArea = new TextArea_0;
   this.gradesArea = new TextArea_0;
   $initWidget(this, this.vPanel);
-  $add_2(this.vPanel, new Label("scegli l'esame"));
-  $add_2(this.vPanel, this.examsList);
   $add_2(this.vPanel, this.searchExamsButton);
+  $add_2(this.vPanel, new Label_0("scegli l'esame"));
+  $add_2(this.vPanel, this.examsList);
   $add_2(this.vPanel, this.subHPanel);
   $setHeight(this.gradesArea, '200px');
   $setWidth(this.gradesArea, '200px');
@@ -5142,39 +5599,34 @@ function SendGradesComponent(){
   $add_1(this.subHPanel, this.studentsArea);
   $add_1(this.subHPanel, this.gradesArea);
   $add_1(this.subHPanel, this.sendGradesButton);
-  $addDomHandler(this.searchExamsButton, new SendGradesComponent$SearchButtonHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
-  $addDomHandler(this.sendGradesButton, new SendGradesComponent$SendGradesButtonHandler(this), (null , TYPE));
+  $addDomHandler(this.searchExamsButton, new ProfessorSendGradesComponent$SearchButtonHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
+  $addDomHandler(this.sendGradesButton, new ProfessorSendGradesComponent$SendGradesButtonHandler(this), (null , TYPE));
   $setWidth(this.examsList, '200px');
   $setVisibleItemCount(this.examsList, 5);
-  $addDomHandler(this.examsList, new SendGradesComponent$ExamsListHandler(this), ($clinit_DoubleClickEvent() , $clinit_DoubleClickEvent() , TYPE_0));
+  $addDomHandler(this.examsList, new ProfessorSendGradesComponent$ExamsListHandler(this), ($clinit_DoubleClickEvent() , $clinit_DoubleClickEvent() , TYPE_0));
 }
 
-defineClass(242, 309, $intern_13, SendGradesComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_SendGradesComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'SendGradesComponent', 242);
-function $onSuccess_11(this$static, result){
-  var student, student$iterator, temp;
-  for (student$iterator = new ArrayList$1(result); student$iterator.i < student$iterator.this$01.array.length;) {
-    student = castToString($next_1(student$iterator));
-    temp = $getText(this$static.this$01.studentsArea);
-    $setText_0(this$static.this$01.studentsArea, temp + ('' + student) + '\n');
-  }
+defineClass(274, 324, $intern_13, ProfessorSendGradesComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorSendGradesComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorSendGradesComponent', 274);
+function $onSuccess_17(this$static, result){
+  $setText_1(this$static.this$01.studentsArea, result);
 }
 
-function SendGradesComponent$1(this$0){
+function ProfessorSendGradesComponent$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(246, 1, {}, SendGradesComponent$1);
-_.onSuccess = function onSuccess_15(result){
-  $onSuccess_11(this, castTo(result, 28));
+defineClass(278, 1, {}, ProfessorSendGradesComponent$1);
+_.onSuccess = function onSuccess_22(result){
+  $onSuccess_17(this, castToString(result));
 }
 ;
-_.onFailure = function onFailure_15(caught){
+_.onFailure = function onFailure_22(caught){
   $wnd.alert('ERROR: ' + caught);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_SendGradesComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'SendGradesComponent/1', 246);
-function $onSuccess_12(this$static, result){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorSendGradesComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorSendGradesComponent/1', 278);
+function $onSuccess_18(this$static, result){
   var i;
   for (i = 0; i < result.array.length; i++) {
     $insertItem(this$static.this$01.examsList, (checkCriticalElementIndex(i, result.array.length) , castToString(result.array[i])));
@@ -5182,221 +5634,250 @@ function $onSuccess_12(this$static, result){
   alert_0('esami trovati ' + result.array.length);
 }
 
-function SendGradesComponent$2(this$0){
+function ProfessorSendGradesComponent$2(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(247, 1, {}, SendGradesComponent$2);
-_.onSuccess = function onSuccess_16(result){
-  $onSuccess_12(this, castTo(result, 28));
+defineClass(279, 1, {}, ProfessorSendGradesComponent$2);
+_.onSuccess = function onSuccess_23(result){
+  $onSuccess_18(this, castTo(result, 27));
 }
 ;
-_.onFailure = function onFailure_16(caught){
+_.onFailure = function onFailure_23(caught){
   $wnd.alert('ERROR: ' + caught);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_SendGradesComponent$2_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'SendGradesComponent/2', 247);
-function $onSuccess_13(this$static){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorSendGradesComponent$2_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorSendGradesComponent/2', 279);
+function $onSuccess_19(this$static){
   $wnd.alert('Inserimento avvenuto.');
   $clear(this$static.this$01.subHPanel);
 }
 
-function SendGradesComponent$3(this$0){
+function ProfessorSendGradesComponent$3(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(248, 1, {}, SendGradesComponent$3);
-_.onSuccess = function onSuccess_17(result){
+defineClass(280, 1, {}, ProfessorSendGradesComponent$3);
+_.onSuccess = function onSuccess_24(result){
   var lastArg;
-  $onSuccess_13((lastArg = this , castToBoolean(result) , lastArg));
+  $onSuccess_19((lastArg = this , castToBoolean(result) , lastArg));
 }
 ;
-_.onFailure = function onFailure_17(caught){
+_.onFailure = function onFailure_24(caught){
   $wnd.alert('Error. inserimento fallito.');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_SendGradesComponent$3_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'SendGradesComponent/3', 248);
-function SendGradesComponent$ExamsListHandler(this$0){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorSendGradesComponent$3_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorSendGradesComponent/3', 280);
+function ProfessorSendGradesComponent$ExamsListHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(245, 1, $intern_15, SendGradesComponent$ExamsListHandler);
-_.onDoubleClick = function onDoubleClick_2(event_0){
+defineClass(277, 1, $intern_15, ProfessorSendGradesComponent$ExamsListHandler);
+_.onDoubleClick = function onDoubleClick_4(event_0){
   var selectedExam;
   selectedExam = $getSelectedItemText(this.this$01.examsList);
-  $retrieveStudents_0(this.this$01, selectedExam);
+  $retrieveStudents(this.this$01, selectedExam);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_SendGradesComponent$ExamsListHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'SendGradesComponent/ExamsListHandler', 245);
-function SendGradesComponent$SearchButtonHandler(this$0){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorSendGradesComponent$ExamsListHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorSendGradesComponent/ExamsListHandler', 277);
+function ProfessorSendGradesComponent$SearchButtonHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(243, 1, $intern_14, SendGradesComponent$SearchButtonHandler);
-_.onClick = function onClick_10(event_0){
+defineClass(275, 1, $intern_14, ProfessorSendGradesComponent$SearchButtonHandler);
+_.onClick = function onClick_13(event_0){
   $retrieveExams_0(this.this$01);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_SendGradesComponent$SearchButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'SendGradesComponent/SearchButtonHandler', 243);
-function SendGradesComponent$SendGradesButtonHandler(this$0){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorSendGradesComponent$SearchButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorSendGradesComponent/SearchButtonHandler', 275);
+function ProfessorSendGradesComponent$SendGradesButtonHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(244, 1, $intern_14, SendGradesComponent$SendGradesButtonHandler);
-_.onClick = function onClick_11(event_0){
+defineClass(276, 1, $intern_14, ProfessorSendGradesComponent$SendGradesButtonHandler);
+_.onClick = function onClick_14(event_0){
   $sendGrades_0(this.this$01);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_SendGradesComponent$SendGradesButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'SendGradesComponent/SendGradesButtonHandler', 244);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_ProfessorSendGradesComponent$SendGradesButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'ProfessorSendGradesComponent/SendGradesButtonHandler', 276);
 function StudentCoursesSignUpComponent(){
   this.vPanel = new VerticalPanel;
   this.coursesList = new ListBox;
-  this.submitBtn = new Button('ISCRIVITI');
+  this.submitBtn = new Button_0('ISCRIVITI');
   $initWidget(this, this.vPanel);
   !connService && (connService = new ConnService_Proxy);
   $retrieveAviableCourses(connService, (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email, new StudentCoursesSignUpComponent$1(this));
-  $add_2(this.vPanel, new Label('Elenco corsi disponibili'));
+  $add_2(this.vPanel, new Label_0('Elenco corsi disponibili'));
   $add_2(this.vPanel, this.coursesList);
   $addDomHandler(this.submitBtn, new StudentCoursesSignUpComponent$submitBtnHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
   $add_2(this.vPanel, this.submitBtn);
 }
 
-defineClass(231, 309, $intern_13, StudentCoursesSignUpComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentCoursesSignUpComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentCoursesSignUpComponent', 231);
-function $onSuccess_14(this$static, result){
+defineClass(256, 324, $intern_13, StudentCoursesSignUpComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentCoursesSignUpComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentCoursesSignUpComponent', 256);
+function $onSuccess_20(this$static, result){
   var i;
   this$static.this$01.courses = $split(result, '@');
-  for (i = 0; i < result.length; i++) {
+  for (i = 0; i < this$static.this$01.courses.length; i++) {
     $insertItem(this$static.this$01.coursesList, this$static.this$01.courses[i]);
   }
-  $setVisibleItemCount(this$static.this$01.coursesList, this$static.this$01.courses.length);
+  $setVisibleItemCount(this$static.this$01.coursesList, $getElement(this$static.this$01.coursesList).options.length);
 }
 
 function StudentCoursesSignUpComponent$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(234, 1, {}, StudentCoursesSignUpComponent$1);
-_.onSuccess = function onSuccess_18(result){
-  $onSuccess_14(this, castToString(result));
+defineClass(259, 1, {}, StudentCoursesSignUpComponent$1);
+_.onSuccess = function onSuccess_25(result){
+  $onSuccess_20(this, castToString(result));
 }
 ;
-_.onFailure = function onFailure_18(caught){
+_.onFailure = function onFailure_25(caught){
   $wnd.alert('Impossibile visualizzare i corsi disponibili');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentCoursesSignUpComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentCoursesSignUpComponent/1', 234);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentCoursesSignUpComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentCoursesSignUpComponent/1', 259);
 function StudentCoursesSignUpComponent$submitBtnHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(232, 1, $intern_14, StudentCoursesSignUpComponent$submitBtnHandler);
-_.onClick = function onClick_12(event_0){
+defineClass(257, 1, $intern_14, StudentCoursesSignUpComponent$submitBtnHandler);
+_.onClick = function onClick_15(event_0){
   !connService && (connService = new ConnService_Proxy);
   $courseRegistration(connService, (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email, $getSelectedItemText(this.this$01.coursesList), new StudentCoursesSignUpComponent$submitBtnHandler$1);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentCoursesSignUpComponent$submitBtnHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentCoursesSignUpComponent/submitBtnHandler', 232);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentCoursesSignUpComponent$submitBtnHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentCoursesSignUpComponent/submitBtnHandler', 257);
 function StudentCoursesSignUpComponent$submitBtnHandler$1(){
 }
 
-defineClass(233, 1, {}, StudentCoursesSignUpComponent$submitBtnHandler$1);
-_.onSuccess = function onSuccess_19(result){
+defineClass(258, 1, {}, StudentCoursesSignUpComponent$submitBtnHandler$1);
+_.onSuccess = function onSuccess_26(result){
   castToBoolean(result);
   $wnd.alert('Iscrizione avvenuta con successo.');
 }
 ;
-_.onFailure = function onFailure_19(caught){
+_.onFailure = function onFailure_26(caught){
   $wnd.alert('Errore server. Iscrizione fallita.');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentCoursesSignUpComponent$submitBtnHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentCoursesSignUpComponent/submitBtnHandler/1', 233);
-function StudentExamsSubscriptionAviable(){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentCoursesSignUpComponent$submitBtnHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentCoursesSignUpComponent/submitBtnHandler/1', 258);
+function $getAvailableExams_0(this$static){
+  !connService && (connService = new ConnService_Proxy);
+  $getAvailableExams(connService, (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email, $getSelectedItemText(this$static.coursesLb), new StudentExamsSignUpComponent$2(this$static));
+}
+
+function StudentExamsSignUpComponent(){
   this.vPanel = new VerticalPanel;
-  this.examsLb = new ListBox;
-  this.confirmButton = new Button('iscriviti');
+  this.examsLb = new Label;
+  this.coursesLb = new ListBox;
+  this.confirmButton = new Button_0('iscriviti');
+  !connService && (connService = new ConnService_Proxy);
+  $retrieveSubscribedCourses(connService, (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email, new StudentExamsSignUpComponent$1(this));
+  $add_2(this.vPanel, new Label_0('CORSI A CUI SEI ISCRITTO:'));
+  $add_2(this.vPanel, this.coursesLb);
+  $addDomHandler(this.confirmButton, new StudentExamsSignUpComponent$ConfirmButtonHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
+  $addDomHandler(this.coursesLb, new StudentExamsSignUpComponent$coursesLbHandler(this), ($clinit_DoubleClickEvent() , $clinit_DoubleClickEvent() , TYPE_0));
   $initWidget(this, this.vPanel);
-  !connService && (connService = new ConnService_Proxy);
-  $retrieveSubscribedCourses(connService, (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email, new StudentExamsSubscriptionAviable$1(this));
-  !connService && (connService = new ConnService_Proxy);
-  $getAvailableExams(connService, this.courses, new StudentExamsSubscriptionAviable$2(this));
-  $setVisibleItemCount(this.examsLb, $getElement(this.examsLb).options.length);
-  $add_2(this.vPanel, new Label('CORSI A CUI SEI ISCRITTO:'));
-  $add_2(this.vPanel, this.examsLb);
-  $add_2(this.vPanel, this.confirmButton);
-  $addDomHandler(this.confirmButton, new StudentExamsSubscriptionAviable$ConfirmButtonHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
 }
 
-defineClass(274, 309, $intern_13, StudentExamsSubscriptionAviable);
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentExamsSubscriptionAviable_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentExamsSubscriptionAviable', 274);
-function $onSuccess_15(this$static, result){
-  this$static.this$01.courses = $split(result, '\n');
+defineClass(260, 324, $intern_13, StudentExamsSignUpComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentExamsSignUpComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentExamsSignUpComponent', 260);
+function $onSuccess_21(this$static, result){
+  var courses, i;
+  courses = $split(result, '\n');
+  for (i = 0; i < courses.length; i++) {
+    $insertItem(this$static.this$01.coursesLb, courses[i]);
+  }
+  $setVisibleItemCount(this$static.this$01.coursesLb, $getElement(this$static.this$01.coursesLb).options.length);
 }
 
-function StudentExamsSubscriptionAviable$1(this$0){
+function StudentExamsSignUpComponent$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(277, 1, {}, StudentExamsSubscriptionAviable$1);
-_.onSuccess = function onSuccess_20(result){
-  $onSuccess_15(this, castToString(result));
+defineClass(264, 1, {}, StudentExamsSignUpComponent$1);
+_.onSuccess = function onSuccess_27(result){
+  $onSuccess_21(this, castToString(result));
 }
 ;
-_.onFailure = function onFailure_20(caught){
+_.onFailure = function onFailure_27(caught){
   $wnd.alert('ERROR: impossibile ottenere corsi');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentExamsSubscriptionAviable$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentExamsSubscriptionAviable/1', 277);
-function $onSuccess_16(this$static, result){
-  var i;
-  this$static.this$01.exams = $split(result, '\n');
-  for (i = 0; i < this$static.this$01.exams.length; i++) {
-    $insertItem(this$static.this$01.examsLb, this$static.this$01.exams[i]);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentExamsSignUpComponent$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentExamsSignUpComponent/1', 264);
+function $onSuccess_22(this$static, result){
+  if (!$equals_1(result, '') && !$equals_1(result, 'signed')) {
+    $setText_0(this$static.this$01.examsLb, 'Esame disponibile:\n' + result);
+    $add_2(this$static.this$01.vPanel, this$static.this$01.examsLb);
+    $add_2(this$static.this$01.vPanel, this$static.this$01.confirmButton);
+  }
+   else if ($equals_1(result, 'signed')) {
+    $remove_1(this$static.this$01.vPanel, this$static.this$01.confirmButton);
+    $add_2(this$static.this$01.vPanel, this$static.this$01.examsLb);
+    $setText_0(this$static.this$01.examsLb, 'sei gi\xE0 registrato');
+  }
+   else {
+    $remove_1(this$static.this$01.vPanel, this$static.this$01.confirmButton);
+    $add_2(this$static.this$01.vPanel, this$static.this$01.examsLb);
+    $setText_0(this$static.this$01.examsLb, 'Nessun esame in programma');
   }
 }
 
-function StudentExamsSubscriptionAviable$2(this$0){
+function StudentExamsSignUpComponent$2(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(278, 1, {}, StudentExamsSubscriptionAviable$2);
-_.onSuccess = function onSuccess_21(result){
-  $onSuccess_16(this, castToString(result));
+defineClass(265, 1, {}, StudentExamsSignUpComponent$2);
+_.onSuccess = function onSuccess_28(result){
+  $onSuccess_22(this, castToString(result));
 }
 ;
-_.onFailure = function onFailure_21(caught){
+_.onFailure = function onFailure_28(caught){
   $wnd.alert('ERROR: impossibile visualizzare esami');
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentExamsSubscriptionAviable$2_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentExamsSubscriptionAviable/2', 278);
-function StudentExamsSubscriptionAviable$ConfirmButtonHandler(this$0){
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentExamsSignUpComponent$2_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentExamsSignUpComponent/2', 265);
+function StudentExamsSignUpComponent$ConfirmButtonHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(275, 1, $intern_14, StudentExamsSubscriptionAviable$ConfirmButtonHandler);
-_.onClick = function onClick_13(event_0){
+defineClass(262, 1, $intern_14, StudentExamsSignUpComponent$ConfirmButtonHandler);
+_.onClick = function onClick_16(event_0){
   !connService && (connService = new ConnService_Proxy);
-  $registerStudentInExam(connService, $getSelectedItemText(this.this$01.examsLb), (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email, new StudentExamsSubscriptionAviable$ConfirmButtonHandler$1);
+  $registerStudentInExam(connService, $split($getTextOrHtml(this.this$01.examsLb.directionalTextHelper), '\n')[1], (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).email, new StudentExamsSignUpComponent$ConfirmButtonHandler$1(this));
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentExamsSubscriptionAviable$ConfirmButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentExamsSubscriptionAviable/ConfirmButtonHandler', 275);
-function $onSuccess_17(result){
-  (checkCriticalNotNull(result) , result) && ($wnd.alert('iscritto') , undefined);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentExamsSignUpComponent$ConfirmButtonHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentExamsSignUpComponent/ConfirmButtonHandler', 262);
+function $onSuccess_23(this$static, result){
+  (checkCriticalNotNull(result) , result) && $setText_0(this$static.this$11.this$01.examsLb, 'Iscrizione avvenuta con successo!');
 }
 
-function StudentExamsSubscriptionAviable$ConfirmButtonHandler$1(){
+function StudentExamsSignUpComponent$ConfirmButtonHandler$1(this$1){
+  this.this$11 = this$1;
 }
 
-defineClass(276, 1, {}, StudentExamsSubscriptionAviable$ConfirmButtonHandler$1);
-_.onSuccess = function onSuccess_22(result){
-  $onSuccess_17(castToBoolean(result));
+defineClass(263, 1, {}, StudentExamsSignUpComponent$ConfirmButtonHandler$1);
+_.onSuccess = function onSuccess_29(result){
+  $onSuccess_23(this, castToBoolean(result));
 }
 ;
-_.onFailure = function onFailure_22(caught){
+_.onFailure = function onFailure_29(caught){
   $wnd.alert('ERROR: ' + caught);
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentExamsSubscriptionAviable$ConfirmButtonHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentExamsSubscriptionAviable/ConfirmButtonHandler/1', 276);
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentExamsSignUpComponent$ConfirmButtonHandler$1_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentExamsSignUpComponent/ConfirmButtonHandler/1', 263);
+function StudentExamsSignUpComponent$coursesLbHandler(this$0){
+  this.this$01 = this$0;
+}
+
+defineClass(261, 1, $intern_15, StudentExamsSignUpComponent$coursesLbHandler);
+_.onDoubleClick = function onDoubleClick_5(event_0){
+  $getAvailableExams_0(this.this$01);
+}
+;
+var Lcom_google_gwt_sample_progettoingegneria_client_dashboards_settings_StudentExamsSignUpComponent$coursesLbHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.dashboards.settings', 'StudentExamsSignUpComponent/coursesLbHandler', 261);
 function $cleanhPanel(this$static){
   $remove_0(this$static.baseVPanel, this$static.adminCreateUserComp);
   $remove_0(this$static.baseVPanel, this$static.studentsListComp);
@@ -5418,14 +5899,14 @@ function AdminMenuComponent(){
   $add_1(this.baseVPanel, this.actionsListBox);
 }
 
-defineClass(203, 309, $intern_13, AdminMenuComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_AdminMenuComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'AdminMenuComponent', 203);
+defineClass(204, 324, $intern_13, AdminMenuComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_AdminMenuComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'AdminMenuComponent', 204);
 function AdminMenuComponent$actionsListBoxHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(204, 1, $intern_15, AdminMenuComponent$actionsListBoxHandler);
-_.onDoubleClick = function onDoubleClick_3(event_0){
+defineClass(205, 1, $intern_15, AdminMenuComponent$actionsListBoxHandler);
+_.onDoubleClick = function onDoubleClick_6(event_0){
   var userchoice;
   $cleanhPanel(this.this$01);
   userchoice = $getElement(this.this$01.actionsListBox).selectedIndex;
@@ -5441,58 +5922,55 @@ _.onDoubleClick = function onDoubleClick_3(event_0){
   }
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_AdminMenuComponent$actionsListBoxHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'AdminMenuComponent/actionsListBoxHandler', 204);
-function $cleanhPanel_0(this$static){
-  $remove_0(this$static.hPanel, this$static.courseQuaryList);
-  $remove_0(this$static.hPanel, this$static.sendGradesView);
-  $remove_0(this$static.hPanel, this$static.infoView);
-  $remove_0(this$static.hPanel, this$static.professorExamCreationView);
-}
-
+var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_AdminMenuComponent$actionsListBoxHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'AdminMenuComponent/actionsListBoxHandler', 205);
 function ProfessorMenuComponent(){
-  this.hPanel = new HorizontalPanel;
+  this.basePanel = new HorizontalPanel;
+  this.vPanel = new VerticalPanel;
   this.actionsListBox = new ListBox;
-  this.courseQuaryList = new ProfessorCoursesListComponent;
-  this.infoView = new PersonalInfoComponent;
-  this.sendGradesView = new SendGradesComponent;
-  this.professorExamCreationView = new ProfessorExamCreationComponent;
-  $initWidget(this, this.hPanel);
+  $initWidget(this, this.basePanel);
   $addDomHandler(this.actionsListBox, new ProfessorMenuComponent$ListBoxHandler(this), ($clinit_DoubleClickEvent() , $clinit_DoubleClickEvent() , TYPE_0));
   $insertItem(this.actionsListBox, 'gestisci corsi');
-  $insertItem(this.actionsListBox, 'crea esame');
+  $insertItem(this.actionsListBox, 'gestisci esame');
   $insertItem(this.actionsListBox, 'invia voti esami');
   $insertItem(this.actionsListBox, 'visualizza informazioni personali');
   $setVisibleItemCount(this.actionsListBox, 4);
-  $add_1(this.hPanel, this.actionsListBox);
+  $add_1(this.basePanel, this.actionsListBox);
+  $add_1(this.basePanel, this.vPanel);
 }
 
-defineClass(199, 309, $intern_13, ProfessorMenuComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_ProfessorMenuComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'ProfessorMenuComponent', 199);
+defineClass(200, 324, $intern_13, ProfessorMenuComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_ProfessorMenuComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'ProfessorMenuComponent', 200);
 function ProfessorMenuComponent$ListBoxHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(200, 1, $intern_15, ProfessorMenuComponent$ListBoxHandler);
-_.onDoubleClick = function onDoubleClick_4(event_0){
+defineClass(201, 1, $intern_15, ProfessorMenuComponent$ListBoxHandler);
+_.onDoubleClick = function onDoubleClick_7(event_0){
   var userchoice;
-  $cleanhPanel_0(this.this$01);
+  $clear(this.this$01.vPanel);
   userchoice = $getElement(this.this$01.actionsListBox).selectedIndex;
   switch (userchoice) {
     case 0:
-      $add_1(this.this$01.hPanel, this.this$01.courseQuaryList);
+      (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).navIndex = 0;
+      this.this$01.courseQuaryList = new ProfessorCoursesListComponent;
+      $add_2(this.this$01.vPanel, this.this$01.courseQuaryList);
       break;
     case 1:
-      $add_1(this.this$01.hPanel, this.this$01.professorExamCreationView);
+      (!currentSession && (currentSession = new Session(($clinit_UserState() , NOT_SIGNED))) , currentSession).navIndex = 1;
+      this.this$01.courseQuaryList = new ProfessorCoursesListComponent;
+      $add_2(this.this$01.vPanel, this.this$01.courseQuaryList);
       break;
     case 2:
-      $add_1(this.this$01.hPanel, this.this$01.sendGradesView);
+      this.this$01.sendGradesView = new ProfessorSendGradesComponent;
+      $add_2(this.this$01.vPanel, this.this$01.sendGradesView);
       break;
     case 3:
-      $add_1(this.this$01.hPanel, this.this$01.infoView);
+      this.this$01.infoView = new PersonalInfoComponent;
+      $add_2(this.this$01.vPanel, this.this$01.infoView);
   }
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_ProfessorMenuComponent$ListBoxHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'ProfessorMenuComponent/ListBoxHandler', 200);
+var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_ProfessorMenuComponent$ListBoxHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'ProfessorMenuComponent/ListBoxHandler', 201);
 function $clearPanel(this$static){
   $remove_1(this$static.vPanel, this$static.infoStudentView);
 }
@@ -5500,49 +5978,42 @@ function $clearPanel(this$static){
 function SecretaryMenuComponent(){
   this.vPanel = new VerticalPanel;
   this.actionsListBox = new ListBox;
-  this.confirmButton = new Button('Conferma');
   this.infoStudentView = new InfoStudentListComponent;
+  this.approveGradesView = new ApproveGradesComponent;
   $initWidget(this, this.vPanel);
   $insertItem(this.actionsListBox, 'visualizza i dati degli studenti');
-  $insertItem(this.actionsListBox, "inserisci voti d'esame");
   $insertItem(this.actionsListBox, 'pubblica voti esame');
   $setVisibleItemCount(this.actionsListBox, 3);
-  $setWidth(this.confirmButton, '200px');
-  $addDomHandler(this.confirmButton, new SecretaryMenuComponent$buttonConfirmHandler(this), ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
+  $addDomHandler(this.actionsListBox, new SecretaryMenuComponent$actionsListBoxHandler(this), ($clinit_DoubleClickEvent() , $clinit_DoubleClickEvent() , TYPE_0));
   $add_2(this.vPanel, this.actionsListBox);
-  $add_2(this.vPanel, this.confirmButton);
 }
 
-defineClass(201, 309, $intern_13, SecretaryMenuComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_SecretaryMenuComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'SecretaryMenuComponent', 201);
-function SecretaryMenuComponent$buttonConfirmHandler(this$0){
+defineClass(202, 324, $intern_13, SecretaryMenuComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_SecretaryMenuComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'SecretaryMenuComponent', 202);
+function SecretaryMenuComponent$actionsListBoxHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(202, 1, $intern_14, SecretaryMenuComponent$buttonConfirmHandler);
-_.onClick = function onClick_14(event_0){
+defineClass(203, 1, $intern_15, SecretaryMenuComponent$actionsListBoxHandler);
+_.onDoubleClick = function onDoubleClick_8(event_0){
   var userchoice;
   $clearPanel(this.this$01);
   userchoice = $getElement(this.this$01.actionsListBox).selectedIndex;
-  userchoice == 0 && $add_2(this.this$01.vPanel, this.this$01.infoStudentView);
+  switch (userchoice) {
+    case 0:
+      $add_2(this.this$01.vPanel, this.this$01.infoStudentView);
+      break;
+    case 1:
+      $add_2(this.this$01.vPanel, this.this$01.approveGradesView);
+  }
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_SecretaryMenuComponent$buttonConfirmHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'SecretaryMenuComponent/buttonConfirmHandler', 202);
-function $cleanhPanel_1(this$static){
-  $remove_1(this$static.hPanel, this$static.infoView);
-  $remove_1(this$static.hPanel, this$static.coursesListView);
-  $remove_1(this$static.hPanel, this$static.courseSignUpView);
-  $remove_1(this$static.hPanel, this$static.gradesView);
-}
-
+var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_SecretaryMenuComponent$actionsListBoxHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'SecretaryMenuComponent/actionsListBoxHandler', 203);
 function StudentMenuComponent(){
-  this.hPanel = new VerticalPanel;
+  this.basePanel = new VerticalPanel;
+  this.vPanel = new VerticalPanel;
   this.actionsListBox = new ListBox;
-  this.infoView = new PersonalInfoComponent;
-  this.coursesListView = new CoursesListComponent;
-  this.courseSignUpView = new StudentCoursesSignUpComponent;
-  this.gradesView = new GradesViewComponent;
-  $initWidget(this, this.hPanel);
+  $initWidget(this, this.basePanel);
   $insertItem(this.actionsListBox, 'visualizza lista corsi disponibili');
   $insertItem(this.actionsListBox, 'iscriviti ad un corso');
   $insertItem(this.actionsListBox, 'registrati ad un esame');
@@ -5550,40 +6021,45 @@ function StudentMenuComponent(){
   $insertItem(this.actionsListBox, 'visualizza i tuoi voti');
   $setVisibleItemCount(this.actionsListBox, 5);
   $addDomHandler(this.actionsListBox, new StudentMenuComponent$ActionsListBoxDCHandler(this), ($clinit_DoubleClickEvent() , $clinit_DoubleClickEvent() , TYPE_0));
-  $add_2(this.hPanel, this.actionsListBox);
+  $add_2(this.basePanel, this.actionsListBox);
+  $add_2(this.basePanel, this.vPanel);
 }
 
-defineClass(197, 309, $intern_13, StudentMenuComponent);
-var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_StudentMenuComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'StudentMenuComponent', 197);
+defineClass(198, 324, $intern_13, StudentMenuComponent);
+var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_StudentMenuComponent_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'StudentMenuComponent', 198);
 function StudentMenuComponent$ActionsListBoxDCHandler(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(198, 1, $intern_15, StudentMenuComponent$ActionsListBoxDCHandler);
-_.onDoubleClick = function onDoubleClick_5(event_0){
+defineClass(199, 1, $intern_15, StudentMenuComponent$ActionsListBoxDCHandler);
+_.onDoubleClick = function onDoubleClick_9(event_0){
   var userchoice;
-  $cleanhPanel_1(this.this$01);
+  $clear(this.this$01.vPanel);
   userchoice = $getElement(this.this$01.actionsListBox).selectedIndex;
   switch (userchoice) {
     case 0:
-      $add_2(this.this$01.hPanel, this.this$01.coursesListView);
+      this.this$01.coursesListView = new CoursesListComponent;
+      $add_2(this.this$01.vPanel, this.this$01.coursesListView);
       break;
     case 1:
-      $add_2(this.this$01.hPanel, this.this$01.courseSignUpView);
+      this.this$01.courseSignUpView = new StudentCoursesSignUpComponent;
+      $add_2(this.this$01.vPanel, this.this$01.courseSignUpView);
       break;
     case 2:
-      this.this$01.examView = new StudentExamsSubscriptionAviable;
-      $add_2(this.this$01.hPanel, this.this$01.examView);
+      this.this$01.examView = new StudentExamsSignUpComponent;
+      $add_2(this.this$01.vPanel, this.this$01.examView);
       break;
     case 3:
-      $add_2(this.this$01.hPanel, this.this$01.infoView);
+      this.this$01.infoView = new PersonalInfoComponent;
+      $add_2(this.this$01.vPanel, this.this$01.infoView);
       break;
     case 4:
-      $add_2(this.this$01.hPanel, this.this$01.gradesView);
+      this.this$01.gradesView = new GradesViewComponent;
+      $add_2(this.this$01.vPanel, this.this$01.gradesView);
   }
 }
 ;
-var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_StudentMenuComponent$ActionsListBoxDCHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'StudentMenuComponent/ActionsListBoxDCHandler', 198);
+var Lcom_google_gwt_sample_progettoingegneria_client_menucomponents_StudentMenuComponent$ActionsListBoxDCHandler_2_classLit = createForClass('com.google.gwt.sample.progettoingegneria.client.menucomponents', 'StudentMenuComponent/ActionsListBoxDCHandler', 199);
 function $clinit_UserState(){
   $clinit_UserState = emptyMethod;
   STUDENT = new UserState('STUDENT', 0);
@@ -5616,23 +6092,23 @@ function instantiate(streamReader){
   return values[ordinal];
 }
 
-defineClass(325, 1, {});
-var Lcom_google_gwt_text_shared_AbstractRenderer_2_classLit = createForClass('com.google.gwt.text.shared', 'AbstractRenderer', 325);
+defineClass(339, 1, {});
+var Lcom_google_gwt_text_shared_AbstractRenderer_2_classLit = createForClass('com.google.gwt.text.shared', 'AbstractRenderer', 339);
 function PassthroughParser(){
 }
 
-defineClass(271, 1, {}, PassthroughParser);
+defineClass(251, 1, {}, PassthroughParser);
 var INSTANCE_0;
-var Lcom_google_gwt_text_shared_testing_PassthroughParser_2_classLit = createForClass('com.google.gwt.text.shared.testing', 'PassthroughParser', 271);
+var Lcom_google_gwt_text_shared_testing_PassthroughParser_2_classLit = createForClass('com.google.gwt.text.shared.testing', 'PassthroughParser', 251);
 function PassthroughRenderer(){
 }
 
-defineClass(270, 325, {}, PassthroughRenderer);
+defineClass(250, 339, {}, PassthroughRenderer);
 var INSTANCE_1;
-var Lcom_google_gwt_text_shared_testing_PassthroughRenderer_2_classLit = createForClass('com.google.gwt.text.shared.testing', 'PassthroughRenderer', 270);
+var Lcom_google_gwt_text_shared_testing_PassthroughRenderer_2_classLit = createForClass('com.google.gwt.text.shared.testing', 'PassthroughRenderer', 250);
 function $clinit_DOM(){
   $clinit_DOM = emptyMethod;
-  $clinit_DOMImplStandard();
+  $clinit_DOMImplMozilla();
 }
 
 function dispatchEvent_0(evt, elem, listener){
@@ -5669,12 +6145,6 @@ function sinkBitlessEvent(elem, eventTypeName){
   elem.addEventListener(eventTypeName, dispatcher, false);
 }
 
-function sinkEvents(elem, eventBits){
-  $clinit_DOM();
-  $maybeInitializeEventSystem();
-  $sinkEventsImpl(elem, eventBits);
-}
-
 var currentEvent = null, sCaptureElem;
 function $onModuleLoad(){
   var allowedModes, currentMode, i;
@@ -5692,10 +6162,9 @@ function getTypeInt(typeName){
   return $eventGetTypeInt(($clinit_DOM() , typeName));
 }
 
-function sinkEvents_0(elem){
+function sinkEvents(elem){
   $clinit_DOM();
-  $maybeInitializeEventSystem();
-  $sinkEventsImpl(elem, 32768);
+  $sinkEvents_0(elem, 32768);
 }
 
 function addCloseHandler(handler){
@@ -5738,7 +6207,7 @@ function Window$ClosingEvent(){
   $clinit_Window$ClosingEvent();
 }
 
-defineClass(151, 316, {}, Window$ClosingEvent);
+defineClass(152, 331, {}, Window$ClosingEvent);
 _.dispatch = function dispatch_2(handler){
   checkCriticalType(handler == null);
   null.$_nullMethod();
@@ -5753,7 +6222,7 @@ _.getAssociatedType = function getAssociatedType_10(){
 }
 ;
 var TYPE_2;
-var Lcom_google_gwt_user_client_Window$ClosingEvent_2_classLit = createForClass('com.google.gwt.user.client', 'Window/ClosingEvent', 151);
+var Lcom_google_gwt_user_client_Window$ClosingEvent_2_classLit = createForClass('com.google.gwt.user.client', 'Window/ClosingEvent', 152);
 function Window$WindowHandlers(){
   HandlerManager.call(this, null);
 }
@@ -5798,7 +6267,7 @@ function $eventGetTypeInt(eventType){
       return $intern_16;
     case 'DOMMouseScroll':
     case 'mousewheel':
-      return 131072;
+      return $intern_17;
     case 'contextmenu':
       return 262144;
     case 'paste':
@@ -5812,11 +6281,11 @@ function $eventGetTypeInt(eventType){
     case 'touchcancel':
       return 8388608;
     case 'gesturestart':
-      return $intern_17;
-    case 'gesturechange':
       return $intern_18;
-    case 'gestureend':
+    case 'gesturechange':
       return $intern_19;
+    case 'gestureend':
+      return $intern_20;
     default:return -1;
   }
 }
@@ -5824,13 +6293,14 @@ function $eventGetTypeInt(eventType){
 function $maybeInitializeEventSystem(){
   if (!eventSystemIsInitialized) {
     $initEventSystem();
+    $initSyntheticMouseUpEvents();
     eventSystemIsInitialized = true;
   }
 }
 
 function getEventListener(elem){
   var maybeListener = elem.__listener;
-  return !instanceOfJso(maybeListener) && instanceOf(maybeListener, 10)?maybeListener:null;
+  return !instanceOfJso(maybeListener) && instanceOf(maybeListener, 11)?maybeListener:null;
 }
 
 function setEventListener(elem, listener){
@@ -5886,16 +6356,16 @@ function $sinkEventsImpl(elem, bits){
   chMask & 16384 && (elem.onscroll = bits & 16384?dispatchEvent_1:null);
   chMask & 32768 && (elem.onload = bits & 32768?dispatchUnhandledEvent:null);
   chMask & $intern_16 && (elem.onerror = bits & $intern_16?dispatchEvent_1:null);
-  chMask & 131072 && (elem.onmousewheel = bits & 131072?dispatchEvent_1:null);
+  chMask & $intern_17 && (elem.onmousewheel = bits & $intern_17?dispatchEvent_1:null);
   chMask & 262144 && (elem.oncontextmenu = bits & 262144?dispatchEvent_1:null);
   chMask & $intern_9 && (elem.onpaste = bits & $intern_9?dispatchEvent_1:null);
   chMask & 1048576 && (elem.ontouchstart = bits & 1048576?dispatchEvent_1:null);
   chMask & 2097152 && (elem.ontouchmove = bits & 2097152?dispatchEvent_1:null);
   chMask & $intern_10 && (elem.ontouchend = bits & $intern_10?dispatchEvent_1:null);
   chMask & 8388608 && (elem.ontouchcancel = bits & 8388608?dispatchEvent_1:null);
-  chMask & $intern_17 && (elem.ongesturestart = bits & $intern_17?dispatchEvent_1:null);
-  chMask & $intern_18 && (elem.ongesturechange = bits & $intern_18?dispatchEvent_1:null);
-  chMask & $intern_19 && (elem.ongestureend = bits & $intern_19?dispatchEvent_1:null);
+  chMask & $intern_18 && (elem.ongesturestart = bits & $intern_18?dispatchEvent_1:null);
+  chMask & $intern_19 && (elem.ongesturechange = bits & $intern_19?dispatchEvent_1:null);
+  chMask & $intern_20 && (elem.ongestureend = bits & $intern_20?dispatchEvent_1:null);
 }
 
 function dispatchCapturedEvent(evt){
@@ -5903,6 +6373,7 @@ function dispatchCapturedEvent(evt){
 }
 
 function dispatchCapturedMouseEvent(evt){
+  $clinit_DOMImplStandard();
   $clinit_DOM();
   return;
 }
@@ -5923,21 +6394,47 @@ function dispatchEvent_2(evt){
 
 function dispatchUnhandledEvent_0(evt){
   var element;
-  element = evt.currentTarget || $wnd;
+  element = evt.currentTarget;
   element['__gwtLastUnhandledEvent'] = evt.type;
   dispatchEvent_2(evt);
 }
 
 function getFirstAncestorWithListener(evt){
   var curElem;
-  curElem = evt.currentTarget || $wnd;
+  curElem = evt.currentTarget;
   while (!!curElem && !getEventListener(curElem)) {
     curElem = curElem.parentNode;
   }
   return curElem;
 }
 
-var bitlessEventDispatchers, captureEventDispatchers, dispatchEvent_1, dispatchUnhandledEvent;
+var bitlessEventDispatchers, captureElem, captureEventDispatchers, dispatchEvent_1, dispatchUnhandledEvent;
+function $clinit_DOMImplMozilla(){
+  $clinit_DOMImplMozilla = emptyMethod;
+  $clinit_DOMImplStandard();
+  captureEventDispatchers['DOMMouseScroll'] = dispatchCapturedMouseEvent;
+}
+
+function $initSyntheticMouseUpEvents(){
+  $wnd.addEventListener('mouseout', $entry(function(evt){
+    var cap = ($clinit_DOMImplStandard() , captureElem);
+    if (cap && !evt.relatedTarget) {
+      if ('html' == evt.target.tagName.toLowerCase()) {
+        var muEvent = $doc.createEvent('MouseEvents');
+        muEvent.initMouseEvent('mouseup', true, true, $wnd, 0, evt.screenX, evt.screenY, evt.clientX, evt.clientY, evt.ctrlKey, evt.altKey, evt.shiftKey, evt.metaKey, evt.button, null);
+        cap.dispatchEvent(muEvent);
+      }
+    }
+  }
+  ), true);
+}
+
+function $sinkEvents_0(elem, bits){
+  $maybeInitializeEventSystem();
+  $sinkEventsImpl(elem, bits);
+  bits & $intern_17 && elem.addEventListener('DOMMouseScroll', ($clinit_DOMImplStandard() , dispatchEvent_1), false);
+}
+
 function foreach_0(map_0, fn){
   for (var e in map_0) {
     map_0.hasOwnProperty(e) && fn(e, map_0[e]);
@@ -5990,7 +6487,7 @@ function IncompatibleRemoteServiceException_1(cause){
   RuntimeException_1.call(this, 'The response could not be deserialized', cause);
 }
 
-defineClass(76, 6, $intern_1, IncompatibleRemoteServiceException, IncompatibleRemoteServiceException_0, IncompatibleRemoteServiceException_1);
+defineClass(76, 9, $intern_1, IncompatibleRemoteServiceException, IncompatibleRemoteServiceException_0, IncompatibleRemoteServiceException_1);
 var Lcom_google_gwt_user_client_rpc_IncompatibleRemoteServiceException_2_classLit = createForClass('com.google.gwt.user.client.rpc', 'IncompatibleRemoteServiceException', 76);
 function deserialize_0(streamReader, instance){
   setDetailMessage(instance, $getString(streamReader, streamReader.results[--streamReader.index_0]));
@@ -6012,7 +6509,7 @@ function InvocationException_0(s, cause){
   RuntimeException_1.call(this, s, cause);
 }
 
-defineClass(67, 6, $intern_1, InvocationException, InvocationException_0);
+defineClass(67, 9, $intern_1, InvocationException, InvocationException_0);
 var Lcom_google_gwt_user_client_rpc_InvocationException_2_classLit = createForClass('com.google.gwt.user.client.rpc', 'InvocationException', 67);
 function $create(this$static, serviceEntryPoint){
   this$static.builder = new RequestBuilder(($clinit_RequestBuilder() , POST), serviceEntryPoint);
@@ -6061,14 +6558,14 @@ function $setRequestData(this$static, data_0){
 function RpcRequestBuilder(){
 }
 
-defineClass(269, 1, {}, RpcRequestBuilder);
-var Lcom_google_gwt_user_client_rpc_RpcRequestBuilder_2_classLit = createForClass('com.google.gwt.user.client.rpc', 'RpcRequestBuilder', 269);
+defineClass(249, 1, {}, RpcRequestBuilder);
+var Lcom_google_gwt_user_client_rpc_RpcRequestBuilder_2_classLit = createForClass('com.google.gwt.user.client.rpc', 'RpcRequestBuilder', 249);
 function RpcTokenException(){
   RuntimeException_0.call(this, 'Invalid RPC token');
 }
 
-defineClass(207, 6, $intern_1, RpcTokenException);
-var Lcom_google_gwt_user_client_rpc_RpcTokenException_2_classLit = createForClass('com.google.gwt.user.client.rpc', 'RpcTokenException', 207);
+defineClass(208, 9, $intern_1, RpcTokenException);
+var Lcom_google_gwt_user_client_rpc_RpcTokenException_2_classLit = createForClass('com.google.gwt.user.client.rpc', 'RpcTokenException', 208);
 function deserialize_1(streamReader, instance){
   setDetailMessage(instance, $getString(streamReader, streamReader.results[--streamReader.index_0]));
 }
@@ -6081,20 +6578,20 @@ function SerializationException(msg){
   Exception.call(this, msg);
 }
 
-defineClass(16, 54, {16:1, 3:1, 4:1}, SerializationException);
+defineClass(16, 55, {16:1, 3:1, 4:1}, SerializationException);
 var Lcom_google_gwt_user_client_rpc_SerializationException_2_classLit = createForClass('com.google.gwt.user.client.rpc', 'SerializationException', 16);
 function ServiceDefTarget$NoServiceEntryPointSpecifiedException(){
   InvocationException.call(this, 'Service implementation URL not specified');
 }
 
-defineClass(193, 67, $intern_1, ServiceDefTarget$NoServiceEntryPointSpecifiedException);
-var Lcom_google_gwt_user_client_rpc_ServiceDefTarget$NoServiceEntryPointSpecifiedException_2_classLit = createForClass('com.google.gwt.user.client.rpc', 'ServiceDefTarget/NoServiceEntryPointSpecifiedException', 193);
+defineClass(194, 67, $intern_1, ServiceDefTarget$NoServiceEntryPointSpecifiedException);
+var Lcom_google_gwt_user_client_rpc_ServiceDefTarget$NoServiceEntryPointSpecifiedException_2_classLit = createForClass('com.google.gwt.user.client.rpc', 'ServiceDefTarget/NoServiceEntryPointSpecifiedException', 194);
 function StatusCodeException(statusCode, statusText, encodedResponse){
   InvocationException.call(this, statusCode + ' ' + statusText + ' ' + encodedResponse);
 }
 
-defineClass(288, 67, $intern_1, StatusCodeException);
-var Lcom_google_gwt_user_client_rpc_StatusCodeException_2_classLit = createForClass('com.google.gwt.user.client.rpc', 'StatusCodeException', 288);
+defineClass(289, 67, $intern_1, StatusCodeException);
+var Lcom_google_gwt_user_client_rpc_StatusCodeException_2_classLit = createForClass('com.google.gwt.user.client.rpc', 'StatusCodeException', 289);
 function serialize_0(streamWriter, instance){
   $writeString(streamWriter, instance.$_nullField);
 }
@@ -6189,10 +6686,10 @@ function longFromBase64(value_0){
   return longVal;
 }
 
-defineClass(106, 1, {});
+defineClass(105, 1, {});
 _.flags = 0;
 _.version = 7;
-var Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStream_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'AbstractSerializationStream', 106);
+var Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStream_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'AbstractSerializationStream', 105);
 function $readObject(this$static){
   var token, typeSignature, id_0, instance;
   token = this$static.results[--this$static.index_0];
@@ -6206,14 +6703,14 @@ function $readObject(this$static){
   return id_0 = ($add_4(this$static.seenArray, null) , this$static.seenArray.array.length) , instance = $instantiate(this$static.serializer, this$static, typeSignature) , $set(this$static.seenArray, id_0 - 1, instance) , $deserialize(this$static.serializer, this$static, instance, typeSignature) , instance;
 }
 
-defineClass(292, 106, {});
-var Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStreamReader_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'AbstractSerializationStreamReader', 292);
+defineClass(305, 105, {});
+var Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStreamReader_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'AbstractSerializationStreamReader', 305);
 function $addString(this$static, string){
   var index_0, o;
   if (string == null) {
     return 0;
   }
-  o = castTo($getStringValue(this$static.stringMap, string), 43);
+  o = castTo($getStringValue(this$static.stringMap, string), 45);
   if (o) {
     return o.value_0;
   }
@@ -6233,7 +6730,7 @@ function $writeObject(this$static, instance){
     $append(this$static, '' + $addString(this$static, null));
     return;
   }
-  objIndex = $containsKey(this$static.objectMap, instance)?castTo($get(this$static.objectMap, instance), 43).value_0:-1;
+  objIndex = $containsKey(this$static.objectMap, instance)?castTo($get(this$static.objectMap, instance), 45).value_0:-1;
   if (objIndex >= 0) {
     append(this$static.encodeBuffer, '' + -(objIndex + 1));
     return;
@@ -6251,9 +6748,9 @@ function $writeString(this$static, value_0){
   $append(this$static, '' + $addString(this$static, value_0));
 }
 
-defineClass(263, 106, {});
+defineClass(246, 105, {});
 _.objectCount = 0;
-var Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStreamWriter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'AbstractSerializationStreamWriter', 263);
+var Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStreamWriter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'AbstractSerializationStreamWriter', 246);
 function $getString(this$static, index_0){
   return index_0 > 0?this$static.stringTable[index_0 - 1]:null;
 }
@@ -6279,9 +6776,9 @@ function ClientSerializationStreamReader(serializer){
   this.serializer = serializer;
 }
 
-defineClass(293, 292, {}, ClientSerializationStreamReader);
+defineClass(306, 305, {}, ClientSerializationStreamReader);
 _.index_0 = 0;
-var Lcom_google_gwt_user_client_rpc_impl_ClientSerializationStreamReader_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'ClientSerializationStreamReader', 293);
+var Lcom_google_gwt_user_client_rpc_impl_ClientSerializationStreamReader_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'ClientSerializationStreamReader', 306);
 function $clinit_ClientSerializationStreamWriter(){
   $clinit_ClientSerializationStreamWriter = emptyMethod;
   regex_0 = getQuotingRegex();
@@ -6301,7 +6798,7 @@ function $getObjectTypeSignature(this$static, o){
   return $getSerializationSignature(this$static.serializer, clazz);
 }
 
-function $toString_0(this$static){
+function $toString_1(this$static){
   var buffer;
   buffer = new StringBuilder;
   append(buffer, '' + this$static.version);
@@ -6380,16 +6877,16 @@ function quoteString(str){
   return out + str.substring(idx);
 }
 
-defineClass(264, 263, {}, ClientSerializationStreamWriter);
+defineClass(247, 246, {}, ClientSerializationStreamWriter);
 _.toString_0 = function toString_12(){
-  return $toString_0(this);
+  return $toString_1(this);
 }
 ;
 var regex_0;
-var Lcom_google_gwt_user_client_rpc_impl_ClientSerializationStreamWriter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'ClientSerializationStreamWriter', 264);
+var Lcom_google_gwt_user_client_rpc_impl_ClientSerializationStreamWriter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'ClientSerializationStreamWriter', 247);
 function $finish_0(this$static, callback, responseHeader){
   var payload;
-  payload = $toString_0(this$static.streamWriter);
+  payload = $toString_1(this$static.streamWriter);
   !!$stats && $stats_0($timeStat(this$static.statsContext, this$static.fullServiceName, 'requestSerialized'));
   return $doInvoke(this$static.this$01, responseHeader, this$static.fullServiceName, this$static.statsContext, payload, callback);
 }
@@ -6459,8 +6956,8 @@ function RequestCallbackAdapter(streamFactory, methodName, statsContext, callbac
   this.responseReader = responseReader;
 }
 
-defineClass(213, 1, {}, RequestCallbackAdapter);
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter', 213);
+defineClass(214, 1, {}, RequestCallbackAdapter);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter', 214);
 function $clinit_RequestCallbackAdapter$ResponseReader(){
   $clinit_RequestCallbackAdapter$ResponseReader = emptyMethod;
   BOOLEAN = new RequestCallbackAdapter$ResponseReader$1;
@@ -6482,123 +6979,123 @@ function RequestCallbackAdapter$ResponseReader(enum$name, enum$ordinal){
 
 function values_3(){
   $clinit_RequestCallbackAdapter$ResponseReader();
-  return stampJavaTypeInfo(getClassLiteralForArray(Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, 1), $intern_0, 21, 0, [BOOLEAN, BYTE, CHAR, DOUBLE, FLOAT, INT, LONG, OBJECT, SHORT, STRING, VOID]);
+  return stampJavaTypeInfo(getClassLiteralForArray(Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, 1), $intern_0, 23, 0, [BOOLEAN, BYTE, CHAR, DOUBLE, FLOAT, INT, LONG, OBJECT, SHORT, STRING, VOID]);
 }
 
-defineClass(21, 15, $intern_20);
+defineClass(23, 15, $intern_21);
 var BOOLEAN, BYTE, CHAR, DOUBLE, FLOAT, INT, LONG, OBJECT, SHORT, STRING, VOID;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader', 21, Ljava_lang_Enum_2_classLit, values_3);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader', 23, Ljava_lang_Enum_2_classLit, values_3);
 function RequestCallbackAdapter$ResponseReader$1(){
   RequestCallbackAdapter$ResponseReader.call(this, 'BOOLEAN', 0);
 }
 
-defineClass(214, 21, $intern_20, RequestCallbackAdapter$ResponseReader$1);
+defineClass(215, 23, $intern_21, RequestCallbackAdapter$ResponseReader$1);
 _.read = function read(streamReader){
   return $clinit_Boolean() , streamReader.results[--streamReader.index_0]?true:false;
 }
 ;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$1_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/1', 214, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$1_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/1', 215, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
 function RequestCallbackAdapter$ResponseReader$10(){
   RequestCallbackAdapter$ResponseReader.call(this, 'STRING', 9);
 }
 
-defineClass(223, 21, $intern_20, RequestCallbackAdapter$ResponseReader$10);
+defineClass(224, 23, $intern_21, RequestCallbackAdapter$ResponseReader$10);
 _.read = function read_0(streamReader){
   return $getString(streamReader, streamReader.results[--streamReader.index_0]);
 }
 ;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$10_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/10', 223, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$10_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/10', 224, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
 function RequestCallbackAdapter$ResponseReader$11(){
   RequestCallbackAdapter$ResponseReader.call(this, 'VOID', 10);
 }
 
-defineClass(224, 21, $intern_20, RequestCallbackAdapter$ResponseReader$11);
+defineClass(225, 23, $intern_21, RequestCallbackAdapter$ResponseReader$11);
 _.read = function read_1(streamReader){
   return null;
 }
 ;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$11_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/11', 224, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$11_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/11', 225, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
 function RequestCallbackAdapter$ResponseReader$2(){
   RequestCallbackAdapter$ResponseReader.call(this, 'BYTE', 1);
 }
 
-defineClass(215, 21, $intern_20, RequestCallbackAdapter$ResponseReader$2);
+defineClass(216, 23, $intern_21, RequestCallbackAdapter$ResponseReader$2);
 _.read = function read_2(streamReader){
   return valueOf(streamReader.results[--streamReader.index_0]);
 }
 ;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$2_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/2', 215, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$2_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/2', 216, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
 function RequestCallbackAdapter$ResponseReader$3(){
   RequestCallbackAdapter$ResponseReader.call(this, 'CHAR', 2);
 }
 
-defineClass(216, 21, $intern_20, RequestCallbackAdapter$ResponseReader$3);
+defineClass(217, 23, $intern_21, RequestCallbackAdapter$ResponseReader$3);
 _.read = function read_3(streamReader){
   return valueOf_0(streamReader.results[--streamReader.index_0]);
 }
 ;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$3_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/3', 216, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$3_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/3', 217, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
 function RequestCallbackAdapter$ResponseReader$4(){
   RequestCallbackAdapter$ResponseReader.call(this, 'DOUBLE', 3);
 }
 
-defineClass(217, 21, $intern_20, RequestCallbackAdapter$ResponseReader$4);
+defineClass(218, 23, $intern_21, RequestCallbackAdapter$ResponseReader$4);
 _.read = function read_4(streamReader){
   return Number(streamReader.results[--streamReader.index_0]);
 }
 ;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$4_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/4', 217, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$4_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/4', 218, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
 function RequestCallbackAdapter$ResponseReader$5(){
   RequestCallbackAdapter$ResponseReader.call(this, 'FLOAT', 4);
 }
 
-defineClass(218, 21, $intern_20, RequestCallbackAdapter$ResponseReader$5);
+defineClass(219, 23, $intern_21, RequestCallbackAdapter$ResponseReader$5);
 _.read = function read_5(streamReader){
   return new Float(Number(streamReader.results[--streamReader.index_0]));
 }
 ;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$5_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/5', 218, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$5_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/5', 219, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
 function RequestCallbackAdapter$ResponseReader$6(){
   RequestCallbackAdapter$ResponseReader.call(this, 'INT', 5);
 }
 
-defineClass(219, 21, $intern_20, RequestCallbackAdapter$ResponseReader$6);
+defineClass(220, 23, $intern_21, RequestCallbackAdapter$ResponseReader$6);
 _.read = function read_6(streamReader){
   return valueOf_1(streamReader.results[--streamReader.index_0]);
 }
 ;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$6_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/6', 219, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$6_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/6', 220, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
 function RequestCallbackAdapter$ResponseReader$7(){
   RequestCallbackAdapter$ResponseReader.call(this, 'LONG', 6);
 }
 
-defineClass(220, 21, $intern_20, RequestCallbackAdapter$ResponseReader$7);
+defineClass(221, 23, $intern_21, RequestCallbackAdapter$ResponseReader$7);
 _.read = function read_7(streamReader){
   var s;
   return valueOf_2((s = streamReader.results[--streamReader.index_0] , longFromBase64(s)));
 }
 ;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$7_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/7', 220, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$7_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/7', 221, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
 function RequestCallbackAdapter$ResponseReader$8(){
   RequestCallbackAdapter$ResponseReader.call(this, 'OBJECT', 7);
 }
 
-defineClass(221, 21, $intern_20, RequestCallbackAdapter$ResponseReader$8);
+defineClass(222, 23, $intern_21, RequestCallbackAdapter$ResponseReader$8);
 _.read = function read_8(streamReader){
   return $readObject(streamReader);
 }
 ;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$8_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/8', 221, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$8_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/8', 222, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
 function RequestCallbackAdapter$ResponseReader$9(){
   RequestCallbackAdapter$ResponseReader.call(this, 'SHORT', 8);
 }
 
-defineClass(222, 21, $intern_20, RequestCallbackAdapter$ResponseReader$9);
+defineClass(223, 23, $intern_21, RequestCallbackAdapter$ResponseReader$9);
 _.read = function read_9(streamReader){
   return valueOf_3(streamReader.results[--streamReader.index_0]);
 }
 ;
-var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$9_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/9', 222, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
+var Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$9_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl', 'RequestCallbackAdapter/ResponseReader/9', 223, Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit, null);
 function $bytesStat(this$static, method, bytes, eventType){
   var stat = this$static.timeStat(method, eventType);
   stat.bytes = bytes;
@@ -6621,14 +7118,14 @@ function RpcStatsContext_0(requestId){
   this.requestId = requestId;
 }
 
-defineClass(105, 1, {}, RpcStatsContext);
+defineClass(104, 1, {}, RpcStatsContext);
 _.timeStat = function timeStat(method, eventType){
   return $timeStat(this, method, eventType);
 }
 ;
 _.requestId = 0;
 var requestIdCounter = 0;
-var Lcom_google_gwt_user_client_rpc_impl_RpcStatsContext_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'RpcStatsContext', 105);
+var Lcom_google_gwt_user_client_rpc_impl_RpcStatsContext_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl', 'RpcStatsContext', 104);
 function $deserialize_0(this$static, stream, instance, signature){
   this$static[signature][1](stream, instance);
 }
@@ -6650,7 +7147,7 @@ function $clear(this$static){
   }
 }
 
-defineClass(310, 5, $intern_21);
+defineClass(325, 6, $intern_22);
 _.doAttachChildren = function doAttachChildren_0(){
   tryCommand(this, ($clinit_AttachDetachException() , attachCommand));
 }
@@ -6659,7 +7156,7 @@ _.doDetachChildren = function doDetachChildren_0(){
   tryCommand(this, ($clinit_AttachDetachException() , detachCommand));
 }
 ;
-var Lcom_google_gwt_user_client_ui_Panel_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Panel', 310);
+var Lcom_google_gwt_user_client_ui_Panel_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Panel', 325);
 function $add(this$static, child, container){
   $removeFromParent(child);
   $add_3(this$static.children, child);
@@ -6688,7 +7185,7 @@ function ComplexPanel(){
   this.children = new WidgetCollection(this);
 }
 
-defineClass(92, 310, $intern_21);
+defineClass(92, 325, $intern_22);
 _.iterator = function iterator_0(){
   return new WidgetCollection$WidgetIterator(this.children);
 }
@@ -6708,7 +7205,7 @@ function changeToStaticPositioning(elem){
   elem.style['position'] = '';
 }
 
-defineClass(124, 92, $intern_21);
+defineClass(125, 92, $intern_22);
 _.remove = function remove_0(w){
   var removed;
   removed = $remove(this, w);
@@ -6716,7 +7213,7 @@ _.remove = function remove_0(w){
   return removed;
 }
 ;
-var Lcom_google_gwt_user_client_ui_AbsolutePanel_2_classLit = createForClass('com.google.gwt.user.client.ui', 'AbsolutePanel', 124);
+var Lcom_google_gwt_user_client_ui_AbsolutePanel_2_classLit = createForClass('com.google.gwt.user.client.ui', 'AbsolutePanel', 125);
 function $clinit_AttachDetachException(){
   $clinit_AttachDetachException = emptyMethod;
   attachCommand = new AttachDetachException$1;
@@ -6732,7 +7229,7 @@ function tryCommand(hasWidgets, c){
   var caught, e, w, w$iterator;
   caught = null;
   for (w$iterator = hasWidgets.iterator(); w$iterator.hasNext_0();) {
-    w = castTo(w$iterator.next_0(), 5);
+    w = castTo(w$iterator.next_0(), 6);
     try {
       c.execute_0(w);
     }
@@ -6752,27 +7249,27 @@ function tryCommand(hasWidgets, c){
   }
 }
 
-defineClass(125, 93, $intern_3, AttachDetachException);
+defineClass(126, 93, $intern_3, AttachDetachException);
 var attachCommand, detachCommand;
-var Lcom_google_gwt_user_client_ui_AttachDetachException_2_classLit = createForClass('com.google.gwt.user.client.ui', 'AttachDetachException', 125);
+var Lcom_google_gwt_user_client_ui_AttachDetachException_2_classLit = createForClass('com.google.gwt.user.client.ui', 'AttachDetachException', 126);
 function AttachDetachException$1(){
 }
 
-defineClass(126, 1, {}, AttachDetachException$1);
+defineClass(127, 1, {}, AttachDetachException$1);
 _.execute_0 = function execute_2(w){
   w.onAttach();
 }
 ;
-var Lcom_google_gwt_user_client_ui_AttachDetachException$1_2_classLit = createForClass('com.google.gwt.user.client.ui', 'AttachDetachException/1', 126);
+var Lcom_google_gwt_user_client_ui_AttachDetachException$1_2_classLit = createForClass('com.google.gwt.user.client.ui', 'AttachDetachException/1', 127);
 function AttachDetachException$2(){
 }
 
-defineClass(127, 1, {}, AttachDetachException$2);
+defineClass(128, 1, {}, AttachDetachException$2);
 _.execute_0 = function execute_3(w){
   w.onDetach();
 }
 ;
-var Lcom_google_gwt_user_client_ui_AttachDetachException$2_2_classLit = createForClass('com.google.gwt.user.client.ui', 'AttachDetachException/2', 127);
+var Lcom_google_gwt_user_client_ui_AttachDetachException$2_2_classLit = createForClass('com.google.gwt.user.client.ui', 'AttachDetachException/2', 128);
 function $clinit_FocusWidget(){
   $clinit_FocusWidget = emptyMethod;
   $clinit_FocusImpl();
@@ -6782,11 +7279,11 @@ function FocusWidget(elem){
   $setElement_0(this, ($clinit_DOM() , elem));
 }
 
-defineClass(86, 5, $intern_13);
+defineClass(86, 6, $intern_13);
 _.onAttach = function onAttach_1(){
   var tabIndex;
   $onAttach(this);
-  tabIndex = $getTabIndex(($clinit_DOM() , this.element));
+  tabIndex = ($clinit_DOM() , this.element).tabIndex;
   -1 == tabIndex && (this.element.tabIndex = 0 , undefined);
 }
 ;
@@ -6799,18 +7296,23 @@ function ButtonBase(elem){
   FocusWidget.call(this, elem);
 }
 
-defineClass(162, 86, $intern_13);
-var Lcom_google_gwt_user_client_ui_ButtonBase_2_classLit = createForClass('com.google.gwt.user.client.ui', 'ButtonBase', 162);
-function Button(html){
+defineClass(163, 86, $intern_13);
+var Lcom_google_gwt_user_client_ui_ButtonBase_2_classLit = createForClass('com.google.gwt.user.client.ui', 'ButtonBase', 163);
+function Button(){
   var e;
   $clinit_FocusWidget();
-  ButtonBase.call(this, (e = $doc.createElement('BUTTON') , e.setAttribute('type', 'button') , e));
+  ButtonBase.call(this, (e = $doc.createElement('BUTTON') , e.type = 'button' , e));
   ($clinit_DOM() , this.element).className = 'gwt-Button';
-  $setInnerHTML(this.element, html);
 }
 
-defineClass(23, 162, $intern_13, Button);
-var Lcom_google_gwt_user_client_ui_Button_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Button', 23);
+function Button_0(html){
+  $clinit_FocusWidget();
+  Button.call(this);
+  $setInnerHTML(($clinit_DOM() , this.element), html);
+}
+
+defineClass(24, 163, $intern_13, Button, Button_0);
+var Lcom_google_gwt_user_client_ui_Button_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Button', 24);
 function $setCellHorizontalAlignment(td, align_0){
   ($clinit_DOM() , td)['align'] = align_0.textAlignString;
 }
@@ -6831,9 +7333,16 @@ function CellPanel(){
   $setElement(this, this.table);
 }
 
-defineClass(94, 92, $intern_21);
+defineClass(94, 92, $intern_22);
 var Lcom_google_gwt_user_client_ui_CellPanel_2_classLit = createForClass('com.google.gwt.user.client.ui', 'CellPanel', 94);
+function $getTextOrHtml(this$static){
+  var elem;
+  elem = this$static.isSpanWrapped?$getFirstChildElement(this$static.element):this$static.element;
+  return elem.textContent;
+}
+
 function $setTextOrHtml(this$static, content_0){
+  this$static.isSpanWrapped = false;
   $setInnerText(this$static.element, content_0);
   if (this$static.textDir != this$static.initialElementDir) {
     this$static.textDir = this$static.initialElementDir;
@@ -6843,12 +7352,14 @@ function $setTextOrHtml(this$static, content_0){
 
 function DirectionalTextHelper(element){
   this.element = element;
+  this.isSpanWrapped = false;
   this.initialElementDir = getDirectionOnElement(element);
   this.textDir = this.initialElementDir;
 }
 
-defineClass(173, 1, {}, DirectionalTextHelper);
-var Lcom_google_gwt_user_client_ui_DirectionalTextHelper_2_classLit = createForClass('com.google.gwt.user.client.ui', 'DirectionalTextHelper', 173);
+defineClass(174, 1, {}, DirectionalTextHelper);
+_.isSpanWrapped = false;
+var Lcom_google_gwt_user_client_ui_DirectionalTextHelper_2_classLit = createForClass('com.google.gwt.user.client.ui', 'DirectionalTextHelper', 174);
 function $clinit_HasHorizontalAlignment(){
   $clinit_HasHorizontalAlignment = emptyMethod;
   new HasHorizontalAlignment$HorizontalAlignmentConstant(($clinit_Style$TextAlign() , 'center'));
@@ -6868,13 +7379,13 @@ function $clinit_HasVerticalAlignment(){
 }
 
 var ALIGN_TOP;
-defineClass(311, 1, {});
-var Lcom_google_gwt_user_client_ui_HasHorizontalAlignment$AutoHorizontalAlignmentConstant_2_classLit = createForClass('com.google.gwt.user.client.ui', 'HasHorizontalAlignment/AutoHorizontalAlignmentConstant', 311);
+defineClass(326, 1, {});
+var Lcom_google_gwt_user_client_ui_HasHorizontalAlignment$AutoHorizontalAlignmentConstant_2_classLit = createForClass('com.google.gwt.user.client.ui', 'HasHorizontalAlignment/AutoHorizontalAlignmentConstant', 326);
 function HasHorizontalAlignment$HorizontalAlignmentConstant(textAlignString){
   this.textAlignString = textAlignString;
 }
 
-defineClass(73, 311, {}, HasHorizontalAlignment$HorizontalAlignmentConstant);
+defineClass(73, 326, {}, HasHorizontalAlignment$HorizontalAlignmentConstant);
 var Lcom_google_gwt_user_client_ui_HasHorizontalAlignment$HorizontalAlignmentConstant_2_classLit = createForClass('com.google.gwt.user.client.ui', 'HasHorizontalAlignment/HorizontalAlignmentConstant', 73);
 function HasVerticalAlignment$VerticalAlignmentConstant(verticalAlignString){
   this.verticalAlignString = verticalAlignString;
@@ -6907,12 +7418,12 @@ function HorizontalPanel(){
   this.table['cellPadding'] = '0';
 }
 
-defineClass(26, 94, $intern_21, HorizontalPanel);
+defineClass(28, 94, $intern_22, HorizontalPanel);
 _.remove = function remove_1(w){
   return $remove_0(this, w);
 }
 ;
-var Lcom_google_gwt_user_client_ui_HorizontalPanel_2_classLit = createForClass('com.google.gwt.user.client.ui', 'HorizontalPanel', 26);
+var Lcom_google_gwt_user_client_ui_HorizontalPanel_2_classLit = createForClass('com.google.gwt.user.client.ui', 'HorizontalPanel', 28);
 function $clinit_Image(){
   $clinit_Image = emptyMethod;
   new HashMap;
@@ -6933,7 +7444,7 @@ function Image_0(){
   ($clinit_DOM() , this.element).className = 'gwt-Image';
 }
 
-defineClass(50, 5, $intern_13, Image_0);
+defineClass(52, 6, $intern_13, Image_0);
 _.onBrowserEvent = function onBrowserEvent_1(event_0){
   $clinit_DOM();
   $eventGetTypeInt(event_0.type) == 32768 && !!this.state && (this.element['__gwtLastUnhandledEvent'] = '' , undefined);
@@ -6944,16 +7455,16 @@ _.onLoad = function onLoad_0(){
   $onLoad(this.state, this);
 }
 ;
-var Lcom_google_gwt_user_client_ui_Image_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Image', 50);
+var Lcom_google_gwt_user_client_ui_Image_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Image', 52);
 function $onLoad(this$static, image){
   var unhandledEvent;
   unhandledEvent = $getPropertyString(($clinit_DOM() , image.element), '__gwtLastUnhandledEvent');
   $equals_1('load', unhandledEvent) && (this$static.syntheticEventCommand = new Image$State$1(this$static, image) , $scheduleDeferred(($clinit_SchedulerImpl() , INSTANCE), this$static.syntheticEventCommand));
 }
 
-defineClass(133, 1, {});
+defineClass(134, 1, {});
 _.syntheticEventCommand = null;
-var Lcom_google_gwt_user_client_ui_Image$State_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Image/State', 133);
+var Lcom_google_gwt_user_client_ui_Image$State_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Image/State', 134);
 function $execute(this$static){
   var evt, evt_0;
   if (this$static.val$image2.state != this$static.this$11 || this$static != this$static.this$11.syntheticEventCommand) {
@@ -6973,8 +7484,8 @@ function Image$State$1(this$1, val$image){
   this.val$image2 = val$image;
 }
 
-defineClass(135, 1, {}, Image$State$1);
-var Lcom_google_gwt_user_client_ui_Image$State$1_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Image/State/1', 135);
+defineClass(136, 1, {}, Image$State$1);
+var Lcom_google_gwt_user_client_ui_Image$State$1_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Image/State/1', 136);
 function $getImageElement(image){
   return $clinit_DOM() , image.element;
 }
@@ -6986,27 +7497,35 @@ function $setUrl_0(image, url_0){
 
 function Image$UnclippedState(image){
   $replaceElement(image, $doc.createElement('img'));
-  sinkEvents_0(($clinit_DOM() , image.element));
-  image.eventsToSink == -1?sinkEvents(image.element, 133398655 | (image.element.__eventBits || 0)):(image.eventsToSink |= 133398655);
+  sinkEvents(($clinit_DOM() , image.element));
+  image.eventsToSink == -1?$sinkEvents_0(image.element, 133398655 | (image.element.__eventBits || 0)):(image.eventsToSink |= 133398655);
 }
 
-defineClass(134, 133, {}, Image$UnclippedState);
-var Lcom_google_gwt_user_client_ui_Image$UnclippedState_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Image/UnclippedState', 134);
+defineClass(135, 134, {}, Image$UnclippedState);
+var Lcom_google_gwt_user_client_ui_Image$UnclippedState_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Image/UnclippedState', 135);
 function LabelBase(element){
   $setElement_0(this, ($clinit_DOM() , element));
   this.directionalTextHelper = new DirectionalTextHelper(this.element);
 }
 
-defineClass(98, 5, $intern_13);
+defineClass(98, 6, $intern_13);
 var Lcom_google_gwt_user_client_ui_LabelBase_2_classLit = createForClass('com.google.gwt.user.client.ui', 'LabelBase', 98);
-function Label(text_0){
+function $setText_0(this$static, text_0){
+  $setTextOrHtml(this$static.directionalTextHelper, text_0);
+}
+
+function Label(){
   LabelBase.call(this, $doc.createElement('div'));
   ($clinit_DOM() , this.element).className = 'gwt-Label';
+}
+
+function Label_0(text_0){
+  Label.call(this);
   $setTextOrHtml(this.directionalTextHelper, text_0);
 }
 
-defineClass(13, 98, $intern_13, Label);
-var Lcom_google_gwt_user_client_ui_Label_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Label', 13);
+defineClass(5, 98, $intern_13, Label, Label_0);
+var Lcom_google_gwt_user_client_ui_Label_2_classLit = createForClass('com.google.gwt.user.client.ui', 'Label', 5);
 function $checkIndex(this$static, index_0){
   if (index_0 < 0 || index_0 >= ($clinit_DOM() , this$static.element).options.length) {
     throw toJs(new IndexOutOfBoundsException);
@@ -7150,34 +7669,34 @@ function get_0(){
   return rp;
 }
 
-defineClass(72, 124, $intern_22);
+defineClass(72, 125, $intern_23);
 var maybeDetachCommand, rootPanels, widgetsToDetach;
 var Lcom_google_gwt_user_client_ui_RootPanel_2_classLit = createForClass('com.google.gwt.user.client.ui', 'RootPanel', 72);
 function RootPanel$1(){
 }
 
-defineClass(129, 1, {}, RootPanel$1);
+defineClass(130, 1, {}, RootPanel$1);
 _.execute_0 = function execute_4(w){
   w.isAttached() && w.onDetach();
 }
 ;
-var Lcom_google_gwt_user_client_ui_RootPanel$1_2_classLit = createForClass('com.google.gwt.user.client.ui', 'RootPanel/1', 129);
+var Lcom_google_gwt_user_client_ui_RootPanel$1_2_classLit = createForClass('com.google.gwt.user.client.ui', 'RootPanel/1', 130);
 function RootPanel$2(){
 }
 
-defineClass(130, 1, {328:1, 22:1}, RootPanel$2);
-var Lcom_google_gwt_user_client_ui_RootPanel$2_2_classLit = createForClass('com.google.gwt.user.client.ui', 'RootPanel/2', 130);
+defineClass(131, 1, {342:1, 20:1}, RootPanel$2);
+var Lcom_google_gwt_user_client_ui_RootPanel$2_2_classLit = createForClass('com.google.gwt.user.client.ui', 'RootPanel/2', 131);
 function RootPanel$DefaultRootPanel(){
   RootPanel.call(this, $doc.body);
 }
 
-defineClass(128, 72, $intern_22, RootPanel$DefaultRootPanel);
-var Lcom_google_gwt_user_client_ui_RootPanel$DefaultRootPanel_2_classLit = createForClass('com.google.gwt.user.client.ui', 'RootPanel/DefaultRootPanel', 128);
+defineClass(129, 72, $intern_23, RootPanel$DefaultRootPanel);
+var Lcom_google_gwt_user_client_ui_RootPanel$DefaultRootPanel_2_classLit = createForClass('com.google.gwt.user.client.ui', 'RootPanel/DefaultRootPanel', 129);
 function $getText(this$static){
   return $getPropertyString(($clinit_DOM() , this$static.element), 'value');
 }
 
-function $setText_0(this$static, text_0){
+function $setText_1(this$static, text_0){
   ($clinit_DOM() , this$static.element)['value'] = text_0 != null?text_0:'';
 }
 
@@ -7187,7 +7706,7 @@ function ValueBoxBase(elem){
   $clinit_LocaleInfo();
 }
 
-defineClass(208, 86, $intern_13);
+defineClass(209, 86, $intern_13);
 _.onBrowserEvent = function onBrowserEvent_2(event_0){
   var type_0;
   type_0 = ($clinit_DOM() , $eventGetTypeInt(event_0.type));
@@ -7197,7 +7716,7 @@ _.onBrowserEvent = function onBrowserEvent_2(event_0){
 _.onLoad = function onLoad_1(){
 }
 ;
-var Lcom_google_gwt_user_client_ui_ValueBoxBase_2_classLit = createForClass('com.google.gwt.user.client.ui', 'ValueBoxBase', 208);
+var Lcom_google_gwt_user_client_ui_ValueBoxBase_2_classLit = createForClass('com.google.gwt.user.client.ui', 'ValueBoxBase', 209);
 function $clinit_TextBoxBase(){
   $clinit_TextBoxBase = emptyMethod;
   $clinit_FocusWidget();
@@ -7209,7 +7728,7 @@ function TextBoxBase(elem){
   ValueBoxBase.call(this, (lastArg = elem , !INSTANCE_1 && (INSTANCE_1 = new PassthroughRenderer) , !INSTANCE_0 && (INSTANCE_0 = new PassthroughParser) , lastArg));
 }
 
-defineClass(103, 208, $intern_13);
+defineClass(103, 209, $intern_13);
 var Lcom_google_gwt_user_client_ui_TextBoxBase_2_classLit = createForClass('com.google.gwt.user.client.ui', 'TextBoxBase', 103);
 function $setCharacterWidth(this$static){
   ($clinit_DOM() , this$static.element).cols = 150;
@@ -7225,8 +7744,8 @@ function TextArea_0(){
   ($clinit_DOM() , this.element).className = 'gwt-TextArea';
 }
 
-defineClass(51, 103, $intern_13, TextArea_0);
-var Lcom_google_gwt_user_client_ui_TextArea_2_classLit = createForClass('com.google.gwt.user.client.ui', 'TextArea', 51);
+defineClass(40, 103, $intern_13, TextArea_0);
+var Lcom_google_gwt_user_client_ui_TextArea_2_classLit = createForClass('com.google.gwt.user.client.ui', 'TextArea', 40);
 function TextBox(){
   var e;
   $clinit_TextBoxBase();
@@ -7238,8 +7757,8 @@ function TextBox_0(element){
   ($clinit_DOM() , this.element).className = 'gwt-TextBox';
 }
 
-defineClass(20, 103, $intern_13, TextBox);
-var Lcom_google_gwt_user_client_ui_TextBox_2_classLit = createForClass('com.google.gwt.user.client.ui', 'TextBox', 20);
+defineClass(21, 103, $intern_13, TextBox);
+var Lcom_google_gwt_user_client_ui_TextBox_2_classLit = createForClass('com.google.gwt.user.client.ui', 'TextBox', 21);
 function $clinit_ValueBoxBase$TextAlignment(){
   $clinit_ValueBoxBase$TextAlignment = emptyMethod;
   CENTER_0 = new ValueBoxBase$TextAlignment$1;
@@ -7257,33 +7776,33 @@ function values_4(){
   return stampJavaTypeInfo(getClassLiteralForArray(Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit, 1), $intern_0, 34, 0, [CENTER_0, JUSTIFY_0, LEFT_0, RIGHT_0]);
 }
 
-defineClass(34, 15, $intern_23);
+defineClass(34, 15, $intern_24);
 var CENTER_0, JUSTIFY_0, LEFT_0, RIGHT_0;
 var Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit = createForEnum('com.google.gwt.user.client.ui', 'ValueBoxBase/TextAlignment', 34, Ljava_lang_Enum_2_classLit, values_4);
 function ValueBoxBase$TextAlignment$1(){
   ValueBoxBase$TextAlignment.call(this, 'CENTER', 0);
 }
 
-defineClass(209, 34, $intern_23, ValueBoxBase$TextAlignment$1);
-var Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$1_2_classLit = createForEnum('com.google.gwt.user.client.ui', 'ValueBoxBase/TextAlignment/1', 209, Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit, null);
+defineClass(210, 34, $intern_24, ValueBoxBase$TextAlignment$1);
+var Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$1_2_classLit = createForEnum('com.google.gwt.user.client.ui', 'ValueBoxBase/TextAlignment/1', 210, Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit, null);
 function ValueBoxBase$TextAlignment$2(){
   ValueBoxBase$TextAlignment.call(this, 'JUSTIFY', 1);
 }
 
-defineClass(210, 34, $intern_23, ValueBoxBase$TextAlignment$2);
-var Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$2_2_classLit = createForEnum('com.google.gwt.user.client.ui', 'ValueBoxBase/TextAlignment/2', 210, Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit, null);
+defineClass(211, 34, $intern_24, ValueBoxBase$TextAlignment$2);
+var Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$2_2_classLit = createForEnum('com.google.gwt.user.client.ui', 'ValueBoxBase/TextAlignment/2', 211, Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit, null);
 function ValueBoxBase$TextAlignment$3(){
   ValueBoxBase$TextAlignment.call(this, 'LEFT', 2);
 }
 
-defineClass(211, 34, $intern_23, ValueBoxBase$TextAlignment$3);
-var Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$3_2_classLit = createForEnum('com.google.gwt.user.client.ui', 'ValueBoxBase/TextAlignment/3', 211, Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit, null);
+defineClass(212, 34, $intern_24, ValueBoxBase$TextAlignment$3);
+var Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$3_2_classLit = createForEnum('com.google.gwt.user.client.ui', 'ValueBoxBase/TextAlignment/3', 212, Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit, null);
 function ValueBoxBase$TextAlignment$4(){
   ValueBoxBase$TextAlignment.call(this, 'RIGHT', 3);
 }
 
-defineClass(212, 34, $intern_23, ValueBoxBase$TextAlignment$4);
-var Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$4_2_classLit = createForEnum('com.google.gwt.user.client.ui', 'ValueBoxBase/TextAlignment/4', 212, Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit, null);
+defineClass(213, 34, $intern_24, ValueBoxBase$TextAlignment$4);
+var Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$4_2_classLit = createForEnum('com.google.gwt.user.client.ui', 'ValueBoxBase/TextAlignment/4', 213, Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit, null);
 function $add_2(this$static, w){
   var td, tr, td_0;
   tr = ($clinit_DOM() , $doc.createElement('tr'));
@@ -7309,7 +7828,7 @@ function VerticalPanel(){
   this.table['cellPadding'] = '0';
 }
 
-defineClass(17, 94, $intern_21, VerticalPanel);
+defineClass(17, 94, $intern_22, VerticalPanel);
 _.remove = function remove_2(w){
   return $remove_1(this, w);
 }
@@ -7335,7 +7854,7 @@ function $insert(this$static, w, beforeIndex){
     throw toJs(new IndexOutOfBoundsException);
   }
   if (this$static.size_0 == this$static.array.length) {
-    newArray = initUnidimensionalArray(Lcom_google_gwt_user_client_ui_Widget_2_classLit, $intern_0, 5, this$static.array.length * 2, 0, 1);
+    newArray = initUnidimensionalArray(Lcom_google_gwt_user_client_ui_Widget_2_classLit, $intern_0, 6, this$static.array.length * 2, 0, 1);
     for (i0 = 0; i0 < this$static.array.length; ++i0) {
       newArray[i0] = this$static.array[i0];
     }
@@ -7371,16 +7890,16 @@ function $remove_3(this$static, w){
 
 function WidgetCollection(parent_0){
   this.parent_0 = parent_0;
-  this.array = initUnidimensionalArray(Lcom_google_gwt_user_client_ui_Widget_2_classLit, $intern_0, 5, 4, 0, 1);
+  this.array = initUnidimensionalArray(Lcom_google_gwt_user_client_ui_Widget_2_classLit, $intern_0, 6, 4, 0, 1);
 }
 
-defineClass(160, 1, {}, WidgetCollection);
+defineClass(161, 1, {}, WidgetCollection);
 _.iterator = function iterator_1(){
   return new WidgetCollection$WidgetIterator(this);
 }
 ;
 _.size_0 = 0;
-var Lcom_google_gwt_user_client_ui_WidgetCollection_2_classLit = createForClass('com.google.gwt.user.client.ui', 'WidgetCollection', 160);
+var Lcom_google_gwt_user_client_ui_WidgetCollection_2_classLit = createForClass('com.google.gwt.user.client.ui', 'WidgetCollection', 161);
 function $next(this$static){
   if (this$static.index_0 >= this$static.this$01.size_0) {
     throw toJs(new NoSuchElementException);
@@ -7416,27 +7935,25 @@ _.index_0 = 0;
 var Lcom_google_gwt_user_client_ui_WidgetCollection$WidgetIterator_2_classLit = createForClass('com.google.gwt.user.client.ui', 'WidgetCollection/WidgetIterator', 85);
 function $clinit_FocusImpl(){
   $clinit_FocusImpl = emptyMethod;
-  implPanel = new FocusImplSafari;
+  implPanel = new FocusImplStandard;
   implPanel?new FocusImpl:implPanel;
 }
 
 function FocusImpl(){
 }
 
-defineClass(172, 1, {}, FocusImpl);
+defineClass(173, 1, {}, FocusImpl);
 var implPanel;
-var Lcom_google_gwt_user_client_ui_impl_FocusImpl_2_classLit = createForClass('com.google.gwt.user.client.ui.impl', 'FocusImpl', 172);
-defineClass(323, 172, {});
-var Lcom_google_gwt_user_client_ui_impl_FocusImplStandard_2_classLit = createForClass('com.google.gwt.user.client.ui.impl', 'FocusImplStandard', 323);
-function FocusImplSafari(){
+var Lcom_google_gwt_user_client_ui_impl_FocusImpl_2_classLit = createForClass('com.google.gwt.user.client.ui.impl', 'FocusImpl', 173);
+function FocusImplStandard(){
 }
 
-defineClass(174, 323, {}, FocusImplSafari);
-var Lcom_google_gwt_user_client_ui_impl_FocusImplSafari_2_classLit = createForClass('com.google.gwt.user.client.ui.impl', 'FocusImplSafari', 174);
+defineClass(175, 173, {}, FocusImplStandard);
+var Lcom_google_gwt_user_client_ui_impl_FocusImplStandard_2_classLit = createForClass('com.google.gwt.user.client.ui.impl', 'FocusImplStandard', 175);
 function assertCompileTimeUserAgent(){
   var runtimeValue;
   runtimeValue = $getRuntimeValue();
-  if (!$equals_1('safari', runtimeValue)) {
+  if (!$equals_1('gecko1_8', runtimeValue)) {
     throw toJs(new UserAgentAsserter$UserAgentAssertionError(runtimeValue));
   }
 }
@@ -7445,16 +7962,16 @@ function Error_0(message, cause){
   Throwable.call(this, message, cause);
 }
 
-defineClass(41, 4, $intern_24);
-var Ljava_lang_Error_2_classLit = createForClass('java.lang', 'Error', 41);
-defineClass(25, 41, $intern_24);
-var Ljava_lang_AssertionError_2_classLit = createForClass('java.lang', 'AssertionError', 25);
+defineClass(43, 4, $intern_25);
+var Ljava_lang_Error_2_classLit = createForClass('java.lang', 'Error', 43);
+defineClass(26, 43, $intern_25);
+var Ljava_lang_AssertionError_2_classLit = createForClass('java.lang', 'AssertionError', 26);
 function UserAgentAsserter$UserAgentAssertionError(runtimeValue){
-  Error_0.call(this, 'Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (safari) does not match the runtime user.agent value (' + runtimeValue + ').\n' + 'Expect more errors.' == null?'null':toString_9('Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (safari) does not match the runtime user.agent value (' + runtimeValue + ').\n' + 'Expect more errors.'), instanceOf('Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (safari) does not match the runtime user.agent value (' + runtimeValue + ').\n' + 'Expect more errors.', 4)?castTo('Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (safari) does not match the runtime user.agent value (' + runtimeValue + ').\n' + 'Expect more errors.', 4):null);
+  Error_0.call(this, 'Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (gecko1_8) does not match the runtime user.agent value (' + runtimeValue + ').\n' + 'Expect more errors.' == null?'null':toString_9('Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (gecko1_8) does not match the runtime user.agent value (' + runtimeValue + ').\n' + 'Expect more errors.'), instanceOf('Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (gecko1_8) does not match the runtime user.agent value (' + runtimeValue + ').\n' + 'Expect more errors.', 4)?castTo('Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (gecko1_8) does not match the runtime user.agent value (' + runtimeValue + ').\n' + 'Expect more errors.', 4):null);
 }
 
-defineClass(111, 25, $intern_24, UserAgentAsserter$UserAgentAssertionError);
-var Lcom_google_gwt_useragent_client_UserAgentAsserter$UserAgentAssertionError_2_classLit = createForClass('com.google.gwt.useragent.client', 'UserAgentAsserter/UserAgentAssertionError', 111);
+defineClass(112, 26, $intern_25, UserAgentAsserter$UserAgentAssertionError);
+var Lcom_google_gwt_useragent_client_UserAgentAsserter$UserAgentAssertionError_2_classLit = createForClass('com.google.gwt.useragent.client', 'UserAgentAsserter/UserAgentAssertionError', 112);
 function $getRuntimeValue(){
   var ua = navigator.userAgent.toLowerCase();
   var docMode = $doc.documentMode;
@@ -7511,8 +8028,8 @@ function $setRequestHeader(this$static, header, value_0){
 function SimpleEventBus$1(){
 }
 
-defineClass(155, 1, {}, SimpleEventBus$1);
-var Lcom_google_web_bindery_event_shared_SimpleEventBus$1_2_classLit = createForClass('com.google.web.bindery.event.shared', 'SimpleEventBus/1', 155);
+defineClass(156, 1, {}, SimpleEventBus$1);
+var Lcom_google_web_bindery_event_shared_SimpleEventBus$1_2_classLit = createForClass('com.google.web.bindery.event.shared', 'SimpleEventBus/1', 156);
 function SimpleEventBus$2(this$0, val$type, val$handler){
   this.this$01 = this$0;
   this.val$type2 = val$type;
@@ -7520,13 +8037,13 @@ function SimpleEventBus$2(this$0, val$type, val$handler){
   this.val$handler4 = val$handler;
 }
 
-defineClass(156, 1, {330:1}, SimpleEventBus$2);
-var Lcom_google_web_bindery_event_shared_SimpleEventBus$2_2_classLit = createForClass('com.google.web.bindery.event.shared', 'SimpleEventBus/2', 156);
+defineClass(157, 1, {344:1}, SimpleEventBus$2);
+var Lcom_google_web_bindery_event_shared_SimpleEventBus$2_2_classLit = createForClass('com.google.web.bindery.event.shared', 'SimpleEventBus/2', 157);
 function AbstractStringBuilder(string){
   this.string = string;
 }
 
-defineClass(79, 1, {116:1});
+defineClass(79, 1, {117:1});
 _.toString_0 = function toString_13(){
   return this.string;
 }
@@ -7536,8 +8053,8 @@ function ArithmeticException(){
   RuntimeException_0.call(this, 'divide by zero');
 }
 
-defineClass(132, 6, $intern_1, ArithmeticException);
-var Ljava_lang_ArithmeticException_2_classLit = createForClass('java.lang', 'ArithmeticException', 132);
+defineClass(133, 9, $intern_1, ArithmeticException);
+var Ljava_lang_ArithmeticException_2_classLit = createForClass('java.lang', 'ArithmeticException', 133);
 function IndexOutOfBoundsException(){
   RuntimeException.call(this);
 }
@@ -7546,26 +8063,26 @@ function IndexOutOfBoundsException_0(message){
   RuntimeException_0.call(this, message);
 }
 
-defineClass(48, 6, $intern_1, IndexOutOfBoundsException, IndexOutOfBoundsException_0);
-var Ljava_lang_IndexOutOfBoundsException_2_classLit = createForClass('java.lang', 'IndexOutOfBoundsException', 48);
+defineClass(50, 9, $intern_1, IndexOutOfBoundsException, IndexOutOfBoundsException_0);
+var Ljava_lang_IndexOutOfBoundsException_2_classLit = createForClass('java.lang', 'IndexOutOfBoundsException', 50);
 function ArrayIndexOutOfBoundsException(msg){
   IndexOutOfBoundsException_0.call(this, msg);
 }
 
-defineClass(186, 48, $intern_1, ArrayIndexOutOfBoundsException);
-var Ljava_lang_ArrayIndexOutOfBoundsException_2_classLit = createForClass('java.lang', 'ArrayIndexOutOfBoundsException', 186);
+defineClass(187, 50, $intern_1, ArrayIndexOutOfBoundsException);
+var Ljava_lang_ArrayIndexOutOfBoundsException_2_classLit = createForClass('java.lang', 'ArrayIndexOutOfBoundsException', 187);
 function ArrayStoreException(){
   RuntimeException.call(this);
 }
 
-defineClass(131, 6, $intern_1, ArrayStoreException);
-var Ljava_lang_ArrayStoreException_2_classLit = createForClass('java.lang', 'ArrayStoreException', 131);
+defineClass(132, 9, $intern_1, ArrayStoreException);
+var Ljava_lang_ArrayStoreException_2_classLit = createForClass('java.lang', 'ArrayStoreException', 132);
 function $clinit_Boolean(){
   $clinit_Boolean = emptyMethod;
 }
 
-booleanCastMap = {3:1, 117:1, 14:1};
-var Ljava_lang_Boolean_2_classLit = createForClass('java.lang', 'Boolean', 117);
+booleanCastMap = {3:1, 118:1, 14:1};
+var Ljava_lang_Boolean_2_classLit = createForClass('java.lang', 'Boolean', 118);
 function __parseAndValidateInt(s){
   var i, isTooLow, length_0, startIndex, toReturn;
   if (s == null) {
@@ -7589,8 +8106,8 @@ function __parseAndValidateInt(s){
   return toReturn;
 }
 
-defineClass(47, 1, {3:1, 47:1});
-var Ljava_lang_Number_2_classLit = createForClass('java.lang', 'Number', 47);
+defineClass(49, 1, {3:1, 49:1});
+var Ljava_lang_Number_2_classLit = createForClass('java.lang', 'Number', 49);
 function Byte(value_0){
   this.value_0 = value_0;
 }
@@ -7603,7 +8120,7 @@ function valueOf(b){
   return result;
 }
 
-defineClass(61, 47, {3:1, 61:1, 14:1, 47:1}, Byte);
+defineClass(61, 49, {3:1, 61:1, 14:1, 49:1}, Byte);
 _.equals_0 = function equals_3(o){
   return instanceOf(o, 61) && castTo(o, 61).value_0 == this.value_0;
 }
@@ -7651,9 +8168,9 @@ function valueOf_0(c){
   return new Character(c);
 }
 
-defineClass(55, 1, {3:1, 55:1, 14:1}, Character);
+defineClass(56, 1, {3:1, 56:1, 14:1}, Character);
 _.equals_0 = function equals_4(o){
-  return instanceOf(o, 55) && castTo(o, 55).value_0 == this.value_0;
+  return instanceOf(o, 56) && castTo(o, 56).value_0 == this.value_0;
 }
 ;
 _.hashCode_0 = function hashCode_6(){
@@ -7665,10 +8182,10 @@ _.toString_0 = function toString_15(){
 }
 ;
 _.value_0 = 0;
-var Ljava_lang_Character_2_classLit = createForClass('java.lang', 'Character', 55);
+var Ljava_lang_Character_2_classLit = createForClass('java.lang', 'Character', 56);
 function $clinit_Character$BoxedValues(){
   $clinit_Character$BoxedValues = emptyMethod;
-  boxedValues_0 = initUnidimensionalArray(Ljava_lang_Character_2_classLit, $intern_0, 55, 128, 0, 1);
+  boxedValues_0 = initUnidimensionalArray(Ljava_lang_Character_2_classLit, $intern_0, 56, 128, 0, 1);
 }
 
 var boxedValues_0;
@@ -7676,19 +8193,19 @@ function ClassCastException(){
   RuntimeException_0.call(this, null);
 }
 
-defineClass(118, 6, $intern_1, ClassCastException);
-var Ljava_lang_ClassCastException_2_classLit = createForClass('java.lang', 'ClassCastException', 118);
+defineClass(119, 9, $intern_1, ClassCastException);
+var Ljava_lang_ClassCastException_2_classLit = createForClass('java.lang', 'ClassCastException', 119);
 function $equals_0(this$static, o){
   return checkCriticalNotNull(this$static) , maskUndefined(this$static) === maskUndefined(o);
 }
 
-doubleCastMap = {3:1, 14:1, 47:1};
-var Ljava_lang_Double_2_classLit = createForClass('java.lang', 'Double', 305);
+doubleCastMap = {3:1, 14:1, 49:1};
+var Ljava_lang_Double_2_classLit = createForClass('java.lang', 'Double', 320);
 function Float(value_0){
   this.value_0 = value_0;
 }
 
-defineClass(69, 47, {3:1, 14:1, 69:1, 47:1}, Float);
+defineClass(69, 49, {3:1, 14:1, 69:1, 49:1}, Float);
 _.equals_0 = function equals_5(o){
   return instanceOf(o, 69) && $equals_0(this.value_0, castTo(o, 69).value_0);
 }
@@ -7711,7 +8228,7 @@ function IllegalArgumentException_0(message){
   RuntimeException_0.call(this, message);
 }
 
-defineClass(30, 6, $intern_25, IllegalArgumentException, IllegalArgumentException_0);
+defineClass(30, 9, $intern_26, IllegalArgumentException, IllegalArgumentException_0);
 var Ljava_lang_IllegalArgumentException_2_classLit = createForClass('java.lang', 'IllegalArgumentException', 30);
 function IllegalStateException(){
   RuntimeException.call(this);
@@ -7721,8 +8238,8 @@ function IllegalStateException_0(s){
   RuntimeException_0.call(this, s);
 }
 
-defineClass(35, 6, $intern_1, IllegalStateException, IllegalStateException_0);
-var Ljava_lang_IllegalStateException_2_classLit = createForClass('java.lang', 'IllegalStateException', 35);
+defineClass(36, 9, $intern_1, IllegalStateException, IllegalStateException_0);
+var Ljava_lang_IllegalStateException_2_classLit = createForClass('java.lang', 'IllegalStateException', 36);
 function Integer(value_0){
   this.value_0 = value_0;
 }
@@ -7783,9 +8300,9 @@ function valueOf_1(i){
   return new Integer(i);
 }
 
-defineClass(43, 47, {3:1, 14:1, 43:1, 47:1}, Integer);
+defineClass(45, 49, {3:1, 14:1, 45:1, 49:1}, Integer);
 _.equals_0 = function equals_6(o){
-  return instanceOf(o, 43) && castTo(o, 43).value_0 == this.value_0;
+  return instanceOf(o, 45) && castTo(o, 45).value_0 == this.value_0;
 }
 ;
 _.hashCode_0 = function hashCode_8(){
@@ -7797,10 +8314,10 @@ _.toString_0 = function toString_18(){
 }
 ;
 _.value_0 = 0;
-var Ljava_lang_Integer_2_classLit = createForClass('java.lang', 'Integer', 43);
+var Ljava_lang_Integer_2_classLit = createForClass('java.lang', 'Integer', 45);
 function $clinit_Integer$BoxedValues(){
   $clinit_Integer$BoxedValues = emptyMethod;
-  boxedValues_1 = initUnidimensionalArray(Ljava_lang_Integer_2_classLit, $intern_0, 43, 256, 0, 1);
+  boxedValues_1 = initUnidimensionalArray(Ljava_lang_Integer_2_classLit, $intern_0, 45, 256, 0, 1);
 }
 
 var boxedValues_1;
@@ -7819,9 +8336,9 @@ function valueOf_2(i){
   return new Long(i);
 }
 
-defineClass(56, 47, {3:1, 14:1, 56:1, 47:1}, Long);
+defineClass(57, 49, {3:1, 14:1, 57:1, 49:1}, Long);
 _.equals_0 = function equals_7(o){
-  return instanceOf(o, 56) && eq(castTo(o, 56).value_0, this.value_0);
+  return instanceOf(o, 57) && eq(castTo(o, 57).value_0, this.value_0);
 }
 ;
 _.hashCode_0 = function hashCode_9(){
@@ -7833,14 +8350,14 @@ _.toString_0 = function toString_19(){
 }
 ;
 _.value_0 = 0;
-var Ljava_lang_Long_2_classLit = createForClass('java.lang', 'Long', 56);
+var Ljava_lang_Long_2_classLit = createForClass('java.lang', 'Long', 57);
 function $clinit_Long$BoxedValues(){
   $clinit_Long$BoxedValues = emptyMethod;
-  boxedValues_2 = initUnidimensionalArray(Ljava_lang_Long_2_classLit, $intern_0, 56, 256, 0, 1);
+  boxedValues_2 = initUnidimensionalArray(Ljava_lang_Long_2_classLit, $intern_0, 57, 256, 0, 1);
 }
 
 var boxedValues_2;
-defineClass(352, 1, {});
+defineClass(366, 1, {});
 function NullPointerException(){
   RuntimeException.call(this);
 }
@@ -7849,17 +8366,17 @@ function NullPointerException_0(message){
   RuntimeException_0.call(this, message);
 }
 
-defineClass(49, 80, $intern_1, NullPointerException, NullPointerException_0);
+defineClass(51, 80, $intern_1, NullPointerException, NullPointerException_0);
 _.createError = function createError_0(msg){
   return new TypeError(msg);
 }
 ;
-var Ljava_lang_NullPointerException_2_classLit = createForClass('java.lang', 'NullPointerException', 49);
+var Ljava_lang_NullPointerException_2_classLit = createForClass('java.lang', 'NullPointerException', 51);
 function NumberFormatException(message){
   IllegalArgumentException_0.call(this, message);
 }
 
-defineClass(70, 30, $intern_25, NumberFormatException);
+defineClass(70, 30, $intern_26, NumberFormatException);
 var Ljava_lang_NumberFormatException_2_classLit = createForClass('java.lang', 'NumberFormatException', 70);
 function Short(value_0){
   this.value_0 = value_0;
@@ -7876,9 +8393,9 @@ function valueOf_3(s){
   return new Short(s);
 }
 
-defineClass(57, 47, {3:1, 14:1, 47:1, 57:1}, Short);
+defineClass(58, 49, {3:1, 14:1, 49:1, 58:1}, Short);
 _.equals_0 = function equals_8(o){
-  return instanceOf(o, 57) && castTo(o, 57).value_0 == this.value_0;
+  return instanceOf(o, 58) && castTo(o, 58).value_0 == this.value_0;
 }
 ;
 _.hashCode_0 = function hashCode_10(){
@@ -7890,10 +8407,10 @@ _.toString_0 = function toString_20(){
 }
 ;
 _.value_0 = 0;
-var Ljava_lang_Short_2_classLit = createForClass('java.lang', 'Short', 57);
+var Ljava_lang_Short_2_classLit = createForClass('java.lang', 'Short', 58);
 function $clinit_Short$BoxedValues(){
   $clinit_Short$BoxedValues = emptyMethod;
-  boxedValues_3 = initUnidimensionalArray(Ljava_lang_Short_2_classLit, $intern_0, 57, 256, 0, 1);
+  boxedValues_3 = initUnidimensionalArray(Ljava_lang_Short_2_classLit, $intern_0, 58, 256, 0, 1);
 }
 
 var boxedValues_3;
@@ -8020,7 +8537,7 @@ function valueOf_5(x_0, count){
   return s;
 }
 
-stringCastMap = {3:1, 116:1, 14:1, 2:1};
+stringCastMap = {3:1, 117:1, 14:1, 2:1};
 var Ljava_lang_String_2_classLit = createForClass('java.lang', 'String', 2);
 function $append_0(this$static, x_0){
   this$static.string += '' + x_0;
@@ -8044,20 +8561,20 @@ function StringBuilder_1(s){
   AbstractStringBuilder.call(this, (checkCriticalNotNull(s) , s));
 }
 
-defineClass(62, 79, {116:1}, StringBuilder, StringBuilder_0, StringBuilder_1);
+defineClass(62, 79, {117:1}, StringBuilder, StringBuilder_0, StringBuilder_1);
 var Ljava_lang_StringBuilder_2_classLit = createForClass('java.lang', 'StringBuilder', 62);
 function StringIndexOutOfBoundsException(message){
   IndexOutOfBoundsException_0.call(this, message);
 }
 
-defineClass(91, 48, $intern_1, StringIndexOutOfBoundsException);
+defineClass(91, 50, $intern_1, StringIndexOutOfBoundsException);
 var Ljava_lang_StringIndexOutOfBoundsException_2_classLit = createForClass('java.lang', 'StringIndexOutOfBoundsException', 91);
-defineClass(356, 1, {});
+defineClass(370, 1, {});
 function Throwable$lambda$0$Type(){
 }
 
-defineClass(112, 1, {}, Throwable$lambda$0$Type);
-var Ljava_lang_Throwable$lambda$0$Type_2_classLit = createForClass('java.lang', 'Throwable/lambda$0$Type', 112);
+defineClass(113, 1, {}, Throwable$lambda$0$Type);
+var Ljava_lang_Throwable$lambda$0$Type_2_classLit = createForClass('java.lang', 'Throwable/lambda$0$Type', 113);
 function UnsupportedOperationException(){
   RuntimeException.call(this);
 }
@@ -8066,7 +8583,7 @@ function UnsupportedOperationException_0(message){
   RuntimeException_0.call(this, message);
 }
 
-defineClass(71, 6, $intern_1, UnsupportedOperationException, UnsupportedOperationException_0);
+defineClass(71, 9, $intern_1, UnsupportedOperationException, UnsupportedOperationException_0);
 var Ljava_lang_UnsupportedOperationException_2_classLit = createForClass('java.lang', 'UnsupportedOperationException', 71);
 function $advanceToFind(this$static, o){
   var e, iter;
@@ -8084,19 +8601,19 @@ function $containsAll(this$static, c){
   checkCriticalNotNull(c);
   for (e$iterator = c.iterator(); e$iterator.hasNext_0();) {
     e = e$iterator.next_0();
-    if (!this$static.contains_0(e)) {
+    if (!this$static.contains(e)) {
       return false;
     }
   }
   return true;
 }
 
-defineClass(313, 1, {52:1});
+defineClass(328, 1, {53:1});
 _.add_0 = function add_2(o){
   throw toJs(new UnsupportedOperationException_0('Add not supported on this collection'));
 }
 ;
-_.contains_0 = function contains(o){
+_.contains = function contains(o){
   return $advanceToFind(this, o);
 }
 ;
@@ -8127,7 +8644,7 @@ _.toString_0 = function toString_21(){
   return !joiner.builder?joiner.emptyValue:joiner.suffix.length == 0?joiner.builder.string:joiner.builder.string + ('' + joiner.suffix);
 }
 ;
-var Ljava_util_AbstractCollection_2_classLit = createForClass('java.util', 'AbstractCollection', 313);
+var Ljava_util_AbstractCollection_2_classLit = createForClass('java.util', 'AbstractCollection', 328);
 function $containsEntry(this$static, entry){
   var key, ourValue, value_0;
   key = entry.getKey();
@@ -8154,7 +8671,7 @@ function $implFindEntry(this$static, key){
   return null;
 }
 
-function $toString_1(this$static, o){
+function $toString_2(this$static, o){
   return o === this$static?'(this Map)':o == null?'null':toString_9(o);
 }
 
@@ -8162,7 +8679,7 @@ function getEntryValueOrNull(entry){
   return !entry?null:entry.getValue();
 }
 
-defineClass(312, 1, {46:1});
+defineClass(327, 1, {48:1});
 _.containsKey = function containsKey(key){
   return !!$implFindEntry(this, key);
 }
@@ -8172,10 +8689,10 @@ _.equals_0 = function equals_9(obj){
   if (obj === this) {
     return true;
   }
-  if (!instanceOf(obj, 46)) {
+  if (!instanceOf(obj, 48)) {
     return false;
   }
-  otherMap = castTo(obj, 46);
+  otherMap = castTo(obj, 48);
   if (this.size_1() != otherMap.size_1()) {
     return false;
   }
@@ -8209,12 +8726,12 @@ _.toString_0 = function toString_22(){
   joiner = new StringJoiner('{', '}');
   for (entry$iterator = new AbstractHashMap$EntrySetIterator(this.entrySet().this$01); entry$iterator.hasNext;) {
     entry = $next_0(entry$iterator);
-    $add_6(joiner, $toString_1(this, entry.getKey()) + '=' + $toString_1(this, entry.getValue()));
+    $add_6(joiner, $toString_2(this, entry.getKey()) + '=' + $toString_2(this, entry.getValue()));
   }
   return !joiner.builder?joiner.emptyValue:joiner.suffix.length == 0?joiner.builder.string:joiner.builder.string + ('' + joiner.suffix);
 }
 ;
-var Ljava_util_AbstractMap_2_classLit = createForClass('java.util', 'AbstractMap', 312);
+var Ljava_util_AbstractMap_2_classLit = createForClass('java.util', 'AbstractMap', 327);
 function $containsKey(this$static, key){
   return instanceOfString(key)?$hasStringValue(this$static, key):!!$getEntry(this$static.hashCodeMap, key);
 }
@@ -8257,7 +8774,7 @@ function AbstractHashMap(){
   $reset(this);
 }
 
-defineClass(95, 312, {46:1});
+defineClass(95, 327, {48:1});
 _.containsKey = function containsKey_0(key){
   return $containsKey(this, key);
 }
@@ -8279,7 +8796,7 @@ _.size_1 = function size_2(){
 }
 ;
 var Ljava_util_AbstractHashMap_2_classLit = createForClass('java.util', 'AbstractHashMap', 95);
-defineClass(314, 313, $intern_26);
+defineClass(329, 328, $intern_27);
 _.equals_0 = function equals_10(o){
   var other;
   if (o === this) {
@@ -8299,10 +8816,10 @@ _.hashCode_0 = function hashCode_12(){
   return hashCode_16(this);
 }
 ;
-var Ljava_util_AbstractSet_2_classLit = createForClass('java.util', 'AbstractSet', 314);
+var Ljava_util_AbstractSet_2_classLit = createForClass('java.util', 'AbstractSet', 329);
 function $contains(this$static, o){
-  if (instanceOf(o, 40)) {
-    return $containsEntry(this$static.this$01, castTo(o, 40));
+  if (instanceOf(o, 42)) {
+    return $containsEntry(this$static.this$01, castTo(o, 42));
   }
   return false;
 }
@@ -8311,8 +8828,8 @@ function AbstractHashMap$EntrySet(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(63, 314, $intern_26, AbstractHashMap$EntrySet);
-_.contains_0 = function contains_0(o){
+defineClass(63, 329, $intern_27, AbstractHashMap$EntrySet);
+_.contains = function contains_0(o){
   return $contains(this, o);
 }
 ;
@@ -8340,7 +8857,7 @@ function $next_0(this$static){
   var rv;
   checkStructuralChange(this$static.this$01, this$static);
   checkCriticalElement(this$static.hasNext);
-  rv = castTo(this$static.current.next_0(), 40);
+  rv = castTo(this$static.current.next_0(), 42);
   this$static.hasNext = $computeHasNext(this$static);
   return rv;
 }
@@ -8353,7 +8870,7 @@ function AbstractHashMap$EntrySetIterator(this$0){
   this.$modCount = this$0.$modCount;
 }
 
-defineClass(37, 1, {}, AbstractHashMap$EntrySetIterator);
+defineClass(38, 1, {}, AbstractHashMap$EntrySetIterator);
 _.next_0 = function next_1(){
   return $next_0(this);
 }
@@ -8363,8 +8880,8 @@ _.hasNext_0 = function hasNext_0(){
 }
 ;
 _.hasNext = false;
-var Ljava_util_AbstractHashMap$EntrySetIterator_2_classLit = createForClass('java.util', 'AbstractHashMap/EntrySetIterator', 37);
-defineClass(318, 313, {52:1, 42:1});
+var Ljava_util_AbstractHashMap$EntrySetIterator_2_classLit = createForClass('java.util', 'AbstractHashMap/EntrySetIterator', 38);
+defineClass(333, 328, {53:1, 44:1});
 _.add_1 = function add_3(index_0, element){
   throw toJs(new UnsupportedOperationException_0('Add not supported on this list'));
 }
@@ -8379,10 +8896,10 @@ _.equals_0 = function equals_11(o){
   if (o === this) {
     return true;
   }
-  if (!instanceOf(o, 42)) {
+  if (!instanceOf(o, 44)) {
     return false;
   }
-  other = castTo(o, 42);
+  other = castTo(o, 44);
   if (this.size_1() != other.size_1()) {
     return false;
   }
@@ -8413,7 +8930,7 @@ _.listIterator_0 = function listIterator_0(from){
   return new AbstractList$ListIteratorImpl(this, from);
 }
 ;
-var Ljava_util_AbstractList_2_classLit = createForClass('java.util', 'AbstractList', 318);
+var Ljava_util_AbstractList_2_classLit = createForClass('java.util', 'AbstractList', 333);
 function AbstractList$IteratorImpl(this$0){
   this.this$01_0 = this$0;
 }
@@ -8452,8 +8969,8 @@ function AbstractMap$1(this$0){
   this.this$01 = this$0;
 }
 
-defineClass(143, 314, $intern_26, AbstractMap$1);
-_.contains_0 = function contains_1(key){
+defineClass(144, 329, $intern_27, AbstractMap$1);
+_.contains = function contains_1(key){
   return $containsKey(this.this$01, key);
 }
 ;
@@ -8466,7 +8983,7 @@ _.size_1 = function size_4(){
   return $size(this.this$01);
 }
 ;
-var Ljava_util_AbstractMap$1_2_classLit = createForClass('java.util', 'AbstractMap/1', 143);
+var Ljava_util_AbstractMap$1_2_classLit = createForClass('java.util', 'AbstractMap/1', 144);
 function AbstractMap$1$1(val$outerIter){
   this.val$outerIter2 = val$outerIter;
 }
@@ -8483,13 +9000,13 @@ _.next_0 = function next_3(){
 }
 ;
 var Ljava_util_AbstractMap$1$1_2_classLit = createForClass('java.util', 'AbstractMap/1/1', 96);
-defineClass(141, 1, $intern_27);
+defineClass(142, 1, $intern_28);
 _.equals_0 = function equals_12(other){
   var entry;
-  if (!instanceOf(other, 40)) {
+  if (!instanceOf(other, 42)) {
     return false;
   }
-  entry = castTo(other, 40);
+  entry = castTo(other, 42);
   return equals_17(this.key, entry.getKey()) && equals_17(this.value_0, entry.getValue());
 }
 ;
@@ -8516,21 +9033,21 @@ _.toString_0 = function toString_23(){
   return this.key + '=' + this.value_0;
 }
 ;
-var Ljava_util_AbstractMap$AbstractEntry_2_classLit = createForClass('java.util', 'AbstractMap/AbstractEntry', 141);
+var Ljava_util_AbstractMap$AbstractEntry_2_classLit = createForClass('java.util', 'AbstractMap/AbstractEntry', 142);
 function AbstractMap$SimpleEntry(key, value_0){
   this.key = key;
   this.value_0 = value_0;
 }
 
-defineClass(142, 141, $intern_27, AbstractMap$SimpleEntry);
-var Ljava_util_AbstractMap$SimpleEntry_2_classLit = createForClass('java.util', 'AbstractMap/SimpleEntry', 142);
-defineClass(319, 1, $intern_27);
+defineClass(143, 142, $intern_28, AbstractMap$SimpleEntry);
+var Ljava_util_AbstractMap$SimpleEntry_2_classLit = createForClass('java.util', 'AbstractMap/SimpleEntry', 143);
+defineClass(334, 1, $intern_28);
 _.equals_0 = function equals_13(other){
   var entry;
-  if (!instanceOf(other, 40)) {
+  if (!instanceOf(other, 42)) {
     return false;
   }
-  entry = castTo(other, 40);
+  entry = castTo(other, 42);
   return equals_17(this.val$entry2.value[0], entry.getKey()) && equals_17($getValue(this), entry.getValue());
 }
 ;
@@ -8542,7 +9059,7 @@ _.toString_0 = function toString_24(){
   return this.val$entry2.value[0] + '=' + $getValue(this);
 }
 ;
-var Ljava_util_AbstractMapEntry_2_classLit = createForClass('java.util', 'AbstractMapEntry', 319);
+var Ljava_util_AbstractMapEntry_2_classLit = createForClass('java.util', 'AbstractMapEntry', 334);
 function $add_4(this$static, o){
   this$static.array[this$static.array.length] = o;
   return true;
@@ -8573,7 +9090,7 @@ function ArrayList(){
   this.array = initUnidimensionalArray(Ljava_lang_Object_2_classLit, $intern_0, 1, 0, 5, 1);
 }
 
-defineClass(28, 318, {3:1, 28:1, 52:1, 42:1}, ArrayList);
+defineClass(27, 333, {3:1, 27:1, 53:1, 44:1}, ArrayList);
 _.add_1 = function add_5(index_0, o){
   checkCriticalPositionIndex(index_0, this.array.length);
   insertTo(this.array, index_0, o);
@@ -8583,7 +9100,7 @@ _.add_0 = function add_6(o){
   return $add_4(this, o);
 }
 ;
-_.contains_0 = function contains_2(o){
+_.contains = function contains_2(o){
   return $indexOf_1(this, o, 0) != -1;
 }
 ;
@@ -8614,7 +9131,7 @@ _.toArray = function toArray_0(out){
   return out;
 }
 ;
-var Ljava_util_ArrayList_2_classLit = createForClass('java.util', 'ArrayList', 28);
+var Ljava_util_ArrayList_2_classLit = createForClass('java.util', 'ArrayList', 27);
 function $next_1(this$static){
   checkCriticalElement(this$static.i < this$static.this$01.array.length);
   this$static.last = this$static.i++;
@@ -8678,8 +9195,8 @@ var EMPTY_LIST;
 function Collections$EmptyList(){
 }
 
-defineClass(163, 318, {3:1, 52:1, 42:1}, Collections$EmptyList);
-_.contains_0 = function contains_3(object){
+defineClass(164, 333, {3:1, 53:1, 44:1}, Collections$EmptyList);
+_.contains = function contains_3(object){
   return false;
 }
 ;
@@ -8700,7 +9217,7 @@ _.size_1 = function size_6(){
   return 0;
 }
 ;
-var Ljava_util_Collections$EmptyList_2_classLit = createForClass('java.util', 'Collections/EmptyList', 163);
+var Ljava_util_Collections$EmptyList_2_classLit = createForClass('java.util', 'Collections/EmptyList', 164);
 function $clinit_Collections$EmptyListIterator(){
   $clinit_Collections$EmptyListIterator = emptyMethod;
   INSTANCE_2 = new Collections$EmptyListIterator;
@@ -8709,7 +9226,7 @@ function $clinit_Collections$EmptyListIterator(){
 function Collections$EmptyListIterator(){
 }
 
-defineClass(164, 1, {}, Collections$EmptyListIterator);
+defineClass(165, 1, {}, Collections$EmptyListIterator);
 _.hasNext_0 = function hasNext_4(){
   return false;
 }
@@ -8727,7 +9244,7 @@ _.previous = function previous_1(){
 }
 ;
 var INSTANCE_2;
-var Ljava_util_Collections$EmptyListIterator_2_classLit = createForClass('java.util', 'Collections/EmptyListIterator', 164);
+var Ljava_util_Collections$EmptyListIterator_2_classLit = createForClass('java.util', 'Collections/EmptyListIterator', 165);
 function checkStructuralChange(host, iterator){
   if (iterator.$modCount != host.$modCount) {
     throw toJs(new ConcurrentModificationException);
@@ -8745,8 +9262,8 @@ function ConcurrentModificationException(){
   RuntimeException.call(this);
 }
 
-defineClass(185, 6, $intern_1, ConcurrentModificationException);
-var Ljava_util_ConcurrentModificationException_2_classLit = createForClass('java.util', 'ConcurrentModificationException', 185);
+defineClass(186, 9, $intern_1, ConcurrentModificationException);
+var Ljava_util_ConcurrentModificationException_2_classLit = createForClass('java.util', 'ConcurrentModificationException', 186);
 function $clinit_Date$StringData(){
   $clinit_Date$StringData = emptyMethod;
   DAYS = stampJavaTypeInfo(getClassLiteralForArray(Ljava_lang_String_2_classLit, 1), $intern_0, 2, 6, ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']);
@@ -8758,7 +9275,7 @@ function HashMap(){
   AbstractHashMap.call(this);
 }
 
-defineClass(36, 95, {3:1, 46:1}, HashMap);
+defineClass(37, 95, {3:1, 48:1}, HashMap);
 _.equals_1 = function equals_14(value1, value2){
   return maskUndefined(value1) === maskUndefined(value2) || value1 != null && equals_Ljava_lang_Object__Z__devirtual$(value1, value2);
 }
@@ -8769,7 +9286,7 @@ _.getHashCode = function getHashCode(key){
   return hashCode | 0;
 }
 ;
-var Ljava_util_HashMap_2_classLit = createForClass('java.util', 'HashMap', 36);
+var Ljava_util_HashMap_2_classLit = createForClass('java.util', 'HashMap', 37);
 function $add_5(this$static, o){
   var old;
   old = $put(this$static.map_0, o, this$static);
@@ -8788,12 +9305,12 @@ function HashSet(){
   this.map_0 = new HashMap;
 }
 
-defineClass(82, 314, {3:1, 52:1, 78:1}, HashSet);
+defineClass(82, 329, {3:1, 53:1, 78:1}, HashSet);
 _.add_0 = function add_7(o){
   return $add_5(this, o);
 }
 ;
-_.contains_0 = function contains_4(o){
+_.contains = function contains_4(o){
   return $contains_0(this, o);
 }
 ;
@@ -8815,16 +9332,16 @@ function IdentityHashMap(){
   AbstractHashMap.call(this);
 }
 
-defineClass(273, 95, {3:1, 46:1}, IdentityHashMap);
+defineClass(253, 95, {3:1, 48:1}, IdentityHashMap);
 _.equals_0 = function equals_15(obj){
   var entry, entry$iterator, otherKey, otherMap, otherValue;
   if (obj === this) {
     return true;
   }
-  if (!instanceOf(obj, 46)) {
+  if (!instanceOf(obj, 48)) {
     return false;
   }
-  otherMap = castTo(obj, 46);
+  otherMap = castTo(obj, 48);
   if (this.hashCodeMap.size_0 + this.stringMap.size_0 != otherMap.size_1()) {
     return false;
   }
@@ -8861,7 +9378,7 @@ _.hashCode_0 = function hashCode_18(){
   return hashCode;
 }
 ;
-var Ljava_util_IdentityHashMap_2_classLit = createForClass('java.util', 'IdentityHashMap', 273);
+var Ljava_util_IdentityHashMap_2_classLit = createForClass('java.util', 'IdentityHashMap', 253);
 function $findEntryInChain(this$static, key, chain){
   var entry, entry$array, entry$index, entry$max;
   for (entry$array = chain , entry$index = 0 , entry$max = entry$array.length; entry$index < entry$max; ++entry$index) {
@@ -8929,13 +9446,13 @@ function InternalHashCodeMap(host){
   this.host = host;
 }
 
-defineClass(167, 1, {}, InternalHashCodeMap);
+defineClass(168, 1, {}, InternalHashCodeMap);
 _.iterator = function iterator_8(){
   return new InternalHashCodeMap$1(this);
 }
 ;
 _.size_0 = 0;
-var Ljava_util_InternalHashCodeMap_2_classLit = createForClass('java.util', 'InternalHashCodeMap', 167);
+var Ljava_util_InternalHashCodeMap_2_classLit = createForClass('java.util', 'InternalHashCodeMap', 168);
 function InternalHashCodeMap$1(this$0){
   this.this$01 = this$0;
   this.chains = this.this$01.backingMap.entries();
@@ -9137,14 +9654,14 @@ function InternalStringMap(host){
   this.host = host;
 }
 
-defineClass(168, 1, {}, InternalStringMap);
+defineClass(169, 1, {}, InternalStringMap);
 _.iterator = function iterator_9(){
   return new InternalStringMap$1(this);
 }
 ;
 _.size_0 = 0;
 _.valueMod = 0;
-var Ljava_util_InternalStringMap_2_classLit = createForClass('java.util', 'InternalStringMap', 168);
+var Ljava_util_InternalStringMap_2_classLit = createForClass('java.util', 'InternalStringMap', 169);
 function InternalStringMap$1(this$0){
   this.this$01 = this$0;
   this.entries_0 = this.this$01.backingMap.entries();
@@ -9174,7 +9691,7 @@ function InternalStringMap$2(this$0, val$entry, val$lastValueMod){
   this.val$lastValueMod3 = val$lastValueMod;
 }
 
-defineClass(169, 319, $intern_27, InternalStringMap$2);
+defineClass(170, 334, $intern_28, InternalStringMap$2);
 _.getKey = function getKey_0(){
   return this.val$entry2.value[0];
 }
@@ -9188,39 +9705,39 @@ _.setValue = function setValue_0(object){
 }
 ;
 _.val$lastValueMod3 = 0;
-var Ljava_util_InternalStringMap$2_2_classLit = createForClass('java.util', 'InternalStringMap/2', 169);
+var Ljava_util_InternalStringMap$2_2_classLit = createForClass('java.util', 'InternalStringMap/2', 170);
 function $clinit_Locale(){
   $clinit_Locale = emptyMethod;
   ROOT = new Locale$1;
   defaultLocale = new Locale$4;
 }
 
-defineClass(306, 1, {});
+defineClass(321, 1, {});
 var ROOT, defaultLocale;
-var Ljava_util_Locale_2_classLit = createForClass('java.util', 'Locale', 306);
+var Ljava_util_Locale_2_classLit = createForClass('java.util', 'Locale', 321);
 function Locale$1(){
 }
 
-defineClass(119, 306, {}, Locale$1);
+defineClass(120, 321, {}, Locale$1);
 _.toString_0 = function toString_25(){
   return '';
 }
 ;
-var Ljava_util_Locale$1_2_classLit = createForClass('java.util', 'Locale/1', 119);
+var Ljava_util_Locale$1_2_classLit = createForClass('java.util', 'Locale/1', 120);
 function Locale$4(){
 }
 
-defineClass(120, 306, {}, Locale$4);
+defineClass(121, 321, {}, Locale$4);
 _.toString_0 = function toString_26(){
   return 'unknown';
 }
 ;
-var Ljava_util_Locale$4_2_classLit = createForClass('java.util', 'Locale/4', 120);
+var Ljava_util_Locale$4_2_classLit = createForClass('java.util', 'Locale/4', 121);
 function NoSuchElementException(){
   RuntimeException.call(this);
 }
 
-defineClass(65, 6, $intern_1, NoSuchElementException);
+defineClass(65, 9, $intern_1, NoSuchElementException);
 var Ljava_util_NoSuchElementException_2_classLit = createForClass('java.util', 'NoSuchElementException', 65);
 function equals_17(a, b){
   return maskUndefined(a) === maskUndefined(b) || a != null && equals_Ljava_lang_Object__Z__devirtual$(a, b);
@@ -9241,7 +9758,7 @@ function checkCriticalArrayBounds(end, length_0){
   }
 }
 
-defineClass(178, 1, {});
+defineClass(179, 1, {});
 _.forEachRemaining = function forEachRemaining(consumer){
   $forEachRemaining(this, consumer);
 }
@@ -9256,14 +9773,14 @@ _.estimateSize = function estimateSize(){
 ;
 _.characteristics = 0;
 _.sizeEstimate = 0;
-var Ljava_util_Spliterators$BaseSpliterator_2_classLit = createForClass('java.util', 'Spliterators/BaseSpliterator', 178);
+var Ljava_util_Spliterators$BaseSpliterator_2_classLit = createForClass('java.util', 'Spliterators/BaseSpliterator', 179);
 function Spliterators$AbstractSpliterator(size_0, characteristics){
   this.sizeEstimate = size_0;
   this.characteristics = (characteristics & 64) != 0?characteristics | 16384:characteristics;
 }
 
-defineClass(179, 178, {});
-var Ljava_util_Spliterators$AbstractSpliterator_2_classLit = createForClass('java.util', 'Spliterators/AbstractSpliterator', 179);
+defineClass(180, 179, {});
+var Ljava_util_Spliterators$AbstractSpliterator_2_classLit = createForClass('java.util', 'Spliterators/AbstractSpliterator', 180);
 function $forEachRemaining_0(this$static, consumer){
   checkCriticalNotNull(consumer);
   while (this$static.index_0 < this$static.limit) {
@@ -9280,7 +9797,7 @@ function $tryAdvance(this$static, consumer){
   return false;
 }
 
-defineClass(165, 1, {});
+defineClass(166, 1, {});
 _.forEachRemaining = function forEachRemaining_0(consumer){
   $forEachRemaining(this, consumer);
 }
@@ -9296,7 +9813,7 @@ _.estimateSize = function estimateSize_0(){
 _.characteristics = 0;
 _.index_0 = 0;
 _.limit = 0;
-var Ljava_util_Spliterators$BaseArraySpliterator_2_classLit = createForClass('java.util', 'Spliterators/BaseArraySpliterator', 165);
+var Ljava_util_Spliterators$BaseArraySpliterator_2_classLit = createForClass('java.util', 'Spliterators/BaseArraySpliterator', 166);
 function $consume(this$static, consumer, index_0){
   consumer.accept(this$static.array[index_0]);
 }
@@ -9308,7 +9825,7 @@ function Spliterators$ArraySpliterator(array, limit){
   this.array = array;
 }
 
-defineClass(166, 165, {}, Spliterators$ArraySpliterator);
+defineClass(167, 166, {}, Spliterators$ArraySpliterator);
 _.forEachRemaining = function forEachRemaining_1(consumer){
   $forEachRemaining_0(this, consumer);
 }
@@ -9317,7 +9834,7 @@ _.tryAdvance = function tryAdvance(consumer){
   return $tryAdvance(this, consumer);
 }
 ;
-var Ljava_util_Spliterators$ArraySpliterator_2_classLit = createForClass('java.util', 'Spliterators/ArraySpliterator', 166);
+var Ljava_util_Spliterators$ArraySpliterator_2_classLit = createForClass('java.util', 'Spliterators/ArraySpliterator', 167);
 function $add_6(this$static, newElement){
   !this$static.builder?(this$static.builder = new StringBuilder_1(this$static.prefix)):$append_1(this$static.builder, this$static.delimiter);
   $append_0(this$static.builder, newElement);
@@ -9358,33 +9875,33 @@ function Collector$Characteristics(enum$name, enum$ordinal){
 
 function values_5(){
   $clinit_Collector$Characteristics();
-  return stampJavaTypeInfo(getClassLiteralForArray(Ljava_util_stream_Collector$Characteristics_2_classLit, 1), $intern_0, 53, 0, [CONCURRENT, IDENTITY_FINISH, UNORDERED]);
+  return stampJavaTypeInfo(getClassLiteralForArray(Ljava_util_stream_Collector$Characteristics_2_classLit, 1), $intern_0, 54, 0, [CONCURRENT, IDENTITY_FINISH, UNORDERED]);
 }
 
-defineClass(53, 15, {3:1, 14:1, 15:1, 53:1}, Collector$Characteristics);
+defineClass(54, 15, {3:1, 14:1, 15:1, 54:1}, Collector$Characteristics);
 var CONCURRENT, IDENTITY_FINISH, UNORDERED;
-var Ljava_util_stream_Collector$Characteristics_2_classLit = createForEnum('java.util.stream', 'Collector/Characteristics', 53, Ljava_lang_Enum_2_classLit, values_5);
+var Ljava_util_stream_Collector$Characteristics_2_classLit = createForEnum('java.util.stream', 'Collector/Characteristics', 54, Ljava_lang_Enum_2_classLit, values_5);
 function CollectorImpl(){
   $clinit_Collections();
 }
 
-defineClass(187, 1, {}, CollectorImpl);
-var Ljava_util_stream_CollectorImpl_2_classLit = createForClass('java.util.stream', 'CollectorImpl', 187);
+defineClass(188, 1, {}, CollectorImpl);
+var Ljava_util_stream_CollectorImpl_2_classLit = createForClass('java.util.stream', 'CollectorImpl', 188);
 function Collectors$20methodref$add$Type(){
 }
 
-defineClass(114, 1, {}, Collectors$20methodref$add$Type);
-var Ljava_util_stream_Collectors$20methodref$add$Type_2_classLit = createForClass('java.util.stream', 'Collectors/20methodref$add$Type', 114);
+defineClass(115, 1, {}, Collectors$20methodref$add$Type);
+var Ljava_util_stream_Collectors$20methodref$add$Type_2_classLit = createForClass('java.util.stream', 'Collectors/20methodref$add$Type', 115);
 function Collectors$21methodref$ctor$Type(){
 }
 
-defineClass(113, 1, {}, Collectors$21methodref$ctor$Type);
-var Ljava_util_stream_Collectors$21methodref$ctor$Type_2_classLit = createForClass('java.util.stream', 'Collectors/21methodref$ctor$Type', 113);
+defineClass(114, 1, {}, Collectors$21methodref$ctor$Type);
+var Ljava_util_stream_Collectors$21methodref$ctor$Type_2_classLit = createForClass('java.util.stream', 'Collectors/21methodref$ctor$Type', 114);
 function Collectors$lambda$42$Type(){
 }
 
-defineClass(115, 1, {}, Collectors$lambda$42$Type);
-var Ljava_util_stream_Collectors$lambda$42$Type_2_classLit = createForClass('java.util.stream', 'Collectors/lambda$42$Type', 115);
+defineClass(116, 1, {}, Collectors$lambda$42$Type);
+var Ljava_util_stream_Collectors$lambda$42$Type_2_classLit = createForClass('java.util.stream', 'Collectors/lambda$42$Type', 116);
 function $terminate(this$static){
   if (!this$static.root) {
     $throwIfTerminated(this$static);
@@ -9414,9 +9931,9 @@ function TerminatableStream(previous){
   }
 }
 
-defineClass(177, 1, {});
+defineClass(178, 1, {});
 _.terminated = false;
-var Ljava_util_stream_TerminatableStream_2_classLit = createForClass('java.util.stream', 'TerminatableStream', 177);
+var Ljava_util_stream_TerminatableStream_2_classLit = createForClass('java.util.stream', 'TerminatableStream', 178);
 function $map(this$static, mapper){
   $throwIfTerminated(this$static);
   return new StreamImpl(this$static, new StreamImpl$MapToObjSpliterator(mapper, this$static.spliterator));
@@ -9437,7 +9954,7 @@ function StreamImpl(prev, spliterator){
 }
 
 function lambda$4(a_1, t_2){
-  castTo(a_1, 52).add_0(t_2);
+  castTo(a_1, 53).add_0(t_2);
   return a_1;
 }
 
@@ -9445,7 +9962,7 @@ function lambda$5(consumer_0, item_2){
   $accept(consumer_0, lambda$4(consumer_0.value_0, item_2));
 }
 
-defineClass(75, 177, {75:1}, StreamImpl);
+defineClass(75, 178, {75:1}, StreamImpl);
 var Ljava_util_stream_StreamImpl_2_classLit = createForClass('java.util.stream', 'StreamImpl', 75);
 function StreamImpl$MapToObjSpliterator(map_0, original){
   Spliterators$AbstractSpliterator.call(this, original.estimateSize(), original.characteristics_0() & -6);
@@ -9453,22 +9970,22 @@ function StreamImpl$MapToObjSpliterator(map_0, original){
   this.original = original;
 }
 
-defineClass(180, 179, {}, StreamImpl$MapToObjSpliterator);
+defineClass(181, 180, {}, StreamImpl$MapToObjSpliterator);
 _.tryAdvance = function tryAdvance_0(action){
   return this.original.tryAdvance(new StreamImpl$MapToObjSpliterator$lambda$0$Type(action));
 }
 ;
-var Ljava_util_stream_StreamImpl$MapToObjSpliterator_2_classLit = createForClass('java.util.stream', 'StreamImpl/MapToObjSpliterator', 180);
+var Ljava_util_stream_StreamImpl$MapToObjSpliterator_2_classLit = createForClass('java.util.stream', 'StreamImpl/MapToObjSpliterator', 181);
 function StreamImpl$MapToObjSpliterator$lambda$0$Type(action_1){
   this.action_1 = action_1;
 }
 
-defineClass(182, 1, {}, StreamImpl$MapToObjSpliterator$lambda$0$Type);
+defineClass(183, 1, {}, StreamImpl$MapToObjSpliterator$lambda$0$Type);
 _.accept = function accept(arg0){
   this.action_1.accept(castTo(arg0, 4).backingJsObject);
 }
 ;
-var Ljava_util_stream_StreamImpl$MapToObjSpliterator$lambda$0$Type_2_classLit = createForClass('java.util.stream', 'StreamImpl/MapToObjSpliterator/lambda$0$Type', 182);
+var Ljava_util_stream_StreamImpl$MapToObjSpliterator$lambda$0$Type_2_classLit = createForClass('java.util.stream', 'StreamImpl/MapToObjSpliterator/lambda$0$Type', 183);
 function $accept(this$static, value_0){
   this$static.value_0 = value_0;
 }
@@ -9476,27 +9993,27 @@ function $accept(this$static, value_0){
 function StreamImpl$ValueConsumer(){
 }
 
-defineClass(181, 1, {}, StreamImpl$ValueConsumer);
+defineClass(182, 1, {}, StreamImpl$ValueConsumer);
 _.accept = function accept_0(value_0){
   $accept(this, value_0);
 }
 ;
-var Ljava_util_stream_StreamImpl$ValueConsumer_2_classLit = createForClass('java.util.stream', 'StreamImpl/ValueConsumer', 181);
+var Ljava_util_stream_StreamImpl$ValueConsumer_2_classLit = createForClass('java.util.stream', 'StreamImpl/ValueConsumer', 182);
 function StreamImpl$lambda$5$Type(consumer_0){
   this.consumer_0 = consumer_0;
 }
 
-defineClass(183, 1, {}, StreamImpl$lambda$5$Type);
+defineClass(184, 1, {}, StreamImpl$lambda$5$Type);
 _.accept = function accept_1(arg0){
   lambda$5(this.consumer_0, arg0);
 }
 ;
-var Ljava_util_stream_StreamImpl$lambda$5$Type_2_classLit = createForClass('java.util.stream', 'StreamImpl/lambda$5$Type', 183);
+var Ljava_util_stream_StreamImpl$lambda$5$Type_2_classLit = createForClass('java.util.stream', 'StreamImpl/lambda$5$Type', 184);
 function insertTo(array, index_0, value_0){
   array.splice(index_0, 0, value_0);
 }
 
-defineClass(354, 1, {});
+defineClass(368, 1, {});
 function stampJavaTypeInfo_0(array, referenceType){
   return getElementTypeCategory(referenceType) != 10 && stampJavaTypeInfo(getClass__Ljava_lang_Class___devirtual$(referenceType), referenceType.castableTypeMap, referenceType.__elementTypeId$, getElementTypeCategory(referenceType), array) , array;
 }
@@ -9584,7 +10101,7 @@ function checkCriticalType(expression){
   }
 }
 
-defineClass(351, 1, {});
+defineClass(365, 1, {});
 function getHashCode_1(o){
   return o.$H || (o.$H = ++nextHashId);
 }
@@ -9645,7 +10162,7 @@ var Lcom_google_gwt_user_client_rpc_XsrfToken_2_classLit = createForClass('com.g
 var $entry = ($clinit_Impl() , entry_0);
 var gwtOnLoad = gwtOnLoad = gwtOnLoad_0;
 addInitFunctions(init);
-setGwtProperty('permProps', [[['locale', 'default'], ['user.agent', 'safari']]]);
+setGwtProperty('permProps', [[['locale', 'default'], ['user.agent', 'gecko1_8']]]);
 $sendStats('moduleStartup', 'moduleEvalEnd');
 gwtOnLoad(__gwtModuleFunction.__errFn, __gwtModuleFunction.__moduleName, __gwtModuleFunction.__moduleBase, __gwtModuleFunction.__softPermutationId,__gwtModuleFunction.__computePropValue);
 $sendStats('moduleStartup', 'end');

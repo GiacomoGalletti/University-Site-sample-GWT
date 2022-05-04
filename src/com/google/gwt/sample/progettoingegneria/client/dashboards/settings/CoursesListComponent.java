@@ -1,6 +1,7 @@
 package com.google.gwt.sample.progettoingegneria.client.dashboards.settings;
 
 import com.google.gwt.sample.progettoingegneria.client.ConnServiceSingleton;
+import com.google.gwt.sample.progettoingegneria.client.Session;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Composite;
@@ -32,7 +33,7 @@ public class CoursesListComponent extends Composite {
     }
 
     public void updateCoursesInfo() {
-        ConnServiceSingleton.getConnService().viewCoursesInfo(new AsyncCallback<String>() {
+        ConnServiceSingleton.getConnService().viewSudentCoursesInfo(Session.getSession().getEmail(), new AsyncCallback<String>() {
 
             @Override
             public void onFailure(Throwable caught) {
