@@ -12,6 +12,7 @@ import com.google.gwt.sample.progettoingegneria.shared.Secretary;
 import com.google.gwt.sample.progettoingegneria.shared.UserState;
 import com.google.gwt.sample.progettoingegneria.shared.Student;
 import com.google.gwt.sample.progettoingegneria.shared.User;
+import com.google.gwt.sample.progettoingegneria.shared.UserFactory;
 
 public class UsersDB
 {
@@ -56,26 +57,11 @@ public class UsersDB
 
 		if (!checkMailExist(email)) {
 			DB db = getUserDB();
-			BTreeMap<String, User> userMap = db.getTreeMap("userMap");
-
-			switch (type) {
-			case 0:
-				User s = new Student(username, password, email, name, surname);
-				userMap.put(email, s);
-				break;
-			case 1:
-				User p = new Professor(username, password, email, name, surname);
-				userMap.put(email, p);
-				break;
-			case 2:
-				User se = new Secretary(username, password, email, name, surname);
-				userMap.put(email, se);
-				break;
-			}
-			User r = userMap.get(email);
+			BTreeMap<String, User> userMap = db.getTreeMap("userMap");			
+			userMap.put(email, new UserFactory().generateUser(type, username, password, email, name, surname));
 			db.commit();
 			db.close();
-			return "registrato "+ r.getEmail() ;
+			return "registrato "+ userMap.get(email).getEmail() ;
 		}
 		return email + " esiste già.";
 		
