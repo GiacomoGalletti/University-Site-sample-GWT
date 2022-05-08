@@ -19,18 +19,18 @@ public class MenuComponent extends Composite {
 		this.main = main;
 		buttonLogin = new Button("Area Utente");
 		Button buttonHome = new Button("home");
-		Button buttonClear = new Button("pulisci db");
+		//Button buttonClear = new Button("pulisci db");
 		
 		buttonLogin.setWidth("250px");
 		buttonHome.setWidth("250px");
 		
 		buttonLogin.addClickHandler(new buttonLoginHandler());
 		buttonHome.addClickHandler(new buttonHomeHandler());
-		buttonClear.addClickHandler(new buttonClearHandler());
+		//buttonClear.addClickHandler(new buttonClearHandler());
 		
 		this.hPanel.add(buttonHome);
 		this.hPanel.add(buttonLogin);
-		this.hPanel.add(buttonClear);
+		//this.hPanel.add(buttonClear);
 	}
 	
 	
